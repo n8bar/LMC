@@ -1,0 +1,138 @@
+html{ height:100%; overflow:hidden; width:100%;}
+
+body {	
+	/** /
+	background:-moz-linear-gradient(90deg bottom left, #558327 0%, #B4DAF5 100%);
+	background-color:#B4DAF5;
+	/**/
+	font-family:Calibri, Verdana, Geneva, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	height:100%;
+	margin:0;
+	overflow:hidden;
+	width:100%;
+}
+
+div {white-space: nowrap; overflow:hidden; -moz-text-overflow:ellipsis; -webkit-text-overflow:ellipsis;}
+
+#heading	{
+	/** /
+	background:-moz-linear-gradient(90deg bottom left, #9FD26C, #F8FCF3 80%, #EBF5E0);
+	background:-webkit-gradient(linear, 0 100%, 0 0, from(#40631D), to(#DDEFCB));
+	/**/
+	background:-moz-linear-gradient(-90deg top left, #786 0%,            #c8e0c0 49.99%,           #d8f0c0 50%,    #f8ffe0 100%);
+	background:-webkit-gradient(linear,0 0,0 100%,from(#786),color-stop(.49999, #c8e0c0),color-stop(.5, #d8f0c0), to(#f8ffe0));
+	/**/
+	border-bottom:solid 4px #342;
+	height:32px;
+	width:100%;
+}
+
+#topLinks	{
+	float:right; font-family:Georgia, "Times New Roman", Times, serif; font-size:14px; font-weight:normal; position:absolute; width:100%;
+}
+
+.mainTab	{
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom:none;
+	background:-moz-linear-gradient(90deg bottom left, #666 10%,          #bbb 49.999%,             #ccc 50%, #eee 100%);
+	background:-webkit-gradient(linear,0 100%,0 0,from(#666), color-stop(.49999, #bbb), color-stop(.5, #ccc), to(#eee));
+	cursor:pointer;
+	float:left;
+	height:26px;
+	margin:28px 4px 0 4px;
+	min-width:144px;
+	padding:0px 0 0 0;
+	text-align:center;
+	text-shadow:#FFF 0 0 3px;
+}
+.mainTab:hover	{
+	background:-moz-linear-gradient(90deg bottom left, #555 10%,          #ccc 49.99%,             #e0e0e0 50%, #FFF 100%);
+	background:-webkit-gradient(linear,0 100%,0 0,from(#555), color-stop(.49999, #ccc), color-stop(.5, #e0e0e0), to(#fff));
+	padding:1px 1px 0 2px;
+	height:27px;
+	margin:26px 3px 0 2px;
+	min-width:147px;
+}
+
+.selectedMainTab	{
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;  
+	border:#fff 1px solid;
+	border-bottom:#342 1px solid;
+	background:-moz-linear-gradient(90deg bottom left, #342 0%,           #2E4615 8%,             #B1DB87 49.99%,         #DDEFCB 50%,    #fff 100%);
+	background:-webkit-gradient(linear,0 100%,0 0,from(#342),color-stop(.08, #2E4615),color-stop(.49999, #B1DB87),color-stop(.5, #DDEFCB), to(#fff));
+	cursor:pointer;
+	float:left;
+	height:28px;
+	margin:24px 1px 0 1px;
+	min-width:148px;
+	padding:1px 2px 0 2px;
+	text-align:center;
+	text-shadow:#FFF 0 0 5px,#FFF 0 0 3px;
+}
+
+.toolbar	{
+	background:-moz-linear-gradient(-90deg top left, #888 0%,            #999 2%,            #c0c0c0 49.99%,           #d0d0d0 50%,    #FFF 100%);
+	background:-webkit-gradient(linear,0 0,0 100%,from(#888),color-stop(.02, #999),color-stop(.49999, #c0c0c0),color-stop(.5, #d0d0d0), to(#fff));
+	border-bottom:#342 3px solid;
+	height:32px;
+	width:100%;
+}
+
+.subTab	{
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;  
+	background:-moz-linear-gradient(90deg bottom left, #444 0%, #2E4615 10%, #B1DB87 100%);
+	background:-webkit-gradient(linear, 0 100%, 0 0, from(#444), color-stop(.1, #2E4615), to(#B1DB87));
+	border:1px #ccc solid;
+	color:white;
+	cursor:pointer;
+	float:left;
+	font-size:16px;
+	font-weight:bold;
+	height:24px;
+	margin:6px 3px 0 3px;
+	text-align:center;
+	width:auto;
+}
+.subTab:hover	{
+	background:-moz-linear-gradient(90deg bottom left, #444 0%, #558327 10%, #EBF5E0 100%);
+	background:-webkit-gradient(linear, 0 100%, 0 0, from(#444), color-stop(.1, #558327), to(#EBF5E0));
+	text-shadow:0 0 1px #000, 0 0 1px #000, 0 0 1px #000;
+}
+.selectedSubTab	{
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;  
+	background:-moz-linear-gradient(90deg bottom left, #342 0%, #86C745 33%, #F8FCF3 100%);
+	background:-webkit-gradient(linear, 0 100%, 0 0, from(#342), color-stop(.333, #86C745), to(#F8FCF3));
+	border:1px #ddd solid;
+	border-bottom:none;
+	color:white;
+	cursor:pointer;
+	float:left;
+	font-size:18px;
+	font-weight:bold;
+	height:26px;
+	margin:5px 3px 0 3px;
+	text-align:center;
+	text-shadow:0 2px 2px #000, 0 2px 3px #000;
+	width:auto;
+}
+
+#frames	{
+	width:100%;
+}
+
+.hiddenFrame	{
+	display:none;
+}
+.frame	{
+	border:none;
+	display:block;
+	height:100%;
+	width:100%;
+}
+

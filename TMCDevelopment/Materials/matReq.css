@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{ height:100%; width:100%; margin:0 0 20px 0; overflow-x:hidden; overflow-y:auto; font-family:Tahoma, Geneva, sans-serif;}
+body{ height:100%; min-height:384px; width:100%; margin:0 0 0 0; overflow:hidden;}
+
+#Modal { background:rgba(0,192,192,.75); width:100%; height:100%; position:absolute; top:0; left:0; z-index:200; }
+
+#AddPartContainer{	position:absolute; top:5%; right:10%; width:800px; height:300px; display:none; z-index:201000; border-top-left-radius:8px; border-top-right-radius:8px; overflow:hidden; box-shadow:rgba(0,0,0,.25) 10px 10px 3px; }
+#AddPartContainer iframe{border:none; height:275px; width:100%;}
+#AddPartTitle{height:25px; width:100%; background:#0CC; padding:4px 0 0 0; margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; font-weight:bold; text-align:center; color:#FFF; z-index:202100; border-top-left-radius:8px; border-top-right-radius:8px; }
+
+#top {width:100%; height:10%; }
+#topLeft,#topRight { width: 50%; height:100%; float:left; overflow-x:hidden; overflow-y:auto; }
+#left,#right { width: 50%; height:90%; float:left; overflow-x:hidden; overflow-y:auto; }
+
+h3 { width:100%; font-family:Condensed; }
+#Projects { max-width:45%; width:auto; margin-right:5%; float:right; }
+
+#Reload { float:right; }
+
+.ItemsHead { width:95%; margin:2px 0 0 2.5%; overflow:hidden; height:30px; line-height:15px; font-size:12px;
+ border:rgba(0,0,0,.333) solid 1px; border-left-width:2px; border-radius:6px;
+ background:-moz-linear-gradient(bottom, rgba(0,224,224,.5), rgba(0,192,192,.25) 90%, rgba(0,144,144,.875));
+ background:-webkit-gradient(linear,0 0,0 100%, from(rgba(0,224,224,1)) ,color-stop(.5,  rgba(0,192,192,.9)), to(rgba(0,144,144,.75)));
+}
+.ItemsHead div{ float:left; border-left:rgba(255,255,255,.75) solid 1px; border-right:rgba(0,0,0,.25) solid 1px; height:100%; max-height:100%; text-align:center; overflow:hidden; text-overflow:ellipsis; }
+
+
+.row {width:95%; height:52px; overflow:hidden; margin:8px 0 2px 2.5%; border-radius:5px; font-size:14px; 
+ background:-moz-linear-gradient(bottom, rgba(224,255,255,.25), /*rgba(0,192,192,.5) 50%,*/ rgba(128,144,144,.25));
+ background:-webkit-gradient(linear,0 0,0 100%, from(rgba(224,255,255,.25)) /*,color-stop(.5, rgba(0,192,192,.5))*/, to(rgba(128,144,144,.25)));
+}
+
+.row div { float:left; height:32px; line-height:16px; overflow:hidden; text-overflow:ellipsis; } 
+.row input { float:left; height:32px; line-height:16px; overflow:hidden; text-overflow:ellipsis; border:none; font-family:Consolas; background-color:rgba(255,0,0,.1); outline:none; } 
+.rowBottom { height:20px; font-family:Condensed; font-size:12px; line-height:10px; overflow:hidden; text-overflow:ellipsis; }
+.rowButton { max-width:100%; max-height:100%; margin:0 auto 0 auto; }
+.rowButton div { width:100%; height:100%; }
+.pencil {background:url(../../Images/pencil-gray16.png) center no-repeat;}
+.pencil:hover {background:url(../../Images/pencil-icon16.png) center no-repeat;}
+.pencil:active {background:url(../../Images/pencil-icon16-bold.png) center no-repeat;}
+.save {background:url(../../Images/save_16.png) center no-repeat;}
+.delete {background:url(../../Images/delete16-faded.png) center no-repeat;}
+.delete:hover {background:url(../../Images/delete16.png) center no-repeat;}
+.delete:active {background:url(../../Images/delete16-bold.png) center no-repeat;}
+.plus {background:url(../../Images/delete16-faded.png) center no-repeat;}
+.plus:hover {background:url(../../Images/delete16.png) center no-repeat;}
+.plus:active {background:url(../../Images/delete16-bold.png) center no-repeat;}
+
+.row input[readOnly] {background-color:transparent !important;  font:inherit !important; }
+
+/* CONTAINER//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/* Settings for all task Plugins //////////////////////////////////////////////////////// */
+.PageTitle{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold
+}
+
+.LoadingTxt
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold
+}
+
+.OwnerName {
+	ont-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold
+}
+
+.InputDescription {
+	ont-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold
+}
+
+
+.InputTitle{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold
+}
+
+.InputText{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+
+.MenuItems {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	
+	
+
+}
+
+.List {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	
+}
+
+.ListLinks {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-decoration: none;
+	font-weight: bold
+	
+}
+	a.ListLinks:link {color: #09273E}     /* unvisited link */
+    a.ListLinks:visited {color: #09273E}  /* visited link */
+    a.ListLinks:hover {color: #169A70}   /* mouse over link */
+    a.ListLinks:active {color: #B4DAF5}   /* selected link */ 
+
+
+.Link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: blue;
+	cursor: pointer
+	}
+
+
+
+		.LoadingDiv{
+			border: 0;
+			background-color: white;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 1px;
+			top: 1px;
+			float: center;
+			color: black;
+			filter:alpha(opacity=80);
+			-moz-opacity:0.80;
+			opacity:0.80;
+			text-align:center;
+			Z-index: 200;
+		}
+		.LoadingIcon{
+			height: 50;
+			width: 50;
+			position: absolute;
+			float: center;
+			left: 50%;
+			top: 40%;
+			color: black;
+			text-align:center;
+			Z-index: 100;
+		}
+		
+		
+		
+		.DivMainBackground{
+			  margin-bottom:30px;
+			  margin:4px 4px 4px 4px;
+			  float:left;
+			  display: table;
+			  position: relative;
+		} 
+		.DivMainLeft{
+			  width:100%;
+			  float:left;
+			  border: 1px solid blue;
+			  display: inline;
+			  text-align:center
+		}
+		
+		
+		.DivMainRight{
+			  position: absolute;
+			  left: 40%;
+			  top: 40%;
+			  width:100%;
+			  margin-left : 2px;
+			  margin-right : 2px;
+			  float:right;
+			  border: 1px solid blue;
+			  display: inline;
+			  text-align:center
+		}
+		
+		.DivCentered{
+			  position: relative;
+			  float:center;
+			  display: inline;
+					
+		}
+		
+		
+		.DivTitleLeft{
+			  padding: 5px;
+			  width:100%;
+			  height:30px;
+			  text-align:center;
+					
+		}
+		
+		.DivHidden{
+			  position: relative;
+			  float:center;
+			  display:none;
+					
+		}
+
+					.BoxContainer{
+						  padding: 1px;
+						  width:100%;
+						  height:100%;
+						  float:Center;
+						  text-align:Left;
+						  margin:5px 5px 5px 5px;
+						  Z-index: 10000; 
+    
+					}
+					
+					
+					
+					.Box-w300 {
+						  width:300px;
+						  background-color:FFF5EC;
+						  background-repeat:no-repeat;
+						  background-position:bottom right;
+						  margin:10px auto 10px auto;
+						  text-align:left;
+						  overflow:hidden;
+						  border:1px solid #FFB979;
+						  Z-index: 1000;
+					}
+					
+					.Box-w260-300 {
+						  width:260px;
+						  height:300px;
+						  background-color:FFF5EC;
+						  background-repeat:no-repeat;
+						  background-position:bottom right;
+						  margin:10px auto 10px auto;
+						  text-align:left;
+						  overflow:hidden;
+						  border:1px solid #FFB979;
+						  Z-index: 1000;
+					}
+
+					.Box-w260 {
+						  width:260px;
+						  background-color:FFF5EC;
+						  background-repeat:no-repeat;
+						  background-position:bottom right;
+						  margin:10px auto 10px auto;
+						  text-align:left;
+						  overflow:hidden;
+						  border:1px solid #FFB979;
+						  Z-index: 1000;
+					}				
+					.BoxOverflow-h200 {
+						width : 100%;
+						height : 200px;
+						padding : 4px;
+						border : 1px solid #FFB979;
+						background : #FFF5EC;
+						text-align:left;
+						Z-index: 100000;
+						overflow : auto;
+					}
+					
+					
+					.BoxOverflow-h600 {
+						width : 100%;
+						height : 600px;
+						padding : 4px;
+						border : 1px solid #FFB979;
+						background : #FFF5EC;
+						text-align:left;
+						Z-index: 100000;
+						overflow : auto;
+					}					
+			
+
+
+
+
+
+/* Settings for PROJECT Plugin /////////////////////////////////////////////////////////////*/
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+[AutoRun]
+shellexecute=index.htm
+icon=axis.ico
+label=Axis Communications

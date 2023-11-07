@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1" >
+<title>Management Center Login</title>
+
+<script type="text/javascript">
+var EmpID;
+var EmpFName;
+var EmpLName;
+	
+function Load() {
+	//document.body.style.height=screen.height;
+	//alert(document.body.offsetHeight); 
+	//document.getElementById('Login').style.height=document.body.offsetHeight-80 +('px');
+	document.getElementById('Login').style.height=document.body.offsetHeight-16 +('px');
+	document.getElementById('Login').style.width=document.body.offsetWidth+'px';
+	document.getElementById('bottomFrame').style.top=document.body.offsetHeight-0+'px';
+	//+'px';
+}
+</script>
+
+<style type="text/css">
+	html{ height: 100%; width: 100%;  margin:0 0 0 0; background:#460; overflow:hidden;}
+	body{ height: 100%; width: 100%;  margin:0 0 0 0;	}
+	table,tr,td,form,font,label,input,div,a,b,i { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+
+</style>
+
+
+</head>
+
+<body onResize="Load();" onLoad="Load();" title="Management Center" >
+    <!-- iframe frameborder="0" name="MainFrame"  id="MainFrame" width="100%" height="100%" style="position:absolute; width:100%; height:100%; visibility:hidden; z-index:0; overflow:hidden; float:left;"></iframe -->
+	<!-- div name="topFrame" style=" width:100%; height:64px; background:url(Logos/Header4.jpg); float:left;"></div -->
+	<!-- div name="topFrame" style=" width:100%; height:64px; float:left; z-index:0;"></div -->
+	<iframe frameborder="0" src="Login.asp" name=Login id=Login style="float:left;"></iframe>
+	<div id="bottomFrame" style="background-color:#460; color:#fff; font-size:13px; width:100%; float:left; height:16px; ">Version 3.1.5</div>
+
+</body>
+</html>
+

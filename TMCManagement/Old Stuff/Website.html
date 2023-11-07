@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tricom Management Center</title>
+<!--
+<script type="text/javascript" src="Library/HorzSlideTabs.js"></script>
+<script type="text/javascript" src="WebsiteJS.js"></script>
+<script type="text/javascript" src="WebsiteAJAX.js"></script>
+<script type="text/javascript" src="dhtmlgoodies_calendar.js?random=20060118"></script> <!--This is the little popup calender-->
+<!--
+<script type="text/javascript" src="WebsiteCommonAJAX.js"></script>
+<script type="text/javascript" src="WebsiteCommonJS.js"></script>
+<script type="text/javascript" src="niftycube.js"></script>
+
+<link rel="stylesheet" href="Website-CSS.css" media="screen">
+
+<script type="text/javascript">
+	window.onload=function()
+	{
+		var W = parent.document.body.offsetWidth ;
+		
+		//TabWidth = ((W-0)/5);
+		//if (TabWidth > 144){TabWidth = 144};
+		//ClosedWidth = ((W-TabWidth-144))/17;
+
+		//GetTaskList();
+	}
+
+function Void(){}
+
+function SizeWindow(X,Y)
+{
+	window.resizeTo(X,Y);
+}
+</script>
+
+-->
+</head>
+
+<body onresize="//Resize();">
+
+<!--
+<div class="TopMainBar" align="right"><!--Main Top Container      -->
+<!--
+	<div class="TopMainBarL">
+		<img alt="" src="images/TMCHeader-L.gif" style="border:none;" />
+	</div>
+    
+	<div class="TopMainBarR">
+
+		<ul id="SlideTabs" class="SlideTabs">
+		</ul>
+	</div>
+    
+	
+</div>
+<div name="UnderTabs" id="UnderTabs" class="UnderTabs"></div>
+<div align="right" id="LogOut" name="LogOut" class="LogOut">
+	<!-- button onclick="SizeWindow(1024,768);">1024 x 768</button>
+	<button onclick="SizeWindow(800,600);">800 x 600</button -->
+<!--
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="CalendarContainer" class="TabMainContainer">
+
+	√ Make Update button when editing an event.
+	
+	√ Show full name on mouseover of event item.
+	
+	√ Show Notes on event item mouseover.
+	
+	√ Fix End Date on drag & drop.
+	
+	√ Fix the double-save bug when editing an event. (I did reproduce the error once.)
+	
+	√ Delete the silly 'Notes:' in the the notes box in calendar Event box.
+	
+	Rebuild the calendar
+</div>
+
+
+
+
+
+<div id="GeneralContainer" class="TabSubContainer">
+
+	√ Move Progress over by date.
+	
+	
+	Tie calendar events to the list items in Gen. Notes, Service, etc..
+	
+	Apply New design style like projects tab (after projects is rebuilt)
+	
+	This list also applies to Service & Test/Maint.</div>
+
+
+<div id="GantChartContainer" class="TabSubContainer">
+
+	Build gant chart someday.</div>
+
+
+
+
+<div id="ContactsContainer" class="TabSubContainer">
+
+	Combine Vendor Table with contacts Table</div>
+
+
+<div id="DataEntryContainer" class="TabSubContainer">
+
+	√Move "Employees" to "Administration".
+	
+	
+	After Combining Vendor table with Contacts table, make the vendor list come from contacts, then delete the vendor table.
+
+	Franchise Table Interface
+	
+	Area Licenses Interface
+
+</div>
+
+
+
+<div id="EstimatesContainer" class="TabSubContainer">
+
+	
+	√Display Sq Footage on system tab & calculate price/Sq Ft. & price/Mat
+	
+	√Make "Addressing" field customer based 
+	
+	
+	Make Active Jobs locked.
+	
+	Add logos on print
+	
+	Accept Apostrophies in database
+	
+	Add License# & Bid Limit
+	
+	Pull State License# from database.
+	
+	After modifying a part in bid, show add-to-database button.</div>
+
+
+
+
+
+<div id="ProjectsContainer" class="TabSubContainer">
+
+	√Re-build Interface according to chosen design style.
+	
+	Add items like Area & Priority to Project List.
+	
+	
+	
+	Build Project Management Page.
+		
+		√Build Tabs
+
+
+		Build Default Infoboxes.
+		
+		Build Custom Infobox feature.
+		
+		Build Tabs Content
+			
+			Management
+			Scheduling
+			BOM
+			Docs
+			Private Docs
+			Plans
+			Pictures
+			Map
+			Closeout docs
+			JobLog / Notes</div>
+
+
+
+
+
+<div id="ServiceContainer" class="TabSubContainer">
+
+	See General Notes</div>
+
+
+
+
+
+<div id="TestMaintContainer" class="TabSubContainer">
+
+	See General Notes</div>
+
+
+
+
+
+<div id="EngineeringPlansContainer" class="TabSubContainer">
+
+	Build Simple to-do list</div>
+
+
+
+
+
+
+<div id="PurchasingContainer" class="TabSubContainer">
+
+	Build Simple to-do list</div>
+
+
+
+
+
+
+<div id="TimeEntryContainer" class="TabSubContainer">
+
+	√Whole Crew Time Entry
+	
+	√Mobilize Entry Popup Window
+	
+	√Fix Calendar popup in date box.
+	
+	
+	Build breaktime clocking.
+	
+	Refresh Service & Test Lists on Tab click.
+	
+</div>
+
+
+
+
+<div id="OfficeManagementContainer" class="TabSubContainer">
+
+	Build Simple to-do list</div>
+
+
+
+<div id="InventoryContainer" class="TabSubContainer">
+
+	Build Simple to-do list</div>
+
+
+
+
+
+<div id="TrainingContainer" class="TabSubContainer">
+
+	Build Simple to-do list</div>
+
+
+
+
+<div id="PersonalContainer" class="TabSubContainer">
+
+	Build Simple to-do list</div>
+
+
+
+
+<div id="WebsiteContainer" class="TabSubContainer">
+	
+	√Automatic Logout
+
+
+	Build an interface for changing username and password.
+	
+	Figure out how to backup the database automatically.
+	
+	Make a swirlly thingy, wherever lists are loaded.</div>
+
+
+
+
+<div id="AdminContainer" class="TabSubContainer">
+
+	Make Active Button work when creating new employee
+	
+	Build database backup feature</div>
+
+
+<!--
+<div id="LoginContainer" class="TabSubContainer" style="height:100%; width:100%; z-index:9999999; filter:alpha(opacity=75);">
+	<iframe class="" id="LoginIframe" src ="Login.html" height="100%" width="100%" frameborder="0">    </iframe>
+</div-->
+
+
+<a href="https://wave.google.com/wave/#minimized:nav,minimized:contact,minimized:search,restored:wave:googlewave.com!w%252BeOVY4KoZA.1">rcstri.com Wave</a>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<title>Purchasing / Jobs</title>
+
+<script type="text/javascript" src="../Modules/rcstri.js"></script>
+<script type="text/javascript" src="../TMC/TMC-AJAX.js"></script>
+<script type="text/javascript" src="../TMC/TMC-JS.js"></script>
+<script type="text/javascript" src="PurchaseJS.js"></script>
+<script type="text/javascript" src="PurchaseAJAX.js"></script>
+<script type="text/javascript" src="../Library/SqlAjax.js"></script>
+<script type="text/javascript" src="../Library/dhtmlgoodies_calendar.js?random=20060118"></script>
+
+<script type="text/javascript">
+	var PurchaseListOnLoadJS='//alert(\'It\\\'s working!\');';
+	var calKey='tricomlv.com_umrfvois9djsfj8q0sovq01ot8%40group.calendar.google.com';
+	var calFeed = 'https://www.google.com/calendar/feeds/'+calKey+'/private/full';
+</script>
+
+
+<link rel="stylesheet" href="../Library/CSS_DEFAULTS.css" media="screen">
+<link rel="stylesheet" href="../Library/ListsCommon.css" media="screen">
+<link rel="stylesheet" href="PurchaseCSS.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../Library/dhtmlgoodies_calendar.css?random=20051112" media="screen">
+
+
+</head>
+<body onLoad="Resize(); setTimeout('LoadCommonData();',2000)" onResize="Resize();" onFocus="Resize(); " onMouseMove="MouseMove(event);">
+
+<div id=Modal></div>
+
+<div id="ScheduleBox" align=left>
+	<div id="SchTitle">Schedule Project <div id=SchProjID></div></div>
+	<div style="float:left; width:100%; height:4px;"></div>
+	<div id=SchProjName contenteditable=true></div>
+	<div style="float:left; width:100%; height:8px;"></div>
+	
+	<div id=SchMain>
+		<div id=SchLeft>
+			<div style="width:100%;">
+				<label class=SchBoxLabel for=SchDateFrom>From:<img class=SchCal onClick="//displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" src=../Images/cal.gif width="16" height="16"></label>
+			</div>
+			<input id=SchDateFrom class="SchBoxTxt" type="text" onFocus="displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" onChange=""/>
+			<br/>
+			
+			<div style="width:100%;">
+				<label class="SchBoxLabel" for=SchDateTo>To:<img class=SchCal onClick="//displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" src="../Images/cal.gif" width="16" height="16"></label>
+			</div>
+			<input id=SchDateTo class=SchBoxTxt type=text onFocus="displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" onChange=""/>
+			<br/>
+			
+			<div style="width:100%;">
+				<label class="SchBoxLabel" for=SchRecureence>Recurrence:</label>
+			</div>
+			<select id=SchRecureence class=SchBoxTxt >
+				<option>Coming Soon...</option>
+			</select>
+			<br/>
+		</div>
+		
+		<div id=SchRight>
+			<div style="width:100%;">
+				<label class="SchBoxLabel" for=SchAttn>Attention:</label>
+			</div>
+			<select id=SchAttn class=SchBoxTxt2 onChange="">
+				<option>none</option>
+			</select>
+			<br/>		
+		
+			<div style="width:100%;">
+				<label class="SchBoxLabel" for=SchLocation>Where?</label>
+			</div>
+			<input id=SchLoc class=SchBoxTxt2 type=text>
+			<br/>		
+		
+			<div style="width:100%;">
+				<label class="SchBoxLabel" for=SchPhase>Phase:</label>
+			</div>
+			<select id=SchPhase class=SchBoxTxt2>
+				<option value=N/A>Not Applicable</option>
+				<option value=Plan>Engineering</option>
+				<option value=UG>Underground</option>
+				<option value="Rough in">Rough in</option>
+				<option value=Trim>Trim</option>
+				<option value=Finish>Finish</option>
+			</select>
+			<br/>		
+		</div>
+	
+		<div id=SchNotes>
+			<label id=NotesLabel for=NotesText>&nbsp;Notes:</label>
+			<textarea id=NotesText></textarea>
+		</div>
+	</div>
+	
+	<div id=SchCrew>
+		<label id=CrewLabel for=CrewAdd>Crew:</label>
+		<select id=Crew class=SchBoxTxt onChange="if(Gebi('CrewList').value!=''){Gebi('CrewList').value+=', ';} Gebi('CrewList').value+=SelI(this.id).innerText;">
+			<option>none</option>
+		</select>
+		<textarea id=CrewList></textarea>
+	</div>
+	
+	<div style="float:left; width:100%; height:4px;"></div>
+	<form action="javascript:ScheduleEvent();" style="float:right;">
+		&nbsp;<input id=SchSchedule type="submit" value=" Schedule " />&nbsp;</form>
+	
+	&nbsp;<button onClick="Gebi('ScheduleBox').style.display='none'; Gebi('Modal').style.display='none'; ">&nbsp;Cancel&nbsp;</button>
+
+</div>
+
+
+
+<div class="OverAllContainer" id="OverAllContainer">
+
+<!--  Begin Right Container+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!--  Begin Right Container+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="RightContainer" id="RightContainer">
+
+	<div id="PurchaseOverlay" class="PurchaseOverlay" style="display:none;">
+		<div id="PurchaseOverlayTxt" class="PurchaseOverlayTxt">Loading Purchasing...</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<img name="" src="../Images/Roller.gif" width="32" height="32" alt="" />	</div>
+ 
+        
+
+<!-- This is the Main White Board or task list-------------------------------------------------------------------- -->
+
+	<div id="Lists" class="Lists" align="center">
+	
+		<div id="SearchSort" class="Toolbar" style="text-align:center; margin-left:auto; margin-right:auto;">
+			<button id="TestButton1" style=" float:left; margin:1px 4px 0 0;" onClick="ChangeToArchive()"><b>Purchasing Archive</b></button>
+			<button id="TestButton2" style=" float:left; margin:1px 4px 0 0; display:none;" onClick="ChangeToActive()"><b>Current Purchasing</b></button>
+			
+			<div style="float:left; margin:2px 0 0 0;">&nbsp; &nbsp; Sort by:</div>
+			
+			<select id="SelSortBy" onChange="SortBy(this[this.selectedIndex].value);">
+				<option id="SortProjID" value="ProjID">Job# (Lowest)</option>
+				<option id="SortProjID1" value="ProjID DESC">Job# (Highest)</option>
+				<option id="SortPriority" value="PurchasePriority DESC" selected >Priority (Highest)</option>
+				<option id="SortPriority1" value="PurchasePriority" >Priority (Lowest)</option>
+				<option id="SortJobName" value="PurchaseName">Job Name</option>
+				<option id="SorPurchasingt" value="OrderUG DESC">Order UG</option>
+				<option id="SortPermits" value="ReceiveUG DESC">Permits</option>
+				<option id="SortUnderGround" value="OrderRoughIn DESC">Underground</option>
+				<option id="SortRoughIn" value="ReceiveRoughIn DESC">Rough In</option>
+				<option id="SortRoughInspect" value="OrderFinish DESC">Rough Inspection</option>
+				<option id="SortOrderMaterials" value="ReceiveFinish DESC">Purchasing</option>
+				<option id="SortJobCompleted" value="OrderMaterials DESC">Done</option>
+				<option id="SortDateStarted" value="PurchasingStartDate ">Date Started (Earliest)</option>
+				<option id="SortDateStarted1" value="PurchasingStartDate DESC">Date Started (Latest)</option>
+				<option id="SortDateDue" value="PurchasingDueDate">Date Due (Earliest)</option>
+				<option id="SortDateDue1" value="PurchasingDueDate DESC">Date Due (Latest)</option>
+				<option id="SortDateCompleted" value="PurchasingCompletedDate">Date Completed (Earliest)</option>
+				<option id="SortDateCompleted1" value="PurchasingCompletedDate DESC">Date Completed (Latest)</option>
+			</select>
+			
+			<button id="ReloadFrame" onClick="PGebi('PurchasingIframe').src=PGebi('PurchasingIframe').src;"><img src="../images/reloadblue24.png" width="100%" height="100%"/></button>
+		</div>
+							
+		<div id="ToDoToolbar" class="Toolbar" style="text-align:center; margin-left:auto; margin-right:auto;">
+		
+			<div style="float:left; width:33%; min-width:33%; height:100%;">
+				<div id="PurchaseListControl" style="float:left; width:100%;">
+					&nbsp;<span class="ControlLabel"> Add a list for:</span>
+					<select id="ToDoEmpList" class="ControlInput">
+						<option selected></option>
+					</select>
+					<button onClick="NewEmpList();">Add</button>
+				</div>
+			
+				<div id="ItemListControl" style="float:left; display:none; width:100%;" align="left">
+					<div id="lblItemListAdd" class="ControlLabel" style="font-size:14px; padding-top:2px;">&nbsp;New Task For Employee</div>
+					<input id="txtItemListAdd" style="width:35%; max-width:35%; text-overflow:ellipsis; float:left;"/>
+					<button onClick="NewItemList();" style="width:12%; max-width:35%; float:left;">Add</button>
+				</div>
+				
+				<div id="ListItemControl" style="float:left; display:none; width:100%;">
+					&nbsp;<span id="lblListItemAdd" class="ControlLabel" style="font-size:14px; padding-top:2px;" >New Task Item For Item List</span>
+					<input id="txtListItemAdd" class="ControlInput"/>
+					<button onClick="NewListItem();" style="width:12%; max-width:35%;">Add</button>
+				</div>
+				
+				<div id="ListItemControl" style="float:left; display:none; width:100%;">
+					&nbsp;<span id="lblListItemAdd" class="ControlLabel">New Task Item For Item List</span>
+					<input id="txtListItemAdd"  class="ControlInput"/>
+					<button onClick="NewListItem();" style="width:12%; max-width:35%;">Add</button>
+				</div>
+			</div>
+				
+			<div id="Rename Control" style="float:left; width:33%;">
+				Rename <span id="lblRename"></span> <input id="txtRename" onKeyUp="RenameItem(this.value);"/>
+			</div>
+			
+			<div style="float:right; width:33%">
+				<button id="btnRemove" style="width:100%; max-width:100%; text-overflow:ellipsis;" onClick="DelTreeItem();">Remove <span id="RemItemName"></span></button>
+			</div>
+				
+		</div>
+							
+		<div id="ListBody" class="ListBody" align="center">
+	
+			<div id="TLItemsContainer" class="TLItemsContainer">
+			
+				<div id="ItemsHead" class="ItemsHead">        	
+					<div class="HeadNum" align="left">#</div >
+					<div class="HeadPri" align="left">!</div >
+					<div class="HeadSched" align="left"></div >
+					<div class="HeadPO" align="left"></div >
+					<div class="HeadJob" align="left">Purchasing Jobs</div >
+					
+					<!--
+					<div class="HeadCust" align="left">Customer</div>
+					<div class="HeadAttn" align="left">Purchase Manager</div>
+					-->
+					
+					<div class="HeadProg"><div id="HeadOrderUG" class="HeadDone" style="font-size:9px;" title="Order Underground">Order UG</div></div>
+					<div class="HeadProg"><div id="HeadRecUg"      class="HeadDone" title="">Rec UG</div></div>
+					<div class="HeadProg"><div id="HeadOrderRuf"      class="HeadDone" title="">Order Rough</div></div>
+					<div class="HeadProg"><div id="HeadRecRuf"    class="HeadDone" title="">Rec Rough</div></div>
+					<div class="HeadProg"><div id="HeadOrderTrim"    class="HeadDone" title="">Order Trim</div></div>
+					<div class="HeadProg"><div id="HeadRecTrim"  class="HeadDone" title="">Rec Trim</div></div>
+					<div class="HeadProg"><div id="HeadDone"      class="HeadDone" title="">Completed</div></div>
+					
+					<div class="HeadDates" align="left">Start</div >
+					<div class="HeadDates" align="left">Due</div >
+					<div class="HeadDates" align="left"><small>Completed</small></div >
+					
+				</div>
+
+				<iframe id="PurchaseListFrame" src="PurchaseList.asp?Active=True&PurchasingArchive=False&SortBy=PurchasePriority DESC" frameborder="0" scrolling="auto"></iframe>
+			</div> 
+			
+			<div id="TLItemsNotes" class="TLItemsNotes">
+				<div id="ItemNotesHead" class="ItemNotesHead">Notes</div>
+				<div id="ItemNotesContainer">
+					<textarea id="ItemNotesText" onKeyUp="SaveNotes(this.value);"></textarea>
+				</div>       	
+			</div>
+			<script type="text/javascript">
+				var PurchaseList=Gebi('PurchaseListFrame').contentWindow;
+				var Active='True';
+				var SortedBy='PurchasePriority%20DESC';
+			</script>
+			
+		</div>                
+		
+		
+		<div id="TLItemsBottom" class=""></div> 
+		
+		
+		<div id="EmployeeList" class="EmployeeList"></div>
+	<!-- Popup Menu for assigning Employee List to tasks -->
+		<div id="PhaseProgressMenu" class="PhaseProgressMenu"></div>
+	</div>
+
+<!--  End White Board------------------------------------------------------------------------------------------------------------- -->
+
+<!--  End White Board------------------------------------------------------------------------------------------------------------- -->
+
+<!--  End White Board------------------------------------------------------------------------------------------------------------- -->
+<!--
+	<div id="EstimateMain" class="MainContainer">
+		<div id="PhaseProgressMenu" class="PhaseProgressMenu">
+			<!-- Right Click Menu -->
+<!--		</div>
+	</div>
+-->
+</div>
+<!-- -End Right Container=======================================================================End Right Container>
+<!--  ------End Right Container=======================================================================End Right Container>
+<!--  ------End Right Container=======================================================================End Right Container-->
+
+</div><!-- End OveralDiv $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
+
+</body>
+</html>
+
+
+
+
+
+

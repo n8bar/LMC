@@ -1,0 +1,96 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script type="text/javascript" src="Modules/rcstri.js"></script>
+<script type="text/javascript" src="Contacts/Contacts_JS.js"></script>
+<script type="text/javascript" src="Contacts/Contacts_AJAX.js"></script>
+<script type="text/javascript" src="Library/dhtmlgoodies_calendar.js?random=20060118"></script>
+
+
+<link rel="stylesheet" href="Contacts/Contacts_CSS.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="Library/dhtmlgoodies_calendar.css?random=20051112" media="screen" />
+
+
+<script type="text/javascript">
+	window.onload=function() { }
+</script>
+
+
+</head>
+<body  onmousemove="parent.ResetLogoutTimer();" onkeyup="parent.ResetLogoutTimer();">
+
+<div id="ContactsModal" class="ContactsModal"></div>
+    
+<div id="ContactsModalBox" class="ContactsModalBox">
+	<div id="CMBLeft" class="CMBLeft"><br />
+		<div class=CMBLabelL> Company Name: </div><div class=CMBLabelR><input id=txtName type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Address: </div><div class=CMBLabelR><input id=txtAddress	 type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> City: </div><div class=CMBLabelR><input id=txtCity 				 type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> State: </div><div class=CMBLabelR><input id=txtState 			 type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Zip: </div><div class=CMBLabelR><input id=txtZip 					 type=text width=200 maxlength=10 /></div><br />
+		<div class=CMBLabelL> Phone 1: </div><div class=CMBLabelR><input id=txtPhone1		 type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Phone 2: </div><div class=CMBLabelR><input id=txtPhone2		 type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Fax: </div><div class=CMBLabelR><input id=txtFax					 type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Notes: </div><div class=CMBLabelR><textarea id=txtNotes		 type=text columns=200 maxlength=50 ></textarea></div><br />
+	</div>
+		
+	<div id="CMBRight" class="CMBRight"><br />
+		<div class=CMBLabelL> Rep1 Name: </div><div class=CMBLabelR><input id=txtContact1	type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Rep1 Phone: </div><div class=CMBLabelR><input id=txtCphone1	type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Rep1 Email: </div><div class=CMBLabelR><input id=txtEmail1	type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Rep2 Name: </div><div class=CMBLabelR><input id=txtContact2	type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Rep2 Phone: </div><div class=CMBLabelR><input id=txtCphone2	type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Rep2 Email: </div><div class=CMBLabelR><input id=txtEmail2	type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Tax Rate: </div><div class=CMBLabelR><input id=txtTax		type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Markup: </div><div class=CMBLabelR><input id=txtMU			type=text width=200 maxlength=50 /></div><br />
+		<div class=CMBLabelL> Website: </div><div class=CMBLabelR><input id=txtWebsite type=text width=200 maxlength=50 /></div><br/><br/>
+		<div style="display:none;"><input id="txtCustomer" type=text disabled maxlength="6" /></div>
+		<div style="display:none;"><input id="txtVendor" type=text disabled maxlength="6" /></div>
+		<p class="CMBCheck" > <input id="chkCustomer" onClick="CBCust();" type="checkbox" width="200" maxlength="" />Customer&nbsp;&nbsp;&nbsp;&nbsp;
+		<input id=chkVendor onClick=CBVend(); type=checkbox width=200 maxlength="" />Vendor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	</div>
+	<div style="float:left; width:50%; height:100%;">
+		<input style="margin:0 0 0 10px;" id=ContactDel type=button onClick=ContactDel(); value="Delete Contact" />
+	</div>
+	<div style="float:right; width:88px; height:10%;"><input class=ContactSave id=ContactSave value=Save type=button onClick=SaveContact(); />
+		<input id=ContactUpdate value=Update type=button onClick=ContactUpdate(); />
+	</div>
+	<div style="float:right; height:10%;"> &nbsp; <input type="button" onClick="ContactsModalClose();" value="Cancel" /></div>
+</div>  
+
+	<div class=ContactsCenterTitle>
+		Contacts List
+		<button id=ReloadFrame onClick=window.location=window.location; ><img src="images/reloadblue24.png" width="100%" height="100%"/></button>
+  </div>
+	
+	<div class="ContactsCenter">
+		<div class="ContactsCenterTop">
+     	Search
+			<input id=SearchContactsTxt name=SearchContactsTxt type=text size=20 maxlength=20 onKeyUp=SearchContacts(); />
+			<select  id="ContactTypeSelect" name="ContactTypeSelect" size="">
+				<option value="All" Selected >All</option>
+				<option value="Customer" >Customers</option>
+				<option value="Vendor" >Vendors</option>
+			</select>
+			&nbsp;
+			<button class="ContactsButtons" onClick="AddContact();">Add New</button>
+		</div>
+    
+		<div id="Header">
+			<div style="width:2.5%;" >&nbsp;</div>
+			<div style="width:22.5%;" ><big>Name</big></div>
+			<div style="width:30%;" >Address</div>
+			<div style="width:11%;" >Phone</div>
+			<div style="width:11%;" >Fax</div>
+			<div style="width:12%;" ><big>Contact</big></div>
+			<div style="width:11%;" >Phone</div>
+		</div>
+    <div id="List"></div>
+  </div>
+  
+  
+</body>
+</html>

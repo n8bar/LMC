@@ -1,0 +1,803 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+/* Top Control Bar ///////////////////////////////////////////////////////////////////////////////*/
+
+a{text-decoration:none;} 
+
+a:link{color:#09273E;}
+a:active{color:#09273E;}
+a:visited{color:#09273E;}
+a:hover{color:#169A70;}
+
+
+body
+{
+	width:100%;
+	height:100%;
+}
+
+li{/*text-shadow:#FFF 0px 0px 3px;*/ font-family:Georgia, "Times New Roman", Times, serif;}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.CalendarMainDIV { /*This is the DIV around the whole calendar*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 1px;
+	align:left;
+	overflow:visible;
+}  
+
+
+
+.Topheader { /*This is The text over the calendar*/
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+	height:3%;
+	min-height:2%;
+	text-align:center;
+	padding: 0px 0px 0px 0px;
+}
+#ReloadFrame{
+	position:relative;
+	top:0px;
+	left:auto;
+	float:right;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:0;
+	margin:0 2px 0 0;
+	height:24px;
+	width:24px;
+	font-size:18px;
+	text-align:center;
+	vertical-align:top;
+}
+
+.TopControl { /*This is the DIV around the whole Top Control Bar*/
+	position:relative;
+	overflow:hidden;
+	width:100%;
+	height:3%;
+	min-height:20px;
+	padding: 0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	border:0px solid Red;
+	z-index:700;
+	background:none;
+}
+
+
+
+
+/*Prev Month Arrow and Hover*/
+.PrevDiv {
+	float: left;
+}
+
+.buttonPrev{
+	word-spacing: 3px;
+	letter-spacing: 1px;
+	cursor: Hand;
+}
+
+
+/*Next Month Arrow and Hover*/
+.NextDiv {
+	float: left;
+}
+
+.buttonNext{
+	word-spacing: 3px;
+	letter-spacing: 1px;
+	cursor: Hand;
+}
+
+
+
+
+
+
+
+/*Today Button and Hover*/
+.TodayDiv {
+	float: left;
+}
+
+.buttonToday{
+	word-spacing: 3px;
+	letter-spacing: 1px;
+	cursor: Hand;
+}
+
+
+
+
+
+
+
+.DateHeadDIV {/* eg. July 2008 , Main Calendar Title*/
+    padding: 3px 0px 0px 2px;
+	float: left;
+	width:auto;
+}
+.DateHead {/* eg. July 2008 , Main Calendar Title*/
+    font-family: Arial,Helvetica,sans-serif;
+	font-weight:bold;
+	font-size: 14px;
+	text-align:left;
+	cursor:pointer;
+}
+
+	
+.DateHeadSolo { /*The Month And Year when no controls are shown*/
+    font-family: Arial,Helvetica,sans-serif;
+	font-weight:bold;
+	font-size: 14px;
+	text-align:center;
+	
+}
+
+
+
+
+
+
+.Status {/*Shows the status of updates*/
+    Margin: 2px 5px 0px 0px;
+    padding: 0px 12px 0px 0px;
+	float: right;
+	Background:#FFCC66;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:bold;
+	font-size: 12px;
+	text-align:center;
+
+}
+
+
+
+
+/*Month Button and Hover*/
+.MonthDiv {
+	float: left;
+}
+
+.buttonMonth{
+	word-spacing: 3px;
+	letter-spacing: 1px;
+	cursor: Hand;
+}
+
+
+
+/*Week Button and Hover*/
+.WeekDiv {
+	float: right;
+}
+
+.buttonWeek{
+	word-spacing: 3px;
+	letter-spacing: 1px;
+	cursor: Hand;
+}
+
+
+.DateTodayDiv {/*Today is Saturday June 15th */
+	float: right;
+	width:160px;
+	height:20px;
+	padding:0px 0px 0px 0px;
+	Margin:0px 0px 0px 0px;
+	background: #9DA4AC;
+	border: 1px solid #FFF;
+
+	
+}
+.DateToday {
+	padding:4px 3px 0px 6px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 10px;
+	font-weight:bold;
+	color:#000;
+
+}
+
+
+
+
+
+.WeekIDDiv {/* eg. July 2008 , Main Calendar Title*/
+    padding: 8px 4px 0px 0px;
+	float: right;
+	width:auto;
+}
+.WeekID {/* eg. July 2008 , Main Calendar Title*/
+	text-align:left;
+
+}
+
+
+
+/*CreateEvent Button and Hover*/
+.EventDiv {
+	float: right;
+}
+
+.buttonEvent{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	word-spacing: 1px;
+	letter-spacing: 1px;
+	cursor: Hand;
+}
+
+
+
+
+
+
+.SelectDate {/* month and year select box div*/
+	margin: 0px 3px 0px 3px;
+	padding: 0px 0px 0px 0px;
+	float: right;
+	
+
+}
+.SelectDate select {/* Background for Inside the month and year select box */
+
+	 /*height and border Works only in Firefox???   IE wont support it and it messes up the height*/
+	
+	
+}
+.GetDateBtnDiv { /*Button That gets the selected dates from the dropdowns*/
+	float: right;
+
+}	
+.GetDateBtn {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	word-spacing: 1px;
+	letter-spacing: 1px;
+	cursor: Hand;
+}
+
+
+
+
+
+
+
+/*//////////////////////////Calendar Layout//////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+/*a.class1:hover {attributes}*/
+
+
+.tableMain {/*Table Data Formating For Today*/
+	position:relative;
+	width:100%;
+	height:100%;
+	z-index:500;
+}
+
+.tableMainPopup {/**/
+	width:100%;
+	height:95%;
+	z-index:500;
+}
+
+
+.WeekHeader {/*Mon Tues Wen Thur Fri Sat Sun*/
+    
+
+}
+
+
+.tdWeek {/*Table Data Formating For Week Numbers */
+	float:left;
+	clear:left;
+	text-align:center;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	width:2%;
+	cursor:pointer;
+	height:100%;
+	min-height:100%;
+/*
+	z-index:1000;
+*/
+}
+
+.WeekContainer {/*Table Data Formating For Week Numbers */
+    position:relative;
+	overflow:hidden;
+	height:100%;
+	width:100%;
+	margin: 0px 0px 0px 0px;
+	padding: 3.9em 0em 0em 0em;
+	Background:#FFF;
+
+}
+.WeekContainerPop {/*Table Data Formating For Week Numbers */
+	position:relative;
+	overflow:hidden;
+	height:100%;
+	width:100%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	Background:#FFF;
+	z-index:1000;
+}
+
+
+.WeekDayHeader{
+	text-align:center;
+	float:left;
+	max-width:13%;
+	min-width:13%;
+	border:1px solid #55A9E8;	
+	text-shadow:#FFF 0px 0px 3px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.WeekNumHeader{
+	text-align:center;
+	float:left;
+	max-width:2%;
+	min-width:2%;
+	border:1px solid #55A9E8;
+	font-size:10px;
+	text-shadow:#FFF 0px 0px 3px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+
+.tdCalendar4rows {/*Table Data Formating For all Rows with 4 rows */
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	min-height:23.25%;
+	height:23%;
+}
+.tdCalendar5rows {/*Table Data Formating For all Rows with 5 rows */
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	/*min-height:74px;*/
+	height:18.4%;
+	max-height:18.4%;
+}
+.tdCalendar6rows {/*Table Data Formating For all Rows with 6 rows */
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	min-height:15.3333%;
+	height:15.3333%;
+}
+
+
+
+
+.tdCalendarDay4rows {/*Table Data Formating For all days with 4 rows */
+	float:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	max-width:13%;
+	min-width:13%;
+	width:13%;
+	height:100%;
+	min-height:100%;
+	overflow:hidden;
+	border-bottom:#98CBF1 
+}
+.tdCalendarDay5rows {/*Table Data Formating For all days with 5 rows */
+	float:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	max-width:13%;
+	min-width:13%;
+	width:13%;
+	height:100%;
+	min-height:100%;
+	overflow:hidden;
+}
+.tdCalendarDay6rows {/*Table Data Formating For all days with 6 rows */
+	float:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	max-width:13%;
+	min-width:13%;
+	width:13%;
+	height:100%;
+	min-height:100%;
+	overflow:hidden;
+}
+.tdCalendarDayPopup {/*Table Data Formating For all days with 6 rows */
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	height:10%;
+	width:10%;
+	text-align:center;
+	cursor:pointer;
+}
+
+
+
+
+
+
+.DayContainerDIV {/*Main Div For All The days*/
+	float:left;
+	position:relative;
+	overflow:hidden;
+	min-height:100%;
+	height:100%;
+	min-width:100%;
+	width:100%;
+	z-index:1000;
+}
+.DayContainerTodayDIV {/*Main Div For The Today Date Formating */
+	float:left;
+	position:relative;
+	overflow:hidden;
+	min-height:100%;
+	height:100%;
+	min-width:100%;
+	width:100%;
+	z-index:1000;
+}
+.DayContainerOtherDIV {/*Main Div For days not associated with this month */
+	float:left;
+	position:relative;
+	overflow:hidden;
+	min-height:100%;
+	height:100%;
+	min-width:100%;
+	width:100%;
+	z-index:1000;
+}
+.DayContainerHoverDIV{/*When the mouse Hovers over a day*/
+	float:left;
+	position:relative;
+	overflow:hidden;
+	min-height:100%;
+	height:100%;
+	min-width:100%;
+	width:100%;
+	z-index:1000;
+}
+
+
+.DayHeaderDiv{/*The top div of each day*/
+	position:relative;
+	height:13px;
+	width:100%;
+	max-width:100%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	cursor:pointer;
+	z-index:1000;
+	/*border-top:1px solid #98CBF1;*/
+}
+.DayHeaderTodayDiv{/*The top div of Today*/
+	position:relative;
+	height:13px;
+	width:100%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	cursor:pointer;
+	z-index:1000;
+}
+
+
+.DayBox{/*Box that contains the day information*/
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 10px 0px;
+	height:100%;
+	min-height:100%;
+	/*
+	position:relative;
+	width:100%;
+	max-width:100%;
+	*/
+	overflow:hidden;
+	z-index:1000;
+}
+
+.DayNumber{/*The Day Number*/
+	position:relative;
+	float:left;
+	height:100%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 4px;
+	cursor:pointer;
+}
+.DayPreview{/*The Day Number*/
+	position:relative;
+	float:right;
+	width:30%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 6px 0px 0px;
+	cursor:pointer;
+	text-align:right;
+}
+
+.DayEvent{
+	height:14px;
+	width:100%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background:#CCFF99;
+	overflow:hidden;
+	white-space:nowrap;
+	border: 1px solid #BBB;
+	padding:0px 0px 0px 2px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 10px;
+	font-weight:normal;
+	color:#000;
+	cursor:pointer;
+	z-index:5000;
+}
+
+.WeekContainer{
+	height:100%;
+	overflow:visible;
+}
+
+.WeekEvent{
+	position:relative;
+	height:14px;
+	width:97%;
+	background:#CCFF99;
+	overflow:hidden;
+	border: 1px solid #BBB;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 1px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000;
+	cursor:crosshair;
+	z-index:5000;
+}
+
+.OverflowNumber{
+	position:relative;
+	height:14px;
+	width:97%;
+	background:none;
+	overflow:hidden;
+	border: 0px solid #BBB;
+	padding:0px;
+	margin:0px;
+	top:-2px;
+	font-family:Consolas,Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight:normal;
+	text-align:center;
+	color:#33F;
+	cursor:default;
+	z-index:5000;
+}
+.OverflowNumber:hover{
+background:-webkit-gradient(linear,left top,left bottom, color-stop(0,rgba(255,255,255,.2)), color-stop(.2,rgba(255,255,255,.8)), color-stop(1,rgba(255,255,255,.2)));
+}
+
+
+
+.CalendarMain{
+	height:100%;
+	min-height:320px;
+	padding:0px 0 0 0; 
+}
+/*The following are specifically for Drag and Drop
+*/
+#CalendarMain{	/* Main container for this script */
+		-moz-user-select:none;
+	}
+	#CalendarMain ul{	/* General rules for all <ul> */
+		margin-top:0px;
+		margin-left:0px;
+		margin-bottom:0px;
+		padding:0px;
+	}
+	
+	#CalendarMain li, #dragContent li, li#indicateDestination{	/* Movable items, i.e. <LI> */
+		list-style-type:none;
+
+	}
+
+	li#indicateDestination{	/* Small Box indicating where content will be dropped - i.e. the one you use if you don't use arrow */
+		border:1px solid #317082;	
+		background-color:#FFF;
+		height:16px;
+	}
+
+	
+	#CalendarMain .mouseover{	/* Mouse over effect on drag */
+		background-color:#E2EBED;
+		border:0px solid Red;
+	}
+	
+
+	
+	#dragContent{	/* Drag container */
+		position:absolute;
+		width:100px;
+		height:16px;
+		display:none;
+		margin:0px;
+		padding:0px;
+		z-index:20000;
+		border:#FFF 1px solid;
+		-webkit-border-radius:7px;
+	}
+
+	#dragDropIndicator{	/* DIV for the small arrow */
+		position:absolute;
+		width:7px;
+		height:10px;
+		display:none;
+		z-index:1000;
+		margin:0px;
+		padding:0px;
+	}
+	
+
+
+
+
+
+
+
+
+
+/* ///////////////////////////////////////////New Event MODAL //////////////////////////////////////////////////////////////////// */
+
+.ModalScreen{
+    position: absolute;
+	display: none;
+    background: #999999;
+	filter:alpha(opacity=60);
+	opacity:0.60;
+	width:100%;
+	height: 100%;
+	text-align:center;
+	margin:0px 0px 0px 0px;
+	z-index:5000;
+}
+
+.NewEventBox{
+	position:absolute;
+	display: none;
+	height:386px;
+	width:616px;
+	top:22%;
+	left:26%;
+	background:#FFF;
+	border: 1px solid #AAA;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 1px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	text-align:center;
+	color:#33F;
+	z-index:5500;
+	
+}
+.NewEventTaskBox{
+	position:absolute;
+	display: none;
+	height:480px;
+	width:640px;
+	top:20%;
+	left:24%;
+	background:#FFF;
+	border: 1px solid #AAA;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 1px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	text-align:center;
+	color:#33F;
+	z-index:5600;
+}
+#ProjectSelectionBox{
+	position:absolute;
+	top:33%; 
+	left:33%;
+	width:33%;
+	height:33%;
+	display:none;
+	margin:auto;
+	z-index:5800;
+	background:#8CF;
+	text-align:center;
+}
+
+.EventLabelText{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+	font-weight:bold;
+	text-align:right;
+	color:#000;
+}
+
+.NewEventHeadderText{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 13px;
+	font-weight:bold;
+	text-align:Left;
+	color:#FFF;
+}
+
+
+.EventTextBox{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+	font-weight:normal;
+	text-align:left;
+	border-left: 1px solid #666;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #AAA;
+	border-right: 1px solid #AAA;
+	color:#000;
+}
+
+.EventListBox{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+	font-weight:normal;
+	text-align:left;
+	border-left: 1px solid #666;
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #AAA;
+	border-right: 1px solid #AAA;
+	color:#000;
+}
+
+.EventDetailsScreen{
+	position:absolute;
+	display: none;
+	/*
+	height:240px;
+	width:288px;
+	*/
+	height:1px;
+	width:1px;
+	
+	top:105px;
+	left:325px;
+	background:#E6F3FB;
+	border: 0px solid #0FF;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 1px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	text-align:center;
+	color:#33F;
+	z-index:6000;
+	
+}
+
+
+li{border:none;}
+
+

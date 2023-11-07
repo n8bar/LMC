@@ -1,0 +1,27 @@
+<!--
+
+	This html file is intended to be called with showModalDialog().
+	
+	Syntax:
+	showModalDialog("alertDialog.html","display text","dialogwidth:480; dialogheight:270; resizable:no")
+	
+-->
+
+<style>
+form {width:100%; height:100%; text-align:center; padding:0; margin:0;}
+
+select {width:95%; height:80%;}
+</style>
+<form>
+
+	<span id=prompter></span>
+	<br />
+	<button id=btnOK onClick="window.close();" >OK</button>
+<script>
+	returnValue=false;
+	
+	document.title='Notice:'+dialogArguments;
+	
+	prompter.innerHTML=dialogArguments;
+</script>
+</form>

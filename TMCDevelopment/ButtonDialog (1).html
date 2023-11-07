@@ -1,0 +1,56 @@
+<!--
+
+	This html file is intended to be caled with showModalDialog().
+	
+	Syntax:
+	var dialogResult=showModalDialog("ButtonDialog.html",[Object],"dialogwidth:480; dialogheight:120; resizable:no")
+	
+	[Object] is an object with the following properties:
+	title: string - This is the window title.
+	ask: string - This is for user instructions.
+	labels: string Array - This is a list of button captions.
+	values: Array - This is a list of the values each button returns.
+	
+	Returns ...
+-->
+
+<style>
+html,body {padding:0; margin:0; width:100%; height:100%; overflow:hidden;}
+form {width:100%; height:100%; text-align:center; padding:0; margin:0;}
+#prompter { width:95%; text-align:left; height:70%; overflow-x:hidden; overflow-y:auto; }
+#chooser { border:0px #CCC solid; width:95%; margin-left:2.5%; height:30%; overflow-x:hidden; overflow-y:auto; }
+	.row {width:100%; height:24px; float:left;}
+	.row label {width:40%; display:inline-block; text-align:right; }
+	.row input {width:50%;}
+</style>
+<form>
+
+	<div id=prompter></div>
+	<div id=chooser></div>
+<script>
+	returnValue=null;
+	
+	var da=dialogArguments;
+	
+	document.title=da.title;
+	
+	prompter.innerHTML=da.ask;
+	
+	var HTML='';
+	var higher=da.labels.length>da.values.length ? da.labels.length : da.values.length;
+	var bWidth = 75*(1/higher);
+	var bMar=bWidth/7.5;
+	
+	for (var lI=0; lI<higher; lI++) {
+		try { var label=da.labels[lI]; if(!label) label='___'; } catch(e) { var label='___'; }
+		HTML+='<button id=button'+lI+' onClick="closeValue(da.values['+lI+']);" style="width:'+bWidth+'%; margin:0 '+bMar+'% 0  '+bMar+'%; float:left;" >'+label+'</button>';
+	}
+	
+	chooser.innerHTML=HTML;
+	
+	function closeValue(rVal) {
+		returnValue=rVal;
+		window.close();
+	}
+</script>
+</form>

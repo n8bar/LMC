@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!-- DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" -->
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>Tricom Management Center</title>
+
+
+<link rel="stylesheet" href="TMC-CSS.css" media="screen">
+
+<script type="text/javascript" src="../Modules/rcstri.js"></script>
+<script type="text/javascript" src="../Modules/CommonJS.js"></script>
+<script type="text/javascript" src="TMC-AJAX.js"></script>
+<script type="text/javascript" src="TMC-JS.js"></script>
+<script type="text/javascript" src="../Library/dhtmlgoodies_calendar.js?random=20060118"></script>
+<script type="text/javascript" src="../Modules/CommonAJAX.js"></script>
+<!--
+-->
+<script type="text/javascript">
+var accessEngineering
+var accessPurchasing
+var accessDataEntry
+var accessEstimates
+var accessInventory
+var accessProjects
+var accessTraining
+var accessService
+var accessWebsite
+var accessOffice
+var accessAdmin
+var accessTest
+var accessTime
+var accessEmpID
+var accessEmpName
+var accessUser
+
+Validate();
+//gCalLogin();
+
+window.onload=function()
+{
+	var W = document.body.offsetWidth ;
+	document.getElementById('LoadInfo').innerHTML='Tabs';
+	
+	TabWidth = ((W-0)/5);
+	if (TabWidth > 144){TabWidth = 144}
+	ClosedWidth = ((W-TabWidth-144))/18;
+	if(ClosedWidth<17){ClosedWidth=17}
+	
+	GetTaskList();
+	
+	Gebi('Modal').style.display='none';
+	
+	//WaveInitialize();
+		
+	/*		var W = document.body.offsetWidth;
+		//if (W > WMin) 
+		//{
+		//}
+		GetTaskList();
+	*/
+
+
+}
+
+function Void(){}
+
+var logoutSeconds=30*60;
+var logoutCounter=logoutSeconds;
+function LogoutCounter()
+{
+	//logoutCounter--;
+	//if(logoutCounter<=0){LogOut();}
+	
+	////document.title=logoutCounter;
+}
+
+
+
+//this is to prevent the user from hitting the back button.  It also supposedly prevents caching of the page.
+setInterval('LogoutCounter();',1000);
+</script>
+</head>
+
+<body style="background-color:#6CBDE2;" onResize="Resize();" onmousemove="LogoutCounter();//ResetLogoutTimer();" onkeydown="//ResetLogoutTimer();" onSelectStart="return false">
+
+
+
+<input type="hidden" id="HiddenDoneLoading" value="false" />
+
+<div id="Modal" class="Modal">
+	<div style=" z-index:1000000">Loading&hellip;</div><br />
+	<div id="LoadInfo" style=" z-index:1000000; font-size:12px;"></div><br />
+	<img  src="../Images/Roller.gif" width="32" height="32" alt="" /><br />
+</div>
+
+<div id="Top" style="position:absolute; top:0; left:0; width:100%; height:64px;">
+	<div class="TopMainBar" align="right" style="position:absolute; top:0;"><!--Main Top Container -->
+			
+		<div class="TopMainBarL">
+			<img alt="" src="../images/TMCHeader-L.gif" style="border:none;" width="188" height="60" />		</div>
+			
+		<div class="TopMainBarR">
+	
+			<ul id="SlideTabs" class="SlideTabs">
+			</ul>
+		</div>
+	</div>
+	<div align="right" id="LogOut" name="LogOut" class="LogOut">
+		<div style="float:right;"><a href="JavaScript:Void();" onClick="LogOut();">Log Out</a> &nbsp; </div>
+
+		<div id="CurrentUser" style="float:right; padding-right:16px;"></div>
+		<script type="text/javascript">document.getElementById('CurrentUser').innerHTML = accessUser+'!';</script>
+		<div style="float:right;">Welcome&nbsp;</div>
+
+		<!--
+		<div style="float:right;">Current Users:<span id="CurrentUsers"></span>&nbsp;&nbsp;&nbsp;</div>
+		-->
+	</div>
+	<div id="UnderTabs" class="UnderTabs">Gant Chart</div>
+</div>
+
+
+<div id="ViewersBox">
+	<div id="NumViewers"></div>
+</div>
+<script>GetViewers();</script>
+
+<div id="Iframes" align="center" style="position:absolute; top:52px; left:0;">
+	
+	
+	
+	<script type="text/javascript">document.getElementById('LoadInfo').innerHTML='Building Pages';</script>
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Calendar Page';</script>
+	<div id="CalendarContainer" class="TabSubContainer">
+	
+		 <!-- 
+		 <iframe class="" id="CalendarIframe" src ="CalendarMain.asp" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+		  -->
+		 <iframe class="" id="CalendarIframe" src ="../CalendarMain.asp" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+	</div>
+	
+	
+	
+	<div id="GantContainer" class="TabMainContainer">
+		 <iframe class="" id="GantIframe" src ="../GantChartMain.asp" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+	</div>
+	
+	
+	
+	
+	<div id="MailContainer" class="TabSubContainer">
+		<iframe class="" id="MailIframe" src="https://tricomlv.com:83" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+	</div>
+	
+	
+	
+<script type="text/javascript">///document.getElementById('LoadInfo').innerHTML='Building General Notes Page';</script>
+	<div id="GeneralContainer" class="TabSubContainer">
+		<iframe class="" id="GeneralIframe" name="GeneralIframe" src="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+		<!--
+		<iframe class="" id="GeneralIframe" src="jobs.asp?type=2&Active=True" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+		<iframe class="" id="GeneralIframe" style="height:100%; max-height:100%; width:100%;" scrolling="no" frameborder="0"> </iframe>
+		-->
+	</div>
+	
+	
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Contacts Page';</script>
+	<div id="ContactsContainer" class="TabSubContainer">
+	
+		<iframe id="ContactsIframe"  class="" src ="../contacts.html" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+		<!--
+        <iframe id="ContactsIframe"  class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+       	-->
+	</div>
+
+	
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Data Entry Page'; Pause(300);</script>
+	<div id="DataEntryContainer" class="TabSubContainer">
+		<iframe id="DataEntryIframe"  class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+	</div>
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Estimates Page';</script>
+	<div id="EstimatesContainer" class="TabSubContainer">
+        <iframe class="" id="EstimatesIframe"  src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+			<iframe id=oldBidderFrame frameborder=0 src="../Old Stuff/OldEstimates.html"></iframe>
+		<!--
+        <iframe class="" id="EstimatesIframe"  src ="Estimates.html" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+		<iframe id=oldBidderFrame frameborder=0 style="position:absolute; top:5%; left:216px; width:90%; height:90%; display:none;" src="OldEstimates.html"></iframe>
+		-->
+	</div>
+	
+	
+	
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Projects Page'; Pause(300);</script>
+	<div id="ProjectsContainer" class="TabSubContainer">
+		<!--	
+		<iframe id="ProjectsIframe"  class="" src="Projects.asp" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+		-->
+		<iframe id="ProjectsIframe"  class="" src="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+	</div>
+	<script type="text/javascript">var ProjTab=Gebi('ProjectsIframe');</script>
+	
+	
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Administration Page'; Pause(300);</script>
+	<div id="AdminContainer" class="TabSubContainer">
+	
+		<iframe id="AdminIframe"  class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+        <!--
+		<iframe id="AdminIframe"  class="" src ="admin.asp" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+        -->
+	</div>
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Engineering Page';</script>
+	<div id="EngineeringPlansContainer" class="TabSubContainer">
+		<iframe id="PlansIframe" class="" src="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+	</div>
+	
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Testing/Maintenance Page'; Pause(300)</script>
+	<div id="TestMaintContainer" class="TabSubContainer">
+		<iframe id="TestMaintIframe" class="" src="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+		<!--
+		-->
+	</div>
+	
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Service Page'; Pause(300)</script>
+	<div id="ServiceContainer" class="TabSubContainer">
+		<iframe id="ServiceIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+		<!--
+        -->
+	</div>
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Purchasing Page'; Pause(300)</script>
+	<div id="PurchasingContainer" class="TabSubContainer">
+		<iframe id="PurchasingIframe" class="" src="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+		<!--
+		<iframe id="PurchasingIframe" class="" src="Purchase.html" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+        -->
+	</div>
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Time-Entry Page';</script>
+	<div id="TimeEntryContainer" class="TabSubContainer">
+		<iframe id="TimeEntryIframe"  class="" src="" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>
+		<!--	<iframe id="TimeEntryIframe"  class="" src="Time_Entry.asp" style="height:100%; max-height:100%; width:100%;" frameborder="0"> </iframe>	-->
+	</div>
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Office Page'; Pause(300)</script>
+	<div id="OfficeContainer" class="TabSubContainer">
+		<!--
+		<iframe id="OfficeIframe" class="" src="SimpleJobs.asp?Type=9&Active=True" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+        -->
+		<iframe id="OfficeIframe" class="" src="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+	</div>
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Inventory Page'; Pause(300)</script>
+	<div id="InventoryContainer" class="TabSubContainer">
+		<iframe id="InventoryIframe" class="" src="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+		<!--
+		<iframe id="InventoryIframe" class="" src="SimpleJobs.asp?Type=8&Active=True" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+        -->
+	</div>
+	
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Training Page'; Pause(300)</script>
+	<div id="TrainingContainer" class="TabSubContainer">
+		<!--
+		<iframe id="TrainingIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+        -->
+		<iframe id="TrainingIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+	</div>
+
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Personal Page'; Pause(300)</script>
+	<div id="PersonalContainer" class="TabSubContainer">
+		<!--
+		<iframe id="PersonalIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+        -->
+		<iframe id="PersonalIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+	</div>
+
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Website Page'; Pause(300)</script>
+	<div id="WebsiteContainer" class="TabSubContainer">
+		<!--
+        <iframe id="WebsiteIframe"  class="" src ="../TMCDevelopment/Website.html" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+		<iframe id="WebsiteIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+        -->	
+		<iframe id="WebsiteIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+	</div>
+
+	<script type="text/javascript">//document.getElementById('LoadInfo').innerHTML='Building Environ Page'; Pause(300)</script>
+	<script type="text/javascript">document.getElementById('LoadInfo').innerHTML='Loading Lists...'; Pause(300)</script>
+	<div id="EnvironContainer" class="TabSubContainer">
+		<!--
+		<iframe id="EnvironIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+        -->
+		<iframe id="EnvironIframe" class="" src ="" style="height:100%; max-height:100%; width:100%;" frameborder="0"></iframe>
+	</div>
+	
+	
+	
+	
+	
+	 
+	
+	
+</div> <!-- End Iframes -->
+<script type="text/javascript">	 Resize();//alert('3');//alert(document.body.offsetHeight+', '+window.innerHeight);</script>
+	
+</body>
+</html>

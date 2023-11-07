@@ -1,0 +1,14 @@
+<html>
+<head>
+<script>
+
+window.onload=function() {
+	var newLocation=window.location.toString().replace('router.neom.com','tmc.tricom.sc').replace('gwv4/gateway?','m/upc.asp?').replace('CODE=','q=');
+	window.location=newLocation;
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

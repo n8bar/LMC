@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<title>Tricom Bid</title>
+	
+	<!--#include file="RED.asp" -->
+	<!--#include file="common.asp" -->
+	
+	<link rel="stylesheet" href="CSS_DEFAULTS.css" media="all">
+	
+	<script type="text/javascript" src="rcstri.js"></script>
+	<script type="text/javascript" src="Num2word.js"></script>
+
+<script type="text/javascript">
+	function onLoad() {
+		var h=document.body.offsetHeight;
+		document.body.style.height='auto';
+		var H=document.body.offsetHeight;
+		
+		var p=H/h;
+		var P=Math.round(p);
+		if(P<p) { P++; }
+		
+		document.body.style.height=(P*h)+'px';
+		
+		for(l=1;l<P;l++) {
+			document.body.innerHTML+='<hr class=pageBreak style=" top:'+(10.5*l)+'in;" />';
+		}
+		
+		//window.print();
+	}
+</script>
+	
+<style>
+html{background:#ccc; height:100%; margin:0; overflow:auto; padding:0; text-align:center; width:100%; }
+body{background:#fff; border:1px outset skyblue !important; box-sizing:border-box; font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif; font-size:.15625in; height:10.5in; margin:0; margin:.0625in auto .25in auto; overflow:hidden; padding:0; text-align:left; width:8in;}
+
+div { page-break-inside:avoid; }
+
+.pageBreak {border-color:skyblue; display:none; page-break-after:always; page-break-before:always; position:absolute; width:8in; }
+
+.bold {font-weight:bold;}
+.ul {text-decoration:underline;}
+
+.mL25 {margin-left:.25in;}
+
+.mB0625 {margin-bottom:.0625in;}
+.mB125 {margin-bottom:.125in;}
+
+.pR25 {padding-right:.25in;}
+
+.fs3-32 {font-size:.09375;}
+.fs1-8  {font-size:.125in;}
+.fs5-32 {font-size:.15625in;}
+.fs3-16 {font-size:.1875in;}
+.fs11-64 {font-size:.171875in;}
+.fs7-32  {font-size:.21875in;}
+.fs1-4  {font-size:.25in;}
+.fs5-16  {font-size:.3125in;}
+
+
+@media screen { body{border:1px #000 solid;} .pageBreak {display:block;}
+</style>
+
+</head>
+
+<body onLoad="onLoad();">
+<%
+ProjID = CStr(Request.QueryString("ProjID"))
+CustID = CStr(Request.QueryString("CustID"))
+
+F="ProjName, ProjAddress, ProjCity, ProjState, ProjZip"
+F=F&",pLHeadID, pLetterTitle, pScopeTitle, pPrintDate, pTax, pScope, pInc, pExc, pSysTotals, pSubT, pTotal, pSignedTCS, pSignedCust, LicFooter"
+F=F&",pAddressing, pBody, pParts, pPartsPrice, pPartsTotal, pLabor, pLaborPrice, pLaborTotal, pLegalNotes"
+SQL = "SELECT "&F&" FROM Projects WHERE ProjID = "&ProjID
+set rs=Server.CreateObject("ADODB.Recordset")
+rs.Open SQL, REDconnstring
+
+SQL3 = "SELECT Name, Address, City, State, Zip, Phone1, Fax, Contact1 FROM Customers WHERE CustID = "&CustID
+set rs3=Server.CreateObject("ADODB.Recordset")
+rs3.Open SQL3, REDconnstring
+
+Dim Customer: Customer=DecodeChars(rs3("Name"))
+
+
+SQL5 = "SELECT CustName, Addressing, SignedBy FROM BidTo WHERE ProjID = "&ProjID&" AND CustID = "&CustID
+set rs5=Server.CreateObject("ADODB.Recordset")
+rs5.Open SQL5, REDconnstring
+
+SQL2="SELECT Image FROM LetterHeads WHERE HeaderID="&rs("pLHeadID")
+set rs2=Server.CreateObject("ADODB.Recordset")
+rs2.Open SQL2, REDconnstring
+
+%>
+<img src="../Images/<%=rs2("Image")%>" width=100% />	
+	
+<div class="fs5-16 taC w100p" ><%=DecodeChars(rs("pLetterTitle"))%></div>
+
+<div class="w100p" style="height:1in;">
+	<div class="w60p fL">
+		<%=Customer%><br/>
+		<div class="fs1-8">
+			<%=Date%><br/><%=rs3("Address")%><br/><%=rs3("City")%>,&nbsp;<%=rs3("State")%>&nbsp;<%=rs3("Zip")%><br/>
+			Phone: <%=rs3("Phone1")%><br/>Fax: <%=rs3("Fax")%>
+		</div>
+	</div>
+	<div class="w40p fL">
+		Re:&nbsp;<%=DecodeChars(rs("ProjName"))%><br/>
+		<%=rs("ProjAddress")%><br/> 
+		<%=rs("ProjCity")%>,&nbsp;<%=rs("ProjState")%>&nbsp;<%=rs("ProjZip")%>
+	</div>
+</div>
+<br/>
+<%
+Addressing=rs("pAddressing")
+If Addressing="" Or (IsNull(Addressing)) Then Addressing = rs3("Contact1")
+%>
+<div class="w100p">
+	<%=Addressing%>&#44;<br/>
+	&nbsp; &nbsp; <%=DecodeChars(CR2Br(rs("pBody")))%>
+</div>
+<%
+F="SystemID, PrintChecked, System, Notes, Includes, Excludes, TaxRate, FixedPrice, Overhead, MU, TotalFixed, Round, Notes"
+SQL4 = "SELECT "&F&" FROM Systems WHERE ProjectID = "&ProjID'&" AND PrintChecked = 1 "
+set rs4=Server.CreateObject("ADODB.Recordset")
+rs4.Open SQL4, REDconnstring
+
+Do Until rs4.EOF
+	
+	SysID = rs4("SystemID")
+	PrintChecked = rs4("PrintChecked")
+	
+	If PrintChecked = "True" then
+		SysSystem = DecodeChars(rs4("System"))
+		SysNotes = DecodeChars(CR2Br(rs4("Notes")))
+		
+		%>
+		<br/>
+		<div class="bold fs3-16 ul mB0625">&nbsp;<%=SysSystem%>&nbsp;</div>
+		<%
+		If rs("pScope") = "True" Then 
+			%>
+			<div class="mL25">
+				<div class="ul"><%=rs("pScopeTitle")%></div>
+				&nbsp; &nbsp; <%=SysNotes%>
+			</div>
+			<%
+		End If
+		
+		
+		Equipment=0
+		Travel=0
+		SQL8="Select UnitCost, Units, Type From Expenses WHERE SysID = "&SysID
+		set rs8=Server.CreateObject("ADODB.Recordset")
+		rs8.Open SQL8, REDconnstring
+		
+		Do Until rs8.EOF
+			
+			itemCost=rs8("UnitCost")
+			itemQty=rs8("Units")
+			
+			Select Case rs8("Type")
+				Case "Equip"
+					Equipment=Equipment+(itemCost*itemQty)
+
+				Case "Travel"
+					Travel=Travel+(itemCost*itemQty)
+			
+			End Select
+			
+			rs8.MoveNext
+		Loop
+		
+		Set rs8=Nothing
+		
+		if Parts = "" or (IsNull(Parts)) then Parts = 0
+		if Labor = "" or (IsNull(Labor)) then Labor = 0
+		if Travel = "" or (IsNull(Travel)) then Travel = 0
+		if Equipment = "" or (IsNull(Equipment)) then Equipment = 0
+		Expenses=Travel+Equipment
+		
+		SysTaxRate = rs4("TaxRate") : if SysTaxRate = "" or (IsNull(SysTaxRate)) then SysTaxRate = 0
+		SysSalesTax = (SysTaxRate*Parts)/100
+		FixedPrice="0"&rs4("FixedPrice")
+		Overhead="0"&rs4("Overhead")
+		Profit="0"&rs4("MU")
+		
+		TotalFixed=rs4("TotalFixed")
+		
+		%>
+		<div style="display:none; white-space:pre; color:silver; font-size:10px; font-family:Consolas, 'Courier New', Courier, monospace;">
+			SysSystem: <%=SysSystem%>
+			Parts: <%=Parts%>
+			Labor: <%=Labor%>
+			Travel: <%=Travel%>
+			Equipment: <%=Equipment%>
+			Expenses: <%=Expenses%>
+			Overhead: <%=Overhead%>
+			Profit: <%=Profit%>
+			FixedPrice: <%=FixedPrice%>
+			SysTaxRate: <%=SysTaxRate%>
+			SysSalesTax: <%=SysSalesTax%>
+		</div>
+
+		<%
+		If TotalFixed="True" Then
+			SysTotal=(FixedPrice*1)+(SysSalesTax*1)
+			OverheadCost=(Overhead*FixedPrice)/100
+		
+			ProfitDollars=FixedPrice-OverheadCost-Expenses-Parts-Labor
+			
+			ProfitDollars=(ProfitDollars*100)/100
+		Else 'TotalFixed=false
+		
+			FixedPrice=Parts+Labor+Expenses
+			OverheadCost=Round(Overhead*FixedPrice)/100
+			SysTotal=FixedPrice+OverheadCost
+			ProfitDollars=(Profit*SysTotal)/100
+			SysTotal=SysTotal+SysSalesTax
+			
+			If rs4("Round")="True" Then
+				withProfit=SysTotal+ProfitDollars
+				roundUp10= (Round(withProfit/10)*10)+10
+				roundDiff= roundUp10-withProfit
+				ProfitDollars=ProfitDollars+roundDiff
+			End If
+			
+			SysTotal=SysTotal+ProfitDollars
+			
+			FixedPrice=SysTotal
+			
+		End If
+		
+		
+		If rs("pTax")="True" Then SysTotal=SysTotal - SysSalesTax
+		
+		'% ><script type="text/javascript">alert('<%=SysTotal% >');< /script><%
+		MoneyFormat = SysTotal-SysSalesTax
+		MoneyFormat = FormatCurrency(MoneyFormat,2)
+		
+
+		SysIncludes = DecodeChars(CR2Br(rs4("Includes")))
+
+		SysExcludes = DecodeChars(CR2Br(rs4("Excludes")))
+
+		If rs("pInc") = "True" Then 
+			%>
+			<br/>
+			<div class="mL25">
+				<div class="ul">Includes:</div>
+				<%=SysIncludes%>
+			</div>
+			<%
+		End If 
+		
+		If rs("pExc") = "True" Then 
+			%>
+			<br/>
+			<div class="mL25">
+				<div class="ul">Excludes:</div>
+				<%=SysExcludes%>
+			</div>
+			<%
+		End If 
+
+		SubTotal = SubTotal + SysTotal
+		If rs("pSysTotals") = "True" Then 
+			%>
+			<div class="taRP ul pR25">Total For: <%=SysSystem%> &nbsp; &nbsp; <font face="consolas"><%=FormatCurrency(SysTotal,2)%></font></div>
+			<%
+		End If 
+
+		If rs("pTax")="True" Then TotalTax = TotalTax+SysSalesTax
+			
+		rs4.MoveNext 
+	Loop
+
+
+	If rs("pSubT") = "True" Then 
+		%><div class="taRP ul bold pR25 fs11-64">Subtotal: &nbsp; <font face="consolas"><%=FormatCurrency(SubTotal,2)%></font> </div><%
+	End If
+
+	If rs("pTax")="True" Then 
+		%><div class="taRP ul pR25">Sales Tax @<%=SysTaxRate%>%: &nbsp; &nbsp; <font face="consolas"><%=FormatCurrency(TotalTax)%></font></div><%
+		'TotalsTotal = TotalsTotal*(1+(SysSalesTax/100))
+	End If
+
+
+	If rs("pTotal") = "True" Then 
+		TotalsTotal=Round((SubTotal+TotalTax)*100)/100
+		%>
+		<div class="taRP ul bold pR25 fs3-16">Total: <font face="consolas"><%=FormatCurrency(TotalsTotal,2)%></font></div>
+		<div id=WordPrice class="taRP ul pR25 fs3-16" style=" page-break-before:avoid; font-family:Verdana, Geneva, sans-serif;"></div>
+
+		<script type="text/javascript">
+			var Price = '<%=Round(TotalsTotal*100)/100%>';
+			Price=Price.split('.');
+			var Dollars= Num2Word(Price[0]);
+			var Cents=Num2Word(Price[1]*1);
+			Gebi('WordPrice').innerHTML=Dollars+' dollars and '+Cents+' cents';
+		</script>
+		<%
+	End If 
+			
+	Set rs4 = Nothing
+%>  
+
+<hr/>  
+
+<p style="line-height:.125in; font-family:'Times New Roman', Times, serif;">&nbsp; &nbsp; <%=DecodeChars(CR2BR(rs("pLegalNotes")))%></p> 
+<br/>
+<div class="mL25">The undersigned parties herby acknowledge the acceptance of the above detailed Proposal:</div>
+
+<div class=w100p>
+	<div class="w50p taC fL">
+		Tricom Representative
+		<div class=w80p style="border-bottom:.01in #000 solid; margin-left:10%; height:.375in;"></div>
+		<div class="w80p taC" style="margin-left:10%; height:.375in;"><%=rs("pSignedTCS")%></div>
+	</div>
+	<div class="w50p taC fL">
+		<%=Customer%> Representative
+		<div class=w80p style="border-bottom:.01in #000 solid; margin-left:10%; height:.375in;"></div>
+		<div class="w80p taC" style="margin-left:10%; height:.375in;"><%=rs("pSignedCust")%></div>
+	</div>
+</div>
+<hr class="fL w100p"/>
+<div class="fL w100p" align="center">Re:&nbsp;<%=DecodeChars(rs3("Name"))%>,&nbsp;<%=DecodeChars(rs("ProjName"))%>&nbsp;Bid# <%=ProjID%></div>    
+
+<div class="fL w100p" align="center" style="overflow:visible; text-align:center; width:100%;">  
+	<div class="CompanyInfo">3540W Sahara Ave, Las Vegas NV 89102 &nbsp; Ph:702-383-2800&nbsp; Fax:702-531-6709</div>
+	<div id="FooterContainer"></div>
+	<script type="text/javascript">
+		Gebi('FooterContainer').innerHTML=CharsDecode('<%=rs("LicFooter")%>');
+	</script>      
+</div>
+
+<%
+set rs = nothing
+set rs2 = nothing
+set rs3 = nothing
+%>
+</body>
+</html>

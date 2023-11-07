@@ -1,0 +1,43 @@
+html, body	{	height:100%; margin:0; padding:0; width:100%; font-family:Calibri, Arial, Helvetica, sans-serif;	overflow:hidden;}
+body	{	background:#888;}
+
+a,b,div,h1,h2,h3,i,input,select,span,table,textarea,td,th,tr{-moz-box-sizing:border-box;-webkit-box-sizing:border-box; background:none; border:none; box-sizing:border-box; outline:none; resize:none;}
+select{	overflow:visible; overflow-style:auto;	}
+
+h1,h2,h3,h4,h5,h6	{cursor:default; font-weight:normal; margin:1%; padding:0; width:100%; }	
+
+#ReloadFrame {background:url(../images/reloadblue24.png); background-position:center; background-repeat:no-repeat; background-size:18px; float:right; margin:0; padding:1px; width:24px; }
+
+#WeekHead{border-bottom:3px #000 solid; height:3.5%; margin:0 auto 0 auto; overflow-y:hidden; text-align:center; width:100%;}
+.HeadDay{ cursor:default; float:left; height:50%; text-align:center; width:10%;}
+.HeadDate{	height:50%; overflow:hidden; } 
+
+#Rows{width:100%; height:82.5%; margin:0 auto 0 auto; overflow-x:hidden; overflow-y:hidden;}	
+	.Row{ float:left; min-height:48px; height:64px; text-align:center; width:100%;}
+		.RowDiv{border-bottom:1px #000 solid; float:left; height:100%; text-align:center; width:10%;}
+		.BorderR{float:right; height:100%; border-right:1px #000 solid;}
+		.BorderL{float:left; height:100%; border-right:1px #000 solid;}
+
+	.AttnSelect{background:inherit; cursor:pointer; height:20px; margin:0 auto; padding:0; width:99%;}
+	.RowWeek{border-bottom:#CCC 1px solid; border-top:#888 1px solid; float:left; height:100%; overflow:hidden; width:80%;}
+		.wkDay{border-right:#888 1px solid; border-left:#CCC 1px solid; color:rgba(0,0,0,0); float:left; font-weight:bold; height:100%; text-align:center; width:12.5%;}
+		.wkDay:hover{background:rgba(85,169,232,.25); border:2px outset; color:#080; position:relative; text-shadow:-1px -1px 1px #FFF, -2px 0px 1px #FFF, 0px 1px 1px #000, 1px 0px 1px #000;}
+		.wkDay:active{border:2px inset; text-shadow:-1px -1px 1px #000, -1px 0px 1px #000, 0px 1px 1px #FFF, 1px 0px 1px #FFF; }
+
+.Event{ -webkit-box-shadow:0px 3px 3px rgba(0,0,0,.75); border-bottom:1px solid; cursor:default; height:16px; font-size:14px; font-weight:bold; line-height:14px; overflow:hidden; position:absolute; overflow:hidden; white-space:nowrap; z-index:9999;}
+.Event:active{ -webkit-box-shadow:0px 5px 5px rgba(0,0,0,.75);}
+.EvStart{border-bottom-left-radius:6px; border-top-left-radius:6px; }
+.EvEnd{border-bottom-right-radius:6px; border-top-right-radius:6px; }
+
+.DragLeft{float:left; color:rgba(0,0,0,.25); height:100%; text-align:left; width:10%;}
+.DragLeft:hover{color:rgba(0,0,0,1); cursor:pointer; text-shadow:#FFF -1px -1px 2px, #FFF -2px -2px 4px;}
+.DragLeft:active{cursor:w-resize;}
+.EventName{border:none; float:left; margin:auto auto; overflow:hidden; text-align:center; text-overflow:ellipsis; white-space:nowrap; width:80%;}
+.EventName:active{cursor:move; }
+.DragRight{float:right; color:rgba(0,0,0,.25); height:100%; text-align:right; width:10%;}
+.DragRight:hover{color:rgba(0,0,0,1); cursor:pointer; text-shadow:#FFF -1px -1px 2px, #FFF -2px -2px 4px;}
+.DragRight:active{cursor:e-resize;}
+
+#addRowBtn{background:#ccc; background-image:url(../images/plus_16.png); border:2px outset; border-radius:4px; border-top-color:#FFF; height:20px; margin:2px 0 0 2px; padding:0; width:20px; -webkit-box-shadow:0px 3px 5px rgba(0,0,0,.75);	}
+#addRowBtn:hover	{	background-color:#ddd;	}
+#addRowBtn:active	{	background-color:#aaa; margin:3px 0 0 3px; border:2px inset;	-webkit-box-shadow:.5px 1px 2px rgba(0,0,0,.75);	}

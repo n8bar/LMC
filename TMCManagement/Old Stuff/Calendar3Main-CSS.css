@@ -1,0 +1,452 @@
+@charset "utf-8";
+/* CSS Document
+
+POSITION
+
+STATIC Default. An element with position: static always has the position the normal flow of the page gives it (a static element ignores any top, bottom, left, or right declarations) 
+
+RELATIVE An element with position: relative moves an element relative to its normal position, so "left:20" adds 20 pixels to the element's LEFT position 
+
+ABSOLUTE An element with position: absolute is positioned at the specified coordinates relative to its containing block. The element's position is specified with the "left", "top", "right", and "bottom" properties 
+
+FIXED An element with position: fixed is positioned at the specified coordinates relative to the browser window. The element's position is specified with the "left", "top", "right", and "bottom" properties. The element remains at that position regardless of scrolling. Works in IE7 (strict mode) 
+
+
+
+
+	filter:alpha(opacity=95);
+	opacity:0.50;
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	width:100%;
+	width: auto;
+	height: auto;
+	margin-left : 2px;
+	margin-right : 2px;
+	float:right;
+	float:left;
+	border: 1px solid blue;
+	display: inline;
+	text-align:center;
+	margin-bottom:30px;
+	margin:4px 4px 4px 4px;
+	float:left;
+	display: table;
+	Z-index: 15000;
+
+	.sidelink A:link {text-decoration: none; color: #2069B4;}
+	.sidelink A:visited {text-decoration: underline}
+	.sidelink A:active {text-decoration: underline}
+	.sidelink A:hover {text-decoration: underline; color: #2069B4;}
+
+ */
+
+/* --------Calendar---------------------------------------------------------    */
+
+
+
+
+
+
+html,body{
+	height: 100%;
+	width: 100%;
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom:0px;
+	overflow:hidden;
+	white-space: nowrap;
+}
+
+.HoverNotes
+{
+	position:absolute;
+	width:192px;
+	white-space:normal;
+	display:none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	z-index:100000;
+	background:#FFE;
+	border:#B8B8C0 solid 2px;
+	border-radius:3px;
+	/*border-radius:8px;*/
+	padding:3px;
+}
+
+
+
+.modalDiv{
+      display: none;
+	  z-index:500;
+	  color: #3300CC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Calendar ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+.CalendarContainer{
+	margin:0px 20px 0px 0px;
+	padding:0px 4px 0px 0px;      
+	position:absolute;
+	height: 100%;
+	width: 100%;
+	overflow:hidden;
+}
+
+
+.CalendarLeftContainer{
+	height: 100%;
+	overflow-x:hidden;
+	overflow-y:auto;
+	width: 5%;
+	text-align:left;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 7px;
+	background:#FFF;
+}
+
+.CalendarMainContainer{
+	margin:0;
+	height: 100%;
+	width: 65%;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	text-align:left;
+	background:#FFF;
+
+}
+
+.CalendarRightContainer{
+	height: 100%;
+	width: 10%;
+	text-align:left;
+	margin:0px 0px 0px 0px;
+	padding:0px 5px 0px 5px;
+	background:#CC99CC;
+
+}
+
+
+
+
+
+
+
+.ViewsTabs{
+	position:relative;
+	height:20px;
+	width:100%;
+	Border:0px solid blue;
+	margin: 10px 1px 0px 0px;
+	z-index:800;
+}
+.ViewsTabsBottom{
+	position:relative;
+	height:4px;
+	width:240px;
+	font-size:6px;
+	background:#55A9E8;
+	Border:0px solid blue;
+	z-index:800;
+}
+.MonthsTab{
+	position:relative;
+	float:left;
+	height:20px;
+	width:45px;
+	margin: 1px 0px 0px 0px;
+	padding: 3px 0px 0px 0px;
+	background:#D5EBF9;
+	cursor:pointer;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+	z-index:1000;
+}
+.BoardTab{
+	position:relative;
+	float:left;
+	height:20px;
+	width:45px;
+	margin: 1px 0px 0px 0px;
+	padding: 3px 0px 0px 0px;
+	background:#D5EBF9;
+	border-left:1px solid white;
+	cursor:pointer;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#324358;
+	text-align:center;
+	z-index:1000;
+}
+.AlertsTab{
+	position:relative;
+	float:left;
+	height:20px;
+	width:45px;
+	margin: 1px 0px 0px 0px;
+	padding: 3px 0px 0px 0px;
+	background:#D5EBF9;
+	border-left:1px solid white;
+	cursor:pointer;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#324358;
+	text-align:center;
+	z-index:1000;
+}
+.ViewsTab{
+	position:relative;
+	float:left;
+	height:20px;
+	width:45px;
+	margin: 1px 0px 0px 0px;
+	padding: 3px 0px 0px 0px;
+	background:#55A9E8;
+	border-left:1px solid white;
+	cursor:pointer;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#324358;
+	text-align:center;
+	z-index:1000;
+}
+
+.Months{
+	display:none;
+	position:relative;
+	height:auto;
+	width:150px;
+	margin: 6px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
+	Border: 0px solid blue;
+	z-index:1000;
+}
+.Board{
+	display:none;
+	position:relative;
+	height:auto;
+	width:200px;
+	Border: 0px solid blue;
+	z-index:1000;
+}
+.Alerts{
+	display:none;
+	position:relative;
+	height:auto;
+	width:200px;
+	Border: 0px solid blue;
+	z-index:1000;
+}
+.Views{
+	display:block;
+	position:relative;
+	height:200px;
+	width:150px;
+	Border: 0px solid blue;
+	z-index:1000;
+}
+
+
+
+
+
+.ViewsBox{
+	position:relative;
+	float:left;
+	width:200px;
+	margin: 10px 0px 0px 16px;
+	padding: 0px 0px 8px 0px;
+	background:#FFF;
+	border:1px solid #999;
+	text-align:center;
+	z-index:1000;
+}
+.ViewsHeader{
+	width:100%;
+	height:15px;
+	border-bottom:1px solid #888;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background:#1C80CA;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#FFF;
+	cursor:pointer;
+	z-index:1100;
+}
+.QuickViewBox{
+	position:relative;
+	float:left;
+	width:180px;
+	margin: 0px 0px 0px 0px;
+	padding: 8px 0px 6px 12px;
+	background:#FFF;
+	z-index:1000;
+}
+.QuickViewItems{
+	width:170px;
+	height:20px;
+	border:0px solid #888;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	z-index:1100;
+}
+.QuickViewTxt{
+    float:right;
+	height:14px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 4px 0px 0px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000;
+	cursor:auto;
+	z-index:1100;
+}
+.QuickViewBtn{
+    float:right;
+	width:12px;
+	height:12px;
+	border-top:2px solid #CCC;
+	border-right:2px solid #777;
+	border-bottom:2px solid #888;
+	border-left:2px solid #CCC;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 10px;
+	font-weight:bold;
+	color:#000;
+	cursor:pointer;
+	z-index:1100;
+}
+
+
+
+.ViewDetailBox{
+	width:180px;
+	margin: 4px 0px 0px 12px;
+	padding: 2px 0px 4px 0px;
+	background:#FFF;
+	text-align:Left;
+	z-index:1000;
+}
+.ViewListTitle{
+	float:left;
+	width:170px;
+	height:15px;
+	overflow:hidden;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background:#FFF;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000;
+	text-align:Left;
+	z-index:1100;
+}
+
+.ViewListItem{
+	width:175px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background:#FFF;
+	text-align:Left;
+	z-index:1000;
+}
+.ViewListMenu{
+	float:left;
+	width:170px;
+	height:20px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background:#FFF;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	font-weight:bold;
+	color:#00F;
+	text-align:Left;
+	z-index:1100;
+}
+
+.ViewListButtons{
+    float:none;
+	width:170px;
+	height:30px;
+	margin: 6px 0px 0px 0px;
+	padding: 5px 0px 0px 0px;
+	background:#FFF;
+	z-index:1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

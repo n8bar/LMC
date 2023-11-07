@@ -1,0 +1,44 @@
+/* Cal2.css */
+
+html
+{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	text-align:center;
+	background:#145E94;
+	overflow:auto;
+}
+
+body
+{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	text-align:center;
+	background:#145E94;
+	overflow:auto;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+}
+
+
+div, span, input, textarea, select{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; outline:none;}
+/* ********************************************************* */
+
+.Overall{	width:100%; height:100%; background:#BBB;	margin-left:auto;	margin-right:auto; }
+
+.Left{float:left; width:180px; height:100%;  background-color:#d0d0d0; background:#FFF; }
+#WhichCalendars{width:100%; height:284px; overflow-x:hidden; overflow-y:auto; border-top:#1C80CA 2px solid;}
+
+.CalToggle{width:94%; height:17px; float:left; margin:0 1.75% 2px 2.25%; padding:0 0 0 2%; font-family: Arial, sans-serif; font-size: 12px; border-radius:2px;}
+.CalToggle:first-child{margin-top:6px;  }
+.CalToggle:hover{opacity:.7;}
+
+.chkCalToggle{display:none;}
+
+.Right{float:left; overflow:visible; width:auto; height:100%;}
+
+.Cal{ width:100%; height:100%; border:none;}

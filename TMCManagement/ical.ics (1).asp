@@ -1,0 +1,49 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
+<!--#include file=red.asp -->
+<%
+Where=Request.QueryString("filter")
+If Where<>"" Then Where= " Where "&Where
+SQL="SELECT * FROM Calendar "&Where
+
+%>BEGIN:VCALENDAR<%
+	%>CALSCALE:GREGORIAN<%
+	%>METHOD:PUBLISH<%
+	%>PRODID:-//Apple Computer\, Inc//iCal 3.0//EN<%
+	%>X-WR-CALNAME:Appointment with Apple Support<%
+	%>VERSION:2.0<%
+	%>METHOD:PUBLISH<%
+	%>BEGIN:VTIMEZONE<%
+		%>TZID:US/PST<%
+		%>BEGIN:DAYLIGHT<%
+			%>TZOFFSETFROM:-0800<%
+			%>TZOFFSETTO:-0700<%
+			%>DTSTART:20130311T020000<%
+			%>RRULE:YEARLY;BYMONTH=03;BYDAY=2SU<%
+			%>TZNAME:PDT<%
+		%>END:DAYLIGHT<%
+		%>BEGIN:STANDARD<%
+			%>TZOFFSETFROM:-0700<%
+			%>TZOFFSETTO:-0800<%
+			%>DTSTART:2013113T020000<%
+			%>RRULE:YEARLY;BYMONTH=11;BYDAY=1SU<%
+			%>TZNAME:PST<%
+		%>END:STANDARD<%
+	%>END:VTIMEZONE<%
+	%>BEGIN:VEVENT<%
+		%>SEQUENCE:5<%
+		%>DTSTART;TZID=US/PST:20130130T000000<%
+		%>SUMMARY:Appointment with Apple Support<%
+		%>UID:EC9439B1-FF65-11D6-9973-003065F99D04<%
+		%>URL;VALUE=URI:https://tmc.tricom.sc/tmcManagement/tmc.asp<%
+		%>ORGANIZER;CN="Apple Support":mailto:nateb@tricomlv.com<%
+		%>DTEND;TZID=US/PST:20130128T131500<%
+		%>LOCATION:Telephone (702-538-4595)<%
+		%>DESCRIPTION:iPhone 4S: <%
+		%>BEGIN:VALARM<%
+			%>X-WR-ALARMUID:C37F6D53-FCDD-4DDA-9557-34F59E1769C4<%
+			%>ACTION:AUDIO<%
+			%>TRIGGER:-PT15M<%
+			%>ATTACH;VALUE=URI:Glass<%
+		%>END:VALARM<%
+	%>END:VEVENT<%
+%>END:VCALENDAR

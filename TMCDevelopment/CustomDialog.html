@@ -1,0 +1,76 @@
+<!--
+
+	This html file is intended to be caled with showModalDialog().
+	
+	Syntax:
+	var dialogResult=showModalDialog("CustomDialog.html",Object,"dialogwidth:640; dialogheight:480; resizable:no")
+	
+	Object is an object with the following properties:
+	title: string - This is the window title.
+	ask: string - This is for user instructions.
+	labels: string Array - This is a list of option names.
+	values: string Array - This is a list of default Values.
+	dataType: string Array - indicates whether the field is a date or ...
+	
+	Returns ...
+-->
+
+<style>
+html,body {padding:0; margin:0; width:100%; height:100%; overflow:hidden;}
+form {width:100%; height:100%; text-align:center; padding:0; margin:0;}
+#prompter { width:95%; text-align:left; height:20%; overflow:hidden; }
+#chooser { border:1px #CCC solid; width:95%; margin-left:2.5%; height:72.5%; overflow-x:hidden; overflow-y:auto; }
+	.row {width:100%; height:24px; float:left;}
+	.row label {width:40%; display:inline-block; text-align:right; }
+	.row input {width:50%;}
+#bottom { width:100%; height:7.5%; }
+</style>
+<form>
+
+	<div id=prompter></div>
+	<div id=chooser></div>
+	<div id=bottom>
+		<button id=btnOK onClick="Done();" disabled >OK</button>
+		<button id=btnCancel onClick="returnValue=false; window.close();" >Cancel</button>
+	</div>
+<script>
+	returnValue=false;
+	
+	var da=dialogArguments;
+	
+	document.title=da.title;
+	
+	prompter.innerHTML=da.ask;
+	
+	var HTML='';
+	var higher=da.labels.length>da.values.length ? da.labels.length : da.values.length;
+	for (var lI=0; lI<higher; lI++) {
+		try { var label=da.labels[lI]; if(!label) label='___'; } catch(e) { var label='___'; }
+		try { var value=da.values[lI]; if(!value) value=''; } catch(e) { var value=''; }
+		HTML+='<div class=row id=field'+lI+'><label for=i'+lI+' >'+label+'</label><input id=i'+lI+' type=text value="'+value+'" onkeypress=OKButton(); onblur=OKButton(); onclick=OKButton(); onmouseover=OKButton(); onmouseout=OKButton(); /></div>';
+	}
+	
+	chooser.innerHTML=HTML;
+	
+	function OKButton() {
+		inputs=document.body.getElementsByTagName('input');
+		for(var i=0; i<inputs.length; i++) {
+			if(inputs[i].value=='') {
+				btnOK.disabled=true;
+				return false;
+			}
+		}
+		btnOK.disabled=false;
+	}
+	
+	function Done() {
+		var data=new Array;
+		for (var lI=0; lI<higher; lI++) {
+			data[da.labels[lI]]=document.getElementById('i'+lI).value;
+		}
+			
+		returnValue=data;
+		window.close();
+	}
+</script>
+</form>

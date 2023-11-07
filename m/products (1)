@@ -1,0 +1,15 @@
+<html>
+<head>
+<script>
+
+window.onload=function() {
+	var redirect=window.location.toString().replace('www.google.com','172.30.6.18').replace('products?','upc.asp?');
+	//alert(window.location+'\n'+redirect);
+	window.location=redirect;
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

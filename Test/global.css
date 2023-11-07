@@ -1,0 +1,327 @@
+@charset "utf-8";
+/* CSS Document */
+
+a,b,button,div,i,img,input,label,p,select,span,textarea	{ -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; padding:0; margin:0; }
+b,button,div,i,img,label,p,select,span	{ cursor:default; }
+hr {-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
+textarea { font-family:Consolas,"Courier New", Courier, monospace}
+
+/* Elements ///////////////////////////////////////////////////////////////////////////////////////////////////// */
+.redXCircle{ box-sizing:border-box; background:#C00; border-radius:50%; color:#fff; cursor:default; float:right; height:19px; line-height:17px; margin:2px 2px 0 0; padding:1px 1px 0 1px; position:relative; text-align:center; width:19px;
+ font-family:verdana, "Arial Black", arial; font-size:14px; font-weight:bold; }
+.redXCircle:hover{background:#E00; border:#fff 1px outset; padding:0 0 1px 0;}
+.redXCircle:active{border:#fff 1px inset; background:#A00; }
+
+.smallRedXCircle {border-radius:50%; background:#C00; color:#fff; cursor:pointer; float:right; font-size:10px; font-family:verdana, "Arial Black", arial; font-weight:bold; height:14px; line-height:12px; padding:1px 1px 2px 1px; text-align:center; width:12px; }
+.smallRedXCircle:hover{background:#E00; border:#c00 1px outset; padding:0 0 1px 0;}
+.smallRedXCircle:active{border:#c00 1px inset; background:#A00; }
+
+.redXCircle32{ background:#C00; color:#fff; cursor:default;
+ box-sizing:border-box; position:relative; height:32px; width:32px; float:right;  border-radius:50%;
+ margin:2px 2px 0 0; padding:1px 1px 0 1px;
+ font-family:verdana, "Arial Black", arial; font-size:28px; font-weight:bold; line-height:30px; text-align:center; }
+.redXCircle32:hover{background:#E00; border:#fff 1px outset; padding:0 0 1px 0;}
+.redXCircle32:active{border:#fff 1px inset; background:#A00; }
+
+.labelColumn { float:left;
+ background:-moz-linear-gradient(right, rgba(0,0,0,.2), rgba(0,0,0,.1) 10px, rgba(0,0,0,.05) 128px, rgba(0,0,0,.05));
+ background:-webkit-gradient(linear,100% 0,0 0, from(rgba(0,0,0,.2)),color-stop(.1, rgba(0,0,0,.1)), color-stop(.5, rgba(0,0,0,.05)), to(rgba(0,0,0,.05)));
+}
+.labelColumn label { border:#aaa 1px solid; border-bottom:none; display:block; height:24px; padding:0 8px 0 0; text-align:right; width:100%;}
+.fieldColumn { float:left;}
+.fieldDiv { border:#aaa 1px solid; border-bottom:none; border-left:none; display:block; float:left; font-size:14px; height:24px; line-height:14px; overflow:hidden; padding:2px 0 0 2px; white-space:pre-wrap; width:100%;  }
+.labelColumnT { float:left;
+ background:-moz-linear-gradient(right, rgba(0,0,0,.2), rgba(0,0,0,.1) 10px, rgba(0,0,0,.05) 128px, rgba(0,0,0,.05));
+ background:-webkit-gradient(linear,100% 0,0 0, from(rgba(0,0,0,.2)),color-stop(.1, rgba(0,0,0,.1)), color-stop(.5, rgba(0,0,0,.05)), to(rgba(0,0,0,.05)));
+}
+.labelColumnT label { border:#aaa 1px solid; border-bottom:none; display:block; font-size:16px; height:48px; line-height:150%; overflow:hidden; padding:0 8px 0 0; white-space:nowrap; text-align:right; width:100%;}
+
+.fieldDivT { border:#aaa 1px solid; border-bottom:none; display:block; font-size:16px; height:48px; line-height:150%; overflow:hidden; padding:0 0 0 2px; white-space:nowrap; width:100%;  }
+
+.editLink {color:#cce; cursor:pointer; float:right; font-size:10px; margin:0 3px 0 0; font-family:Verdana, Geneva, sans-serif; font-weight:bold; text-decoration:none; z-index:10000;}
+.editLink:hover{color:#44f; text-decoration:underline;}
+
+.editField { float:left; width:49%;}
+.editButton { background:#eee; display:inline; float:left; height:18px; padding:0px 2px 1px 2px; margin:0 2px 2px 2px; text-align:center;
+	border-radius:5px; border:#888 1px solid; border-top:none; border-bottom:#000 1px solid; 
+	font-family:Calibri, Arial, sans-serif; font-size:12px; 
+}
+.editButton:hover{background:#f8f8f8;}
+.editButton:active{ border:#888 1px solid; border-top:#000 2px solid; border-bottom:#fff 1px solid; padding:0px 2px 1px 2px; }
+.editImg { float:left; height:24px; margin:0 2px 0 2px; width:24px;}
+
+
+.shade {
+ background:-webkit-gradient(linear,0 100%,0 0, from(rgba(0,0,0,.1)) /*,color-stop(.5,  rgba(0,120,192,.5))*/, to(rgba(255,255,255,0)));
+}
+.shade20 {
+ background:-webkit-gradient(linear,0 100%,0 0, from(rgba(0,0,0,.2)) /*,color-stop(.5,  rgba(0,120,192,.5))*/, to(rgba(255,255,255,0)));
+}
+.shade35 {
+ background:-webkit-gradient(linear,0 100%,0 0, from(rgba(0,0,0,.35)) /*,color-stop(.5,  rgba(0,120,192,.5))*/, to(rgba(255,255,255,0)));
+}
+.shade50 {
+ background:-webkit-gradient(linear,0 100%,0 0, from(rgba(0,0,0,.5)) /*,color-stop(.5,  rgba(0,120,192,.5))*/, to(rgba(255,255,255,0)));
+}
+
+
+.Toolbar{cursor:default; height:32px; padding:2px; text-align:left; width:100%; z-index:20000;
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#fff),color-stop(.15, #ddd), color-stop(.7, #ddd), to(#bbb));
+	background-image:-moz-linear-gradient(top, #fff, #fff 70%, #eee); box-sizing:border-box;
+}
+
+@media print{ .Toolbar{display:none;}	}
+.Toolbar button{ border-radius:5px; border:1px #d0d0d0 solid; margin:3px 0 0 0; overflow:hidden; float:left;
+ font-family:"Swis721 LtCn BT", "Arial Narrow", "Agency FB";
+ background:-moz-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.25) 20%, rgba(128,128,128,.75) 90%, rgba(128,128,128,.5));
+ background:-webkit-gradient(linear,0 0,0 100%, from(rgba(255,255,255,.5)),color-stop(.1, rgba(255,255,255,.25)),color-stop(.9,  rgba(128,128,128,.75)), to(rgba(128,128,128,.5)));
+}
+.Toolbar button:hover{ border-color:black;
+ background:-moz-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.25) 40%, rgba(128,128,128,.75) 90%, rgba(128,128,128,.5));
+ background:-webkit-gradient(linear,0 0,0 100%, from(rgba(255,255,255,.5)),color-stop(.1, rgba(255,255,255,.25)),color-stop(.9,  rgba(128,128,128,.75)), to(rgba(128,128,128,.5)));
+}
+.Toolbar button:active{ border-color:black;	border-top-width:2px;	border-bottom-width:0px; 
+ background:-moz-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.25) 10%, rgba(128,128,128,.75) 90%, rgba(128,128,128,.5));
+ background:-webkit-gradient(linear,0 0,0 100%, from(rgba(255,255,255,.5)),color-stop(.1, rgba(255,255,255,.25)),color-stop(.9,  rgba(128,128,128,.75)), to(rgba(128,128,128,.5)));
+}
+.Toolbar button:disabled{ background:#ccc;}
+
+.ToolbarButton{ border-radius:4px; border:1px #eee solid; margin:3px 0 0 0; font-family:"Swis721 LtCn BT", "Arial Narrow", "Agency FB"; overflow:hidden;
+ background:-moz-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.25) 20%, rgba(128,128,128,.75) 90%, rgba(128,128,128,.5));
+ background:-webkit-gradient(linear,0 0,0 100%, from(rgba(255,255,255,.5)),color-stop(.1, rgba(255,255,255,.25)),color-stop(.9,  rgba(128,128,128,.75)), to(rgba(128,128,128,.5)));
+}
+.ToolbarButton:hover{ border-color:black;
+ background:-moz-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.25) 40%, rgba(128,128,128,.75) 90%, rgba(128,128,128,.5));
+ background:-webkit-gradient(linear,0 0,0 100%,from(rgba(255,255,255,.5)),color-stop(.1, rgba(255,255,255,.25)),color-stop(.9,  rgba(128,128,128,.75)), to(rgba(128,128,128,.5)));
+}
+.ToolbarButton:active{ border-color:black;	border-top-width:2px;	border-bottom-width:0px; 
+ background:-moz-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.25) 10%, #ccc 90%, #888);
+ background:-webkit-gradient(linear,0 0,0 100%, from(rgba(255,255,255,.5)),color-stop(.1, rgba(255,255,255,.25)),color-stop(.9, rgba(128,128,128,.75)), to(rgba(128,128,128,.5)));
+}
+.ToolbarButton:disabled{ background:#ccc; opacity:.7; }
+
+/** /
+.Toolbar button:hover{border:2px outset;  padding:0 2px 2px 0;}
+.Toolbar button:active{border:2px inset; background-color:#BBB; padding:0 2px 2px 0;}
+.Toolbar button:disabled{border:none; opacity:.5; padding:1px 3px 3px 1px;}
+/**/
+
+.tButton24{ border-radius:4px; border:1px #eee solid; margin:3px 0 0 0; overflow:hidden; float:left; height:24px; width:24px;
+ background:-moz-linear-gradient(top, #fff, #fff 20%, #ccc 90%, #888);
+ background:-webkit-gradient(linear,0 0,0 100%, from(#fff),color-stop(.1, #fff),color-stop(.9, #ccc), to(#888));
+}
+.tButton24:hover{ border-color:black;
+ background:-moz-linear-gradient(top, #fff, #fff 40%, #ccc 90%, #888);
+ background:-webkit-gradient(linear,0 0,0 100%, from(#fff),color-stop(.1, #fff),color-stop(.9, #ccc), to(#888));
+}
+.tButton24:active{ border-color:black;	border-top-width:2px;	border-bottom-width:0px; 
+ background:-moz-linear-gradient(top, #fff, #fff 10%, #ccc 90%, #888);
+ background:-webkit-gradient(linear,0 0,0 100%, from(#fff),color-stop(.1, #fff),color-stop(.9, #ccc), to(#888));
+}
+.tButton24:disabled{ background:#ccc;}
+
+.tButton0x24{ border-radius:4px; border:1px #eee solid; margin:3px 0 0 0; overflow:hidden; float:left; height:24px; width:24px;
+ background:-moz-linear-gradient(top, #fff, #fff 20%, #ccc 90%, #888);
+ background:-webkit-gradient(linear,0 0,0 100%, from(#fff),color-stop(.1, #fff),color-stop(.9, #ccc), to(#888));
+}
+.tButton0x24:hover{ border-color:black;
+ background:-moz-linear-gradient(top, #fff, #fff 40%, #ccc 90%, #888);
+ background:-webkit-gradient(linear,0 0,0 100%, from(#fff),color-stop(.1, #fff),color-stop(.9, #ccc), to(#888));
+}
+.tButton0x24:active{ border-color:black;	border-top-width:2px;	border-bottom-width:0px; 
+ background:-moz-linear-gradient(top, #fff, #fff 10%, #ccc 90%, #888);
+ background:-webkit-gradient(linear,0 0,0 100%, from(#fff),color-stop(.1, #fff),color-stop(.9, #ccc), to(#888));
+}
+.tButton0x24:disabled{ background:#ccc;}
+
+
+.tButton32{float:left; height:32px; width:32px;}
+.tButton32x{float:left; height:32px; width:auto; font-size:20px; line-height:28px;}
+
+.Toolbar button img{ height:100%; width:100%; }
+
+.Toolbar div{position:relative; height:24px; margin:0; background:none;}
+.Toolbar span{position:relative; height:24px; margin:0; background:none; }
+.tSpacer { display:inline-block; float:left; height:100%; margin:0 4px 0 5px; overflow:hidden; width:8px;}
+.tSpacer1 { display:inline-block; float:left; height:100%; margin:0 4px 0 5px; overflow:hidden; width:1%;}
+.tSpacer5 { display:inline-block; float:left; height:100%; margin:0 4px 0 5px; overflow:hidden; width:5%;}
+.tSpacer10 { display:inline-block; float:left; height:100%; margin:0 4px 0 5px; overflow:hidden; width:10%;}
+.tSpacerLine{ border:inset 1px; display:inline-block; float:left; height:100%; margin:0 4px 0 5px; overflow:hidden; width:2px; }
+
+/*  BUTTONS  /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+.Button10B{
+	cursor:pointer;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 10px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+}
+.Button11B{
+	cursor:pointer;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+}
+.Button12B{
+	cursor:pointer;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+}
+
+
+/*  Boxes  ///////////////////////////////////////////////////////////////////////////  Boxes   //////////////////*/
+
+.TitleBox200Centered{
+	width:240px;
+	margin: 0px 0px 0px 0px;
+	text-align:center;
+}
+
+.HiddenBox{
+	position:relative;
+	display:none;
+}
+
+.HiddenBox200Border{
+	position:relative;
+	padding: 1px 2px 2px 2px;
+	width:240px;
+	display:none;
+	border: 1px solid #AAA;
+	background:#D8E0E9;
+}
+
+.MenuBox{
+	border:1px solid #AAA;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 16px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 16px;
+	box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 16px;
+	display:none;
+	overflow:hidden;
+	position:absolute;
+}
+.MenuItem{}
+
+.WindowBox{
+	border-top-right-radius:8px;
+	border-top-left-radius:8px;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 32px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 32px;
+	box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 32px;
+	display:none;
+	overflow:hidden;
+	position:absolute;
+}
+.WindowTitle	{
+	width:100%;
+	height:24px;
+	border-top-right-radius:4px;
+	border-top-left-radius:4px;
+	font-family:Calibri, Arial, Helvetica, sans-serif;
+} /* FYI: There is a red X button class named redXCircle */
+
+
+/*  TitleText  /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.TitleText10B{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 10px;
+	font-weight:bold;
+	color:#000;
+	text-align:Left;
+}
+.TitleText11B{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000;
+	text-align:Left;
+}
+.TitleText12B{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+	font-weight:bold;
+	color:#000;
+	text-align:Left;
+}
+.TitleText14B{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 14px;
+	font-weight:bold;
+	color:#000;
+	text-align:Left;
+}
+
+.TitleText10BC{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 10px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+}
+.TitleText11BC{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+}
+.TitleText12BC{
+	cursor:auto;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	font-size: 12px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+}
+
+
+/* Misc /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+vCenter{position:absolute; top:0; bottom:0;	margin-left:auto; margin-top:auto;}
+
+
+.nowrap { white-space:nowrap; }
+.pre{ white-space:pre; }
+
+.taR {text-align:right;}
+.taL {text-align:left; text-overflow:ellipsis;}
+.taC {text-align:center;}
+.taRP {text-align:right; padding-right:2px;}
+.taLP {text-align:left; text-overflow:ellipsis; padding-left:2px;}
+.taRi {text-align:right !important; }
+.taLi {text-align:left !important; text-overflow:ellipsis; }
+.taCi {text-align:center !important; }
+.taRPi {text-align:right !important; padding-right:2px !important;}
+.taLPi {text-align:left !important; text-overflow:ellipsis; padding-left:2px !important;}
+
+.tO {white-space:nowrap; overflow-x:hidden; text-overflow:ellipsis; max-width:100%;}
+
+.fL {float:left;}
+.fR {float:right;}
+

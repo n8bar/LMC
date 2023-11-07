@@ -1,0 +1,12 @@
+/* CSS Document */
+
+a,b,button,div,input,label,p,select,span,textarea,whateverelse {box-sizing:border-box; outline:none;}
+
+
+.fL{float:left;}
+
+.borderRaised { border:1px rgba(192,192,192,.7) solid; border-top:1px rgba(255,255,255,.9) solid; border-bottom:1px rgba(64,64,64,.5) solid; }
+
+.shade {
+ background:-webkit-gradient(linear,0 100%,0 0, from(rgba(0,0,0,.1)) /*,color-stop(.5,  rgba(0,120,192,.5))*/, to(rgba(255,255,255,0)));
+}

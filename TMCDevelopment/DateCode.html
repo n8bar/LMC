@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+<script language="javascript">
+
+d=new Date();
+var weekday = d.getDay();
+var hours = d.getHours();
+var minutes = d.getMinutes();
+var month = d.getMonth();
+var seconds = d.getSeconds();
+var monthday = d.getDate();
+var year = d.getYear();
+
+var Days_in_Month = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+if((dt.getYear()%4==0)&&((dt.getYear()%100!=0)||(dt.getYear()%400==0))){days_of_month[1] = 29;} //  if it's a leap year
+     
+var Month_Labels = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+
+
+
+
+
+var days_of_month = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+dt = new Date(); // today's date.
+
+
+
+
+
+function gettime()
+{
+
+	var Time = (hours+":"+minutes);
+	
+	document.getElementById('Line1').innerHTML = Time;
+}
+
+
+
+function getdate()
+{
+
+
+	var Date1 =(month+"/"+monthday+"/"+year);
+	
+	document.getElementById('Line2').innerHTML = Date1;
+
+
+}
+
+function incnow()
+{
+
+	
+	var X = 0;
+	for(var i=0; i<4; i++)
+	{
+		var D = (month+i+'/'+monthday+'/'+year+'  -   ');
+		document.getElementById('Line3').innerHTML += D;
+		
+		X++;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+function incinput(Format,Interval) // Increments dates based from the input value
+{
+	document.getElementById('Line4').innerHTML = '';
+	var date = document.getElementById('Data4').value;
+	var Duration = document.getElementById('Data4-2').value;
+	
+	var rMonth = 0;
+	var rDay = 0;
+	var rYear = 0;
+	
+	var aDate = date.split("/");
+	var sDay = aDate[1];
+	var sMonth = aDate[0];
+	var sYear = aDate[2];
+	
+	
+	
+	
+	
+	
+	if(Format =='M')
+	{
+	  	rDay	= sDay;
+	  	rYear = sYear;
+		
+		var MoNum = sMonth;
+		
+		
+		
+		var Inc = 0;
+		for(var i=0; i<Duration; i++)
+		{
+			rMonth = (parseInt(MoNum)+Inc);
+			
+			var date2 = (rMonth+'/'+rDay+'/'+rYear+'  -   ');
+			document.getElementById('Line4').innerHTML += date2;
+			
+			var MonthCount;
+			var MoNumReset;
+			if(rMonth >=12 && Interval == 1){MonthCount = 12; MoNumReset = (rMonth-12); rYear = (parseInt(rYear)+1);}
+			if(rMonth >=11 && Interval == 2){MonthCount = 11; MoNumReset = (rMonth-12); rYear = (parseInt(rYear)+1);}
+			if(rMonth >=10 && Interval == 3){MonthCount = 10; MoNumReset = (rMonth-12); rYear = (parseInt(rYear)+1);}
+			if(rMonth >=9 && Interval == 4){MonthCount = 9; MoNumReset = (rMonth-12); rYear = (parseInt(rYear)+1);}
+			if(rMonth >=8 && Interval == 5){MonthCount = 8; MoNumReset = (rMonth-12); rYear = (parseInt(rYear)+1);}
+			if(rMonth >=7 && Interval == 6){MonthCount = 7; MoNumReset = (rMonth-12); rYear = (parseInt(rYear)+1);}
+			
+			if(rMonth >= MonthCount)
+			{
+			
+				MoNum = MoNumReset;
+				Inc = 0;
+				Inc = (parseInt(Inc)+Interval);
+			}
+			else
+			{
+				Inc = (parseInt(Inc)+Interval);
+			}
+			
+		}
+		
+	}
+	
+   //11/26/2009
+   
+   
+   
+   
+
+		
+		
+	if(Format =='Y')
+	{
+	  	rDay  = sDay;
+	  	rMonth = sMonth;
+		
+		var YrNum = sYear;
+		
+		var Inc = 0;
+		for(var i=0; i<Duration; i++)
+		{
+			rYear = (parseInt(YrNum)+Inc);		
+			var date2 = (rMonth+'/'+rDay+'/'+rYear+'  -   ');
+			document.getElementById('Line4').innerHTML += date2;
+			
+			
+			Inc++;
+			
+		}		
+		
+		
+		
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function getDayOfMonth() {
+
+	 var d = document.getElementById('Data12').value;
+	
+	 da = new Date(d);
+	 var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+	 var weeks = ["First","Second","Third","Fourth","Fifth","Sixth"];
+	 var Ret = days[da.getDay()];
+	 
+	 document.getElementById('Line12').innerHTML = Ret;
+}
+
+
+
+
+</script>        
+        
+</head>
+<body>
+
+<div>Date Testing</div>
+<br/>
+<br/>
+<div style="left:1px;"><button style="float:left;" onclick="gettime();">Time</button><div id="Line1" style="float:left;"></div></div>
+<br/>
+<br/>
+<div style="left:1px;"><button style="float:left;" onclick="getdate();">Date</button><div id="Line2" style="float:left;"></div></div>
+<br/>
+<br/>
+<div style="left:1px;"><button style="float:left;" onclick="incnow();">Inc - Now</button><div id="Line3" style="float:left;"></div></div>
+<br/>
+<br/>
+<br/>
+<hr />  
+<div style="left:1px;">Repeat Dates
+<br/>
+Start Date<input  style="" id="Data4" name="Data4"type="text" value="10/17/2009"/>
+Duration<input  style="" id="Data4-2" name="Data4-2"type="text" maxlength="6" size="6" value="26"/>
+<br/>
+<button style="" onclick="incinput('W',1);">Weekly</button>
+<br/>
+<button style="" onclick="incinput('M',1);">Monthly</button>
+<br/>
+<button style="" onclick="incinput('M',2);">2 Months</button>
+<br/>
+<button style="" onclick="incinput('M',3);">3 Months</button>
+<br/>
+<button style="" onclick="incinput('M',4);">4 Months</button>
+<br/>
+<button style="" onclick="incinput('M',5);">5 Months</button>
+<br/>
+<button style="" onclick="incinput('M',6);">6 Months</button>
+<br/>
+<button style="" onclick="incinput('Y',1);">Yearly</button>
+<br/>
+<div id="Line4" style=""></div></div>
+<hr /> 
+<br/>
+<br/>
+<div style="left:1px;">Get Day Name<input  style="float:left;" id="Data12" name="Data12"type="text"value="10/17/2009" /><button style="float:left;" onclick="getDayOfMonth();">Get Day</button><div id="Line12" style="float:left;"></div></div>
+<br/>
+<br/>
+
+
+
+</body>

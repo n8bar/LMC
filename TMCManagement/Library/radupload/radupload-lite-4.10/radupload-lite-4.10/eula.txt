@@ -1,0 +1,48 @@
+END USER LICENSE AGREEMENT FOR RAD UPLOAD LITE
+
+This License Agreement is a legal agreement between you ("LICENSEE") (either an individual or a single entity) and Rad Inks (Pte) Ltd. ("Rad Inks") for the software product Rad Upload Lite which includes computer software and electronic documentation (collectively the "SOFTWARE"). Read it carefully before completing the installation process and using the SOFTWARE. If you did not obtain this copy of the SOFTWARE legally, please destroy the copy immediately.
+
+By installing, copying, or otherwise using the SOFTWARE, you agree to be bound by the terms of this License Agreement.
+
+YOU AGREE THAT YOUR USE OF THE SOFTWARE ACKNOWLEDGES THAT YOU HAVE READ THIS LICENSE, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS.
+
+1. License
+
+Subject to the terms and conditions of this License Agreement, Rad Inks grants you, LICENSEE, a non-exclusive, non-transferable license to install and use one (1) copy of the SOFTWARE on a single computer system.
+
+LICENSEE may make one (1) copy of the SOFTWARE solely for backup or archival purposes, provided that LICENSEE reproduces and includes all copyright and other proprietary notice(s) on the copy. 
+
+
+2. Restrictions
+
+LICENSEE may not:
+(i) Decompile, reverse engineer, disassemble or otherwise reduce the SOFTWARE to a human perceivable form.
+(ii) Rent, lease, lend, transfer or otherwise transfer rights to the SOFTWARE.
+(iii) Translate, adapt, modify the SOFTWARE or create derivative works based upon the SOFTWARE or any part thereof.
+(iv) Distribute copies of the SOFTWARE.
+(v) Electronically transfer the SOFTWARE over a network, a telephone circuit or the Internet.
+(vi) Remove any proprietary notices or labels on the SOFTWARE.
+(vii) Use the SOFTWARE to encode, reproduce or copy any material or intellectual property you do not have the right to encode, reproduce or copy
+
+
+3. Termination
+
+This License Agreement is effective until terminated. Rad Inks may terminate this License Agreement if LICENSEE fails to comply with the terms and conditions of this License Agreement. In such event, LICENSEE must destroy all copies of the SOFTWARE and all of its component parts. All provisions relating the ownership, disclaimer of warranties, limitation of liability and the general provisions shall survive the termination of this License Agreement. 
+
+4. Ownership
+The SOFTWARE is licensed, NOT sold. The foregoing License Agreement gives LICENSEE limited rights to use the SOFTWARE. All rights, title and interest, including all copyrights, in and to the SOFTWARE and any copies LICENSEE is permitted to make herein are exclusively owned by Rad Inks,
+it's successors and/or its suppliers and are protected by copyright, trademark and trade secret law and international treaties. Rad Inks retains all rights not expressly granted to LICENSEE in this License Agreement.
+
+
+
+5. LIMITED WARRANTY AND DISCLAIMER
+(a) NO WARRANTY. RAD INKS AND ITS SUPPLIERS, IF ANY, DISCLAIM ALL WARRANTIES, EITHER EXPRESSED OR IMPLIED, OR OTHERWISE INCLUDING THE WARRANTIES OF MERCHANTIBLITY AND FITNESS FOR A PARTICULAR PURPOSE. ALSO, THERE IS NO WARRANTY OF NONINFRINGEMENT, TITLE OR QUIET ENJOYMENT. IF APPLICABLE LAW IMPLIES ANY WARRANTIES WITH RESPECT TO THE SOFWARE, ALL SUCH WARRANTIES ARE LIMITED IN DURATION TO THIRTY(30) DAYS FROM THE DATE OF DELIVERY. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY RAD INKS, ITS DEALERS, DISTRIBUTORS, AGENTS, OR EMPLOYEES SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF THIS WARRANTY.
+
+6. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL RAD INKS AND ITS SUPPLIERS BE LIABLE FOR ANY CONSEQUENTIAL, INCIDENTAL, DIRECT, INDIRECT, SPECIAL, PUNITIVE OR OTHER DAMAGES WATHSOEVER (INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION OR OTHER PECUNIARY LOSS) ARISING OUT OF THIS AGREEMENT OR CAUSED BY THE USE OR INABILITY TO USE THE SOFTWARE, EVEN IF RAD INKS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. BECAUSE SOME JURIDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL, INCIDENTAL OR SPECIAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU. 
+
+7. Entire Agreement
+
+This License Agreement constitutes the entire agreement between LICENSEE and Rad Inks and supersedes any other prior agreements or understandings, whether oral or written, regarding the SOFTWARE. If a provision of this agreement is deemed null and void, invalid or without effect, the remainder of this agreement shall remain in effect.
+

