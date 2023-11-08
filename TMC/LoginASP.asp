@@ -2,7 +2,8 @@
 
 <%
 'REDConnString="DRIVER={SQL Server};SERVER=192.168.1.31;UID=mainuser;PWD=76.Admin;DATABASE=MCBase"
-REDConnString="DSN=mcbase;UID=mainuser;PWD=76.Admin;Database=MCBase"
+REDConnString="DSN=mcbase;UID=mainuser;PWD=562.Admin;Database=MCBase"
+REDConnString="DRIVER={SQL Server};SERVER=127.0.0.1;UID=mainuser;PWD=562.Admin;DATABASE=MCBase"
 
 Application("tmcVer")="1.0.0.3047"
 Application("tmcVersion")="1.0.0.3047beta"

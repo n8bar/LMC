@@ -68,19 +68,22 @@ body{background:#fff; border:none; box-sizing:border-box; font-family:Verdana, G
 <body onLoad="onLoad();">
 <%
 ProjID = CStr(Request.QueryString("ProjID"))
-CustID = CStr(Request.QueryString("CustID"))
 
-F="ProjName, ProjAddress, ProjCity, ProjState, ProjZip, Use2010Bidder"
-F=F&",pLHeadID, pLetter, pLetterTitle, pScopeTitle, pPrintDate, pTax, pScope, pInc, pExc, pSysTotals, pSubT, pTotal, pSignedTCS, pSignedCust, LicFooter"
+F="ProjName, ProjAddress, ProjCity, ProjState, ProjZip, Use2010Bidder, CustomerID"
+F=F&",pLHeadID, pLetter, pLetterTitle, pScopeTitle, pPrintDate, pTax, pScope, pInc, pExc, pSecTotals, pSubT, pTotal, pSignedTCS, pSignedCust, LicFooter"
 F=F&",pAddressing, pBody, pParts, pPartsPrice, pPartsTotal, pLabor, pLaborPrice, pLaborTotal, pLegalNotes"
 SQL = "SELECT "&F&" FROM Projects WHERE ProjID = "&ProjID
+%><%'=SQL%><%
 set rs=Server.CreateObject("ADODB.Recordset")
 rs.Open SQL, REDconnstring
+CustID = "0"&rs("CustomerID")
 
-SQL3 = "SELECT Name, Address, City, State, Zip, Phone1, Fax, Contact1 FROM Customers WHERE CustID = "&CustID
-%><%=SQL3%><%
+If CustID=0 Then CustID = 3423 'hardcode nobody/anybody
+
+SQL3 = "SELECT Name, Address, City, State, Zip, Phone1, Fax, Contact1 FROM Contacts WHERE ID = "&CustID
 set rs3=Server.CreateObject("ADODB.Recordset")
 rs3.Open SQL3, REDconnstring
+%><%'=SQL3%><%
 
 Dim Customer: Customer=DecodeChars(rs3("Name"))
 
@@ -92,7 +95,6 @@ rs5.Open SQL5, REDconnstring
 SQL2="SELECT Image FROM LetterHeads WHERE HeaderID="&rs("pLHeadID")
 set rs2=Server.CreateObject("ADODB.Recordset")
 rs2.Open SQL2, REDconnstring
-
 %>
 <img src="../Images/<%=rs2("Image")%>" width=100% />	
 	
@@ -130,28 +132,28 @@ If rs("pLetter")="True" Then
 	<%
 End If
 	
-F="SystemID, PrintChecked, System, Notes, Includes, Excludes, TaxRate, FixedPrice, Overhead, MU, TotalFixed, Round, Notes"
-SQL4 = "SELECT "&F&" FROM Systems WHERE ProjectID = "&ProjID&" AND PrintChecked = 'True' "
+F="SectionID, PrintChecked, Section, Notes, Includes, Excludes, TaxRate, FixedPrice, Overhead, MU, TotalFixed, Round, Notes"
+SQL4 = "SELECT "&F&" FROM Sections WHERE ProjectID = "&ProjID&" AND PrintChecked = 'True' "
 set rs4=Server.CreateObject("ADODB.Recordset")
 rs4.Open SQL4, REDconnstring
 
 Do Until rs4.EOF
 	
-	SysID = rs4("SystemID")
+	SecID = rs4("SectionID")
 	PrintChecked = rs4("PrintChecked")
 	
-		SysSystem = DecodeChars(rs4("System"))
-		SysNotes = DecodeChars(CR2Br(rs4("Notes")))
+		SecSection = DecodeChars(rs4("Section"))
+		SecNotes = DecodeChars(CR2Br(rs4("Notes")))
 		
 		%>
 		<br/>
-		<div class="bold fs3-16 ul mB0625 w100p taC">&nbsp;<%=SysSystem%>&nbsp;</div>
+		<div class="bold fs3-16 ul mB0625 w100p taC">&nbsp;<%=SecSection%>&nbsp;</div>
 		<%
-		If rs("pScope") = "True" AND SysNotes <> "" Then 
+		If rs("pScope") = "True" AND SecNotes <> "" Then 
 			%>
 			<div class="mL25">
 				<div class="ul"><%=rs("pScopeTitle")%></div>
-				&nbsp; &nbsp; <%=SysNotes%>
+				&nbsp; &nbsp; <%=SecNotes%>
 			</div>
 			<%
 		End If
@@ -190,7 +192,7 @@ Do Until rs4.EOF
 		End If
 		
 		Parts=0
-		SQL6="SELECT BidItemsID, Cost, Qty, ItemName, ItemDescription FROM BidItems WHERE Type='Part' AND editable<>1 AND SysID = "&SysID
+		SQL6="SELECT BidItemsID, Cost, Qty, ItemName, ItemDescription FROM BidItems WHERE Type='Part' AND editable<>1 AND SecID = "&SecID
 		Set rs6=Server.CreateObject("ADODB.Recordset")
 		rs6.Open SQL6, REDconnstring
 
@@ -260,7 +262,7 @@ Do Until rs4.EOF
 		End If
 		
 		Labor=0
-		SQL7="SELECT BidItemsID, Cost, Qty, ItemName, ItemDescription FROM BidItems WHERE Type='Labor' AND editable<>1 AND SysID = "&SysID
+		SQL7="SELECT BidItemsID, Cost, Qty, ItemName, ItemDescription FROM BidItems WHERE Type='Labor' AND editable<>1 AND SecID = "&SecID
 		Set rs7=Server.CreateObject("ADODB.Recordset")
 		rs7.Open SQL7, REDconnstring
 
@@ -310,7 +312,7 @@ Do Until rs4.EOF
 		
 		Equipment=0
 		Travel=0
-		SQL8="Select UnitCost, Units, Type From Expenses WHERE editable<>1 AND SysID = "&SysID&" ORDER BY Type"
+		SQL8="Select UnitCost, Units, Type From Expenses WHERE editable<>1 AND SecID = "&SecID&" ORDER BY Type"
 		set rs8=Server.CreateObject("ADODB.Recordset")
 		rs8.Open SQL8, REDconnstring
 		
@@ -339,8 +341,8 @@ Do Until rs4.EOF
 		if Equipment = "" or (IsNull(Equipment)) then Equipment = 0
 		Expenses=Travel+Equipment
 		
-		SysTaxRate = rs4("TaxRate") : if SysTaxRate = "" or (IsNull(SysTaxRate)) then SysTaxRate = 0
-		If UseNewBidder Then SysSalesTax = (SysTaxRate*Parts)/100 Else SysSalesTax = SysTaxRate*Parts/100
+		SecTaxRate = rs4("TaxRate") : if SecTaxRate = "" or (IsNull(SecTaxRate)) then SecTaxRate = 0
+		If UseNewBidder Then SecSalesTax = (SecTaxRate*Parts)/100 Else SecSalesTax = SecTaxRate*Parts/100
 		FixedPrice="0"&rs4("FixedPrice")
 		Overhead="0"&rs4("Overhead")
 		Profit="0"&rs4("MU")
@@ -370,7 +372,7 @@ Do Until rs4.EOF
 		
 		%>
 		<div style="display:none; white-space:pre; color:silver; font-size:10px; font-family:Consolas, 'Courier New', Courier, monospace;">
-			SysSystem: <%=SysSystem%>
+			SecSection: <%=SecSection%>
 			Parts: <%=Parts%>
 			Labor: <%=Labor%>
 			Travel: <%=Travel%>
@@ -380,57 +382,57 @@ Do Until rs4.EOF
 			Profit: <%=Profit%>
 			Margin: <%=Margin%>
 			FixedPrice: <%=FixedPrice%>
-			SysTaxRate: <%=SysTaxRate%>
-			SysSalesTax: <%=SysSalesTax%>
+			SecTaxRate: <%=SecTaxRate%>
+			SecSalesTax: <%=SecSalesTax%>
 		</div>
 
 		<%
-		SysTotal=(FixedPrice*1)'+(SysSalesTax*1)
+		SecTotal=(FixedPrice*1)'+(SecSalesTax*1)
 		OverheadCost=(Overhead*FixedPrice)/100
 	
 		ProfitDollars=FixedPrice-OverheadCost-Expenses-Parts-Labor
 		
 		ProfitDollars=(ProfitDollars*100)/100
 		
-		If rs("pTax")="True" Then SysTotal=SysTotal - SysSalesTax
+		If rs("pTax")="True" Then SecTotal=SecTotal - SecSalesTax
 		
-		'% ><script type="text/javascript">alert('<%=SysTotal% >');< /script><%
-		MoneyFormat = SysTotal-SysSalesTax
+		'% ><script type="text/javascript">alert('<%=SecTotal% >');< /script><%
+		MoneyFormat = SecTotal-SecSalesTax
 		MoneyFormat = FormatCurrency(MoneyFormat,2)
 		
 
-		SysIncludes = DecodeChars(CR2Br(rs4("Includes")))
+		SecIncludes = DecodeChars(CR2Br(rs4("Includes")))
 
-		SysExcludes = DecodeChars(CR2Br(rs4("Excludes")))
+		SecExcludes = DecodeChars(CR2Br(rs4("Excludes")))
 
-		If rs("pInc") = "True" AND SysIncludes <> "" Then 
+		If rs("pInc") = "True" AND SecIncludes <> "" Then 
 			%>
 			<br/>
 			<div class="mL25">
 				<div class="ul">Includes:</div>
-				<%=SysIncludes%>
+				<%=SecIncludes%>
 			</div>
 			<%
 		End If 
 		
-		If rs("pExc") = "True" AND SysExcludes <> "" Then 
+		If rs("pExc") = "True" AND SecExcludes <> "" Then 
 			%>
 			<br/>
 			<div class="mL25">
 				<div class="ul">Excludes:</div>
-				<%=SysExcludes%>
+				<%=SecExcludes%>
 			</div>
 			<%
 		End If 
 
-		SubTotal = SubTotal + SysTotal
-		If rs("pSysTotals") = "True" Then 
+		SubTotal = SubTotal + SecTotal
+		If rs("pSecTotals") = "True" Then 
 			%>
-			<div class="taRP ul pR25">Total For: <%=SysSystem%> &nbsp; &nbsp; <font face="consolas"><%=FormatCurrency(SysTotal,2)%></font></div>
+			<div class="taRP ul pR25">Total For: <%=SecSection%> &nbsp; &nbsp; <font face="consolas"><%=FormatCurrency(SecTotal,2)%></font></div>
 			<%
 		End If 
 
-		If rs("pTax")="True" Then TotalTax = TotalTax+SysSalesTax
+		If rs("pTax")="True" Then TotalTax = TotalTax+SecSalesTax
 			
 		rs4.MoveNext 
 	Loop
@@ -441,8 +443,8 @@ Do Until rs4.EOF
 	End If
 
 	If rs("pTax")="True" Then 
-		%><div class="taRP ul pR25">Sales Tax @<%=SysTaxRate%>%: &nbsp; &nbsp; <font face="consolas"><%=FormatCurrency(TotalTax)%></font></div><%
-		'TotalsTotal = TotalsTotal*(1+(SysSalesTax/100))
+		%><div class="taRP ul pR25">Sales Tax @<%=SecTaxRate%>%: &nbsp; &nbsp; <font face="consolas"><%=FormatCurrency(TotalTax)%></font></div><%
+		'TotalsTotal = TotalsTotal*(1+(SecSalesTax/100))
 	End If
 
 

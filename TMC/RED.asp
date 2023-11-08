@@ -1,7 +1,8 @@
 <%'REDconnstring = "DRIVER={SQL Server};SERVER=172.30.6.18;UID=rcstricom;PWD=watf-771;DATABASE=Tribase"
 'PDconn = "DRIVER={SQL Server};SERVER=whsql-v03.prod.mesa1.secureserver.net;UID=tricomelstore;PWD=watf-771;DATABASE=DB_16816"
 'REDconnstring = "DRIVER={SQL Server};SERVER=172.30.6.18;UID=sa;PWD=Tri1234;DATABASE=Tribase"
-REDconnstring = "DSN=mcbase;UID=mainuser;PWD=76.Admin;Database=MCBase"
+REDconnstring = "DSN=mcbase;UID=mainuser;PWD=562.Admin;Database=MCBase"
+REDConnString="DRIVER={SQL Server};SERVER=127.0.0.1;UID=mainuser;PWD=562.Admin;DATABASE=MCBase"
 
 Function dcField(recordSetObj,fieldName)
 	dcField=DecodeChars(recordSetObj(fieldName))
@@ -24,10 +25,11 @@ Function UnloadArray(arr)
 	Next
 	UnloadArray=arr
 End Function
-
+ 
 Function DecodeChars(TheString)
+ 	If IsNull(TheString) Then TheString=""
+ 	TheString=CStr(TheString)
 	dim OldString : OldString=""
-	If IsNull(TheString) Then TheString=""
 	If TheString<>"" Then 
 		while(OldString<>TheString)
 			OldString=TheString

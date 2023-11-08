@@ -1,7 +1,7 @@
 <%'REDconnstring = "DRIVER={SQL Server};SERVER=172.30.6.18;UID=rcstricom;PWD=watf-771;DATABASE=Tribase"
 'PDconn = "DRIVER={SQL Server};SERVER=whsql-v03.prod.mesa1.secureserver.net;UID=tricomelstore;PWD=watf-771;DATABASE=DB_16816"
 'REDconnstring = "DRIVER={SQL Server};SERVER=172.30.6.18;UID=sa;PWD=Tri1234;DATABASE=Tribase"
-REDconnstring = "DRIVER={SQL Server};SERVER=192.168.1.31;UID=sa;PWD=76.Admin;DATABASE=MCBase"
+REDconnstring = "DRIVER={SQL Server};SERVER=192.168.1.31;UID=sa;PWD=562.Admin;DATABASE=MCBase"
 
 Function dcField(recordSetObj,fieldName)
 	dcField=DecodeChars(recordSetObj(fieldName))

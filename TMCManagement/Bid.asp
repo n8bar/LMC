@@ -45,7 +45,7 @@
 			<div id="nbCity2" class="newBidBlock3">&nbsp;</div>
 			<label class="newBidLabel3" for="nbState" >State:</label>
 			<select id="nbState" type="text" class="newBidTxt3">
-				<option value="UT">UT</option>
+				<option value="AZ">AZ</option>
 				<%StateOptionList("Abbr")%>
 			</select>
 			<label class="newBidLabel3" for="nbZip" >Zip:</label><input id="nbZip" type="text" class="newBidTxt3"></input>
@@ -55,23 +55,23 @@
 	<br/>
 	<br/>
 	
-	<div class="newBidBoxRow">
+	<div class="newBidBoxRow" style="display:none;">
 		<label class=newBidLabel2 for=nbSqFeet><small>Square Footage:</small></label>
 		<input id=nbSqFeet class=newBidTxt2 />
 		<label class=newBidLabel2 for=nbFloors><small># of Floors:</small></label>
 		<input id=nbFloors class=newBidTxt2 />
 	</div>
 	<br/>
-	<div align="left" style="height:56px; padding:0 0 0 2%; width:100%;">
-		<label style=" float:left; height:100%; width:49.9%; ">
-			<input type="checkbox" id=nbNewBidder checked onChange="Gebi('nbOldBidder').checked=!this.checked;" />
+	<div align="left" style="height:56px; padding:0 0 0 2%; width:100%; display:none;">
+		<label style=" float:left; height:100%; width:49.9%; color:darkgrey;">
+			<input type="checkbox" id=nbNewBidder disabled onChange="Gebi('nbOldBidder').checked=!this.checked;" />
 			Lump Sum Bid <br/>
-			<small>-For Larger Projects: Margin is calculated off all expenses. </small>
+			<small style="color:inherit;">-Materials cannot be itemized on proposal: Margin will be calculated off all expenses. </small>
 		</label>
-		<label style=" float:left; height:100%; width:49.9%; ">
-			<input type="checkbox" id=nbOldBidder onChange="Gebi('nbNewBidder').checked=!this.checked;" />
+		<label style=" float:left; height:100%; width:49.9%; color:darkgrey; ">
+			<input type="checkbox" id=nbOldBidder checked disabled onChange="Gebi('nbNewBidder').checked=!this.checked;" />
 			Itemized Materials Bid <br/>
-			<small>-For Smaller Jobs: Margin is calculated off materials only.</small>
+			<small style="color:inherit;">-Allows displaying material line items: Margin will be calculated off materials only.</small>
 		</label>
 	</div>
 	<div class="newBidBoxRow" style="width:95%;"><button style="float:right;" onclick=SaveNewBid();>Save</button></div>

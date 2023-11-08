@@ -28,21 +28,21 @@ rs0.Open Sql0, REDConnString
 If rs0.EOF Then Response.Redirect("blank.html")
 If rs0("Projects") <> "True" Then  Response.Redirect("blank.html")
 
-SysID=Request.QueryString("SysID")
+SecID=Request.QueryString("SecID")
 ProjID=Request.QueryString("ProjID")
 
-If SysID>0 AND ProjID<1 Then
-	cols="System,SystemID,ProjectID,RCSNotes,Notes,EnteredBy,DateEntered,Includes,Excludes"
-	cols=cols&",MU,FixedPrice,Overhead,TaxRate,ExcludeSys,TotalFixed,Round"
-	SQL="SELECT "&cols&" FROM Systems WHERE SystemID="&SysID
+If SecID>0 AND ProjID<1 Then
+	cols="Section,SectionID,ProjectID,RCSNotes,Notes,EnteredBy,DateEntered,Includes,Excludes"
+	cols=cols&",MU,FixedPrice,Overhead,TaxRate,ExcludeSec,TotalFixed,Round"
+	SQL="SELECT "&cols&" FROM Sections WHERE SectionID="&SecID
 	Set rs=Server.createObject("AdoDB.RecordSet")
 	%><%'=SQL%><%
 	rs.Open SQL, REDConnString
 	 
 	projId=rs("ProjectID")
-	'sysId=rs("SystemId")
+	'secId=rs("SectionId")
 	'Notes=DecodeChars(rs("Notes"))
-	'System=DecodeChars(rs("System"))
+	'Section=DecodeChars(rs("Section"))
 	'RCSNotes=DecodeChars(rs("RCSNotes"))
 	'Includes=DecodeChars(rs("Includes"))
 	'Excludes=DecodeChars(rs("Excludes"))
@@ -68,12 +68,12 @@ City=DecodeChars(projRS("ProjCity"))
 RCSNotes=DecodeChars(CR2Br(projRS("RCSNotes")&" "))
 Customer=DecodeChars(projRS("CustName"))
 
-editLink="<a class=""editLink"" onclick=""eSysField(this.parentNode);"" >Edit</a>"
-currencyLink="<a class=""editLink"" onclick=""eSysCurrency(this.parentNode);"" >Edit</a>"
-dateLink="<a class=""editLink"" onclick=""dateSysField(this.parentNode)"" >Edit</a>"
-notesLink="<a class=editLink onClick=eSysNotes(this.parentNode);>Edit</a>"
+editLink="<a class=""editLink"" onclick=""eSecField(this.parentNode);"" >Edit</a>"
+currencyLink="<a class=""editLink"" onclick=""eSecCurrency(this.parentNode);"" >Edit</a>"
+dateLink="<a class=""editLink"" onclick=""dateSecField(this.parentNode)"" >Edit</a>"
+notesLink="<a class=editLink onClick=eSecNotes(this.parentNode);>Edit</a>"
 
-sysListSQL="SELECT SystemID FROM Systems WHERE ProjectID="&projID&" AND ExcludeSys<1"
+sysListSQL="SELECT SectionID FROM Sections WHERE ProjectID="&projID&" AND ExcludeSec<1"
 Set sysListRS=Server.CreateObject("AdoDB.RecordSet")
 sysListRS.Open sysListSQL, REDConnString
 sysCount=0
@@ -86,21 +86,21 @@ Loop
 
 </head>
 
-<body onLoad="setTimeout('systemBudget(<%=sysId%>);',500); sysResize();" style="height:100%; overflow:hidden; " onResize="sysResize();">
+<body onLoad="setTimeout('systemBudget(<%=secId%>);',500); sysResize();" style="height:100%; overflow:hidden; " onResize="sysResize();">
 
 <div id=copyModal>
 	<div id=copyWindow class="WindowBox">
-		<div id=cwTitle class="WindowTitle"><span class="redXCircle" onClick="hide('copyModal')">X</span>Copy System</div>
+		<div id=cwTitle class="WindowTitle"><span class="redXCircle" onClick="hide('copyModal')">X</span>Copy Section</div>
 		<br/>
 		&nbsp;&nbsp;&nbsp;
 		<label class="fL nowrap">&nbsp;&nbsp;Preset Name&nbsp;<input id=cwPresetName type="text" style="width:256px;" /></label>
 		<br/>
 		&nbsp;&nbsp;&nbsp;
 		<label class="fL nowrap">
-			&nbsp;&nbsp;Preset System&nbsp;
-			<select id=cwSysType style="width:240px;">
-				<option id=cwSysType0 selected></option>
-				<%SysTypesOptionList("cwSysType")%>
+			&nbsp;&nbsp;Preset Section&nbsp;
+			<select id=cwSecType style="width:240px;">
+				<option id=cwSecType0 selected></option>
+				<%SecTypesOptionList("cwSecType")%>
 			</select>
 		</label>
 		<div id=cwBottom style="width:100%; height:32px; line-height:32px; float:left; margin:12px 0 0 0;">
@@ -180,21 +180,21 @@ var accessUser='n8';
 	</div>
 	
 	
-	<div id="SysInfoTitle" class="ProjInfoTitle">
-		<span class=rollUp onClick="RollupC(this,'RollUpSysInfo',Gebi('RollUpSysInfo'));">▼</span>
-		Systems Information
+	<div id="SecInfoTitle" class="ProjInfoTitle">
+		<span class=rollUp onClick="RollupC(this,'RollUpSecInfo',Gebi('RollUpSecInfo'));">▼</span>
+		Sections Information
 	</div>
-	<div id=RollUpSysInfo style="height:40%; min-height:128px;">
+	<div id=RollUpSecInfo style="height:40%; min-height:128px;">
 		<div class="ProjInfoListHead" style="border-bottom:none; line-height:32px;" >
-			<div style="width:33.34%; width:calc(33.34%-16px); width:-moz-calc(33.34%-16px); width:-webkit-calc(33.34%-16px); border:none; text-align:left;"><big>&nbsp; System Name</big> / Estimator / Notes</div>
+			<div style="width:33.34%; width:calc(33.34%-16px); width:-moz-calc(33.34%-16px); width:-webkit-calc(33.34%-16px); border:none; text-align:left;"><big>&nbsp; Section Name</big> / Estimator / Notes</div>
 			<div style="width:33.33%; width:calc(33.33%-16px); width:-moz-calc(33.33%-16px); width:-webkit-calc(33.33%-16px); border:none; text-align:left;">Scope of Work</div>
 			<div style="width:16.67%; width:calc(16.67%-16px); width:-moz-calc(16.67%-16px); width:-webkit-calc(33.33%-16px); border:none; text-align:left;">Includes</div>
 			<div style="width:16.66%; width:calc(16.66%-16px); width:-moz-calc(16.66%-16px); width:-webkit-calc(33.33%-16px); border:none; text-align:left;">Excludes</div>
 		</div>
-		<div id=SysInfo class=ProjInfo height="384px" style="height:100%; height:calc(100%-64px); min-height:64px; overflow-y:scroll;">
+		<div id=SecInfo class=ProjInfo height="384px" style="height:100%; height:calc(100%-64px); min-height:64px; overflow-y:scroll;">
 		
 			<%
-			sysListSQL="SELECT SystemID FROM Systems WHERE ProjectID="&projID&" AND ExcludeSys<1"
+			sysListSQL="SELECT SectionID FROM Sections WHERE ProjectID="&projID&" AND ExcludeSec<1"
 			Set sysListRS=Server.CreateObject("AdoDB.RecordSet")
 			sysListRS.Open sysListSQL, REDConnString
 			sysCount=0
@@ -211,16 +211,16 @@ var accessUser='n8';
 			Do Until sysListRS.EOF
 				row = row+1
 				
-				SysID=sysListRS("SystemID")
+				SecID=sysListRS("SectionID")
 				
-				cols="System,SystemID,ProjectID,RCSNotes,Notes,EnteredBy,DateEntered,Includes,Excludes"
-				cols=cols&",MU,FixedPrice,Overhead,TaxRate,ExcludeSys,TotalFixed,Round"
-				SQL="SELECT "&cols&" FROM Systems WHERE SystemID="&SysID
+				cols="Section,SectionID,ProjectID,RCSNotes,Notes,EnteredBy,DateEntered,Includes,Excludes"
+				cols=cols&",MU,FixedPrice,Overhead,TaxRate,ExcludeSec,TotalFixed,Round"
+				SQL="SELECT "&cols&" FROM Sections WHERE SectionID="&SecID
 				%><%'=SQL%><%
 				Set rs=Server.createObject("AdoDB.RecordSet")
 				rs.Open SQL, REDConnString
 				
-				sysName=DecodeChars(rs("System"))
+				sysName=DecodeChars(rs("Section"))
 				sysEntBy=rs("EnteredBy")
 				sysNotes=DecodeChars(CR2BR(rs("RCSNotes")))
 				sysScope=DecodeChars(CR2BR(rs("Notes")))
@@ -242,7 +242,7 @@ var accessUser='n8';
 				
 				<!--
 				<div class="w100p fL h32"></div>
-				<button style="font-size:18px; min-height:64px; height:24px; width:90%; margin-left:5%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; float:left;" onclick="PrintSystemBudget(< %=SysID%>);">Print < %=System%> Budget Summary</button>
+				<button style="font-size:18px; min-height:64px; height:24px; width:90%; margin-left:5%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; float:left;" onclick="PrintSectionBudget(< %=SecID%>);">Print < %=Section%> Budget Summary</button>
 				<br/>
 				-->
 		
@@ -257,9 +257,9 @@ var accessUser='n8';
 	<!-- 
 	<div class="ProjInfoTitle">
 		<span class=rollUp onClick="RollupC(this,'RollUpCost',Gebi('RollUpCost'));">▼</span>
-		<div style="float:left">System Costing</div>
+		<div style="float:left">Section Costing</div>
 	</div>
-	<div id=SysCosting class=ProjInfo style="height:auto;">
+	<div id=SecCosting class=ProjInfo style="height:auto;">
 		<div id=RollUpCost height="auto">
 			<div class="ProjInfoListHead" style="border-bottom:none; line-height:16px; width:100%; margin:0;" >
 				<% 
@@ -383,9 +383,9 @@ var accessUser='n8';
 				</div>
 			</div>
 			
-			<div id=BidSystemsParts>
+			<div id=BidSectionsParts>
 				<%
-				sysListSQL="SELECT SystemID FROM Systems WHERE ProjectID="&projID&" AND ExcludeSys<1"
+				sysListSQL="SELECT SectionID FROM Sections WHERE ProjectID="&projID&" AND ExcludeSec<1"
 				Set sysListRS=Server.CreateObject("AdoDB.RecordSet")
 				sysListRS.Open sysListSQL, REDConnString
 				
@@ -393,19 +393,19 @@ var accessUser='n8';
 				partsTotal=0
 				Do Until sysListRS.EOF
 					
-					SysID=sysListRS("SystemID")
+					SecID=sysListRS("SectionID")
 					
-					SQL="SELECT System, MU FROM Systems WHERE SystemID="&SysID
+					SQL="SELECT Section, MU FROM Sections WHERE SectionID="&SecID
 					%><%'=SQL%><%
 					Set rs=Server.createObject("AdoDB.RecordSet")
 					rs.Open SQL, REDConnString
 					
 					%>
 					<div id=pRow-1 class="ProjInfoListRow" style="background:none !important;" ><div style="width:100%;"></div></div>
-					<div id=pRow0 class="ProjInfoListRow" style="background:none !important;" ><div style="width:100%;"><%=DecodeChars(rs("System"))%></div></div>
+					<div id=pRow0 class="ProjInfoListRow" style="background:none !important;" ><div style="width:100%;"><%=DecodeChars(rs("Section"))%></div></div>
 					<%
 					
-					pSQL="SELECT BidItemsID, Manufacturer, ItemName, ItemDescription, IsNull(Qty,0) AS Qty, IsNull(Cost,0) AS Cost, ActualQty, editable FROM BidItems WHERE SysID="&sysId&" AND Type='Part'"
+					pSQL="SELECT BidItemsID, Manufacturer, ItemName, ItemDescription, IsNull(Qty,0) AS Qty, IsNull(Cost,0) AS Cost, ActualQty, editable FROM BidItems WHERE SecID="&secId&" AND Type='Part'"
 					%><%'=pSQL%><%
 					Set pRS=Server.CreateObject("AdoDB.RecordSet")
 					pRS.Open pSQL, REDConnString
@@ -504,9 +504,9 @@ var accessUser='n8';
 		%>
 	</div>
 	
-	<div id=BidSystemsLabor>
+	<div id=BidSectionsLabor>
 		<%
-		sysListSQL="SELECT SystemID FROM Systems WHERE ProjectID="&projID&" AND ExcludeSys<1"
+		sysListSQL="SELECT SectionID FROM Sections WHERE ProjectID="&projID&" AND ExcludeSec<1"
 		Set sysListRS=Server.CreateObject("AdoDB.RecordSet")
 		sysListRS.Open sysListSQL, REDConnString
 		
@@ -521,14 +521,14 @@ var accessUser='n8';
 		Dim laborActualDollars(1024)
 		Do Until sysListRS.EOF
 			
-			SysID=sysListRS("SystemID")
+			SecID=sysListRS("SectionID")
 			
-			SQL="SELECT System, MU FROM Systems WHERE SystemID="&SysID
+			SQL="SELECT Section, MU FROM Sections WHERE SectionID="&SecID
 			%><%'=SQL%><%
 			Set rs=Server.createObject("AdoDB.RecordSet")
 			rs.Open SQL, REDConnString
 			
-			lSQL="SELECT BidItemsID, ItemName, ItemDescription, Qty, ActualQty, Cost, editable FROM BidItems WHERE SysID="&sysId&" AND Type='Labor'"
+			lSQL="SELECT BidItemsID, ItemName, ItemDescription, Qty, ActualQty, Cost, editable FROM BidItems WHERE SecID="&secId&" AND Type='Labor'"
 			%><%'=lSQL%><%
 			Set lRS=Server.CreateObject("AdoDB.RecordSet")
 			lRS.Open lSQL, REDConnString
@@ -730,9 +730,9 @@ var accessUser='n8';
 				</div>
 			</div>
 			
-			<div id=BidSystemsTravel>
+			<div id=BidSectionsTravel>
 				<%
-				tSQL="SELECT ExpenseID, SubType, Origin, Destination, Units, ActualUnits, UnitCost, editable FROM Expenses WHERE SysID="&sysId&" AND Type='Travel'"
+				tSQL="SELECT ExpenseID, SubType, Origin, Destination, Units, ActualUnits, UnitCost, editable FROM Expenses WHERE SecID="&secId&" AND Type='Travel'"
 				%><%'=tSQL%><%
 				Set tRS=Server.CreateObject("AdoDB.RecordSet")
 				tRS.Open tSQL, REDConnString
@@ -829,9 +829,9 @@ var accessUser='n8';
 				</div>
 			</div>
 			
-			<div id=BidSystemsEquipment >
+			<div id=BidSectionsEquipment >
 				<%
-				eSQL="SELECT ExpenseID, SubType, Units, ActualUnits, UnitCost, editable FROM Expenses WHERE SysID="&sysId&" AND Type='Equip'"
+				eSQL="SELECT ExpenseID, SubType, Units, ActualUnits, UnitCost, editable FROM Expenses WHERE SecID="&secId&" AND Type='Equip'"
 				%><%'=eSQL%><%
 				Set eRS=Server.CreateObject("AdoDB.RecordSet")
 				eRS.Open eSQL, REDConnString
@@ -909,9 +909,9 @@ var accessUser='n8';
 				</div>
 			</div>
 			
-			<div id=BidSystemsOther>
+			<div id=BidSectionsOther>
 				<%
-				oSQL="SELECT ExpenseID, SubType, Units, ActualUnits, UnitCost, editable FROM Expenses WHERE SysID="&sysId&" AND Type='OH'"
+				oSQL="SELECT ExpenseID, SubType, Units, ActualUnits, UnitCost, editable FROM Expenses WHERE SecID="&secId&" AND Type='OH'"
 				%><%'=oSQL%><%
 				Set oRS=Server.CreateObject("AdoDB.RecordSet")
 				oRS.Open oSQL, REDConnString
@@ -971,10 +971,10 @@ var accessUser='n8';
 	</script>
 </div>
 
-<div id=SystemsBar class="Toolbar">
+<div id=SectionsBar class="Toolbar">
 	<button id=ReloadFrame class=tButton0x24 onClick="window.location=window.location;" style="float:right; margin:3px 1% 0 0; position:relative; "/>
 		<img src="../Images/reloadblue24.png" style="float:left; height:20px; margin:0; width:20px;"/>
-		<div style="float:left; font-size:16px;">&nbsp;Reload: <%=System%></div>
+		<div style="float:left; font-size:16px;">&nbsp;Reload: <%=Section%></div>
 	</button>
 	
 	<div id=budgetStatus class="fR taR w20p" style="line-height:32px; margin-right:16px;" >
@@ -982,26 +982,26 @@ var accessUser='n8';
 		<span id=plusMinus class=total></span>
 		<span id=diff class=total></span>
 	</div>
-	<div id=ActualTotal class="total taR" title="Actual for <%=System%>" align=right style=" width:20%;"></div>
-	<div id=SystemTotal class="total taR" title="Budget for <%=System%>" align=right style=" width:20%;"></div>
-	<!--small style="float:left; padding:5px 0 0 0; width:7%;"><b>Systems:</b></small>
+	<div id=ActualTotal class="total taR" title="Actual for <%=Section%>" align=right style=" width:20%;"></div>
+	<div id=SectionTotal class="total taR" title="Budget for <%=Section%>" align=right style=" width:20%;"></div>
+	<!--small style="float:left; padding:5px 0 0 0; width:7%;"><b>Sections:</b></small>
 	<div id=systemLinkList >
-		<select id=systemList onChange="parent.loadSystem(SelI(this.id).value);" style="width:100%; font-size:18px; opacity:.6;"> 
+		<select id=systemList onChange="parent.loadSection(SelI(this.id).value);" style="width:100%; font-size:18px; opacity:.6;"> 
 		<%
-		'SQL1="SELECT System, SystemID FROM Systems WHERE ProjectID="&projId
+		'SQL1="SELECT Section, SectionID FROM Sections WHERE ProjectID="&projId
 		'Set rs1=Server.createObject("Adodb.Recordset")
 		'rs1.open SQL1, REDConnstring
 		'
 		'Do Until rs1.eof
-		'	If rs1("SystemID")=sysId Then 
+		'	If rs1("SectionID")=secId Then 
 		'		s="font-size:16px; font-weight:bold; font-size:15px;"
 		'		selected="selected"
 		'	else 
 		'		selected=""
 		'		s=""
 		'	End If
-		'	'% ><a class="sysLink" onClick="parent.loadSystem(<%=rs1("SystemID")% >);" style="<%=s% >"><%=DecodeChars(rs1("System"))% ></a><%
-		'	% ><option class="sysLink" value="<%=rs1("SystemID")% >" style="<%=s% >" <%=selected% >><%=DecodeChars(rs1("System"))% ></option><%
+		'	'% ><a class="sysLink" onClick="parent.loadSection(<%=rs1("SectionID")% >);" style="<%=s% >"><%=DecodeChars(rs1("Section"))% ></a><%
+		'	% ><option class="sysLink" value="<%=rs1("SectionID")% >" style="<%=s% >" <%=selected% >><%=DecodeChars(rs1("Section"))% ></option><%
 		'	rs1.moveNext
 		'Loop
 		'Set rs1=Nothing

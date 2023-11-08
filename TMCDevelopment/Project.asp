@@ -31,7 +31,7 @@ If rs0("Projects") <> "True" Then  Response.Redirect("blank.html")
 projId=Request.QueryString("id")
 
 F="ProjName, CustomerID, CustName, Floors, SqFoot, RCSPM, BiddingDueDate, DateEnt, DateStarted, DateDue, ProjAddress, ProjCity, ProjState, ProjZip, RCSNotes, Use2010Bidder"
-F=F&",pLHeadID,pSysTotals,pLetter,pInc,pExc,pScope,pSubT,pTax,pTotal,pParts,pPartsPrice,pPartsTotal,pLabor,pLaborPrice,pLaborTotal,LicFooter"
+F=F&",pLHeadID,pSecTotals,pLetter,pInc,pExc,pScope,pSubT,pTax,pTotal,pParts,pPartsPrice,pPartsTotal,pLabor,pLaborPrice,pLaborTotal,LicFooter"
 F=F&",pLetterTitle,pPrintDate,pScopeTitle,pAddressing,pSignedTCS,pSignedCust,pBody,pLegalNotes"
 SQL="SELECT "&F&" FROM Projects WHERE ProjID="&projId
 Set rs=Server.CreateObject("Adodb.RecordSet")
@@ -45,7 +45,7 @@ Customer=DecodeChars(rs("CustName"))
 If rs("Use2010Bidder") = "True" Then useNewBidder= True Else useNewBidder=False
 
 If Customer="" Then
-	custSQL="SELECT Name FROM Contacts WHERE CustomerID=0"&rs("CustomerID")
+	custSQL="SELECT Name FROM Contacts WHERE ID=0"&rs("CustomerID")
 	Set custRS=Server.CreateObject("AdoDB.RecordSet")
 	custRS.Open custSQL, REDConnString
 	If Not custRS.EOF Then 
@@ -301,24 +301,24 @@ notesLink="<a class=editLink onClick=editNotes(this.parentNode);>Edit</a>"
 				
 				<div id=ProjInfoRight >
 					<div id=SysTitle class=ProjInfoTitle style="margin-top:1%;">
-						<div style="float:left;">Systems</div>
+						<div style="float:left;">Sections</div>
 					</div>
 					<div id=Systems class=ProjInfo height=150px style="min-height:150px; height:25%; overflow-y:scroll;">
 						<%
-						sysSQL="SELECT System, SystemID FROM Systems WHERE ProjectID="&ProjID
+						sysSQL="SELECT Section, SectionID FROM Sections WHERE ProjectID="&ProjID
 						Set sysRS=Server.createObject("Adodb.Recordset")
 						sysRS.open sysSQL, REDConnstring
 						
 						newSysStyle=""
-						newSysText="New System"
+						newSysText="New Section"
 						If sysRS.eof Then 
 							newSysStyle=" color:#a44; font-size:20px; font-weight:bold; height:32px; width:100%;"
 							newSysText="Click here to create a new system."
 						End If
 						
 						Do Until sysRS.eof
-							thisSys=DecodeChars(sysRS("System"))
-							thisSysId=sysRS("SystemID")
+							thisSys=DecodeChars(sysRS("Section"))
+							thisSysId=sysRS("SectionID")
 							
 							
 							%>
@@ -393,8 +393,8 @@ notesLink="<a class=editLink onClick=editNotes(this.parentNode);>Edit</a>"
 				<div class="fL taC w33p"></div>
 			</div>
 			<div class="fieldColumn w33p" style="height:120px; overflow-x:hidden; overflow-y:auto;">
-				<% If rs("pSysTotals")="True" then checked="checked" Else checked="" %>
-				<label class="fieldDiv"><input class=pdCheck <%=checked%> type=checkbox onChange="WSQLUBit('Projects','pSysTotals',this.checked,'ProjID',projId);" /><span>System Totals</span>
+				<% If rs("pSecTotals")="True" then checked="checked" Else checked="" %>
+				<label class="fieldDiv"><input class=pdCheck <%=checked%> type=checkbox onChange="WSQLUBit('Projects','pSecTotals',this.checked,'ProjID',projId);" /><span>System Totals</span>
 				</label>
 				<% If rs("pSubT")="True" then checked="checked" Else checked="" %>
 				<label class="fieldDiv"><input class=pdCheck <%=checked%> type=checkbox onChange="WSQLUBit('Projects','pSubT',this.checked,'ProjID',projId);" /><span>Subtotal</span>
