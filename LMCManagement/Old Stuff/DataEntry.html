@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Data Entry</title>
+
+<script type="text/javascript" src="../Modules/rcstri.js"></script>
+<script type="text/javascript" src="DataEntryJS.js"></script>
+<script type="text/javascript" src="DataEntryAJAX.js"></script>
+<SCRIPT type="text/javascript" src="../Library/dhtmlgoodies_calendar.js?random=20060118"></script>
+<!-- script type="text/javascript" src="niftycube.js"></script -->
+
+<link type="text/css" rel="stylesheet" href="DataEntryCSS.css" media="screen"/>
+<link type="text/css" rel="stylesheet" href="../Library/dhtmlgoodies_calendar.css?random=20051112" media="screen"/>
+
+<script type="text/javascript">
+	window.onload=function(){
+		GetManufList();
+		DataTabs('PartsBox','PartsTabBox')
+	}
+	function Void(){}
+</script>
+</head>
+
+<body onResize="Resize();parent.ResetLogoutTimer();" class="Body"  onmousemove="ResetLogoutTimer();" onkeyup="ResetLogoutTimer();">
+
+
+
+<div class="DataTabsBox"><!--Creates dynamic tabs-->
+
+	<div id="PartsTabBox" class="TabBox2" style="margin-left:1px;">
+    <div id="PartsTab" class="TabInner2" onClick="DataTabs('PartsBox','PartsTabBox')" onMouseOver="MouseOverTab('PartsTabBox')" onMouseOut="MouseOutTab('PartsTabBox')">Parts</div>
+	</div>
+    
+    <div id="LaborTabBox" class="TabBox2">
+			<div id="LaborTab"  class="TabInner2" onClick="DataTabs('LaborBox','LaborTabBox')" onMouseOver="MouseOverTab('LaborTabBox')" onMouseOut="MouseOutTab('LaborTabBox')">Labor</div>
+	</div>
+    
+    <div id="BidPresetTabBox" class="TabBox2">
+			<div id="BidPresetTab"  class="TabInner2" onClick="DataTabs('BidPreset','BidPresetTabBox'); LoadLists(); BidPresetList();" onMouseOver="MouseOverTab('BidPresetTabBox')" onMouseOut="MouseOutTab('BidPresetTabBox')">Bid Presets</div>
+	</div>
+    
+    <div id="GeneralTabBox" class="TabBox2">
+			<div id="GeneralTab"  class="TabInner2" onClick="DataTabs('GeneralBox','GeneralTabBox')" onMouseOver="MouseOverTab('GeneralTabBox')" onMouseOut="MouseOutTab('GeneralTabBox')">General</div>
+	</div>
+	
+	<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../TMCDevelopment/images/reloadblue24.png" width="100%" height="100%"/></button>
+</div>
+
+<div class="DataTabsBottom"></div>
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+<div id="PartsBox" class="MainBoxHidden"><!---->
+    
+	<div id="PartsEntryHead" class="PartsEntryHead">PARTS ENTRY</div> 
+    
+	<div id="PartsListBox" class="PartsListBox">
+	
+		<div id="SearchingPartsModal" class="PartEditModal" style="opacity:1;">
+			<div style=" z-index:1000000">Searching&hellip;</div><br />
+			<div id="LoadInfo" style=" z-index:1000000; font-size:12px;"></div><br />
+			<img name="" src="../../TMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" /><br />
+			<button onClick="Gebi('SearchingPartsModal').style.display='none';" style="width:128px; z-index:1000000; font-size:10px;">I'm impatient</button>
+		</div>
+
+	
+		<div id="PartsListSearchBox" class="PartsListSearchBox">
+			<div id="AddPartBoxTitle" class="AddPartBoxTitle">SEARCH</div>
+			<div class="AddPartBoxSearchTxt">
+				<input id="SearchPartsTxt" type="text" size="12" maxlength="12" style="float:left; padding:0; margin:0; height:18px;" />
+				<button style="font-size:12px; padding:0; margin:0 0 0 1px; float:left; font-weight:bold; height:22px;" onClick="SearchParts(0);">&nbsp;Go&nbsp;</button>
+			</div>
+			<input onClick="//javascript:SearchParts('Manufacturer',0);"id="SearchPartsManufBtn" class="AddPartBoxSearchBtn" type="checkbox" value="" />
+			<label for="SearchPartsManufBtn" class="AddPartBoxSearchBtnText" >&nbsp;Mfr</label> &nbsp;
+			<input onClick="//javascript:SearchParts('Model',0);" id="SearchPartsModelBtn" class="AddPartBoxSearchBtn" type="checkbox" value="" />
+			<label for="SearchPartsModelBtn" class="AddPartBoxSearchBtnText">&nbsp;Model</label> &nbsp;
+			<input onClick="//javascript:SearchParts('PartNumber',0);"id="SearchPartsItemNumBtn" class="AddPartBoxSearchBtn" type="checkbox" value="" />
+			<label for="SearchPartsItemNumBtn" class="AddPartBoxSearchBtnText">&nbsp;Part#</label> &nbsp;
+			<input onClick="//javascript:SearchParts('System',0);" id="SearchPartsSystemBtn" class="AddPartBoxSearchBtn" type="checkbox" value="" />
+			<label for="SearchPartsSystemBtn" class="AddPartBoxSearchBtnText">&nbsp;System</label> &nbsp;
+			<input onClick="//javascript:SearchParts('Category1',0);" id="SearchPartsCategoryBtn" class="AddPartBoxSearchBtn" type="checkbox" value="" />
+			<label for="SearchPartsCategoryBtn" class="AddPartBoxSearchBtnText">&nbsp;Category</label> &nbsp;
+			<input onClick="//javascript:SearchParts('Vendor1',0);" id="SearchPartsVendorBtn" class="AddPartBoxSearchBtn" type="checkbox" value="" />
+			<label for="SearchPartsVendorBtn" class="AddPartBoxSearchBtnText">&nbsp;Vendor</label> &nbsp;
+			<input onClick="//javascript:SearchParts('Description',0);" id="SearchPartsDescBtn" class="AddPartBoxSearchBtn" type="checkbox" checked />
+			<label for="SearchPartsDescBtn" class="AddPartBoxSearchBtnText">&nbsp;Description</label> &nbsp;
+			<input onClick="ClearPartsList();" style="margin-left:25px;" id="SearchPartsClearBtn" class="AddPartBoxSearchBtn" type="button" value="Clear All" />
+			<button id="NewPart" class="PartEntryBtnR" onClick="NewPart();">New Part</button>
+		</div>
+		
+		<div class="AddPartBoxScrollHead">
+			<div class="PartsListHead" style="width:22px;">Del</div>
+			<div class="PartsListHead" style="width:37px; border-left: 1px solid #000;">Edit</div>
+			<div class="PartsListHead" style="width:70px; border-left: 1px solid #000;">Manufacturer</div>
+			<div class="PartsListHead" style="width:70px; border-left: 1px solid #000;">Model</div>
+			<div class="PartsListHead" style="width:100px; border-left: 1px solid #000;">Part #</div>
+			<div class="PartsListHead" style="width:75px; border-left: 1px solid #000;">System</div>
+			<div class="PartsListHead" style="width:110px; border-left: 1px solid #000;">Category 1</div>
+			<div class="PartsListHead" style="width:65px; border-left: 1px solid #000;">Vendor 1</div>
+			<div class="PartsListHead" style="width:65px; border-left: 1px solid #000;">Cost</div>
+			<div class="PartsListHead" style="width:30px; border-left: 1px solid #000; display:inline;">Labor</div>
+			<div class="PartsListHead" style="width:32%; border-left: 1px solid #000; display:inline;">Description</div>
+		</div>
+		
+		<div id="AddPartBoxScroll" class="AddPartBoxScrollY"></div>
+		
+	</div><!--END PartsListBox-->
+    
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+    
+    
+
+    <div id="PartEditModal" class="PartEditModal"></div> 
+    
+    
+    
+    
+	<div id="PartEditBox" class="PartEditBox">
+    
+		<div id="PartEditBoxHead" class="PartEditBoxHead">EDIT</div>
+            
+			<div class="PartEditL"><!--Left Box Left Column Top Box-->
+				<div class="TitleTxtDiv">Manufacturer</div>
+				<div class="TitleTxtDiv">Model</div>
+				<div class="TitleTxtDiv">Part Number</div>
+				<div class="TitleTxtDiv" style="height:58px;" >Description</div>
+				<div class="TitleTxtDiv">Bid Cost</div>
+				<div class="TitleTxtDiv">Labor Hr</div>
+				<div class="TitleTxtDiv">System</div>
+				<div class="TitleTxtDiv">Category 1</div>
+				<div class="TitleTxtDiv">Category 2</div>
+				<div class="TitleTxtDiv">Vendor 1</div>
+				<div class="TitleTxtDiv">Vendor 2</div>
+				<div class="TitleTxtDiv">Vendor 3</div>
+				<div class="TitleTxtDiv">Vendor 4</div>
+				<div class="TitleTxtDiv">Vendor 5</div>
+				<div class="TitleTxtDiv">Vendor 6</div>
+			</div>
+            
+		<div class="PartEditR"><!--Left Box Right Column Top Box-->
+                    
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+				<select style="font-size:16px;" class="SelectBox" id="Manufacturer" onChange="this.style.background='#FFF';"><option></option></select>
+			</div>
+			
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;">
+				<input  style="font-size:16px;" class="ProjInfoTxt" id="Model" type="text" maxlength="48" onChange="this.style.background='#FFF';">
+			</div>
+			
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;">
+				<input  style="font-size:16px;" class="ProjInfoTxt" id="PartNumber" type="text" maxlength="48" onChange="this.style.background='#FFF';">
+			</div>
+			
+			<div class="InputTxtDiv" style="height:60px;" >
+					<textarea style="height:55px; width:100%; border:1px solid #FFF;" id="Description" rows="4" onChange="this.style.background='#FFF';"></textarea>
+			</div>
+			
+			<div class="InputTxtDiv">
+				<div class="TxtLeft">$</div>
+				<input class="ProjInfoTxt" style="float:left; width:370px; font-weight:bold;" id="Cost" type="text" maxlength="48"
+				 onkeyUp="Validate(this);" onChange="Replace(this); this.style.background='#FFF';">
+			</div>
+			<div class="InputTxtDiv">
+				<input class="ProjInfoTxt" id="LaborValue" type="text" maxlength="48" onkeyUp="Validate(this);" onChange="Replace(this); this.style.background='#FFF';">
+			</div>
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+				<select  class="SelectBox" name="" id="System" onChange="this.style.background='#FFF';"><option></option></select>
+			</div>
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+				<select  class="SelectBox" name="" id="Category1" onChange="this.style.background='#FFF';"><option></option></select>
+			</div>
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+				<select  class="SelectBox" name="" id="Category2" onChange=""><option></option></select>
+			</div>
+                            
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+				<select  class="SelectBox2" id="Vendor1" onChange="SetDateToday('Date1'); this.style.background='#FFF';"><option></option></select>
+				<div class="TxtLeft">$</div>
+				<input class="ProjInfoTxt2" id="Cost1" type="text" maxlength="48" onkeyUp="Validate(this); SetDateToday('Date1');"
+				 onchange="Replace(this); this.style.background='#FFF';">
+				<div class="PartsInfoDate"><input class="PartsInfoTxtDate" id="Date1" type="text" maxlength="48" onChange="this.style.background='#FFF';"></div>
+				<div class="PartsInfoDateIcon">
+					<img style="cursor:pointer;"onclick="displayCalendar('Date1','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16">				</div>
+			</div>
+                            
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+			<select  class="SelectBox2" name="" id="Vendor2"  onChange="SetDateToday('Date2');"><option></option></select>
+			<div class="TxtLeft">$</div>
+			<input class="ProjInfoTxt2" name="" id="Cost2" type="text" value="" maxlength="48" onkeyUp="Validate(this);  SetDateToday('Date2');" onChange="Replace(this);">
+			<div class="PartsInfoDate"><input class="PartsInfoTxtDate" name="Date2" id="Date2" type="text" value="" maxlength="48" ></div>
+			<div class="PartsInfoDateIcon"><img style="cursor:pointer;"onclick="displayCalendar('Date2','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16"></div>
+			</div>
+			
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+			<select  class="SelectBox2" name="" id="Vendor3"  onChange="SetDateToday('Date3');"><option></option></select>
+			<div class="TxtLeft">$</div>
+			<input class="ProjInfoTxt2" name="" id="Cost3" type="text" value="" maxlength="48" onkeyUp="Validate(this); SetDateToday('Date3');" onChange="Replace(this);">
+			<div class="PartsInfoDate"><input class="PartsInfoTxtDate" name="Date3" id="Date3" type="text" value="" maxlength="48" ></div>
+			<div class="PartsInfoDateIcon"><img style="cursor:pointer;"onclick="displayCalendar('Date3','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16"></div>
+			</div>
+			
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+			<select  class="SelectBox2" name="" id="Vendor4"  onChange="SetDateToday('Date4');"><option></option></select>
+			<div class="TxtLeft">$</div>
+			<input class="ProjInfoTxt2" name="" id="Cost4" type="text" value="" maxlength="48" onkeyUp="Validate(this); SetDateToday('Date4');" onChange="Replace(this);">
+			<div class="PartsInfoDate"><input class="PartsInfoTxtDate" name="Date4" id="Date4" type="text" value="" maxlength="48" ></div>
+			<div class="PartsInfoDateIcon"><img style="cursor:pointer;"onclick="displayCalendar('Date4','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16"></div>
+			</div>
+			
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+			<select  class="SelectBox2" name="" id="Vendor5"  onChange="SetDateToday('Date5');"><option></option></select>
+			<div class="TxtLeft">$</div>
+			<input class="ProjInfoTxt2" name="" id="Cost5" type="text" value="" maxlength="48" onkeyUp="Validate(this); SetDateToday('Date5');" onChange="Replace(this);">
+			<div class="PartsInfoDate"><input class="PartsInfoTxtDate" name="Date5" id="Date5" type="text" value="" maxlength="48" ></div>
+			<div class="PartsInfoDateIcon"><img style="cursor:pointer;"onclick="displayCalendar('Date5','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16"></div>
+			</div>
+			
+			<div class="InputTxtDiv" style="text-align:right; padding-right::5px;" >
+			<select  class="SelectBox2" name="" id="Vendor6"  onChange="SetDateToday('Date6');"><option></option></select>
+			<div class="TxtLeft">$</div>
+			<input class="ProjInfoTxt2" name="" id="Cost6" type="text" maxlength="48" onkeyUp="Validate(this); SetDateToday('Date6');" onChange="Replace(this);">
+			<div class="PartsInfoDate"><input class="PartsInfoTxtDate" name="Date6" id="Date6" type="text" value="" maxlength="48" ></div>
+			<div class="PartsInfoDateIcon">
+				<img style="cursor:pointer;"onclick="displayCalendar('Date6','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16">			</div>
+			</div>
+</div>
+     
+		
+		<div id="SubPartsNote" style="display:none;">Sub-parts for this new part can be added after it is saved.</div>
+		<div class="PartsEntryBottom"><button id="SubPartsBtn" onClick="SubParts();">Included sub-parts...</button></div>		
+		<div id="PartsEntryFoot" class="PartsEntryFoot">Part # -</div> 
+		
+		
+		
+		<div class="PartsEntryBottom">
+		
+			<input style="display:none;" onClick="SaveNewPart();" id="SaveNew" class="PartEntryBtnR" type="button" value="Save" />
+			<input style="" onClick="SaveExistingPart();" id="SaveExisting" class="PartEntryBtnR" type="button" value="Update" />
+			<button id="Cancel" class="PartEntryBtnL" onClick="HidePartEditModal();">Cancel</button>
+		</div> 
+	</div><!--END PartEditBox-->
+</div>
+<!--END PartsBox--> 
+  
+  
+ 	<div id="IncludePartsBox" class="MainBoxHidden2" style="overflow:hidden; width:768px; height:475px;">
+		<div id="IncPartsSearch" class="IncPartsSearch">
+			<div style="width:100%; border-bottom:#000 1px solid;">
+				<big ><big><b id="AddPartSearchTitle">Add Parts Search:</b></big></big><br />
+			</div>
+			
+			Manufacturer:<br />
+			<input id="ipsMfr" type="text" onKeyUp="if(this.value!=''){IncludeSearchParts();}"/><br /><br />
+			Model:<br />
+			<input id="ipsModel" type="text" onKeyUp="if(this.value!=''){IncludeSearchParts();}"/><br /><br />
+			Part:<br />
+			<input id="ipsPN" type="text" onKeyUp="if(this.value!=''){IncludeSearchParts();}"/><br /><br />
+			System:<br />
+			<input id="ipsSys" type="text" onKeyUp="if(this.value!=''){IncludeSearchParts();}"/><br /><br />
+			Description:<br />
+			<input id="ipsDesc" type="text" onKeyUp="if(this.value!=''){IncludeSearchParts();}"/><br /><br />
+		</div>
+		
+		<div id="IncPartsSearchResults" class="IncPartsSearchResults">
+		<!--
+			<div id="SearchResultsModal" class="PartEditModal">
+			</div>
+			Search Results
+		-->
+			
+		</div>
+		
+		<div id="IncPartsList" class="IncPartsList">
+			List
+		</div>
+		
+		<div id="IncludedPartsBoxBottom" class="IncludedPartsBoxBottom" align="left";>
+			<button class="IncPartsDone" onClick="Gebi('IncludePartsBox').style.display='none';">Done</button>
+			<small><b>Note:</b> Included sub-parts are not shown in bid, so please include the bid cost with the main part.</small>
+		</div>
+	</div>
+ 
+  
+     
+
+  
+  
+  
+  
+  
+<div id="LaborBox" class="MainBoxHidden"><!--Creates the Tabs for The Estimate-->
+
+
+
+	Labor</div>     
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<div id="BidPreset" class="MainBoxHidden"><!--BidPreset TAB Page-->
+ 
+ 
+ 
+     <div id="BidPresetModal" class="BidPresetModal">    </div> 
+    
+     
+    
+
+ 
+        <div id="BidPresetNewBox" class="BidPresetNewBox">
+    
+        
+            <div id="" class="BidPresetNewBoxTop">Create A New Preset</div>
+                
+                <br />
+                <div id="" class="BidPresetLBottomTop">
+                    <div class="BidPresetLTitle">Preset Name</div>
+                    <div class="BidPresetLTxtBox"><input name="PresetNameTxtNew" id="PresetNameTxtNew" type="text"/></div>
+                </div>
+                <br />
+                <div id="" class="BidPresetLBottomTop">
+                    <div class="BidPresetLTitle">System Type</div>
+                    <div class="BidPresetLTxtBox"><select name="SystemTypesNew" id="SystemTypesNew"></select></div>
+                </div>
+                <br />
+                
+             <div id="" class="BidPresetNewBoxBottom">
+                <div id="" class="BidPresetNewBoxBottomL"><button onClick="BidPresetsNewCancel();" >Cancel</button></div>
+                <div id="" class="BidPresetNewBoxBottomR"><button onClick="BidPresetNew();">Save</button></div>
+             </div>   
+        </div> 
+    
+    
+    
+    
+        <div id="AddPartContainer" class="AddPartContainer"> 
+            
+            <div id="AddPartBox" class="AddPartBox">
+             
+                <div id="AddPartBoxTitle1" class="AddPartBoxTitle1">PARTS LIST SEARCH</div>
+                <div id="AddPartBoxSearch1" class="AddPartBoxSearch1">
+                    <div id="AddPartBoxClose1" class="AddPartBoxClose1" onClick=""><button onClick="BidPresetsPartsCancel();">Close</button></div>
+                    <input onClick="javascript:SearchPresetParts('Description');"name="" id=""  class="AddPartBoxSearchBtn1" type="button" value="Description" />
+                    <input onClick="javascript:SearchPresetParts('PartNumber');"name="" id=""  class="AddPartBoxSearchBtn1" type="button" value="ItemNumber" />
+                    <input onClick="javascript:SearchPresetParts('Manufacturer');"name="" id=""  class="AddPartBoxSearchBtn1" type="button" value="Manufacturer" />
+                    <div class="AddPartBoxSearchTxt1"><input name="PresetSearchPartsTx1t" id="PresetSearchPartsTx1t"type="text" size="12" maxlength="12" /></div>
+                </div>
+                
+                <div class="AddPartBoxScrollHead1">
+                    <div class="PartsListHead1" style="width:40px; padding:1px 0px 0px 3px;">Add</div>
+                    <div class="PartsListHead1" style="width:64px; border-left: 1px solid #000;">Manufacturer</div>
+                    <div class="PartsListHead1" style="width:70px; border-left: 1px solid #000;">Model</div>
+                    <div class="PartsListHead1" style="width:70px; border-left: 1px solid #000;">PartNum</div>
+                    <div class="PartsListHead1" style="width:65px; border-left: 1px solid #000;display:inline;">Cost</div>
+                    <div class="PartsListHead1" style="width:375; border-left: 1px solid #000;display:inline;">Description</div>
+                </div>
+                
+                <div id="PresetNewPartsList" class="AddPartBoxScroll1">Parts</div>
+            </div> 
+        </div>
+
+
+
+
+
+
+        <div id="AddLaborContainer" class="AddLaborContainer"> 
+            
+            <div id="AddLaborBox" class="AddLaborBox">
+             
+                <div id="AddLaborBoxTitle1" class="AddLaborBoxTitle1">LABOR LIST SEARCH</div>
+                
+                <div id="AddLaborBoxSearch1" class="AddLaborBoxSearch1">
+                    <div id="AddLaborBoxClose1" class="AddLaborBoxClose1" onClick=""><button onClick="BidPresetsLaborCancel();">Close</button></div>
+                    <input onClick="javascript:PresetSearchLabor();"name="" id=""  class="AddLaborBoxSearchBtn1" type="button" value="Labor List" />
+                    <div class="AddLaborBoxSearchTxt1"><input name="PresetSearchLaborTx1t" id="PresetSearchLaborTx1t"type="text" size="12" maxlength="12" /></div>
+                </div>
+                
+                <div class="AddLaborBoxScrollHead1">
+                    <div class="LaborListHead1" style="width:40px; padding:1px 0px 0px 3px;">Add</div>
+                    <div class="LaborListHead1" style="width:70px; border-left: 1px solid #000;">Name</div>
+                    <div class="LaborListHead1" style="width:70px; border-left: 1px solid #000;">Description</div>
+                </div>
+                
+                <div id="PresetNewLaborList" class="AddLaborBoxScroll1">Labor</div>
+            </div> 
+        </div>
+
+         
+         
+         
+         
+    
+
+	<div id="" class="BidPresetMain">
+	
+		<div id="" class="BidPresetL">
+			<div id="" class="BidPresetRTop">Existing Bid Presets</div>
+			
+			<div id="" class="BidPresetRListTop">
+				<div id="" class="BidPresetRListTopTxt" style="width:10%;">Edit</div>
+				<div id="" class="BidPresetRListTopTxt" style="width:37%; border-left:0px solid #000;">Preset Name</div>	
+				<div id="" class="BidPresetRListTopTxt" style="width:45%; border-left:0px solid #000;">System Type</div>		
+			</div>
+		
+			<div id="BidPresetRList" class="BidPresetRList"></div>
+		</div> <!--End BidPresetR-->
+	
+	
+	<div id="" class="BidPresetR">
+	
+		<div id="BidPresetLTop" class="BidPresetLTop">Edit Bid Preset</div>
+	
+		<div id="BidPresetLBottom" class="BidPresetLBottom">
+	
+			<div id="BidPresetLHeader" class="BidPresetLHeader"></div>
+	
+			<div id="" class="BidPresetLBottomTop">
+				<div class="BidPresetLTitle">Preset Name</div>
+				<div class="BidPresetLTxtBox"><input id="PresetNameTxt" type="text"  onKeyUp="UpdateText('PresetNameTxt','Text','BidPresets','BidPresetID','BidPresetName');" /></div>
+				<div id="BidPresetID" class="BidPresetLR">SHOWS THE PRESET ID</div>
+			</div>
+			
+			<div id="" class="BidPresetLBottomTop">
+				<div class="BidPresetLTitle">System Type</div>
+				<div class="BidPresetLTxtBox"><select id="SystemTypes" onChange="UpdateText('SystemTypes','List','BidPresets','BidPresetID','BidPresetSystemID');" ></select></div>
+			</div>
+	
+	
+			<div id="PrePartsTabBox" class="TabBox" style="margin-left:0px;">
+				<div id="PrePartsTab"  class="TabInner" onClick="ShowPresetParts();">Parts</div>
+			</div>
+			
+			<div id="PreLaborTabBox" class="TabBox2" style="margin-left:1px;">
+				<div id="PreLaborTab"  class="TabInner2" onClick="ShowPresetLabor();">Labor</div>
+			</div>
+			
+			<div id="PreTextTabBox" class="TabBox2" style="margin-left:1px;">
+				<div id="PreLaborTab"  class="TabInner2" onClick="ShowPresetText();">Text</div>
+			</div>
+			
+			<div class="DataTabsBottom"></div>
+	
+
+			<div id="BidPresetPartsBox" class="BidPresetPartsBox">
+				<div id="" class="BidPresetPartsBoxTop">
+					<a href="Javascript:Void();" onClick="BidPresetAddParts();">Add Parts</a>
+				</div>
+				
+				<div id="" class="BidPresetPartsBoxHead">
+					<div id="" class="BidPresetPartsBoxHeadTxt" style="width:4%;">Del</div>
+					<div id="" class="BidPresetPartsBoxHeadTxt" style="width:14.5%; border-left:1px solid #000;">Manuf</div>
+					<div id="" class="BidPresetPartsBoxHeadTxt" style="width:14.5%; border-left:1px solid #000;">Model</div>
+					<div id="" class="BidPresetPartsBoxHeadTxt" style="width:14.5%; border-left:1px solid #000;">PartNum</div>
+					<div id="" class="BidPresetPartsBoxHeadTxt" style="width:40%; border-left:1px solid #000;">Description</div>
+				</div>
+				
+				<div id="BidPresetPartsList" class="BidPresetPartsList"></div>
+			</div>
+	
+	
+			<div id="BidPresetLaborBox" class="BidPresetLaborBox">
+				
+				<div id="" class="BidPresetPartsBoxTop">
+					<a href="Javascript:Void();"  onclick="BidPresetAddLabor();">Add Labor</a>
+				</div>
+				
+				<div id="" class="BidPresetPartsBoxHead">
+					<div id="" class="BidPresetPartsBoxHeadTxt" style="width:5%;">X</div>
+					<div id="" class="BidPresetPartsBoxHeadTxt" style="width:20%; border-left:1px solid #000;">Name</div>
+					<div id="" class="BidPresetPartsBoxHeadTxt" style="width:70%; border-left:1px solid #000;">Description</div>
+				</div>
+			
+				<div id="BidPresetLaborList" class="BidPresetLaborList"></div>
+			</div>
+	
+	
+			<div id="BidPresetTextBox" class="BidPresetPartsBox" style="display:none;">
+				
+				<div class="SystemInfoRtitle">SCOPE OF WORK</div>
+				<textarea style="height:153px;" class="SystemInfoNotes" id="ScopeText" onKeyUp="UpdateText('ScopeText','Text','BidPresets','BidPresetID','Scope');"></textarea>
+				
+				<div class="SystemInfoRtitle">INCLUDES</div>
+				<textarea style="height:81px;" class="SystemInfoNotes" id="IncludesText" onKeyUp="UpdateText('IncludesText','Text','BidPresets','BidPresetID','Includes');"></textarea>
+				
+				<div class="SystemInfoRtitle">EXCLUDES</div>
+				<textarea style="height:92px;" class="SystemInfoNotes" id="ExcludesText" onKeyUp="UpdateText('ExcludesText','Text','BidPresets','BidPresetID','Excludes');"></textarea>
+			</div>                  
+		</div><!--End BidPresetLBottom-->
+	
+		<div id="" class="BidPresetLNew">
+			<button onClick="BidPresetsNew();" >New Preset</button>
+		</div>  
+	</div><!--End BidPresetL-->
+
+
+</div> <!--End BidPresetMain-->
+            
+            
+            
+</div> 
+<!--End BidPreset-->
+  
+   
+<div id="GeneralBox" class="MainBoxHidden"><!--Creates the Tabs for The Estimate-->General</div>
+
+<input name="HiddenPartID" id="HiddenPartID"type="hidden" value="" /> 
+  
+<script type="text/javascript">Resize();</script>   
+</body>
+</html>

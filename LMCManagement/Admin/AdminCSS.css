@@ -1,0 +1,410 @@
+@charset "utf-8";
+/* CSS Document */
+
+html,body{
+	height: 100%; width: 100%; margin:0 0 0 0;
+}
+
+a{text-decoration:underline; font-size:13px; font-family:Arial, Helvetica, sans-serif;} 
+a:link{color:#blue;}
+a:active{color:#blue;}
+a:visited{color:#blue;}
+a:hover{color:#DD00DD;}
+
+.Body {
+	width:100%; height:100%; overflow:hidden;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////////////////////////////////*/
+
+
+.DataTabsBox{
+	position:relative; height:28px; width:100%;	
+	overflow:hidden; margin:0; padding: 4px 0 30px 0; background-color:#F8F8F8; border-top:1px solid #EEE; border-bottom:3px solid #FAF8E2;
+}
+#ReloadFrame{
+	position:relative; top:0px; left:auto; float:right; font-family:Arial, Helvetica, sans-serif; padding:0; margin:0 2px 0 0; height:24px; width:24px; font-size:18px; text-align:center; vertical-align:top;
+}
+
+.DataTabsBottom{
+	position:relative; overflow:hidden; height:4px; width:100%; font-size:4px; Border:0px solid blue; margin: 0px 0px 0px 0px; /*background:#6D4358;*/
+}
+
+
+.TabBox{
+	position:relative; float:left; width: 90px; padding: 5px; margin: 6px 0px 0px 1px; padding: 3px 3px 3px 3px; background-color:#FAF8E2;
+}
+.TabBox2{
+	position:relative; float:left; width: 90px; height: 64px; padding: 5px; margin: 6px 0px 0px 1px; padding: 3px 3px 3px 3px; background-color:#A97691; color:#000; border-radius:12px; border-top:#FFF 2px solid; border-left:#FFF 2px solid; border-right:#888 1px solid;
+}
+.TabBox2:hover{border-radius:16px; margin: 2px 0 0 1px;}
+
+.VTabBox{
+	position:relative; float:left; width: 90px; padding: 5px; margin: 6px 0px 0px 1px; padding: 3px 3px 3px 3px; background-color:#FAF8E2;
+}
+.VTabBox2{
+	position:relative; float:left; width: 90px; height: 32px; padding: 5px; margin: 6px 0px 0px 1px; padding: 3px 3px 3px 3px; background-color:#B689A0; color:#000
+}
+
+.TabInner{
+	position:relative; height:14px; width:98%; margin: 4px 0px 0px 0px; padding: 0px 0px 0px 0px; cursor:pointer; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; color:#F8F8F8; text-align:center; z-index:1000;
+}
+
+.TabInner2{
+	position:relative; height:14px; width:100%; margin: 4px 0px 0px 0px; padding: 0px 0px 0px 0px; cursor:pointer; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; color:#000; text-align:center; z-index:1000;
+}
+
+
+
+
+
+
+
+
+
+.MainBox{
+	position:relative; height:95%; width: 100%; margin: 0px 0px 0px 0px; padding: 5px 5px 5px 5px; background-color:#EDE0E7; text-align:center; z-index:500;
+}
+.MainBoxHidden{
+	position:relative; display:none; width:100%; height:95%; overflow:hidden; margin: 0px 0px 0px 0px; text-align:center; z-index:500;
+}
+
+
+
+.MainTimeBox
+{
+	position:relative; height:95%; width:192px; margin: 0px 0px 0px 0px; padding: 5px 5px 5px 5px; background-color:#EDE0E7; text-align:center; z-index:500; float:left; text-align:left; height:100%; background:#F8F8F8; padding: 3px 3px 0 3px; margin-right:4px;;
+}
+
+.MainTimeBoxHiddden
+{
+	display:none; position:relative; height:95%; width:192px; margin: 0px 0px 0px 0px; padding: 5px 5px 5px 5px; background-color:#EDE0E7; text-align:center; z-index:500; float:left; text-align:left; height:100%; background:#F8F8F8; padding: 3px 3px 0 3px; margin-right:4px;;
+}
+
+
+.TimeButton{-webkit-box-sizing:border-box; width:94px; margin:0; padding:0;}
+
+.ProjList{ width:100%; overflow-y:scroll; overflow-x:hidden; font-size:14px; font-family:Arial, Verdana, Helvetica, sans-serif;}
+
+.ActiveProjList{width:100%;}
+.InactiveProjList{width:100%; display:none;}
+
+.ProjListItem
+	{width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; background:#FFDBBB; cursor:default; padding:2px 0 2px 2px; border-left:#FFF 2px solid ;}
+.ProjListItem:first-child {border-top-left-radius:12px; border-top:#FFF 2px solid;}
+.ProjListItem:last-child {border-bottom-left-radius:12px; border-bottom:#BF5B00 1px solid; }
+.ProjListItem:hover{-webkit-appearance:button; border-radius:10px;}
+
+
+
+
+
+.TimeEmpRight{
+	float:left; background:#FFF; width:100px; height:85%; overflow-x:hidden; overflow-y:hidden; white-space:nowrap; position:relative;
+}
+
+.TimeHead{
+	position:relative; overflow:hidden; white-space:nowrap; height:30px; width: 100%; margin: 0px 0px 4px 0px; padding: 4px 0px 0px 0px; font-family: Arial,Helvetica,sans-serif; font-size: 24px; font-weight:bold; text-align:left; color:#000; background-color:#E7DC8D; z-index:1100;
+}
+
+
+
+
+.EmployeeTimeBody{
+	float:left; position:relative; background:none; width:100%; overflow-y:hidden; overflow-x:hidden;
+}
+
+.ReportDiv{-webkit-box-sizing:border-box; float:left;}
+
+.EmployeeTimeList{
+	float:left; background:#F3EFC5; width:100%; height:25px; border-bottom:1px solid #000; font-size:12px; text-align:left; cursor:default;
+}
+
+.EmployeeTimeCheckBox{
+	float:left; background:none; width:20px; height:100%; border-right:1px solid #000; border-left:1px solid #000;
+}
+
+.EditTimeButton{
+	float:left; background-image:url(images/Pencil 18x18.gif); background-repeat:no-repeat; background-position:center; width:18px; height:18px; margin:3px 0px 0px 1px; position:relative; cursor:pointer;
+}
+
+.EditTimeButtonLockout{
+	float:left; background-image:url(../../TMCDevelopment/Images/NoEdit.gif); background-position:center; background-repeat:no-repeat; width:20px; height:20px; margin:3px 0px 0px 0px; position:relative;
+
+}
+
+.EmployeeTimeDate{
+	float:left; background:none; width:63px; height:22px; border-left:1px solid #000; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 0px; text-align:center;
+}
+
+.EmployeeTimeTimeIn{
+	float:left; background:none; width:35px; height:22px; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 5px;
+}
+
+.EmployeeTimeTimeOut{
+	float:left; background:none; width:35px; height:22px; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 5px;
+}
+
+.EmployeeTimeTotalHrs{
+	float:left; background:none; width:35px; height:22px; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 5px;
+}
+
+.EmployeeTimeJobName{
+	float:left; background:none; width:160px; height:22px; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 5px;
+}
+.EmployeeTimeSup{
+	float:left; background:none; width:107px; height:22px; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 5px;
+}
+
+.EmployeeTimeJobPhase{
+	float:left; background:none; width:50px; height:22px; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 5px;
+}
+
+.EmployeeTimeJobType{
+	float:left; background:none; width:58px; height:22px; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 5px;
+}
+
+.EmployeeTimeDescription{
+	float:left; background:none; width:208px; height:22px; border-right:1px solid #000; overflow:hidden; padding:3px 0px 0px 5px;
+}
+.Header{
+	float:left; background:#E7DC8D; white-space:nowrap; overflow-x:visible; overflow-y:hidden; width:100%; height:20px; border:1px solid #000; box-sizing: border-box;
+}
+.HeaderDate{
+	float:left; background:none; width:63px; height:18px; border-right:1px solid #000; font-size:12px; padding:3px 0px 0px 0px;
+}
+
+.HeaderTimeIn{
+	float:left; background:none; width:40px; height:18px; border-right:1px solid #000; font-size:12px; padding:3px 0px 0px 0px;
+}
+
+.HeaderTimeOut{
+	float:left; background:none; width:40px; height:18px; border-right:1px solid #000; font-size:12px; padding:3px 0px 0px 0px;
+}
+
+.HeaderTotalHrs{
+	float:left; background:none; width:40px; height:18px; border-right:1px solid #000; font-size:12px; padding:3px 0px 0px 0px;
+}
+
+.HeaderSup{
+	float:left; background:none; width:112px; height:18px; border-right:1px solid #000; font-size:12px; padding:3px 0px 0px 0px;
+}
+
+.HeaderJobName{
+	float:left; background:none; width:165px; height:18px; border-right:1px solid #000; font-size:12px; padding:3px 0px 0px 0px;
+}
+
+.HeaderJobType{
+	float:left; background:none; width:63px; height:18px; border-right:1px solid #000; font-size:12px; padding:3px 0px 0px 0px;
+}
+
+.HeaderJobPhase{
+	float:left; background:none; width:55px; height:18px; border-right:1px solid #000; font-size:12px; padding:3px 0px 0px 0px;
+}
+
+.HeaderDescription{
+	position:relative; top:0px; float:left; background:none; width:203px; height:18px; font-size:12px; padding:3px 2% 0px 0px; text-align:center; white-space:nowrap; overflow-x:visible; overflow-y:hidden; border-right:1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.TimeFoot{
+	position:relative; overflow:hidden; white-space:nowrap; float:left; height:14px; width: 97.1%; margin: 0px 0px 0px 0px; padding: 4px 0px 0px 4px; font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-weight:bold; text-align:left; color:#FFF; background:#6D4358;
+}
+.TimeBottom{
+	position:relative; overflow:hidden; white-space:nowrap; float:left; height:25px; width: 96.2%; margin: 0px 0px 0px 0px; padding: 5px 5px 0px 5px; text-align:left; color:#FFF; background:#A97691;
+}
+
+
+
+.TitleTxtDiv{
+	position:relative; overflow:hidden; white-space:nowrap; height:22px; margin: 0px 0px 0px 0px; padding: 2px 6px 0px 0px; font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight:bold; color:#000; text-align:right; border-left:1px solid #000; border-bottom:1px solid #000; background:#F3EBEF;
+}
+
+.SelectBox{
+	position:relative; overflow:hidden; white-space:nowrap; float:left;
+    height:24px; width:100%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; z-index:1100;
+}
+.SelectBox2{
+	position:relative; overflow:hidden; white-space:nowrap; float:left;
+    height:24px; width:150px; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; z-index:1100;
+}	
+.InputTxtDiv{
+    position:relative; overflow:hidden; white-space:nowrap;
+    height:24px; width:99%; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px; border-right:1px solid #000; border-bottom:1px solid #000; background:#FFF; z-index:1100;
+}
+
+.ProjectInfoTxt{/*Text Box*/
+    overflow:hidden; white-space:nowrap; float:left; height:20px; width:96%; margin: 0px 0px 0px 0px; padding: 1px 0px 0px 4px; font-family:"Times New Roman", Times, serif; font-size: 14px; font-weight:normal; color:#000; border:1px solid #FFF; text-align:left;
+}
+.ProjectInfoTxt2{/*Text Box*/
+    overflow:hidden; white-space:nowrap; float:left; height:24px; width:100px; margin: 0px 0px 0px 0px; padding: 1px 0px 0px 4px; font-family:"Times New Roman", Times, serif; font-size: 14px; font-weight:normal; color:#000; border:1px solid #FFF; text-align:left;
+}
+.TxtLeft{/*Text Box*/
+    overflow:hidden; white-space:nowrap; float:left; font-size:13px; padding: 0px 0px 0px 4px; text-align:left;
+}
+
+/*  Employee Data +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.EmployeeHead{
+	position:absolute; top:0px; left:0px; overflow:hidden; white-space:nowrap; height:32px; width: 100%; margin: 0px 0px 0px 0px; padding: 4px 0px 4px 0px; font-size: 24px; font-weight:bold; text-align:center; color:#895671; background:none; z-index:10100;
+}
+
+
+.EmployeeData{
+	text-align:center; position:relative; overflow:hidden; white-space:nowrap; float:left; height:100%; width:100%; margin: 32px 0px 0px 0px; padding: 0px 0px 0px 0px; background:inherit; z-index:1100;
+}
+
+
+.EmployeeDL{
+	position:relative; left:14%; overflow-y:hidden; overflow-x:hidden; white-space:nowrap; float:left; height:90%; width:48%; margin: 0% 0% 0px 0%; padding: 0px 0px 1px 0px; background:inherit; border-top:#F3EBEF 2px solid; border-left:#EDE0E7 2px solid; border-bottom:#6D4358 2px solid; border-right:#A97691 2px solid; z-index:1100;
+}
+
+.EmployeeDR{
+  position:relative; left:14%; overflow-y:scroll; overflow-x:hidden; white-space:nowrap; float:left; height:90%; width:19%; padding: 0px 0px 0px 0px; background:#DEC9D3; border-top:#FCFAFB 2px solid; border-left:#F3EBEF 3px solid; border-bottom:#6D4358 2px solid; border-right:#A97691 2px solid; z-index:1100;
+}
+
+
+.EmployeeDC{
+  position:relative; overflow:hidden; white-space:nowrap; float:left;
+  height:auto; width:0%; margin: 0px 1% 0px 1%; padding: 0px 0px 0px 0px; background:inherit; z-index:1100;
+}
+
+
+.EmpDLTabs
+{
+	float:left; clear:both; width:100%; height:32px; overflow:hidden; border-bottom:#6D4358 4px solid; white-space:nowrap;
+}
+
+.EmpName
+{
+	font-family:"Courier New", Courier, monospace; font-size:15px; float:right; font-weight:bold; text-align:right; background:#DEC9D3; border-top:#6D4358 1px solid; border-right:#F3EBEF 2px solid; border-bottom:#FCFAFB 1px solid; border-left:#A97691 1px solid; padding:0 4px 0 4px; margin: 3px 3px 3px 0;
+}
+
+
+.EmpButtons1
+{
+  position:relative; float:left; width:100%; background:#DEC9D3; border-top:#FCFAFB 2px solid; border-left:#F3EBEF 2px solid; border-bottom:#6D4358 2px solid; border-right:#A97691 2px solid; padding:1px 0% 0px 0%;
+}
+
+.EmpButtons2
+{
+	vertical-align:bottom; float:right; width:29.5%; border-color:#6D4358; border-style:none; border-width:2px;
+}
+
+.EmpAccess
+{
+	overflow-y:scroll; overflow-x:hidden; width:100%; display:none; float:left;
+}
+
+.EmpInfo
+{
+	float:left; clear:both; overflow-y:scroll; overflow-x:hidden; width:100%; display:none;
+}
+
+
+.EmpTxtL
+{
+	width:30%; float:left; text-align:right; height:22px; font-family: Arial,Helvetica,sans-serif; border-color:#00FF00; border-style:hidden; border-width:2px; margin: 7px 0px 0px 0px;
+}
+
+.EmpTxtR
+{
+	width:62%; float:left; text-align:left; height:22px; font-family: Arial,Helvetica,sans-serif; border-color:#00FF00; border-style:hidden; border-width:2px; margin: 2px 0px 5px 0px;
+}
+
+.EmpListItem
+{
+	float:left; clear:both; width:100%; height:18px;
+  text-align:left; position:relative; cursor:pointer; padding: 4px 0px 0px 4px;
+}
+
+
+
+
+.EmpTxt
+{
+width:99%;
+}
+
+.DateEmpTxt
+{
+width:64px;
+}
+
+.CBRow1
+{
+	position:relative; width:1px; overflow:visible; left:0px;
+}
+
+.CBRow2
+{
+	position:relative; width:1px; overflow:visible; left:10px;
+}
+
+.CBRow3
+{
+	position:relative; width:1px; overflow:visible; left:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Center50{ position:relative; width:50%; left:25%;}
+
+
+.ditch{display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

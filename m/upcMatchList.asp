@@ -3,8 +3,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--#include file="common.asp" -->
 
-<script type="text/javascript" src="../tmcManagement/modules/CommonAJAX.js"></script>
-<script type="text/javascript" src="../tmcManagement/modules/rcstri.js"></script>
+<script type="text/javascript" src="../LMCManagement/Modules/CommonAJAX.js"></script>
+<script type="text/javascript" src="../LMCManagement/Modules/rcstri.js"></script>
 
 
 <script type="text/javascript">

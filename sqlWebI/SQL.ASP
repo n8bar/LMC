@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>SQL Web Interface</title>
-<script type="text/javascript" src="./../tmcManagement/Modules/rcstri.js"></script>
+<script type="text/javascript" src="../LMCManagement/Modules/rcstri.js"></script>
 <script type="text/javascript" src="SqlAJAX.js"></script>
 <style>
 a{font-size:18px; font-family:Verdana, Arial, Helvetica, sans-serif;}

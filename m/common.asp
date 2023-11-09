@@ -149,8 +149,8 @@ Sub ContactsOptionList(Opt)
 End Sub
 
 %>
-<script type="text/javascript" src="../TMCManagement/Modules/rcstri.js?nocache=<%=timer%>"></script>
-<script type="text/javascript" src="../TMCManagement/Library/SqlAjax.js?nocache=<%=timer%>"></script>
+<script type="text/javascript" src="../LMCManagement/Modules/rcstri.js?nocache=<%=timer%>"></script>
+<script type="text/javascript" src="../LMCManagement/Library/SqlAjax.js?nocache=<%=timer%>"></script>
 <link type="text/css" rel=stylesheet href="common.css"  media="all" />
 
 <style media="all">
