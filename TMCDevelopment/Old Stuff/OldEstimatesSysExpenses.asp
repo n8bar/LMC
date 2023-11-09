@@ -1,5 +1,5 @@
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<!--#include file="../../TMC/RED.asp" -->
+<!--#include file="../../LMC/RED.asp" -->
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

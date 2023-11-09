@@ -1,4 +1,4 @@
-<!--#include file="../../TMC/RED.asp" -->
+<!--#include file="../../LMC/RED.asp" -->
 <%
 Format=lcase(Request.QueryString("Format"))
 If Format <> "html" Then Format="xml"

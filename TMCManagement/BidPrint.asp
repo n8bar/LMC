@@ -5,7 +5,7 @@
 	
 	<title>Red Oak Bid</title>
 	
-	<!--#include file="../TMC/RED.asp" -->
+	<!--#include file="../LMC/RED.asp" -->
 	<!--#include file="common.asp" -->
 	
 	<link rel=stylesheet href="Library/CSS_DEFAULTS.css" media=all>

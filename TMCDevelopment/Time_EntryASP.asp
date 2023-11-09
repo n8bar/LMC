@@ -1,4 +1,4 @@
-<!--#include file="../TMC/RED.asp" -->
+<!--#include file="../LMC/RED.asp" -->
 <%
 response.ContentType = "text/xml"
 if request.QueryString("html")=1 then response.ContentType="text/html"

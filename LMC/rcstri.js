@@ -144,8 +144,8 @@ function CharsEncode(S) {
 function CharsDecode(S) {
 	if(!S){return ''}
 	
-	S=S.replace(/&lt;/g,'<');
-	S=S.replace(/&gt;/g,'>');
+	S=S.replace(/</g,'<');
+	S=S.replace(/>/g,'>');
 	
 	S=S.replace(/<br>/g,'\r');
 	S=S.replace(/<br\/>/g,'\r');
@@ -306,7 +306,7 @@ function alpha(e,allow,obj) {
 }
 
 function a(Str){
-	return '<a href="'+Str+'">'+Str+'</a>';
+	return '<a href="../TMC/'+Str+'">'+Str+'</a>';
 }
 
 

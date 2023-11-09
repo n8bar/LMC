@@ -1,5 +1,5 @@
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-//<!-- #include file="../TMC/RED.asp" -->
+//<!-- #include file="../LMC/RED.asp" -->
 //<script> //I'm grateful I can get my IDE to play well with a javascript file that has a .asp extension
 //I'm thinking its cool how we can deprecate AJAX for Asynchronous Javascript.
 <%

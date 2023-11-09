@@ -33,7 +33,7 @@ function WaveInitialize() {
 }
 </script>
 
-<!-- #include file="../../TMC/RED.asp" -->
+<!-- #include file="../../LMC/RED.asp" -->
 
 
 </head> 

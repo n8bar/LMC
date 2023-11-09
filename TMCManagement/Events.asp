@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
-<!-- #include file="../TMC/RED.asp" -->
+<!-- #include file="../LMC/RED.asp" -->
 <!-- #include file="Common.ASP" -->
 
 <script type="text/javascript" src="Library/ListsCommon.js"></script>

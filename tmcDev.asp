@@ -63,7 +63,7 @@ strike {text-decoration:line-through;}
 	<div id=main class="shade scrollBox">
 		<h2>&nbsp;</h2>
 		<h1 onDblClick="this.innerHTML='<input id=devURL /><button onclick=nav(); >Go</button>'; devURL.focus();" >Tricom Management Center</h1>
-		<h3><!--#include file="./TMC/LoginASP.asp" --><%'=application("tmcVersion")%></h3>
+		<h3><!--#include file="LMC/LoginASP.asp" --><%'=application("tmcVersion")%></h3>
 		<h5>latest update: <%=Application("tmcBuildDate")%></h5>
 		
 		<h3>&nbsp;</h3>

@@ -133,7 +133,7 @@ End Function
 Sub LoginCheck()
 	If Session("EmpId")="" Then
 		%>
-		<script type="text/javascript" src=Library/RedAJAX.js ></script>
+		<script type="text/javascript" src=../TMC/Library/RedAJAX.js ></script>
 		<script type="text/javascript">//LoginCheck();</script>
 		<%
 		start=Timer

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Time_Entry</title>
 
-<!--#include file="../TMC/RED.asp" -->
+<!--#include file="../LMC/RED.asp" -->
 <!--#include file="common.asp" -->
 <script type="text/javascript" src="Modules/rcstri.js"></script>
 <script type="text/javascript" src="Time/Time-EntryJS.js"></script>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Contacts Search List</title>
-<!--#include file="../TMC/RED.asp" -->
+<!--#include file="../LMC/RED.asp" -->
 <%
 	SearchName=request.QueryString("SearchName")
 	SearchTxt=request.QueryString("SearchTxt")

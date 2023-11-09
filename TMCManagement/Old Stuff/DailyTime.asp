@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Daily Time</title>
 
-<!--#include file="../../TMC/RED.asp" -->
+<!--#include file="../../LMC/RED.asp" -->
 
 <script type="text/javascript" src="../Modules/rcstri.js"></script>
 <script type="text/javascript" src="../Library/SqlAjax.js"></script>

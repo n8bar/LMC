@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Labor Interface</title>
-<!--#include file="../../TMC/RED.asp" -->
+<!--#include file="../../LMC/RED.asp" -->
 <%
 	boxID=request.QueryString("BoxID")
 	modalID=request.QueryString("ModalID")

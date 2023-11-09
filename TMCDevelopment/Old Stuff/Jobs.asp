@@ -6,7 +6,7 @@
 
 <title>Jobs / Jobs</title>
 
-<!-- #include file="../../TMC/RED.asp" -->
+<!-- #include file="../../LMC/RED.asp" -->
 
 <script type="text/javascript" src="../Modules/rcstri.js"></script>
 <script type="text/javascript" src="../TMC/TMC-AJAX.js"></script>

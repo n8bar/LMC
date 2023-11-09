@@ -5,12 +5,12 @@
 REDConnString="DSN=mcbase;UID=mainuser;PWD=562.Admin;Database=MCBase"
 REDConnString="DRIVER={SQL Server};SERVER=127.0.0.1;UID=mainuser;PWD=562.Admin;DATABASE=MCBase"
 
-Application("tmcVer")="1.0.0.3047"
-Application("tmcVersion")="1.0.0.3047beta"
-Application("tmcMajorReleaseDate")="2015.10.14"
-Application("tmcMinorReleaseDate")="2015.10.14"
-Application("tmcReleaseDate")="2015.10.14"
-Application("tmcBuildDate")="2015.10.14"
+Application("lmcVer")="1.0.0.3047"
+Application("lmcVersion")="1.0.0.3047beta"
+Application("lmcMajorReleaseDate")="2015.10.14"
+Application("lmcMinorReleaseDate")="2015.10.14"
+Application("lmcReleaseDate")="2015.10.14"
+Application("lmcBuildDate")="2015.10.14"
 
 Dim GlobalCustID
 Dim sAction 
@@ -192,7 +192,7 @@ End Sub'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sub oops  () '--------------------------------------------------------------------------------------------------------
 
-response.write Application("tmcVersion")
+response.write Application("lmcVersion")
 
 End Sub '------------------------------------------------------------------------------------------------------------------------
 

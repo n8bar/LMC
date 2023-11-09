@@ -24,7 +24,7 @@
 </script>
 
 
-<!-- #include file="../../TMC/RED.asp" -->
+<!-- #include file="../../LMC/RED.asp" -->
 
 <link type="text/css" rel="stylesheet" href="../Library/CSS_DEFAULTS.css" media="screen"/>
 <link type="text/css" rel="stylesheet" href="PlansCSS.css" media="screen"/>

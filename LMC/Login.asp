@@ -5,8 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-<script type="text/javascript" src="LoginAJAX.js"></script>
-<script type="text/javascript" src="rcstri.js"></script>
+<script type="text/javascript" src="../LMC/LoginAJAX.js"></script>
+<script type="text/javascript" src="../LMC/rcstri.js"></script>
  
 <style>
 	table,tr,td,form,font,label,input,div,a,b,i { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
@@ -40,7 +40,7 @@
 		<td width="100%" height="100%" align="center" valign="middle"> 
 			<table width=768 height=768 border=0 cellpadding=0 cellspacing=0 >
 				<tr>
-					<td width="648" height="500" align="center" valign="middle" style="background:url(Logos/LovoL.png) center fixed no-repeat; "> 
+					<td width="648" height="500" align="center" valign="middle" style="background:url(../LMC/Logos/LovoL.png) center fixed no-repeat; "> 
 						<span action="javascript:Login();" method=post >
 							<div id=loginMeat>
 								<br/>
@@ -72,7 +72,7 @@
 				</tr>
 				<tr height="24" ></tr>
 				<tr height="24" >
-					<td ><!-- button class="mobile" onclick="window.top.location='../m';">TMC Mobile</button --></td>
+					<td ><!-- button class="mobile" onclick="window.top.location='../m';">LMC Mobile</button --></td>
 				</tr>
 			</table>
 		</td>

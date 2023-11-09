@@ -27,7 +27,7 @@ h1,h2,h3,h4,h5,h6 { text-align:center; width:100%; margin:4px; }
 	<div id=left class="shade20">
 	</div>
 	<div id=main class="shade35">
-	<!--#include file="../tmc/loginAsp.asp" -->
+	<!--#include file="../LMC/LoginASP.asp" -->
 	</div>
 	<div id=right class="shade20">
 		<div class="h25p w100p fL scrollBox shade" id=vHistory >

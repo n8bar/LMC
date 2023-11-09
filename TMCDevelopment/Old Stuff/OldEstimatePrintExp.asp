@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=8" />
 <title>Tricom Estimate</title>
 
-<!--#include file="../../TMC/RED.asp" -->
+<!--#include file="../../LMC/RED.asp" -->
 
 <script type="text/javascript" src="../Modules/rcstri.js"></script>
 <script type="text/javascript" src="../Modules/Num2word.js"></script>

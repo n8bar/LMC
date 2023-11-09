@@ -6,7 +6,7 @@ if Request.QueryString("HTML")=1 Then content="text/html"
 Response.ContentType=content
 
 %>
-<!-- #include file="../TMC/RED.asp" -->
+<!-- #include file="../LMC/RED.asp" -->
 <root>
 	<action><%=Request.QueryString("action")%></action>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd" >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--#include file="../TMC/RED.asp" -->
+<!--#include file="../LMC/RED.asp" -->
 
 <script type="text/javascript" src="../tmcManagement/CommonAJAX.js"></script>
 <script type="text/javascript" src="../tmcManagement/rcstri.js"></script>

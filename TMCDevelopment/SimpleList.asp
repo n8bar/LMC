@@ -24,7 +24,7 @@
 </script>
 
 
-<!-- #include file="../TMC/RED.asp" -->
+<!-- #include file="../LMC/RED.asp" -->
 
 <link rel="stylesheet" href="Library/CSS_DEFAULTS.css" media="screen"/>
 <link rel="stylesheet" href="Library/SimpleJobsCSS.css" media="screen"/>

@@ -1,4 +1,4 @@
-<!--#include file="../TMC/RED.asp" -->
+<!--#include file="../LMC/RED.asp" -->
 <!--#include file="adovbs.inc" -->
 <!DOCTYPE html>
 <html>

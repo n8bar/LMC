@@ -15,7 +15,7 @@
 <SCRIPT type="text/javascript" src="../Library/dhtmlgoodies_calendar.js?random=20060118"></script>
 <!-- script type="text/javascript" src="https://wave-api.appspot.com/public/embed.js"></script> 
 <script type="text/javascript" src="Library/WaveEmbed.js"></script>  -->
-<!-- #include file="../../TMC/RED.asp" -->
+<!-- #include file="../../LMC/RED.asp" -->
 
 <%
 	Dim ProjID:

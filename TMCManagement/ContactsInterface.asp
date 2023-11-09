@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Contacts Interface</title>
-<!--#include file="../TMC/RED.asp" -->
+<!--#include file="../LMC/RED.asp" -->
 <!--#include file="common.asp" -->
 <%
 	boxID=request.QueryString("BoxID")
