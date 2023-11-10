@@ -40,7 +40,7 @@
 		<td width="100%" height="100%" align="center" valign="middle"> 
 			<table width=768 height=768 border=0 cellpadding=0 cellspacing=0 >
 				<tr>
-					<td width="648" height="500" align="center" valign="middle" style="background:url(../LMC/Logos/LovoL.png) center fixed no-repeat; "> 
+					<td width="648"  align="center" valign="middle" style="background:url(../LMC/Logos/LovoL.png) center fixed no-repeat; "> 
 						<span action="javascript:Login();" method=post >
 							<div id=loginMeat>
 								<br/>

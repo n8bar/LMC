@@ -3,8 +3,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--#include file="../LMC/RED.asp" -->
 
-<script type="text/javascript" src="../LmcManagement/CommonAJAX.js"></script>
-<script type="text/javascript" src="../LmcManagement/rcstri.js"></script>
+<script type="text/javascript" src="../tmcManagement/CommonAJAX.js"></script>
+<script type="text/javascript" src="../tmcManagement/rcstri.js"></script>
 
 
 <script type="text/javascript">
@@ -146,29 +146,32 @@ SQL1 ="SELECT * FROM Access WHERE Password='"&Password&"' AND UserName='"&UserNa
 set rs1=Server.CreateObject("ADODB.Recordset")
 rs1.Open SQL1, REDconnstring
 
+
+%>
+</head>
+
+<body>
+<h2 align="center"><small>Tricom Management Center Mobile</small></h2>
+
+<div style="text-align:center;">
+<%
 if rs1.eof then 
-	Response.Redirect("../lmc/m.asp")
+	Response.Redirect("../tmc/m.asp")
   'Response.Write("UserName:&"UserName)
   'Response.Write("Password:&"Password)
 end if
 Dim EmpID
 EmpID = rs1("EmpID")
 Session("EmpID")=EmpID
-
 %>
-</head>
+<div>Welcome <%=UserName%>!</div><small><small><br/></small></small>
+<a href="Time.asp?EmpID=<%=EmpID%>">Time Entry</a><br />
+<a href="Inventory.asp?EmpID=<%=EmpID%>" disabled >Inventory</a><br />
+<a href="JobPacking.asp?EmpID=<%=EmpID%>" disabled >Job Packing</a><br />
+<br />
+<button id="Logout" onclick="logOut();">Logout</button>
 
-<body style=" height:100%;">
-<div style="text-align:center; height:100%;">
-	<h2 align="center"><small>Lovo Management Center Mobile</small></h2>
-	<div>Welcome <%=UserName%>!</div><small><small><br/></small></small>
-	<a href="Cal.asp?EmpID=<%=EmpID%>">Calendar</a><br />
-	<iframe style="border:none; width:100%; height:75%;" src="Cal.asp?EmpID=<%=EmpID%>"></iframe>
-	<a href="Time.asp?EmpID=<%=EmpID%>">Time Entry</a><br />
-	<a href="Inventory.asp?EmpID=<%=EmpID%>" disabled >Inventory</a><br />
-	<a href="JobPacking.asp?EmpID=<%=EmpID%>" disabled >Job Packing</a><br />
-	<br />
-	<button id="Logout" onclick="logOut();">Logout</button>
+
 </div>
 </body>
 </html>
