@@ -34,7 +34,7 @@ SQL="SELECT * FROM Calendar "&Where
 		%>DTSTART;TZID=US/PST:20130130T000000<%
 		%>SUMMARY:Appointment with Apple Support<%
 		%>UID:EC9439B1-FF65-11D6-9973-003065F99D04<%
-		%>URL;VALUE=URI:https://tmc.tricom.sc/tmcManagement/tmc.asp<%
+		%>URL;VALUE=URI:https://LMC.tricom.sc/LMCManagement/LMC.asp<%
 		%>ORGANIZER;CN="Apple Support":mailto:nateb@tricomlv.com<%
 		%>DTEND;TZID=US/PST:20130128T131500<%
 		%>LOCATION:Telephone (702-538-4595)<%

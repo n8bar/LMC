@@ -99,7 +99,7 @@ button{font-size:22px; color:#555;}
 	<label id=lNewDate for=NewDate>Date:</label>
 	<input id=NewDate onFocus="displayCalendar('NewDate','mm/dd/yyyy',NewDate);" onChange="if(this.value!=''){Gebi('Create').disabled=false; Gebi('Create').focus();}"/>
 	
-	<img id=NewDateImg onClick="displayCalendar('NewDate','mm/dd/yyyy',NewDate);" src="../../TMCDevelopment/Images/cal.gif">
+	<img id=NewDateImg onClick="displayCalendar('NewDate','mm/dd/yyyy',NewDate);" src="../../LMCDevelopment/Images/cal.gif">
 	<br/>
 	<br/>
 	<br/>
@@ -113,7 +113,7 @@ button{font-size:22px; color:#555;}
 <h2><%=ProjName%></h2>
 
 <div id=Toolbar align=Left>
-	&nbsp; &nbsp;<button id=New onClick="ShowNewReportBox();"><div class="vPadding3"></div><img id=imgPlus src="../../TMCDevelopment/images/plus_16.png"/> New</button>
+	&nbsp; &nbsp;<button id=New onClick="ShowNewReportBox();"><div class="vPadding3"></div><img id=imgPlus src="../../LMCDevelopment/images/plus_16.png"/> New</button>
 </div>
 
 <div id=Head align=Center>

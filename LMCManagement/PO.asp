@@ -338,7 +338,7 @@ For r=0 To rI
 Next
 
 Subject=Server.URLEncode("Fire Alarm Order "&PO)
-attachment=Server.URLEncode("\\tmc.tricom.sc\wwwroot\"&filename)
+attachment=Server.URLEncode("\\anc.cybercreek.us\wwwroot\"&filename)
 emailBody=Server.URLEncode("Cory,")
 emailBody=emailBody&"%0D"&Server.URLEncode("I need a Fire Alarm order entered at https://myeddie.edwardsutcfs.com/.")
 emailBody=emailBody&"%0D"&Server.URLEncode("Username: 187944")

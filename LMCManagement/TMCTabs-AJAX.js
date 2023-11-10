@@ -34,7 +34,7 @@ function getSubTabs(parentTabId)	{
 	
 	return false;
 	
-	HttpTxt='TMCTabs-ASP.asp?action=subTabs&parentTabId='+parentTabId;
+	HttpTxt='LMCTabs-ASP.asp?action=subTabs&parentTabId='+parentTabId;
 	var xhro = GetXmlHttpObject();
 	xhro.onreadystatechange = ReturnGetSubTabs;
 	xhro.open('GET',HttpTxt, false);
@@ -140,7 +140,7 @@ function getSubTabs(parentTabId)	{
 
 
 function keepAlive()	{
-	HttpText='TMCTabs-ASP.asp?action=keepAlive';
+	HttpText='LMCTabs-ASP.asp?action=keepAlive';
 	xmlHttp = GetXmlHttpObject();
 	xmlHttp.onreadystatechange = ReturnGetSubTabs;
 	xmlHttp.open('GET',HttpText, true);

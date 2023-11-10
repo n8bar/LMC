@@ -51,7 +51,7 @@ jpNotes=dcF(rs3,"notes")
 		<div><span>Job Pack#</span><%=JPID&tab&tab%></div>
 		<div><span>Ship To:</span><%=ShipToName&", "&ShipToAttn&", "&ShipToAddress&", "&ShipToCity&", "&ShipToState&" "&ShipToZip%></div>
 		<span class="fR" style="position:relative; top:-3px;">
-			<span class="tButton0x24" style="line-height:24px; overflow:hidden; margin-right:16px; width:auto;" onClick="sendJP();">&nbsp;Send&nbsp;<img class="fR h40" style="position:relative; top:-10px;" src="../../TMCDevelopment/images/ServiceVan48.png"/></span><%=indent%>
+			<span class="tButton0x24" style="line-height:24px; overflow:hidden; margin-right:16px; width:auto;" onClick="sendJP();">&nbsp;Send&nbsp;<img class="fR h40" style="position:relative; top:-10px;" src="../../LMCDevelopment/images/ServiceVan48.png"/></span><%=indent%>
 		</span>
 	</div>
 	
@@ -60,7 +60,7 @@ jpNotes=dcF(rs3,"notes")
 		<div class="w20p" >Manufacturer</div>
 		<div class="w21p">Part Number</div>
 		<div class="w11p lH12"><small>Inventory Quantity</small></div>
-		<div class="w5p p0" ><button class=tButton0x24 style="float:none;" onClick="movePart(0)"><img height=20 src="../../TMCDevelopment/images/CyanDblRight24.png"/></button></div>
+		<div class="w5p p0" ><button class=tButton0x24 style="float:none;" onClick="movePart(0)"><img height=20 src="../../LMCDevelopment/images/CyanDblRight24.png"/></button></div>
 		<div class="w16p lH12"><small>Job Pack Quantity</small></div>
 		<div class="w11p lH12"><small>Still Needed Quantity</small></div>
 		<div class="w11p lH12"><small>Sent Qty <br/> (this M.R.)</small></div>
@@ -190,7 +190,7 @@ For r=0 To rI
 				<div style="background:<%=pColor%>; width:<%=pLevel%>%; height:100%;">&nbsp;</div>
 			</div>
 		</div>
-		<div class="w5p p0 taC" ><%if invQty(r) > 0 Then %> <button class=tButton0x24 style="float:none;" onClick="movePart(<%=r%>);"><img height=20 src="../../TMCDevelopment/images/CyanDblRight24.png"/></button> <%End IF%></div>
+		<div class="w5p p0 taC" ><%if invQty(r) > 0 Then %> <button class=tButton0x24 style="float:none;" onClick="movePart(<%=r%>);"><img height=20 src="../../LMCDevelopment/images/CyanDblRight24.png"/></button> <%End IF%></div>
 		<div class="w11p h100p ffConsolas">
 			<input id=jpQty<%=r%> class="w100p h100p taR " value="<%=jPackQty(r)%>" onkeypress="onlyAccept(event,'0123456789.',this); " readonly />
 		</div>
@@ -263,7 +263,7 @@ Response.End()
 			<small id=invQty<%=r%>><%=invQty%></small>
 			<div class="w100p h3" style="border:1px #888 solid; border-radius:2px; position:relative; top:-5px; background:#000; z-index:0;" ><div style="background:<%=pColor%>; width:<%=pLevel%>%; height:100%;">&nbsp;</div></div>
 		</div>
-		<div class="w5p p0 taC" ><%if invQty > 0 Then %> <button class=tButton0x24 style="float:none;" onClick="movePart(<%=r%>);"><img height=20 src="../../TMCDevelopment/images/CyanDblRight24.png"/></button> <%End IF%></div>
+		<div class="w5p p0 taC" ><%if invQty > 0 Then %> <button class=tButton0x24 style="float:none;" onClick="movePart(<%=r%>);"><img height=20 src="../../LMCDevelopment/images/CyanDblRight24.png"/></button> <%End IF%></div>
 		<div class="w11p h100p ffConsolas">
 			<input id=jpQty<%=r%> class="w100p h100p taR " value="<%=jpQty%>" onkeypress="onlyAccept(event,'0123456789.',this); " readonly />
 		</div>
@@ -300,7 +300,7 @@ Do Until rs4.Eof
 				<small id=invQty<%=r%>><%=invQty%></small>
 				<div class="w100p h3" style="border:1px #888 solid; border-radius:2px; position:relative; top:-5px; background:#000; z-index:0;" ><div style="background:<%=pColor%>; width:<%=pLevel%>%; height:100%;">&nbsp;</div></div>
 			</div>
-			<div class="w5p p0 taC" ><%if invQty > 0 Then %> <button class=tButton0x24 style="float:none;" onClick="movePart(<%=r%>);"><img height=20 src="../../TMCDevelopment/images/CyanDblRight24.png"/></button> <%End IF%></div>
+			<div class="w5p p0 taC" ><%if invQty > 0 Then %> <button class=tButton0x24 style="float:none;" onClick="movePart(<%=r%>);"><img height=20 src="../../LMCDevelopment/images/CyanDblRight24.png"/></button> <%End IF%></div>
 			<div class="w11p h100p ffConsolas">
 				<input id=jpQty<%=r%> class="w100p h100p taR " value="<%=jpQty%>" onkeypress="onlyAccept(event,'0123456789.',this); " readonly />
 			</div>
@@ -384,7 +384,7 @@ Loop
 		<small id=invQty<%=r%>><%=invQty%></small>
 		<div class="w100p h3" style="border:1px #888 solid; border-radius:2px; position:relative; top:-5px; background:#000;" ><div style="background:<%=pColor%>; width:<%=pLevel%>%; height:100%;">&nbsp;</div></div>
 	</div>
-	<div class="w5p p0 taC" ><%if invQty > 0 Then %> <button class=tButton0x24 style="float:none;" onClick="movePart(<%=r%>);"><img height=20 src="../../TMCDevelopment/images/CyanDblRight24.png"/></button> <%End IF%></div>
+	<div class="w5p p0 taC" ><%if invQty > 0 Then %> <button class=tButton0x24 style="float:none;" onClick="movePart(<%=r%>);"><img height=20 src="../../LMCDevelopment/images/CyanDblRight24.png"/></button> <%End IF%></div>
 	<div class="w11p h100p ffConsolas">
 				<input id=jpQty<%=r%> class="w100p h100p taR " value="<%=jpQty%>" onkeypress="onlyAccept(event,'0123456789.',this); " readonly />
 	</div>

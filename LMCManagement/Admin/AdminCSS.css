@@ -131,7 +131,7 @@ a:hover{color:#DD00DD;}
 }
 
 .EditTimeButtonLockout{
-	float:left; background-image:url(../../TMCDevelopment/Images/NoEdit.gif); background-position:center; background-repeat:no-repeat; width:20px; height:20px; margin:3px 0px 0px 0px; position:relative;
+	float:left; background-image:url(../../LMCDevelopment/Images/NoEdit.gif); background-position:center; background-repeat:no-repeat; width:20px; height:20px; margin:3px 0px 0px 0px; position:relative;
 
 }
 

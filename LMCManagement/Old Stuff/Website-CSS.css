@@ -23,7 +23,7 @@ html,body{
 	margin:0px 0px 0px 0px;
 	overflow:hidden;
 	white-space: nowrap;
-	background: url('../../TMCDevelopment/images/TMCHeader.gif');
+	background: url('../../LMCDevelopment/images/LMCHeader.gif');
 }
 
 .TopMainBarL {
@@ -33,7 +33,7 @@ html,body{
 	overflow:visible;
 	margin:0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
-	/*background: url('images/TMCHeader-L.gif');/**/
+	/*background: url('images/LMCHeader-L.gif');/**/
 }	
 
 .TopMainBarR{
@@ -73,7 +73,7 @@ html,body{
 	color:#000;
 	text-align:center;
 	z-index:1000;
-	background: url('../../TMCDevelopment/images/TMCHeader.gif');
+	background: url('../../LMCDevelopment/images/LMCHeader.gif');
 	display:none;
 }
 

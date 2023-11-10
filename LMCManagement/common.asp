@@ -19,7 +19,7 @@ var sessionID=<%=Session.SessionID%>;
 //}
 //catch(e) {
 //	sessionWrite('LoginDestination',location);
-//	location='../tmc/tmc.html';
+//	location='../LMC/LMC.html';
 //}
 </script>
 

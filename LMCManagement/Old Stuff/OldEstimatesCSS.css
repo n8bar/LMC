@@ -770,7 +770,7 @@ a.RclickMenuLink:active {color: #000}
 	padding: 8px 0px 0px 0px;
 	border-radius: 16px;
 }
-.ProjTab1Text:hover{background:url(../../TMCDevelopment/images/MoneyGreenish.png);}
+.ProjTab1Text:hover{background:url(../../LMCDevelopment/images/MoneyGreenish.png);}
 
 .ProjTab2{
 	float:left;
@@ -794,7 +794,7 @@ a.RclickMenuLink:active {color: #000}
 	padding: 8px 0px 0px 0px;
 	border-radius: 16px;
 }
-.ProjTab2Text:hover{background:url(../../TMCDevelopment/images/MoneyGreenish.png);}
+.ProjTab2Text:hover{background:url(../../LMCDevelopment/images/MoneyGreenish.png);}
 
 .ProjTab3{
 	float:left;
@@ -819,7 +819,7 @@ a.RclickMenuLink:active {color: #000}
 	padding: 8px 0px 0px 0px;
 	border-radius: 8px;
 }
-.ProjTab3Text:hover{background:url(../../TMCDevelopment/images/MoneyGreenish.png);}
+.ProjTab3Text:hover{background:url(../../LMCDevelopment/images/MoneyGreenish.png);}
 
 
 .EstimateMainHeader{
@@ -888,11 +888,11 @@ a.RclickMenuLink:active {color: #000}
 	vertical-align:top;
 	z-index:10000000;
 	background:none;
-	background:url(../../TMCDevelopment/images/grayX.png);
+	background:url(../../LMCDevelopment/images/grayX.png);
 	-webkit-background-size:100%;
 	border:none;
 }
-#ExitFrame:hover{background:url(../../TMCDevelopment/images/redX.png); -webkit-background-size:100%;}
+#ExitFrame:hover{background:url(../../LMCDevelopment/images/redX.png); -webkit-background-size:100%;}
 
 
 
@@ -3753,7 +3753,7 @@ InfoLeftTabs{
 	background: #E0CFF1;
 	filter:alpha(opacity=30);
 	opacity:0.30;
-	background-image:url(../../TMCDevelopment/images/Bidlock.png);
+	background-image:url(../../LMCDevelopment/images/Bidlock.png);
 	width:50%;
 	height:95%;
 	text-align:center;

@@ -5,7 +5,7 @@
 <title>Google Logger-Inner</title>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="../../TMCDevelopment/Old Stuff/rcstri.js"></script>
+<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/rcstri.js"></script>
 <script type="text/javascript">
 //<Google Calendar biz>///////////////////////////////////////////////////////////////////////////
 var calService;
@@ -33,7 +33,7 @@ function calLogin() {
 
 var calServiceIsSetup=false;
 function setupCalService() {
-  calService = new google.gdata.calendar.CalendarService('TricomLV-TMC-2');
+  calService = new google.gdata.calendar.CalendarService('TricomLV-LMC-2');
   calLogin();
 	calServiceIsSetup=true;
 	return false;

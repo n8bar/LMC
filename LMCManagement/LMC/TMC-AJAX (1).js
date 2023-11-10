@@ -29,7 +29,7 @@ function GetViewers()
 {
 	xmlHttp = GetXmlHttpObject();
 	xmlHttp.onreadystatechange = ReturnViewers;
-	HttpText='TMC-ASP.asp?action=GetViewers'
+	HttpText='LMC-ASP.asp?action=GetViewers'
 	xmlHttp.open('GET',HttpText, false);
 	xmlHttp.send(null);
 	try{if(xmlHttp.status == 200){ReturnViewers();}}catch(e){}

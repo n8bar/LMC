@@ -3,11 +3,11 @@
 	<div class=ProjInfoHeading>
 		<div class="fL taC w33p">Letterhead</div>
 		<div class="fL taC w33p">
-			<button class="tButton24 fR mT0" onclick=showNewSys(); title="Add a System"><img src="../../TMCDevelopment/images/plus_16.PNG"></button>
+			<button class="tButton24 fR mT0" onclick=showNewSys(); title="Add a System"><img src="../../LMCDevelopment/images/plus_16.PNG"></button>
 			Systems
 		</div>
 		<div class="fL taC w33p">
-			<button class="tButton24 fR mT0" onclick=showAddCust(); title="Add a Customer"><img src="../../TMCDevelopment/images/plus_16.PNG"></button>
+			<button class="tButton24 fR mT0" onclick=showAddCust(); title="Add a Customer"><img src="../../LMCDevelopment/images/plus_16.PNG"></button>
 			Customers
 </div>
 	</div>

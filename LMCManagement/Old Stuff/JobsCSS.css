@@ -115,38 +115,38 @@ button{padding:0; margin:0; -webkit-box-sizing:border-box; -moz-box-sizing:borde
 }
 
 .ItemInfoBackground{	float:left; overflow:hidden; width:32px; 
-	height:24px; padding:0; margin:4px 0 0 0; background:url(../../TMCDevelopment/Images/OpenJobs.png) no-repeat; 
+	height:24px; padding:0; margin:4px 0 0 0; background:url(../../LMCDevelopment/Images/OpenJobs.png) no-repeat; 
 }
-div.ItemInfoBackground:Hover{background-image:url(../../TMCDevelopment/Images/OpenJobsRollover.png)}
+div.ItemInfoBackground:Hover{background-image:url(../../LMCDevelopment/Images/OpenJobsRollover.png)}
 
 
 .ItemTime{	float:left; overflow:hidden; width:24px; height:24px; 
 	text-align:center; padding:3px 2px 3px 2px; /*background:#FFF5EC; */
 	cursor:pointer;	}
 .ItemTimeBackground{	float:left; overflow:hidden; width:24px; height:24px; padding:0; 
-	background:url(../../TMCDevelopment/Images/Clock24x24.gif) no-repeat; 
+	background:url(../../LMCDevelopment/Images/Clock24x24.gif) no-repeat; 
 	background-repeat:no-repeat;	}
-div.ItemTimeBackground:Hover{background-image:url(../../TMCDevelopment/Images/Clock24x24Rollover.gif)}
+div.ItemTimeBackground:Hover{background-image:url(../../LMCDevelopment/Images/Clock24x24Rollover.gif)}
 .ItemSch{	float:left;	
 	overflow:hidden; width:24px; height:24px; 
 	text-align:center; 
 	padding:4px 2px 3px 2px; /*background:none;  */
 	cursor:pointer;	}
-.ItemSchBackground {	float:left; overflow:hidden; width:24px; height:24px; padding:0; background-image:url(../../TMCDevelopment/Images/cal24x24.gif); 
+.ItemSchBackground {	float:left; overflow:hidden; width:24px; height:24px; padding:0; background-image:url(../../LMCDevelopment/Images/cal24x24.gif); 
 }
-div.ItemSchBackground:Hover{background-image:url(../../TMCDevelopment/Images/cal24x24Rollover.gif)}
+div.ItemSchBackground:Hover{background-image:url(../../LMCDevelopment/Images/cal24x24Rollover.gif)}
 }
 .ItemAttnButton {	float:left; 
 	white-space:nowrap; 
 	width:7px; 
 	height:3.5px; 
 	padding:6px 3px 3px 3px; border-left:none; 
-	background-image:url(/WebSite/TMC/Images/down10.gif) no-repeat; overflow:visible;	}
+	background-image:url(/WebSite/LMC/Images/down10.gif) no-repeat; overflow:visible;	}
 .ItemArchiveAttn{	float:left; overflow:hidden; white-space:nowrap; width:111px; height:25px; padding:6px 0px 0px 20px; font-weight:normal; color:#000; border-left:none; 
 }
 
 .NoteID{	height:25px; width:4.5%; padding-top:6px; min-width:35px; float:left; font-family:Consolas, "Courier New", Courier, monospace; font-weight:normal; font-size:11px; text-align:center; border-left:1px solid #888; border-bottom:1px solid #888; z-index:10; cursor:default;	}
-.PlusMinus{	margin-top:3px; margin-left:3px; margin-right:2px; float:left; width:9px; height:16px; background:center url(../../TMCDevelopment/images/TreePlus.gif) no-repeat; cursor:pointer;	}
+.PlusMinus{	margin-top:3px; margin-left:3px; margin-right:2px; float:left; width:9px; height:16px; background:center url(../../LMCDevelopment/images/TreePlus.gif) no-repeat; cursor:pointer;	}
 
 .ItemJob{	width:27%; min-width:211px; height:25px; min-height:25px; padding-top:2px; float:left; overflow:visible; white-space:nowrap; font-size:16px; font-family:Arial,Helvetica,sans-serif; font-weight:500; text-overflow:ellipsis; border-left:1px solid #C0C0C0; cursor:default;	}
 .JobName{float:left; cursor:default; width:100%; max-width:166px; overflow:hidden; text-overflow:ellipsis; font-size:18px; padding-left:2px;}
@@ -157,10 +157,10 @@ div.ItemSchBackground:Hover{background-image:url(../../TMCDevelopment/Images/cal
 	cursor:pointer;	}
 .ItemManage{	width:16px; min-width:16px; height:15px; min-height:15px; float:left; overflow:hidden; white-space:nowrap; font-family:Verdana, Arial, Helvetica, sans-serif-size; font-size:11px; border-left:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0;	}
 .InnerManage{	float:left; width:15px; height:15px; font-size:10px; padding-top:0px; text-align:center; 
-	cursor:pointer; background:url(../../TMCDevelopment/images/cal15x15.gif) no-repeat center;	}
+	cursor:pointer; background:url(../../LMCDevelopment/images/cal15x15.gif) no-repeat center;	}
 .ItemSched{	width:3%; min-width:23px; height:25px; float:left; overflow:hidden; white-space:nowrap; font-family:Verdana, Arial, Helvetica, sans-serif-size; font-size:11px; border-left:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0;	}
 .InnerSched{	float:left; width:95%; height:25px; font-size:10px; padding-top:0px; text-align:center; 
-	cursor:pointer; background:url(../../TMCDevelopment/images/cal15x15.gif) no-repeat center;	}
+	cursor:pointer; background:url(../../LMCDevelopment/images/cal15x15.gif) no-repeat center;	}
 .ItemDates{	width:9.5%; min-width:74px; height:25px; float:left; overflow:hidden; white-space:nowrap; font-family:Arial,Helvetica,sans-serif; /*text-overflow:ellipsis;*/
 	font-size:13px; text-align:center; background:none; padding:0; border:none; border-left:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0; cursor:text;	}
 .ItemAttn{	width:15%; min-width:117px; height:25px; float:left; font-family:Arial,Helvetica,sans-serif; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; text-align:center; background:inherit; padding:0; border:none; border-left:1px solid #C0C0C0; border-top:0px; border-right:none; border-bottom:0px; cursor:default;	}

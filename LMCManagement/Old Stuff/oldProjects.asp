@@ -42,13 +42,13 @@
 	<div id=SchMain>
 		<div id=SchLeft>
 			<div style="width:100%;">
-				<label class=SchBoxLabel for=SchDateFrom>From:<img class=SchCal onClick="//displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" src=../../TMCDevelopment/Images/cal.gif></label>
+				<label class=SchBoxLabel for=SchDateFrom>From:<img class=SchCal onClick="//displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" src=../../LMCDevelopment/Images/cal.gif></label>
 			</div>
 			<input id=SchDateFrom class="SchBoxTxt" type="text" onFocus="displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" onChange=""/>
 			<br/>
 			
 			<div style="width:100%;">
-				<label class="SchBoxLabel" for=SchDateTo>To:<img class=SchCal onClick="//displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" src="../../TMCDevelopment/Images/cal.gif"></label>
+				<label class="SchBoxLabel" for=SchDateTo>To:<img class=SchCal onClick="//displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" src="../../LMCDevelopment/Images/cal.gif"></label>
 			</div>
 			<input id=SchDateTo class=SchBoxTxt type=text onFocus="displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" onChange=""/>
 			<br/>
@@ -125,7 +125,7 @@
 		<br/>
 		<br/>
 		<br/>
-		<img name="" src="../../TMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
+		<img name="" src="../../LMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
  
         
 
@@ -162,10 +162,10 @@
 				<option id="SortDateCompleted1" value="DateCompleted DESC">Date Completed (Latest)</option>
 			</select>
 			<button id="ReloadFrame" onClick="PGebi('ProjectsIframe').src=PGebi('ProjectsIframe').src;">
-				<img src="../../TMCDevelopment/images/reloadblue24.png" style="width:100%; height:100%"/>
+				<img src="../../LMCDevelopment/images/reloadblue24.png" style="width:100%; height:100%"/>
 			</button>
 			<button id="calAuthenticate" onClick="parent.calLogin();">
-				<img id="cAuthImg" src="../../TMCDevelopment/images/Cal24x24.gif" style="width:100%; height:100%"/>
+				<img id="cAuthImg" src="../../LMCDevelopment/images/Cal24x24.gif" style="width:100%; height:100%"/>
 			</button>
 		</div>
 							

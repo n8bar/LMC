@@ -51,7 +51,7 @@ function Load() {
 		topTab=window.top.document.getElementsByClassName('selectedMainTab'); 
 	//} 
 	//catch(e) { topTab='\\'; }
-	if(!!topTab) Gebi('path').innerHTML.replace('TMC',topTab.innerHTML);
+	if(!!topTab) Gebi('path').innerHTML.replace('LMC',topTab.innerHTML);
 	
 	Search();
 }
@@ -249,13 +249,13 @@ function Search() {
 	<div id=Top></div>
 	<div id=mainToolbar class=Toolbar style="background:none; height:48px; text-align:center; width:98%;" >
 		<% If TaskName="" Then TaskName="My ToDo" %>
-		<div id=path>&nbsp; My TMC > <%=TaskName%> > <big><b>Task List</b></big></div>
+		<div id=path>&nbsp; My LMC > <%=TaskName%> > <big><b>Task List</b></big></div>
 		<script type="text/javascript">
 			var path='';
 			var topLevel=window.top.document;
 			try { //(!!topLevel.getElementsByClassName('selectedMainTab')) {
 				path+=topLevel.getElementsByClassName('selectedMainTab')[0].innerHTML+'>';
-			} catch(e) { /*path='My TMC >'*/ }
+			} catch(e) { /*path='My LMC >'*/ }
 			path+=' <%=TaskName%> > <big><b>Task List</b></big>';
 			Gebi('path').innerHTML=path;
 		</script>

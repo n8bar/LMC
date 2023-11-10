@@ -242,7 +242,7 @@ document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[1]+'
 document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[4]+') solid; padding:3px 0 0 0;">Estimating / Sales</div>');
 //document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[5]+') solid;">Training</div>');
 document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[6]+') solid; padding:3px 0 0 0;">Products/Materials</div>');
-document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[7]+') solid; padding:3px 0 0 0;">Calendar & TMC Main</div>');
+document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[7]+') solid; padding:3px 0 0 0;">Calendar & LMC Main</div>');
 document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[8]+') solid; padding:3px 0 0 0;">Service</div>');
 document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[9]+') solid; padding:3px 0 0 0;" >Office Management</div>');
 document.write('	<div class=dBox style="color:#000; border:1px rgb('+cOrder[13]+') solid; padding:3px 0 0 0;">Engineering</div>');

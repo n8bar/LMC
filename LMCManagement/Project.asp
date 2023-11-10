@@ -4,19 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-<title>TMC Estimates</title>
-<!--#include file="../TMCDevelopment/common.asp" -->
+<title>LMC Estimates</title>
+<!--#include file="../LMCDevelopment/common.asp" -->
 
-<script type="text/javascript" src="../TMCDevelopment/Project/Project.js?nocache=<%=timer%>"></script>
-<script type="text/javascript" src="../TMCDevelopment/Project/ProjectAJAX.js?nocache=<%=timer%>"></script>
+<script type="text/javascript" src="../LMCDevelopment/Project/Project.js?nocache=<%=timer%>"></script>
+<script type="text/javascript" src="../LMCDevelopment/Project/ProjectAJAX.js?nocache=<%=timer%>"></script>
 
-<link rel=stylesheet href="../TMCDevelopment/Library/CSS_DEFAULTS.css?nocache=<%=timer%>" media=all>
-<link rel=stylesheet href="../TMCDevelopment/Project/Project.css?nocache=<%=timer%>" media=all>
+<link rel=stylesheet href="../LMCDevelopment/Library/CSS_DEFAULTS.css?nocache=<%=timer%>" media=all>
+<link rel=stylesheet href="../LMCDevelopment/Project/Project.css?nocache=<%=timer%>" media=all>
 <%
 If Session("user")="" Then 
 	QS=request.QueryString
 	If QS <> "" Then QS= "?"&QS
-	Session("LoginDestination")="../TMCManagement/Project.asp"&QS
+	Session("LoginDestination")="../LMCManagement/Project.asp"&QS
 	Response.Redirect("blank.html")
 End If
  
@@ -143,12 +143,12 @@ notesLink="<a class=editLink onClick=editNotes(this.parentNode);>Edit</a>"
  
 <div id="AddPartContainer"> 
 	<div id="AddPartTitle" onmousedown="PartsMouseDown(event)" onmouseup="PartsMouseUp(event)" onMouseMove="ModalMouseMove(event,'AddPartContainer')" onselectstart="return false;" >PARTS LIST SEARCH</div>
-	<iframe id="AddPartBox" class="AddPartBox" src="../TMCDevelopment/PartsInterface.asp?BoxID=AddPartContainer&ModalID=Modal&MM=parent.PartsMouseMove(event,'AddPartContainer')&MD=parent.PartsMouseDown(event)&MU=parent.PartsMouseUp(event)"></iframe>
+	<iframe id="AddPartBox" class="AddPartBox" src="../LMCDevelopment/PartsInterface.asp?BoxID=AddPartContainer&ModalID=Modal&MM=parent.PartsMouseMove(event,'AddPartContainer')&MD=parent.PartsMouseDown(event)&MU=parent.PartsMouseUp(event)"></iframe>
 </div>
 	
 <div id="AddLaborContainer"> 
 	<div id="AddLaborTitle" onmousedown="PartsMouseDown(event)" onmouseup="PartsMouseUp(event)" onMouseMove="ModalMouseMove(event,'AddLaborContainer')" onselectstart="return false;" >LABOR LIST SEARCH</div>
-	<iframe id="AddLaborBox" class="AddLaborBox" src="../TMCDevelopment/LaborInterface.asp?BoxID=AddLaborContainer&ModalID=Modal&MM=parent.PartsMouseMove(event,'AddLaborContainer')&MD=parent.PartsMouseDown(event)&MU=parent.PartsMouseUp(event)"></iframe>
+	<iframe id="AddLaborBox" class="AddLaborBox" src="../LMCDevelopment/LaborInterface.asp?BoxID=AddLaborContainer&ModalID=Modal&MM=parent.PartsMouseMove(event,'AddLaborContainer')&MD=parent.PartsMouseDown(event)&MU=parent.PartsMouseUp(event)"></iframe>
 </div>
 
 <div id="AddTravelContainer" class="WindowBox"> 
@@ -220,7 +220,7 @@ notesLink="<a class=editLink onClick=editNotes(this.parentNode);>Edit</a>"
 </div>
 
 <div id=pathToolbar class="Toolbar" style="background:none;">
-	<div id=path>&nbsp; Projects > <a href="../TMCDevelopment/Projects.asp">Projects Management</a> > <big><b><%=pName%></b></big></div>
+	<div id=path>&nbsp; Projects > <a href="../LMCDevelopment/Projects.asp">Projects Management</a> > <big><b><%=pName%></b></big></div>
 </div>
 
 <div id=TabsBar>
@@ -379,7 +379,7 @@ notesLink="<a class=editLink onClick=editNotes(this.parentNode);>Edit</a>"
 	</div>
 	
 	<!-- iframe id=SysPage class="tabPage" src="System.asp?projId=< %=projId%>&nocache=< %=timer%>"></iframe -->
-	<iframe id=SysPage class="tabPage" src="../TMCDevelopment/BudgetDetail.asp?projId=<%=projId%>&nocache=<%=timer%>"></iframe>
+	<iframe id=SysPage class="tabPage" src="../LMCDevelopment/BudgetDetail.asp?projId=<%=projId%>&nocache=<%=timer%>"></iframe>
 	
 	<iframe id=BOMPage class=tabPage src="" ></iframe>
 	

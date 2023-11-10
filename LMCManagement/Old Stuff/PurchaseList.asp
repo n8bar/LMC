@@ -47,8 +47,8 @@
 
 <body onLoad="SelectRow(1); onLoadJS(); ListResize();" onResize="ListResize();" onMouseMove="MouseMove(event); UpdateParentMouse();">
 
-<div id="Plus" style="background:center url(../../TMCDevelopment/images/TreePlus.gif) no-repeat; display:none;"></div>
-<div id="Minus" style="background:center url(../../TMCDevelopment/images/TreeMinus.gif) no-repeat; display:none;"></div>
+<div id="Plus" style="background:center url(../../LMCDevelopment/images/TreePlus.gif) no-repeat; display:none;"></div>
+<div id="Minus" style="background:center url(../../LMCDevelopment/images/TreeMinus.gif) no-repeat; display:none;"></div>
 
 
 <div id="ProgressMenu" class="Menu" >

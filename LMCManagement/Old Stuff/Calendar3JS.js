@@ -409,7 +409,7 @@ function showEventBubble(inst,ev,sDate,sDay,Row,Col)
 			document.getElementById('DateDayID').value =sDay;
 			
 			document.getElementById('BubbleTop').innerHTML = ('<div align="right" class="BubbleTopPlain">')+
-								  ('<div class="TopDivTopPlain"><a href="Javascript:Void()" onMouseUp="hideToolTip();"><img src="../../TMCDevelopment/Old Stuff/Images/close12X12.gif" height="12px" width-"12px" border="0"  margin="0" padding="0"/></a></div>')+
+								  ('<div class="TopDivTopPlain"><a href="Javascript:Void()" onMouseUp="hideToolTip();"><img src="../../LMCDevelopment/Old Stuff/Images/close12X12.gif" height="12px" width-"12px" border="0"  margin="0" padding="0"/></a></div>')+
 								  ('</div>');
 			document.getElementById('DayNotes').innerHTML = ('');					  
 			document.getElementById('BubbleBottom').innerHTML = ('<div class="BubbleBottomPlain"></div>');

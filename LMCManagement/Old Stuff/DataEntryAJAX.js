@@ -559,7 +559,7 @@ function IncludeSearchParts()
 function IncludePart(PN)
 {
 	var HTTP='DataEntryASP.asp?action=IncludePart&PartID='+EditPartID+'&IncPartID='+PN;
-	//Gebi('PartsEntryHead').innerHTML='<a href="../../TMCDevelopment/'+HTTP+'">IncludePart Response</a>';
+	//Gebi('PartsEntryHead').innerHTML='<a href="../../LMCDevelopment/'+HTTP+'">IncludePart Response</a>';
 	xmlHttp=GetXmlHttpObject();
 	xmlHttp.onreadystatechange=ReturnIncludePart;
 	xmlHttp.open('Get',HTTP,true);
@@ -586,7 +586,7 @@ function IncludePart(PN)
 function ExcludePart(RowID)
 {
 	var HTTP='DataEntryASP.asp?action=ExcludePart&RowID='+RowID;
-	//Gebi('PartsEntryHead').innerHTML='<a href="../../TMCDevelopment/'+HTTP+'">IncludePart Response</a>';
+	//Gebi('PartsEntryHead').innerHTML='<a href="../../LMCDevelopment/'+HTTP+'">IncludePart Response</a>';
 	xmlHttp=GetXmlHttpObject();
 	xmlHttp.onreadystatechange=ReturnExcludePart;
 	xmlHttp.open('Get',HTTP,true);
@@ -621,7 +621,7 @@ function EditPart(PartID)
 {
 	EditPartID=PartID
 	var Http='DataEntryASP.asp?action=EditPart&PartID='+EditPartID;
-	//DebugBox('<a href="../../TMCDevelopment/'+Http+'">EditPart HTTP</a>',100,100,0,0);
+	//DebugBox('<a href="../../LMCDevelopment/'+Http+'">EditPart HTTP</a>',100,100,0,0);
 	xmlHttp2=GetXmlHttpObject();
 	xmlHttp2.onreadystatechange=ReturnEditPart;
 	xmlHttp2.open('Get',Http,false);

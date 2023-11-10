@@ -265,7 +265,7 @@ if sortColumn="" Then sortColumn="projname"
 			
 			<div id=ItemJob<%=LoopNum%> class=ItemJob>
 				<!-- img id=download<%=LoopNum%> class=download Project src="../images/down_64.png" width=24 height=24 onClick="downloadClick(this,< %=ProjID%>);" / -->
-				<a class=download href="XMLX.tmcProject?action=project&id=<%=projId%>" ><img id=download<%=LoopNum%> Project src="../images/down_64.png" width=24 height=24 /></a>
+				<a class=download href="XMLX.LMCProject?action=project&id=<%=projId%>" ><img id=download<%=LoopNum%> Project src="../images/down_64.png" width=24 height=24 /></a>
 				<a id=JobName<%=LoopNum%> class=JobName href="BidProject.asp?id=<%=ProjID%>&noCache=<%=timestamp%>" target="_parent" onMouseDown="sessionWrite('ShownBids',Gebi('selShowBids').selectedIndex);" style="<%=rowSty%>" ><%=ProjName%></a>
 			</div>
 			

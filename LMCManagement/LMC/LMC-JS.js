@@ -43,7 +43,7 @@ function CreateCalendarTabs()
 		HTML+='					Gebi(\'UnderTabs\').style.background=\'#'+TAO[i][3]+'\';';
 		HTML+='					Gebi(\'UnderTabs\').innerHTML=\''+TAO[i][2]+'\';';
 		HTML+='					'+TAO[i][5]+'();"';
-		HTML+='					alert(TMC-JS.js:47);';
+		HTML+='					alert(LMC-JS.js:47);';
 		HTML+='>';
 		HTML+=	'<div style="background:url(images/BlackGradient2TLCorner24x24.gif); width:24px; height:24px; z-index:0; overflow:visible; float:left;"></div>';
 		HTML+=	'<div id="SlideTabText'+i+'" class="SlideTabText" onclick="this.parentNode.onclick();">';
@@ -435,14 +435,14 @@ function Resize()
 	//document.getElementById('LogOut').style.left=(document.body.offsetWidth);
 	TabWidth = (document.body.offsetWidth) / 10;
 	
-	var TMCH=66;
+	var LMCH=66;
 	
 	if(window.innerHeight)	{document.body.style.height=window.innerHeight+'px';}
 	
 	//alert(Gebi('Iframes').offsetHeight);
-	Gebi('Iframes').style.height=(document.body.offsetHeight-TMCH)+'px';
-	Gebi('Iframes').style.maxHeight=(document.body.offsetHeight-TMCH)+'px';
-	Gebi('Iframes').style.minHeight=(document.body.offsetHeight-TMCH)+'px';
+	Gebi('Iframes').style.height=(document.body.offsetHeight-LMCH)+'px';
+	Gebi('Iframes').style.maxHeight=(document.body.offsetHeight-LMCH)+'px';
+	Gebi('Iframes').style.minHeight=(document.body.offsetHeight-LMCH)+'px';
 	//alert(Gebi('Iframes').offsetHeight);
 	/*
 	*/

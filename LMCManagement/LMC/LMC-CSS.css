@@ -76,7 +76,7 @@ body{
 	margin:0px 0px 0px 0px;
 	overflow:hidden;
 	white-space: nowrap;
-	background: url('../../TMCDevelopment/images/TMCHeader.gif');
+	background: url('../../LMCDevelopment/images/LMCHeader.gif');
 	z-index:998;
 }
 
@@ -90,7 +90,7 @@ body{
 	overflow:visible;
 	margin:0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
-	/*background: url('images/TMCHeader-L.gif');/**/
+	/*background: url('images/LMCHeader-L.gif');/**/
 }	
 
 .TopMainBarR{
@@ -132,7 +132,7 @@ body{
 	color:#000;
 	text-align:center;
 	z-index:1000;
-	background: url('../../TMCDevelopment/images/TMCHeader.gif');
+	background: url('../../LMCDevelopment/images/LMCHeader.gif');
 	display:none;
 }
 
@@ -162,7 +162,7 @@ body{
 	border-left:1px solid #CCC; /**/
 }
 
-.SlideTab{width:4.25%; max-width:128px; float:right; cursor:pointer; height:25px; background:url(../../TMCDevelopment/images/BlackGradient2-24x24.gif);color:#DDD; height:64px; display:block;}
+.SlideTab{width:4.25%; max-width:128px; float:right; cursor:pointer; height:25px; background:url(../../LMCDevelopment/images/BlackGradient2-24x24.gif);color:#DDD; height:64px; display:block;}
 .SlideTab:hover{width:12.75%; max-width:144px;}
 
 .SlideTabText {

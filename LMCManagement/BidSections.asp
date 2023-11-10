@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-<title>TMC Estimates</title>
+<title>LMC Estimates</title>
 <!--#include file="Common.asp" -->
 
 <script type="text/javascript" src="Bid/BidProject.js"></script>
@@ -17,7 +17,7 @@
 If Session("user")="" Then
 	QS=request.QueryString
 	If QS <> "" Then QS= "?"&QS
-	Session("LoginDestination")="../TMCManagement/BidSections.asp"&QS
+	Session("LoginDestination")="../LMCManagement/BidSections.asp"&QS
 	Response.Redirect("blank.html")
 End If
 

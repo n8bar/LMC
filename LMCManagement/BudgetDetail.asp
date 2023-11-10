@@ -6,18 +6,18 @@
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 <title>Budget Detail</title>
-<!--#include file="../TMCDevelopment/common.asp" -->
+<!--#include file="../LMCDevelopment/common.asp" -->
 
-<script type="text/javascript" src="../TMCDevelopment/Project/Project.js?nocache=<%=timer%>"></script>
-<script type="text/javascript" src="../TMCDevelopment/Project/ProjectAJAX.js?nocache=<%=timer%>"></script>
+<script type="text/javascript" src="../LMCDevelopment/Project/Project.js?nocache=<%=timer%>"></script>
+<script type="text/javascript" src="../LMCDevelopment/Project/ProjectAJAX.js?nocache=<%=timer%>"></script>
 
-<link rel=stylesheet href="../TMCDevelopment/Project/Project.css?nocache=<%=timer%>" media=all >
+<link rel=stylesheet href="../LMCDevelopment/Project/Project.css?nocache=<%=timer%>" media=all >
 
 <%
 If Session("user")="" Then
 	QS=request.QueryString
 	If QS <> "" Then QS= "?"&QS
-	Session("LoginDestination")="../TMCManagement/BudgetDetail.asp"&QS
+	Session("LoginDestination")="../LMCManagement/BudgetDetail.asp"&QS
 	Response.Redirect("blank.html")
 End If
 

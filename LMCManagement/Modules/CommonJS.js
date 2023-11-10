@@ -82,7 +82,7 @@ var calFeed;
 var calServiceIsSetup=false;
 function setupCalService()
 {
-  calService = new google.gdata.calendar.CalendarService('TricomLV-TMC-2');
+  calService = new google.gdata.calendar.CalendarService('TricomLV-LMC-2');
   //calLogin(); 
 	calServiceIsSetup=true;
 	return true;

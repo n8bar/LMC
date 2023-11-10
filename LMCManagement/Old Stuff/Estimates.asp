@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-<title>TMC Estimates</title>
+<title>LMC Estimates</title>
 
 <script type="text/javascript">var InsideFrame=false;</script>
 
@@ -93,12 +93,12 @@ ProjId:<%=Request.QueryString("ProjId")%>
 				
 				<label class="TitleText11B" style="float:left; margin:0; width:52px; padding:6px 0 0 4px;" for="SearchDateFrom">Between:</label>
 				<input id="SearchDateFrom" onChange="GetProjects();" onFocus="SwitchToProjView();" style="float:left; width:128px;" value="1/1/1900"/>
-				<img class=DateButton onClick="PGebi('oldBidderFrame').style.display='none'; displayCalendar('SearchDateFrom','mm/dd/yyyy',this);" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16" />
+				<img class=DateButton onClick="PGebi('oldBidderFrame').style.display='none'; displayCalendar('SearchDateFrom','mm/dd/yyyy',this);" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16" />
 				<br/>
 				
 				<label class="TitleText11B" style="float:left; margin:0; width:52px; padding:6px 0 0 4px;" for="SearchDateTo"><div style="float:right;">and:</div></label>
 				<input id="SearchDateTo" onChange="GetProjects();" onFocus="SwitchToProjView();" style="float:left; width:128px;"/>
-				<img class=DateButton onClick="PGebi('oldBidderFrame').style.display='none'; displayCalendar('SearchDateTo','mm/dd/yyyy',this);" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16" />
+				<img class=DateButton onClick="PGebi('oldBidderFrame').style.display='none'; displayCalendar('SearchDateTo','mm/dd/yyyy',this);" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16" />
 				<script type="text/javascript">var Today=new Date; Gebi('SearchDateTo').value=(Today.getMonth()+1)+'/'+Today.getDate()+'/'+Today.getFullYear(); </script>
 				<br/>
 				<br/>
@@ -238,7 +238,7 @@ ProjId:<%=Request.QueryString("ProjId")%>
 
 	<div class="">
 		<input class="" name="NewSysDate" id="NewSysDate" type="text" value="" maxlength="48" />
-		<img style="cursor:pointer;"onclick="displayCalendar('NewSysDate','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16">	</div>
+		<img style="cursor:pointer;"onclick="displayCalendar('NewSysDate','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16">	</div>
 
 	<div class="NewSystemTitles">Profit</div>
 	<div id="" class=""><input class=""  style="width:50px;" name="NewSysMU" id="NewSysMU" type="text" value="100" maxlength="20"  ></div>
@@ -266,7 +266,7 @@ ProjId:<%=Request.QueryString("ProjId")%>
 		<br/>
 		<br/>
 		<br/>
-		<img name="" src="../../TMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
+		<img name="" src="../../LMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
 		
 		<div class="EstimateMainHeader"> 
 			<div id="EstTopInfo3" class="ProjectMainHeaderTxt"></div>
@@ -274,7 +274,7 @@ ProjId:<%=Request.QueryString("ProjId")%>
 			<div id="EstTopInfo2" class="ProjectMainHeaderTxt"></div>
 			<div class="ProjectMainHeaderTxt">&nbsp;/&nbsp;</div>
 			<div id="EstTopInfo1" class="ProjectMainHeaderTxt"></div>
-			<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../TMCDevelopment/images/reloadblue24.png" width="100%" height="100%"/></button>
+			<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCDevelopment/images/reloadblue24.png" width="100%" height="100%"/></button>
 		</div>
 				
 		<div id="ProjectBox" class="ProjectBox">
@@ -650,7 +650,7 @@ ProjId:<%=Request.QueryString("ProjId")%>
 				<div class="PrintSetupTitles">Date</div>
 				<div class="PrintSetupTextInput">
 					<input name="PrintDate" id="PrintDate" type="text" value="" onChange="UpdateText('PrintDate','Text','ProjectPrint','ProjectID','PrintDate');"/>
-					<img style="cursor:pointer;"onclick="displayCalendar('PrintDate','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16">				</div>
+					<img style="cursor:pointer;"onclick="displayCalendar('PrintDate','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16">				</div>
 			</div>
 		</div><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
@@ -710,7 +710,7 @@ ProjId:<%=Request.QueryString("ProjId")%>
 			<br/>
 			<br/>
 			<br/>
-		<img name="" src="../../TMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
+		<img name="" src="../../LMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
 
 	<div class="SysTabsBox">
 		<div id="InfoTab" onClick="ShowSysTab(this.id)" class="SystemTab1" onMouseOver="MouseOverTab(this.id)" onMouseOut="MouseOutTab(this.id)">Information</div>
@@ -994,7 +994,7 @@ ProjId:<%=Request.QueryString("ProjId")%>
 	<div style="text-align:center;">
 		<div style="float:left; width:128px;">on <input id="ObtainDate" type="text" style="width:80%;" /></div>
 		<div style="float:left; margin-top:3px; height:20px;">
-			<img style="cursor:pointer; float:right" onClick="displayCalendar('ObtainDate','mm/dd/yyyy',this);" src="../../TMCDevelopment/Images/cal.gif" width="16" height="16">
+			<img style="cursor:pointer; float:right" onClick="displayCalendar('ObtainDate','mm/dd/yyyy',this);" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16">
 		</div>
 	</div><!--
 	<hr/>

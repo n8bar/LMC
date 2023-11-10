@@ -164,15 +164,15 @@ button div{float:left; height:100%; vertical-align:middle;}
 </div>
     
 <div id=Toolbar class="Toolbar" style="position:relative; top:-8px;" align=Left>
-	<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../TMCDevelopment/images/reloadblue24.png" width="100%" height="100%"></button>
+	<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCDevelopment/images/reloadblue24.png" width="100%" height="100%"></button>
 	
-	<button id=Back onClick="PGebi('PurchasingIframe').src='Purchase.html';"><img style="width:16px; height:16px;" src="../../TMCDevelopment/images/GreenLeftTriangle.png"/><div>Back 2 Purchasing Jobs</div></button>
+	<button id=Back onClick="PGebi('PurchasingIframe').src='Purchase.html';"><img style="width:16px; height:16px;" src="../../LMCDevelopment/images/GreenLeftTriangle.png"/><div>Back 2 Purchasing Jobs</div></button>
 	<span class="tSpacerLine" style="position:relative; top:-4px; margin-right:5px;"></span>
-	<button id=New onClick="ShowNewPOBox();"><img id=imgPlus src="../../TMCDevelopment/images/plus_16.png"/><div>New</div></button>
+	<button id=New onClick="ShowNewPOBox();"><img id=imgPlus src="../../LMCDevelopment/images/plus_16.png"/><div>New</div></button>
 	<%
-	If BomIsGenerated="True" Then%><button id=New onClick="GeneratePOs(<%=ProjID%>);"><img id=imgPlus src="../../TMCDevelopment/images/plus_16.png"/><div>Generate P.O.'s from Bill of Materials.</div></button>
+	If BomIsGenerated="True" Then%><button id=New onClick="GeneratePOs(<%=ProjID%>);"><img id=imgPlus src="../../LMCDevelopment/images/plus_16.png"/><div>Generate P.O.'s from Bill of Materials.</div></button>
 	<%End If%>
-    <button id=New onClick="DelSelected();"><img id=imgMinus src="../../TMCDevelopment/images/minus_16.png"/><div>Delete Selected</div></button>
+    <button id=New onClick="DelSelected();"><img id=imgMinus src="../../LMCDevelopment/images/minus_16.png"/><div>Delete Selected</div></button>
 </div>
 
 <div id=Head align=Center>

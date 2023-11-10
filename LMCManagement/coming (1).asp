@@ -7,7 +7,7 @@
 	a {font-weight:bold;}
 	a:link	{	color:#a00;	}
 	a:visited	{	color:#fe0;	}
-	a:hover	{	color:#030; cursor:url(../TMCDevelopment/try.cur); text-shadow:#0f0 0 0 10px;	}
+	a:hover	{	color:#030; cursor:url(../LMCDevelopment/try.cur); text-shadow:#0f0 0 0 10px;	}
 	
 	body {background:#666; color:white;}
 	
@@ -18,8 +18,8 @@
 <body>
 	<center>
 		<br/>
-		<img alt="Under Construction" src="../TMCDevelopment/../Images/Icons/Tools/construction-cone-icon.png" width="32" height="32"   style="top:53px; left:77px;" />
-		<img alt="Under Construction" src="../TMCDevelopment/../Images/Icons/Tools/lightning-sign-icon.png"    width="48" height="48"   style="top:48px; left:96px;" /><img alt="Under Construction" src="../Images/Icons/Tools/lightning-sign-icon.png"    width="64" height="64"   style="top:49px; left:137px;" /><img alt="Under Construction" src="../Images/Icons/Tools/lightning-sign-icon.png"    width="88" height="88"   style="top:57px; left:206px;" /><img alt="Under Construction" src="../Images/Icons/Tools/lightning-sign-icon.png"    width="128" height="128" style="top:82px; left:316px;" /><img alt="Under Construction" src="../Images/Icons/Tools/construction-cone-icon.png" width="104" height="104" style="top:167px; left:478px;" />
+		<img alt="Under Construction" src="../LMCDevelopment/../Images/Icons/Tools/construction-cone-icon.png" width="32" height="32"   style="top:53px; left:77px;" />
+		<img alt="Under Construction" src="../LMCDevelopment/../Images/Icons/Tools/lightning-sign-icon.png"    width="48" height="48"   style="top:48px; left:96px;" /><img alt="Under Construction" src="../Images/Icons/Tools/lightning-sign-icon.png"    width="64" height="64"   style="top:49px; left:137px;" /><img alt="Under Construction" src="../Images/Icons/Tools/lightning-sign-icon.png"    width="88" height="88"   style="top:57px; left:206px;" /><img alt="Under Construction" src="../Images/Icons/Tools/lightning-sign-icon.png"    width="128" height="128" style="top:82px; left:316px;" /><img alt="Under Construction" src="../Images/Icons/Tools/construction-cone-icon.png" width="104" height="104" style="top:167px; left:478px;" />
 	</center>
 	<p><br/>
 		<br/>

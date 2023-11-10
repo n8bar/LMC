@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
-	<title>TMC Contacts</title>
+	<title>LMC Contacts</title>
 	<!--#include file="Common.asp" -->
 	<script type="text/javascript" src="Contacts/Contacts_JS.js"></script>
 	<script type="text/javascript" src="Contacts/Contacts_AJAX.js"></script>
