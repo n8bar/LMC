@@ -359,11 +359,11 @@ width:100%; height:24px; float:left; clear:both; cursor:pointer;
 }
 .HeadSched   {
 	position:relative; float:left; overflow:hidden; white-space: nowrap; width:2.5%; min-width:19px; height:100%; font-size: 13px;    
-	text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../TMCDevelopment/images/calendar-background-icon16.png) center no-repeat; vertical-align:middle;
+	text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../LMCDevelopment/images/calendar-background-icon16.png) center no-repeat; vertical-align:middle;
 }
 .HeadPO   {
 	position:relative; float:left; overflow:hidden; white-space: nowrap; width:2.5%; min-width:19px; height:100%; font-size: 13px;    
-	text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../TMCDevelopment/images/Pencil-gray16.png) center no-repeat; vertical-align:middle;
+	text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../LMCDevelopment/images/Pencil-gray16.png) center no-repeat; vertical-align:middle;
 }
 .HeadNum    {
 	position:relative;
@@ -535,10 +535,10 @@ width:100%; height:24px; float:left; clear:both; cursor:pointer;
 	width:26px;   
 	height:24px;  
 	padding:0px 0px 0px 0px;  
-	background: url(../../TMCDevelopment/Images/Archive2.gif) no-repeat; 
+	background: url(../../LMCDevelopment/Images/Archive2.gif) no-repeat; 
 	cursor:pointer; 
 }
-div.ItemArchiveButton:Hover{background-image:url(../../TMCDevelopment/Images/Archive2Rollover.gif)}
+div.ItemArchiveButton:Hover{background-image:url(../../LMCDevelopment/Images/Archive2Rollover.gif)}
 
 .ArchivedPurchaseItemArchiveButton{
 	float:left;  
@@ -547,7 +547,7 @@ div.ItemArchiveButton:Hover{background-image:url(../../TMCDevelopment/Images/Arc
 	width:26px;   
 	height:24px;  
 	padding:0px 0px 0px 0px;  
-	background: url(../../TMCDevelopment/Images/Arrow20X25L.gif) no-repeat; 
+	background: url(../../LMCDevelopment/Images/Arrow20X25L.gif) no-repeat; 
 	cursor:pointer;
 }
 
@@ -569,9 +569,9 @@ div.ItemArchiveButton:Hover{background-image:url(../../TMCDevelopment/Images/Arc
 	height:24px;  
 	padding:0px 0px 0px 0px;
 	margin:4px 0 0 0;
-	background: url(../../TMCDevelopment/Images/OpenPurchase.png) no-repeat; 
+	background: url(../../LMCDevelopment/Images/OpenPurchase.png) no-repeat; 
 }
-div.ItemInfoBackground:Hover{background-image:url(../../TMCDevelopment/Images/OpenPurchaseRollover.png)}
+div.ItemInfoBackground:Hover{background-image:url(../../LMCDevelopment/Images/OpenPurchaseRollover.png)}
 
 
 .ItemTime{
@@ -590,10 +590,10 @@ div.ItemInfoBackground:Hover{background-image:url(../../TMCDevelopment/Images/Op
 	width:24px;
 	height:24px;  
 	padding:0px 0px 0px 0px; 
-	background:url(../../TMCDevelopment/Images/Clock24x24.gif) no-repeat; 
+	background:url(../../LMCDevelopment/Images/Clock24x24.gif) no-repeat; 
 	background-repeat:no-repeat;
 }
-div.ItemTimeBackground:Hover{background-image:url(../../TMCDevelopment/Images/Clock24x24Rollover.gif)}
+div.ItemTimeBackground:Hover{background-image:url(../../LMCDevelopment/Images/Clock24x24Rollover.gif)}
 .ItemSch{
 	float:left;	
 	overflow:hidden;  
@@ -610,9 +610,9 @@ div.ItemTimeBackground:Hover{background-image:url(../../TMCDevelopment/Images/Cl
 	width:24px;   
 	height:24px;  
 	padding:0px 0px 0px 0px;  
-	background-image:url(../../TMCDevelopment/Images/cal24x24.gif); 
+	background-image:url(../../LMCDevelopment/Images/cal24x24.gif); 
 }
-div.ItemSchBackground:Hover{background-image:url(../../TMCDevelopment/Images/cal24x24Rollover.gif)}
+div.ItemSchBackground:Hover{background-image:url(../../LMCDevelopment/Images/cal24x24Rollover.gif)}
 .ItemAttn{
 	float:left;  
 	overflow: visible;  
@@ -631,7 +631,7 @@ div.ItemSchBackground:Hover{background-image:url(../../TMCDevelopment/Images/cal
 	height:3.5px; 
 	padding:6px 3px 3px 3px;  
 	border-left:none; 
-	background-image: url(/WebSite/TMC/Images/down10.gif) no-repeat;
+	background-image: url(/WebSite/LMC/Images/down10.gif) no-repeat;
 	overflow:visible;
 }
 .ItemArchiveAttn{
@@ -668,7 +668,7 @@ div.ItemSchBackground:Hover{background-image:url(../../TMCDevelopment/Images/cal
 	float:left;
 	width:9px;
 	height:9px;
-	background:center url(../../TMCDevelopment/images/TreePlus.gif) no-repeat;
+	background:center url(../../LMCDevelopment/images/TreePlus.gif) no-repeat;
 	cursor:pointer;
 }
 
@@ -732,7 +732,7 @@ div.ItemSchBackground:Hover{background-image:url(../../TMCDevelopment/Images/cal
 	padding-top:0px;
 	text-align:center; 
 	cursor:pointer;
-	background:url(../../TMCDevelopment/images/cal15x15.gif) no-repeat center;
+	background:url(../../LMCDevelopment/images/cal15x15.gif) no-repeat center;
 }
 .ItemPO{
 	width:2.5%;
@@ -756,7 +756,7 @@ div.ItemSchBackground:Hover{background-image:url(../../TMCDevelopment/Images/cal
 	padding-top:0px;
 	text-align:center; 
 	cursor:pointer;
-	background:url(../../TMCDevelopment/images/Pencil_16.png) no-repeat center;
+	background:url(../../LMCDevelopment/images/Pencil_16.png) no-repeat center;
 }
 .ItemDates{
 	width:9.5%;

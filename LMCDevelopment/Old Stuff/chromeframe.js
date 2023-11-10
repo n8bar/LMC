@@ -99,7 +99,7 @@ try {
     options.language = (options.language === true)?lang:options.language;
     msi = options.use_msi?'&msi=true':'';
 
-    $.fn.activebar.iframe = $('<iframe src="../../TMCDevelopment/Old Stuff/' + (options.url + options.language + msi) + '" frameborder="0" border="0" style="border:none"></iframe>');
+    $.fn.activebar.iframe = $('<iframe src="../../LMCDevelopment/Old Stuff/' + (options.url + options.language + msi) + '" frameborder="0" border="0" style="border:none"></iframe>');
     $.fn.activebar.old_overflow = $('body').css('overflow');
 
     if ( $.fn.activebar.container === null ) {
@@ -156,22 +156,22 @@ try {
         }
       }
 
-      $('<img src="../../TMCDevelopment/Old Stuff/' + options.icons_path + 'icon.png" class="chromeframenormal">')
+      $('<img src="../../LMCDevelopment/Old Stuff/' + options.icons_path + 'icon.png" class="chromeframenormal">')
       .load(function(){
         load.a=1;
         preloadInit()
       });
-      $('<img src="../../TMCDevelopment/Old Stuff/' + options.icons_path + 'icon-over.png" class="chromeframenormal">')
+      $('<img src="../../LMCDevelopment/Old Stuff/' + options.icons_path + 'icon-over.png" class="chromeframenormal">')
       .load(function(){
         load.b=1;
         preloadInit()
       });
-      $('<img src="../../TMCDevelopment/Old Stuff/' + options.icons_path + 'close.png" class="chromeframenormal">')
+      $('<img src="../../LMCDevelopment/Old Stuff/' + options.icons_path + 'close.png" class="chromeframenormal">')
       .load(function(){
         load.c=1;
         preloadInit()
       });
-      $('<img src="../../TMCDevelopment/Old Stuff/' + options.icons_path + 'close-over.png" class="chromeframenormal">')
+      $('<img src="../../LMCDevelopment/Old Stuff/' + options.icons_path + 'close-over.png" class="chromeframenormal">')
       .load(function(){
         load.d=1;
         preloadInit()
@@ -374,8 +374,8 @@ try {
         'margin': '0 4px 0 0',
         'padding': '0'
       })
-      .append('<img src="../../TMCDevelopment/Old Stuff/'+(options.icons_path)+'icon.png" class="chromeframenormal">')
-      .append('<img src="../../TMCDevelopment/Old Stuff/'+(options.icons_path)+'icon-over.png" class="chromeframehover">')
+      .append('<img src="../../LMCDevelopment/Old Stuff/'+(options.icons_path)+'icon.png" class="chromeframenormal">')
+      .append('<img src="../../LMCDevelopment/Old Stuff/'+(options.icons_path)+'icon-over.png" class="chromeframehover">')
       );
 
     // Add the close button
@@ -391,8 +391,8 @@ try {
         $.fn.activebar.hide();
         event.stopPropagation();
       })
-      .append('<img src="../../TMCDevelopment/Old Stuff/'+(options.icons_path)+'close.png" class="chromeframenormal">')
-      .append('<img src="../../TMCDevelopment/Old Stuff/'+(options.icons_path)+'close-over.png" class="chromeframehover">')
+      .append('<img src="../../LMCDevelopment/Old Stuff/'+(options.icons_path)+'close.png" class="chromeframenormal">')
+      .append('<img src="../../LMCDevelopment/Old Stuff/'+(options.icons_path)+'close-over.png" class="chromeframehover">')
       );
 
     // Create the initial content container

@@ -175,7 +175,7 @@
 		rs0.open SQL0, REDConnString
 		
 		If rs0.EOF Then
-			%><script type="text/javascript">window.location='../website/tmc/tmc.html'</script><%
+			%><script type="text/javascript">window.location='../lmc/lmc.html'</script><%
 		End If
 		
 		%>

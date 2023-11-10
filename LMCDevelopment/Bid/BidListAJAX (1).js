@@ -43,7 +43,7 @@ function delProj(projId)	{
 
 function prepareProjectDownload(downloadArrow,projId) {
 	
-	location='XMLX.tmcProject?action=project&id='+projId;
+	location='XMLX.lmcProject?action=project&id='+projId;
 	/** /
 	HttpText='XMLX.asp?action=project&id='+projId;
 	xhr = GetXmlHttpObject();

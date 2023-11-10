@@ -232,7 +232,7 @@ var ProjID=<%=ProjID%>; //Copy the ASP ProjID to a JS ProjID
 
 		<div id="CustomInfoBox<%=iBNum%>">
 			<div id="iTitle<%=iBNum%>" class="iTitleCustom">
-				<img class="CustomIX" src="../../TMCDevelopment/images/closesmall.gif" onClick="DelInfoBox(<%=rs2("InfoBoxID")%>,this.parentNode.parentNode)"/>
+				<img class="CustomIX" src="../../LMCDevelopment/images/closesmall.gif" onClick="DelInfoBox(<%=rs2("InfoBoxID")%>,this.parentNode.parentNode)"/>
 				<div class="iTitleTextCustom"><%=rs2("Title")%></div>
 				<div id="UpButton<%=iBNum%>" href="javascript:Void();" onClick="RollUp('<%=iBNum%>');" class="CustomIUp">▲</div>
 				<div id="DnButton<%=iBNum%>" href="javascript:Void();" onClick="RollDn('<%=iBNum%>');" class="CustomIDn">▼</div>
@@ -255,7 +255,7 @@ var ProjID=<%=ProjID%>; //Copy the ASP ProjID to a JS ProjID
 							%>
 							
 							<div id="<%=TN%>Div" class="InfoDiv" onClick="try{Gebi('<%=TN%>').focus();} catch(e){}">
-								<img src="../../TMCDevelopment/images/closesmall.gif" style="cursor:pointer;" onClick="DelInfoBoxData(<%=rs3("InfoBoxDataID")%>,this.parentNode);"/>
+								<img src="../../LMCDevelopment/images/closesmall.gif" style="cursor:pointer;" onClick="DelInfoBoxData(<%=rs3("InfoBoxDataID")%>,this.parentNode);"/>
 								<label for="<%=TN%>" class="InfoLabel"><%=rs3("Name")%><br/></label>
 								<input id="<%=TN%>" type="text" class="InfoText" value="<%=rs3("Data")%>"  
 								 onKeyUp="UpdateText('InfoBoxData','Data',this.value,'InfoBoxDataID',<%=rs3("InfoBoxDataID")%>);"/>
@@ -471,9 +471,9 @@ Gebi('iTitleProj').parentNode.style.background=OldBkg;
 	
 			<div id="TabTitleSpacer"  style="width:33%; float:left; position:relative; height:1px;">&nbsp;</div>
 			<div id="TabTitle" class="TabTitle">
-				<div class="TabTitleCorner"><img src="../../TMCDevelopment/images/LightGrayGradient2BLCorner24x24.gif" style="float:left; z-index:0;"/></div>
+				<div class="TabTitleCorner"><img src="../../LMCDevelopment/images/LightGrayGradient2BLCorner24x24.gif" style="float:left; z-index:0;"/></div>
 				<div id="TabTitleText" class="TabTitleText">Manage</div>
-				<div class="TabTitleCorner" style="width:1px;"><img src="../../TMCDevelopment/images/LightGrayGradient2BRCorner24x24.gif" style="float:left; z-index:0;"/></div>
+				<div class="TabTitleCorner" style="width:1px;"><img src="../../LMCDevelopment/images/LightGrayGradient2BRCorner24x24.gif" style="float:left; z-index:0;"/></div>
 			</div>
 			
 

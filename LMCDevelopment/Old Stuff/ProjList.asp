@@ -65,8 +65,8 @@
 
 
 
-<div id="Plus" style="background:center url(../../TMCDevelopment/images/TreePlus.gif) no-repeat; display:none;"></div>
-<div id="Minus" style="background:center url(../../TMCDevelopment/images/TreeMinus.gif) no-repeat; display:none;"></div>
+<div id="Plus" style="background:center url(../../LMCDevelopment/images/TreePlus.gif) no-repeat; display:none;"></div>
+<div id="Minus" style="background:center url(../../LMCDevelopment/images/TreeMinus.gif) no-repeat; display:none;"></div>
 
 
 
@@ -629,7 +629,7 @@ Loop
 <div id="TrimColumn" class="ProgColumn" style=""></div>
 <div id="DoneColumn" class="ProgColumn" style=""></div>
 -->
-<img src="../../TMCDevelopment/images/yellowish.png"/>
+<img src="../../LMCDevelopment/images/yellowish.png"/>
 
 <!--
 <button onClick="parent.ToCal('Cal Experiment','2010-08-02','2010-08-06');">Calendar Experiment</button>

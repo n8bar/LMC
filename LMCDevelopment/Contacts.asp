@@ -117,7 +117,7 @@
 		<div id=Top></div>
 		<div id=mainToolbar class=Toolbar style="background:none; height:48px; text-align:center; width:98%;">
 			
-			<div id=path> My TMC > <b><big onDblClick="location='oldContacts.asp';">Contacts</big></b></div>
+			<div id=path> My LMC > <b><big onDblClick="location='oldContacts.asp';">Contacts</big></b></div>
 			
 			<div class=tSpacer5 >&nbsp;</div>
 			<button id=newContact class="tButton0x32" onClick="showNewContact();" title="New Contact" /><img src="../Images/plus_16.png" style="height:24px; width:24px; margin:auto; position:relative; top:4px; left:4px;" /> New Contact &nbsp;</button>

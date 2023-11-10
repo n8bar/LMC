@@ -66,7 +66,7 @@ Select Case sAction
 		ProjId=Request.QueryString("id")
 		dlPath="../downloads/projects/"
 		oPath = "C:\inetpub\wwwroot\downloads\projects\"
-		oFilename=ProjID&"-"&timest&".xml"'.tmcProject"
+		oFilename=ProjID&"-"&timest&".xml"'.lmcProject"
 		
 		shell.run "c:\Inetpub\wwwroot\cmd.exe /c ""c:\Inetpub\wwwroot\n8echo.exe _LT_root_GT_  >> "&oPath&oFileName&""""
 		Sleep(1)

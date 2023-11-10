@@ -1,5 +1,5 @@
 ﻿<%
-REDconnstring = "DRIVER={SQL Server};SERVER=tmc.tricom;UID=rcstricom;PWD=watf-771;DATABASE=Tribase"
+REDconnstring = "DRIVER={SQL Server};SERVER=LMC.tricom;UID=rcstricom;PWD=watf-771;DATABASE=Tribase"
 PDconn = "DRIVER={SQL Server};SERVER=whsql-v03.prod.mesa1.secureserver.net;UID=tricomelstore;PWD=watf-771;DATABASE=DB_16816"
 
 
@@ -103,14 +103,14 @@ End Function
 Sub LoginCheck()
 	If Session("EmpId")="" Then
 		%>
-		<script type="text/javascript" src=../../TMCDevelopment/Old Stuff/RedAJAX.js></script>
+		<script type="text/javascript" src=../../LMCDevelopment/Old Stuff/RedAJAX.js></script>
 		<script type="text/javascript">LoginCheck();</script>
 		<%
 		start=Timer
 		Do while Session("EmpID")=""
 			If Timer>start+45 Then
 				%><script type="text/javascript">alert('Your Login has Expired.');</script><%
-				Response.Redirect("tmc.html")
+				Response.Redirect("LMC.html")
 				Response.End()
 			End If
 		Loop

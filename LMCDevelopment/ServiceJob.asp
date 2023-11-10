@@ -15,7 +15,7 @@
 If Session("user")="" Then
 	QS=request.QueryString
 	If QS <> "" Then QS= "?"&QS
-	Session("LoginDestination")="../TMCManagement/ServiceJob.asp"&QS
+	Session("LoginDestination")="../LMCManagement/ServiceJob.asp"&QS
 	Response.Redirect("blank.html")
 End If
 
@@ -32,7 +32,7 @@ Id = Request.QueryString("id")
 var serviceId=('0<%=cStr(Request.QueryString("id"))%>')*1;
 var Id=serviceId;
 </script>
-<title>TMC Service Call #<%=Id%></title>
+<title>LMC Service Call #<%=Id%></title>
 <%
 	'cols="JobName,ProjectID,PrivateNotes,Scope,TricomRepID,DateEnt,Includes,Excludes"
 	'cols=cols&",MU,FixedPrice,Overhead,TaxRate,isFixedPrice,Round,CustAgreed"

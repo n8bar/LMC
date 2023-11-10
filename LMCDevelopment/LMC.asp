@@ -268,7 +268,7 @@
 <div id=frames></div>
 
 <div id=footer style="background:#444; color:#eee; font-size:12px; font-weight:normal; height:14px; width:100%; ">
-	<div style="float:left;"> &nbsp; LMC version <%=Application("tmcVersion")%></div>
+	<div style="float:left;"> &nbsp; LMC version <%=Application("lmcVersion")%></div>
 	<div style="float:right;">&nbsp; <big>&copy;</big> 2013 Tricom Software Development &nbsp; </div>
 </div>
 

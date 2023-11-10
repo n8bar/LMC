@@ -136,7 +136,7 @@ function PrintTime() {
 	window.open('TimeReport.asp?EmpID=1000&From='+Gebi('FromDate').value+'&To='+Gebi('ToDate').value,'TimeReport', true);
 /*	
 	var WindowOptions = 'scrollbars=yes, height=704, width=980, toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=yes';
-	//openWindow=window.open('https://www.rcstri.com/Website/TMCdevelopment/blank.html','TimeReport', WindowOptions,false);
+	//openWindow=window.open('https://www.rcstri.com/Website/LMCdevelopment/blank.html','TimeReport', WindowOptions,false);
 	openWindow=window.open('TimeReport.asp?EmpID=1000&From='+Gebi('FromDate').value+'&To'+Gebi('ToDate').value,'TimeReport', WindowOptions,false);
 	//WindowContents =Gebi('EmployeeTimeBox').innerHTML;
 	//alert(WindowContents);

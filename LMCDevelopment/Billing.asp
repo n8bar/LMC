@@ -35,7 +35,7 @@ function Load() {
 		topTab=window.top.document.getElementsByClassName('selectedMainTab'); 
 	//} 
 	//catch(e) { topTab='\\'; }
-	try { if(!!topTab) Gebi('path').innerHTML.replace('TMC',topTab.innerHTML); } catch(e) {}
+	try { if(!!topTab) Gebi('path').innerHTML.replace('LMC',topTab.innerHTML); } catch(e) {}
 	
 	Search();
 }
@@ -275,7 +275,7 @@ function Search() {
 	<div id=Top></div>
 	<div id=mainToolbar class=Toolbar style="background:none; height:48px; text-align:center; width:98%;" >
 		
-		<div id=path>&nbsp; TMC > Billing > Task List</div>
+		<div id=path>&nbsp; LMC > Billing > Task List</div>
 		
 		<div class=tSpacer5 >&nbsp;</div>
 		<button id=newBid class="tButton32" onClick="showNewTask();" title="New Task" /><img src="../Images/plus_16.png" /></button>

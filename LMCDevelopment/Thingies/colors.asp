@@ -236,7 +236,7 @@ document.write('</div>');
 spitEmOut(0,6);
 document.write('<br/>');
 document.write('<div class="row titles" style="max-height:32px;">');
-document.write('	<div class=dBox style="color:#000; background:#fff; border:1px rgb('+cOrder[7]+') solid;">Calendar & TMC Main</div>');
+document.write('	<div class=dBox style="color:#000; background:#fff; border:1px rgb('+cOrder[7]+') solid;">Calendar & LMC Main</div>');
 document.write('	<div class=dBox style="color:#000; background:#fff; border:1px rgb('+cOrder[8]+') solid;">Service</div>');
 document.write('	<div class=dBox style="color:#000; background:#fff; border:1px rgb('+cOrder[9]+') solid;">Engineering</div>');
 document.write('	<div class=dBox style="color:#000; background:#fff; border:1px rgb('+cOrder[10]+') solid;">Office Management</div>');

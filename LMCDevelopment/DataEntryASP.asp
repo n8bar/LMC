@@ -2367,7 +2367,7 @@ Sub NewUser() '-----------------------------------------------------------------
 	EmpID = CStr(Request.QueryString("EmpID"))
 	User = CStr(Request.QueryString("User"))
 	Pass = CStr(Request.QueryString("Pass"))
-	url = "https://www.rcstri.com/website/tmcmanagement/tmc.html"
+	url = "https://www.rcstri.com/website/LMCmanagement/LMC.html"
 
 	SQL2 = "INSERT INTO Access (EmpID,UserName,Password,url) Values("&EmpID&",'"&User&"','"&Pass&"','"&Url&"')"
 	set rs2=Server.CreateObject("ADODB.Recordset")

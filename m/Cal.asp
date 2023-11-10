@@ -28,16 +28,14 @@
 </head>
 
 <body class=body onLoad="/*alert('startingOnLoad procedures'); setTimeout('Resize();',150);/**/ onLoad(); " onResize="Resize(); Gebi('ModalScreen').style.display='none'; " onmousemove="mX=parent.mX; mY=parent.mY;" onkeyup="" >
-
 <div id=ModalScreen class=ModalScreen ></div>
 <div id=HoverNotes class=HoverNotes onMouseOver="this.style.visibility='hidden';" ></div>
-
+    
 <div id=CalendarMain class=CalendarMain >
 <div id=calDivDot>&nbsp;</div>
 
 <div id=CalendarContainer >
 
-	
 	<div align="center" valign="top" class="CalendarMainContainer" id="CalendarMainContainer">
 		<div id="CalendarPlaner" style="display:block; height:100%;">
 			<div id="Calendar1" style="position:relative; height:100%; width:100%; top:1px; Border:0px solid blue; z-index:100; ">
@@ -150,20 +148,17 @@
 		</div>
 	</div>
 </div>
-
 <script type="text/javascript">Resize();</script>
 
-<!-- Everything below are divs used for popups////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- Everything below are divs used for popups //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <div id="NewEventTaskBox" class="NewEventTaskBox WindowBox" align="center">
-
 	<div style="font-size:18px; background-color:#1294D0; width:100%; color:#FFFFFF;" class="WindowTitle">
 		<div onClick="hideEventModal();" class="redXCircle">X</div>
 		New Event <span id="NewEventDate"></span>
 	</div>
 	
 	<label style="font-size:24px; width:100%;">Please choose an event category:</label>
-
 	<%
 		Dim TaskID
 		SQL = "SELECT TaskID, TaskName, BorderColor, OrderNum, AltName FROM Tasks WHERE EnableCal=1 ORDER BY OrderNum" 
@@ -191,26 +186,13 @@
 			tIndex=tIndex+1
 			%>	
 			<br/>
+
+
 			<button onClick="TaskListerRedirect(<%=TaskID%>,<%=tIndex%>);" style="width:70%; color:#<%=Color%>; font-size:18px; float:left; margin:0 0 0 15%;">
 				<%=TaskName%>
 			</button>
-			<%   
-			'rs.MoveNext
-			'If rs.EOF Then Exit Do
-			'
-			'Do While Session("Access"&rs("AltName"))="False"
-			'	rs.MoveNext
-			'	If rs.EOF Then Exit Do
-			'Loop
-			'If rs.EOF Then Exit Do
-			
-			'TaskID=rs("TaskID")
-			'TaskName=rs("TaskName")
-			'Color=rs("BorderColor")
-			%>
-			<!--button onClick="TaskListerRedirect(<%=TaskID%>,<%=rs("OrderNum")%>);" style="width:40%; color:#<%=Color%>; font-weight:bold; float:right; margin:0 7.5% 0 0;">
-				<%=TaskName%>
-			</button -->
+
+
 			<br/>
 			<br/>
 			<%   
@@ -218,8 +200,7 @@
 		Loop
 
 		set rs = nothing
-	%>
-
+%>
 </div>
 
 <div id="ProjectSelectionBox" class="WindowBox JobSelectionBox">
@@ -237,22 +218,23 @@
 	<select id="selEventProj" onChange="JobSched(SelI(this.id)); this.selectedIndex=0;">
 		<option value="0">Select An Active Project:</option>
 		<%
-			ProjectOptionList("active")
-			'SQL1="SELECT ProjID,Area,RCSPM,ProjName FROM Projects WHERE Active=1 AND Obtained=1 ORDER BY ProjName"
-			'Set rs1=Server.CreateObject("ADODB.Recordset")
-			'rs1.Open SQL1, REDconnstring 
+			'ProjectOptionList("active")
+			SQL1="SELECT ProjID,Area,RCSPM,ProjName FROM Projects WHERE Active=1 AND Obtained=1 ORDER BY ProjName"
+			Set rs1=Server.CreateObject("ADODB.Recordset")
+			rs1.Open SQL1, REDconnstring 
 			
-			'Do Until rs1.EOF
-				%>
-					<!-- option value="< %=rs1("ProjID")%>" area="< %=rs1("Area")%>" attn="< %=rs1("RCSPM")%>" >< %=DecodeChars(rs1("ProjName"))%></option -->
+			Do Until rs1.EOF
+				%></%>
+					<option value="<%=rs1("ProjID")%>" area="<%=rs1("Area")%>" attn="<%=rs1("RCSPM")%>" ><%=DecodeChars(rs1("ProjName"))%></option>
 				<%
-			'	rs1.MoveNext
-			'Loop
+				rs1.MoveNext
+			Loop
 			
-			'Set rs1= Nothing
+			Set rs1= Nothing
 		%>
 	</select>
 </div>
+
 
 <div id="ServiceSelectionBox" class="WindowBox JobSelectionBox">
 	<div id="ServeSelTitle" class="WindowTitle" style="background:#1C80CA; color:#fff;">
@@ -317,6 +299,7 @@
 </div>
 
 <form action="javascript:SaveEvent(document.getElementById('EventBoxForm'));" id="EventBoxForm" style="">
+
 	<input id=EventJobID type="hidden" value="0" />
 	<div id="NewEventBox" class="NewEventBox WindowBox" style="height:auto;"><!-- For Entering a new event -->
 		<div id=NewEventBoxTitle class="WindowTitle" style="border-bottom:1px solid #AAA; background:#3599E3;">
@@ -503,9 +486,9 @@
 		<div id="EventDetails2"  Class="EventDetailsScreen" >
 		</div>
 		<!--	<div height="23"><div class="EventLabelText" style="float:right;">Area</div>
-			<div>< %    		'SQL = "select AreaID, AreaDescription from Area"				'set rs=Server.CreateObject("ADODB.Recordset")			'rs.Open SQL, REDconnstring				%>
-			<select name="AreaList2" id="AreaList2" style="font-size:12px; width:200px">			<option value="0"selected="selected">----</option>			< %	'Do Until rs.EOF		%>
-			<option value="< %'= rs("AreaID")%>">< %'= rs("AreaDescription")%></option>			< %				'rs.MoveNext		'Loop			'set rs = nothing		%>			</select>		</div>	</div>	-->
+			<div><%    		'SQL = "select AreaID, AreaDescription from Area"				'set rs=Server.CreateObject("ADODB.Recordset")			'rs.Open SQL, REDconnstring				%>
+			<select name="AreaList2" id="AreaList2" style="font-size:12px; width:200px">			<option value="0"selected="selected">----</option>			<%	'Do Until rs.EOF		%>
+			<option value="<%'= rs("AreaID")%>"><%'= rs("AreaDescription")%></option>			<%				'rs.MoveNext		'Loop			'set rs = nothing		%>			</select>		</div>	</div>	-->
 	</div>
 </div>
 	
@@ -524,6 +507,8 @@
 	</div> 		
 </form>
 
+
+
 <!-- Drag and drop ------------------------------------------------------------------------------------------------------ -->
 
 <ul id="dragContent"></ul>
@@ -532,6 +517,7 @@
 <!-- -------------------------------------------------------------------------------------------------------------------- -->
 
 
-    
+</div>
+
 </body>
 </html>

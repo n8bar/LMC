@@ -114,7 +114,7 @@ hr{margin:10px 0 0 0; padding:1px 0 0 0; clear:both;}
 	float:left;
 	height:18px;
 	margin:16px 0 0 0;
-	background:url(../../TMCDevelopment/Images/GreyGradient2-18.gif) repeat-x;
+	background:url(../../LMCDevelopment/Images/GreyGradient2-18.gif) repeat-x;
 	text-align:center;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:12px;
@@ -180,7 +180,7 @@ div.DefaultIDn:active{color:#777;}
 	width:176px;
 	height:18px;
 	margin:16px 0 0 0;
-	background:url(../../TMCDevelopment/Images/BlackGradient2-18.gif) repeat-x;
+	background:url(../../LMCDevelopment/Images/BlackGradient2-18.gif) repeat-x;
 	text-align:center;
 	font-family:Geneva, Arial, Helvetica, sans-serif;
 	font-size:12px;
@@ -633,7 +633,7 @@ z-index:10000;
 	height:24px;
 	float:left;
 	overflow:visible;
-	background:url(../../TMCDevelopment/images/LightGrayGradient2B-24x24.gif);
+	background:url(../../LMCDevelopment/images/LightGrayGradient2B-24x24.gif);
 	width:80%;
 	font-family:Georgia, "Times New Roman", Times, serif;
 	font-size:16px;

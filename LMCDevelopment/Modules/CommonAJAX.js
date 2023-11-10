@@ -166,7 +166,7 @@ function ReturnCalLogin()
 			//{
 			//	var token = google.accounts.user.login(scope);
 			//	/** /
-			//	returnUrl="https://www.rcstri.com/website/tmcdevelopment/tmc.html";
+			//	returnUrl="https://www.rcstri.com/website/LMCdevelopment/LMC.html";
 			//	window.open('https://www.google.com/a/tricomlv.com/AuthSubRequestJS?session=1&scope='+scope+'&next='+returnUrl,'_self');
 			//	/**/
 			//	SessionWrite('calLogin','1');

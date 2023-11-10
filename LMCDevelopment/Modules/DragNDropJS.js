@@ -24,7 +24,7 @@
 	
 	Add the following to your HTML
 	<ul id="dragContent"></ul>
-    <div id="dragDropIndicator"><img src="../../TMCDevelopment/Arrow20X25R2.gif"></div>
+    <div id="dragDropIndicator"><img src="../../LMCDevelopment/Arrow20X25R2.gif"></div>
 	
 	************************************************************************************************************/
 		

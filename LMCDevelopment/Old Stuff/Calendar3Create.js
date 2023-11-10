@@ -559,7 +559,7 @@ function Make_Calendar(Year,Month,inst,count,Direction) {
 		{
 			HTML_String += '<div style="background:'+colorHeadBG+'; color:'+colorHead+'; font-family:'+fontHead+'; font-size:'+sizeHead+';';
 			HTML_String += 'font-weight:'+weightHead+'; text-align:'+TextAlign+'; "onMouseOver="hideToolTip()" class="Topheader">'+sHead;
-			HTML_String += 	'<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../TMCDevelopment/Old Stuff/images/reloadblue24.png" width="100%" height="100%"/></button>';
+			HTML_String += 	'<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCDevelopment/Old Stuff/images/reloadblue24.png" width="100%" height="100%"/></button>';
 			HTML_String += '</div>';
 		}
 
@@ -1284,7 +1284,7 @@ function Make_Week(inst,Year,Week) {
 	var HTML_String = '<div class="CalendarMainDIV" style="">';
 				
 	HTML_String +='<div style="" class ="Topheader">Weekly Planner';
-	HTML_String +=	'<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../TMCDevelopment/Old Stuff/images/reloadblue24.png" width="100%" height="100%"/></button>';
+	HTML_String +=	'<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCDevelopment/Old Stuff/images/reloadblue24.png" width="100%" height="100%"/></button>';
 	HTML_String +='</div>';
 	
 	HTML_String += '<div style="" class ="TopControl" onMouseOver="">';
@@ -1573,7 +1573,7 @@ function Make_Day(inst,sYear,sMonth,sDay,count,Direction) {
         var HTML_String = '<div class="CalendarMainDIV" style="">';
 					
 		HTML_String += '<div style="" class ="Topheader">Day Planer';
-		HTML_String +=	 '<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../TMCDevelopment/Old Stuff/images/reloadblue24.png" width="100%" height="100%"/></button>';
+		HTML_String +=	 '<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCDevelopment/Old Stuff/images/reloadblue24.png" width="100%" height="100%"/></button>';
 		HTML_String += '</div>';
 		
 		HTML_String += '<div style=""    class ="TopControl"  onMouseOver="">';

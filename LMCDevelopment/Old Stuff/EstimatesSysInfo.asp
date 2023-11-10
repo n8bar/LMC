@@ -125,7 +125,7 @@ img.Cal{cursor:pointer;}
 				 onchange="SendSQL('Write','UPDATE Systems SET DateBid=\''+this.value+'\' WHERE SystemID=<%=SysID%>');" 
 				 onKeyUp="SendSQL('Write','UPDATE Systems SET DateBid=\''+this.value+'\' WHERE SystemID=<%=SysID%>');"
 				/>
-				<div align="center" style=" float:left; clear:right;"><img class="Cal" onClick="displayCalendar('DateBid','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif"/></div>
+				<div align="center" style=" float:left; clear:right;"><img class="Cal" onClick="displayCalendar('DateBid','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif"/></div>
 			</div>
 		</div>
 		
@@ -136,7 +136,7 @@ img.Cal{cursor:pointer;}
 				 onchange="SendSQL('Write','UPDATE Systems SET DateWon=\''+this.value+'\' WHERE SystemID=<%=SysID%>');" 
 				 onKeyUp="SendSQL('Write','UPDATE Systems SET DateWon=\''+this.value+'\' WHERE SystemID=<%=SysID%>');"
 				/>
-				<div align="center" style=" float:left; clear:right;"><img class="Cal" onClick="displayCalendar('DateWon','mm/dd/yyyy',this)" src="../../TMCDevelopment/Images/cal.gif"/></div>
+				<div align="center" style=" float:left; clear:right;"><img class="Cal" onClick="displayCalendar('DateWon','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif"/></div>
 			</div>
 		</div>
 		<!--

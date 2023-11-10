@@ -60,13 +60,13 @@
 	<div id=SchMain>
 		<div id=SchLeft>
 			<div style="width:100%;">
-				<label class=SchBoxLabel for=SchDateFrom>From:<img class=SchCal onClick="//displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" src=../TMCDevelopment/Images/cal.gif></label>
+				<label class=SchBoxLabel for=SchDateFrom>From:<img class=SchCal onClick="//displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" src=../LMCDevelopment/Images/cal.gif></label>
 			</div>
 			<input id=SchDateFrom class="SchBoxTxt" type="text" onFocus="displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" onChange=""/>
 			<br/>
 			
 			<div style="width:100%;">
-				<label class="SchBoxLabel" for=SchDateTo>To:<img class=SchCal onClick="//displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" src="../TMCDevelopment/Images/cal.gif"></label>
+				<label class="SchBoxLabel" for=SchDateTo>To:<img class=SchCal onClick="//displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" src="../LMCDevelopment/Images/cal.gif"></label>
 			</div>
 			<input id=SchDateTo class=SchBoxTxt type=text onFocus="displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" onChange=""/>
 			<br/>
@@ -145,7 +145,7 @@
 		<br/>
 		<br/>
 		<br/>
-		<img name="" src="../TMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
+		<img name="" src="../LMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
  
         
 
@@ -183,10 +183,10 @@
 				
 				&nbsp; &nbsp; 
 				
-				<button id="NewJob" onClick="AddNewJob();"><img src="../TMCDevelopment/images/plus_16.png"/>Add New Job</button>
-				<button id="DelJob" onClick="DelJob();"><img src="../TMCDevelopment/images/delete_16.png"/>Delete Selected Job</button>
+				<button id="NewJob" onClick="AddNewJob();"><img src="../LMCDevelopment/images/plus_16.png"/>Add New Job</button>
+				<button id="DelJob" onClick="DelJob();"><img src="../LMCDevelopment/images/delete_16.png"/>Delete Selected Job</button>
 					
-				<button id="ReloadFrame" onClick="window.location=window.location"><img src="../TMCDevelopment/images/reloadblue24.png" width="100%" height="100%"/></button>
+				<button id="ReloadFrame" onClick="window.location=window.location"><img src="../LMCDevelopment/images/reloadblue24.png" width="100%" height="100%"/></button>
 			</div>
 		</div>
 							
@@ -236,7 +236,7 @@
 				<div id="ItemsHead" class="ItemsHead">        	
 					<div class="HeadNum" align="left">#</div >
 					<div class="HeadPri" align="left">!</div >
-					<div class="HeadManage" align="left"><img src="../TMCDevelopment/images/FolderOutline.png"/></div >
+					<div class="HeadManage" align="left"><img src="../LMCDevelopment/images/FolderOutline.png"/></div >
 					<div class="HeadJob" align="left">Job</div >
 					<!-- <div class="HeadCust" align="left">Customer</div> -->
 					<div class="HeadProg" align="center"><big><big>•••</big></big></div>

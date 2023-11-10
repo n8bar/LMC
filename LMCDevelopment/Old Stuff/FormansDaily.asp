@@ -58,7 +58,7 @@
 	</div>
 	
 	<div id="Top">
-		<img id="Logo" src="../../TMCDevelopment/Images/TCS.jpg"/>
+		<img id="Logo" src="../../LMCDevelopment/Images/TCS.jpg"/>
 		<div id="Weather">
 			<%
 				If rs("Sunny")="True" Then Sunny="checked" else Sunny=""
@@ -71,35 +71,35 @@
 				If rs("Cold")="True" Then Cold="checked" else Cold=""
 			%>
 			<label class="WeatherLabel" style="margin-left:.03125in;" title="Sunny">
-				<img class="WeatherIcon" src="../../TMCDevelopment/images/weather/Sunny.jpg" />
+				<img class="WeatherIcon" src="../../LMCDevelopment/images/weather/Sunny.jpg" />
 				<input id="WeatherCheckboxSunny" class="WeatherCheckbox" type="checkbox"<%=Sunny%> onChange="SetBit('Sunny',this.checked,<%=ReportID%>)"  />&nbsp;
 			</label>
 			<label class="WeatherLabel" style="left:.5in;" title="Cloudy">
-				<img class="WeatherIcon" src="../../TMCDevelopment/images/weather/Cloudy.jpg" />
+				<img class="WeatherIcon" src="../../LMCDevelopment/images/weather/Cloudy.jpg" />
 				<input id="WeatherCheckboxCloudy" class="WeatherCheckbox" type="checkbox" <%=Cloudy%> onChange="SetBit('Cloudy',this.checked,<%=ReportID%>)"  />
 			</label>
 			<label class="WeatherLabel" style="left:1in;" title="Thunderstorms">
-				<img class="WeatherIcon" src="../../TMCDevelopment/images/weather/Thunder.jpg" />
+				<img class="WeatherIcon" src="../../LMCDevelopment/images/weather/Thunder.jpg" />
 				<input id="WeatherCheckboxThunder" class="WeatherCheckbox" type="checkbox" <%=Thunder%> onChange="SetBit('Thunder',this.checked,<%=ReportID%>)"  />
 			</label>
 			<label class="WeatherLabel" style="left:1.5in;" title="Rain">
-				<img class="WeatherIcon" src="../../TMCDevelopment/images/weather/Rain.jpg" />
+				<img class="WeatherIcon" src="../../LMCDevelopment/images/weather/Rain.jpg" />
 				<input id="WeatherCheckboxRain" class="WeatherCheckbox" type="checkbox" <%=Rain%> onChange="SetBit('Rain',this.checked,<%=ReportID%>)"  />
 			</label>
 			<label class="WeatherLabel" style="left:2in;" title="Ice">
-				<img class="WeatherIcon" src="../../TMCDevelopment/images/weather/Ice.jpg" />
+				<img class="WeatherIcon" src="../../LMCDevelopment/images/weather/Ice.jpg" />
 				<input id="WeatherCheckboxIce" class="WeatherCheckbox" type="checkbox" <%=Ice%> onChange="SetBit('Ice',this.checked,<%=ReportID%>)"  />
 			</label>
 			<label class="WeatherLabel" style="left:2.5in;" title="Windy">
-				<img class="WeatherIcon" src="../../TMCDevelopment/images/weather/Windy.jpg" />
+				<img class="WeatherIcon" src="../../LMCDevelopment/images/weather/Windy.jpg" />
 				<input id="WeatherCheckboxWind" class="WeatherCheckbox" type="checkbox" <%=Wind%> onChange="SetBit('Wind',this.checked,<%=ReportID%>)"  />
 			</label>
 			<label class="WeatherLabel" style="left:3in;" title="Snow">
-				<img class="WeatherIcon" src="../../TMCDevelopment/images/weather/Snow.jpg" />
+				<img class="WeatherIcon" src="../../LMCDevelopment/images/weather/Snow.jpg" />
 				<input id="WeatherCheckboxSnow" class="WeatherCheckbox" type="checkbox" <%=Snow%> onChange="SetBit('Snow',this.checked,<%=ReportID%>)"  />
 			</label>
 			<label class="WeatherLabel" style="left:3.5in;" title="Cold">
-				<img class="WeatherIcon" src="../../TMCDevelopment/images/weather/Cold.jpg" />
+				<img class="WeatherIcon" src="../../LMCDevelopment/images/weather/Cold.jpg" />
 				<input id="WeatherCheckboxCold" class="WeatherCheckbox" type="checkbox" <%=Cold%> onChange="SetBit('Cold',this.checked,<%=ReportID%>)"  />
 			</label>
 		</div>
@@ -155,7 +155,7 @@
 				<script type="text/javascript">Gebi('FormanDiv').innerHTML=SelI('Forman').innerHTML</script>
 			</label>
 			<label id=lblDate align=right>Date:<input id="ReportDate" value="<%=d8%>" onChange="DateChange('<%=d8%>',this.value,<%=ProjID%>,<%=ReportID%>);"/></label>
-			<img id="DatePick" onClick="displayCalendar('ReportDate','mm/dd/yyyy',Gebi('ReportDate'))" src="../../TMCDevelopment/Images/cal.gif" />		</div>
+			<img id="DatePick" onClick="displayCalendar('ReportDate','mm/dd/yyyy',Gebi('ReportDate'))" src="../../LMCDevelopment/Images/cal.gif" />		</div>
 	</div>
 
 	<div id="TimeHead">
@@ -164,7 +164,7 @@
 		
 		<div id="TimeHeadRow">
 			<div id="ClearH">
-				<img id=DelAll src=../../TMCDevelopment/images/delete_16.png title="Delete Everybody's Time!!!"
+				<img id=DelAll src=../../LMCDevelopment/images/delete_16.png title="Delete Everybody's Time!!!"
 				 onClick="
 				 if(confirm('You are about to wipe all the time for this project on this day!'))
 				 	{SendSQL('Write', 'DELETE FROM Time WHERE Date=\'<%=d8%>\' AND JobType=\'Project\' AND JobID=<%=ProjID%>'); Gebi('TimeFrame').src=Gebi('TimeFrame').src;}"

@@ -16,7 +16,7 @@
 If Session("user")="" Then 
 	QS=request.QueryString
 	If QS <> "" Then QS= "?"&QS
-	Session("LoginDestination")="../TMCManagement/Contact.asp"&QS
+	Session("LoginDestination")="../LMCManagement/Contact.asp"&QS
 	Response.Redirect("blank.html")
 End If
  
@@ -148,7 +148,7 @@ phoneLink="<a class=editLink onClick=editPhone(this.parentNode);>Edit</a>"
 </div>
 
 <div id=pathToolbar class="Toolbar" style="background:none;">
-	<div id=path>&nbsp; My TMC > <a href="Contacts.asp?noCache="<%=noCache%>>Contacts</a> > <big><b><%=cName%></b></big></div>
+	<div id=path>&nbsp; My LMC > <a href="Contacts.asp?noCache="<%=noCache%>>Contacts</a> > <big><b><%=cName%></b></big></div>
 </div>
 
 <div id=TabsBar style="display:none;">

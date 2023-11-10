@@ -5,11 +5,11 @@
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<title>RedOak Management Center</title>
 	
-	<link rel="stylesheet" href="TMC/TMC.css?noCache=<%=timer%>" media="all">
+	<link rel="stylesheet" href="LMC/LMC.css?noCache=<%=timer%>" media="all">
 	
 	<script type="text/javascript" src="Modules/rcstri.js?noCache=<%=timer%>"></script>
 	<script type="text/javascript" src="Modules/CommonAJAX.js?noCache=<%=timer%>"></script>
-	<script type="text/javascript" src="TMCTabs-AJAX.js?noCache=<%=timer%>"></script>
+	<script type="text/javascript" src="LMCTabs-AJAX.js?noCache=<%=timer%>"></script>
 	
 	<script type="text/javascript">
 	
@@ -148,7 +148,7 @@
 '	Do Until rs.EOF
 '		tName=rs("tabName")
 '		tabClass="mainTab"
-'		'If tName="My TMC" Then tabClass="selectedMainTab"
+'		'If tName="My LMC" Then tabClass="selectedMainTab"
 '		%>
 '		<div id=mainTab< %=rs("TabID")%> class="< %=tabClass%>" onClick="mainTab(this);" style="width:< %'=tW%>;">&nbsp;< %=tName%>&nbsp;</div>
 '		< %
@@ -268,7 +268,7 @@
 <div id=frames></div>
 
 <div id=footer style="background:#444; color:#eee; font-size:12px; font-weight:normal; height:14px; width:100%; ">
-	<div style="float:left;"> &nbsp; TMC version <%=Application("tmcVersion")%></div>
+	<div style="float:left;"> &nbsp; LMC version <%=Application("lmcVersion")%></div>
 	<div style="float:right;">&nbsp; <big>&copy;</big> 2013 Tricom Software Development &nbsp; </div>
 </div>
 

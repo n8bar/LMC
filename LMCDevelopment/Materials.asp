@@ -43,7 +43,7 @@
 		var topLevel=window.top.document;
 		try { //(!!topLevel.getElementsByClassName('selectedMainTab')) {
 			path+=topLevel.getElementsByClassName('selectedMainTab')[0].innerHTML+'>';
-		} catch(e) { /*path='My TMC >'*/ }
+		} catch(e) { /*path='My LMC >'*/ }
 		path+=' <big><b>Materials</b></big>';
 		Gebi('path').innerHTML=path;
 	</script>

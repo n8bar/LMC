@@ -314,7 +314,7 @@ a:hover{color:#169A70;}
 	width:26px;   
 	height:19px;  
 	padding:0px 0px 0px 0px;  
-	background: url(../../TMCDevelopment/Old%20Stuff/Images/Arrow20X25R.gif); 
+	background: url(../../LMCDevelopment/Old%20Stuff/Images/Arrow20X25R.gif); 
 	cursor:pointer; 
 }
 .ArchivedTaskListItemArchiveButton { 
@@ -325,7 +325,7 @@ a:hover{color:#169A70;}
 	height:19px;  
 	padding:0px 0px 0px 0px;  
 	border-left:none;  
-	background: url(../../TMCDevelopment/Old%20Stuff/Images/Arrow20X25L.gif); 
+	background: url(../../LMCDevelopment/Old%20Stuff/Images/Arrow20X25L.gif); 
 	cursor:pointer;
 }
 .TaskListItemDel  { 
@@ -346,7 +346,7 @@ a:hover{color:#169A70;}
 	height:25px;  
 	padding:0px 0px 0px 0px; 
 	border-left:none;  
-	background:url(../../TMCDevelopment/Old%20Stuff/Images/TrashCan20.gif); 
+	background:url(../../LMCDevelopment/Old%20Stuff/Images/TrashCan20.gif); 
 	background-repeat:no-repeat;
 }
 .TaskListItemTime  { 
@@ -367,7 +367,7 @@ a:hover{color:#169A70;}
 	height:25px;  
 	padding:0px 0px 0px 0px; 
 	border-left:none; 
-	background:url(../../TMCDevelopment/Old%20Stuff/Images/Clock20.gif); 
+	background:url(../../LMCDevelopment/Old%20Stuff/Images/Clock20.gif); 
 	background-repeat:no-repeat;
 }
 .TaskListItemSch   { 
@@ -388,7 +388,7 @@ a:hover{color:#169A70;}
 	height:25px;  
 	padding:0px 0px 0px 0px;  
 	border-left:none;  
-	background-image:url(../../TMCDevelopment/Old%20Stuff/Images/calender20.gif); 
+	background-image:url(../../LMCDevelopment/Old%20Stuff/Images/calender20.gif); 
 	background-repeat:no-repeat;
 }
 .TaskListItemJob   {
@@ -423,7 +423,7 @@ a:hover{color:#169A70;}
 	height:3.5px; 
 	padding:6px 3px 3px 3px;  
 	border-left:none; 
-	background-image: url(/WebSite/TMC/Images/down10.gif);
+	background-image: url(/WebSite/LMC/Images/down10.gif);
 	background-repeat:no-repeat;
 }
 .TaskListItemCust  { 
@@ -475,7 +475,7 @@ a:hover{color:#169A70;}
 	background-position:top; 
 	background-repeat:no-repeat;  
 	border-left:none; 
-	background-image:url(../../TMCDevelopment/Old%20Stuff/Images/I-10.gif);
+	background-image:url(../../LMCDevelopment/Old%20Stuff/Images/I-10.gif);
 }
 .TaskListItemDivider { 
 	float:left; 
@@ -498,7 +498,7 @@ a:hover{color:#169A70;}
 	text-align:left; 
 	color:#000; 
 	border-left:none; 
-	background-image: url(/WebSite/TMC/Images/down10.gif); 
+	background-image: url(/WebSite/LMC/Images/down10.gif); 
 	background-repeat:no-repeat; 
 	border-right:none;
 }
