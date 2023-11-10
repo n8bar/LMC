@@ -15,8 +15,8 @@ div {white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
 #heading	{ border-bottom:solid 2px #025B86; height:54px; width:100%;
 	/**/
-	background:url(../../images/LMCHeader-L.gif) no-repeat left center, -moz-linear-gradient(90deg bottom left, #048ECD, #fff);
-	background:url(../../images/LMCHeader-L.gif) no-repeat left center, -webkit-gradient(linear, 0 100%, 0 0, from(#048ECD), to(#fff));
+	background:url(../../images/LMCHeader-L.png) no-repeat left center, -moz-linear-gradient(90deg bottom left, #048ECD, #fff);
+	background:url(../../images/LMCHeader-L.png) no-repeat left center, -webkit-gradient(linear, 0 100%, 0 0, from(#048ECD), to(#fff));
 	background:-ie-gradient(linear,0 100%,0 0,from(#025B86),color-stop(.08, #025B86),color-stop(.49999, #7CBDED),color-stop(.5, #98cbf1), to(#fff));
 	background-color:#B4DAF5;
 	/**/

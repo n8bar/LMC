@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<title>RedOak Management Center</title>
+	<title>Lovo Management Center</title>
 	
 	<link rel="stylesheet" href="../LMCManagement/LMC/LMC.css?noCache=<%=timer%>" media="all">
 	
@@ -269,7 +269,7 @@
 
 <div id=footer style="background:#444; color:#eee; font-size:12px; font-weight:normal; height:14px; width:100%; ">
 	<div style="float:left;"> &nbsp; LMC version <%=Application("lmcVersion")%></div>
-	<div style="float:right;">&nbsp; <big>&copy;</big> 2013 Tricom Software Development &nbsp; </div>
+	<div style="float:right;">&nbsp; <big>&copy;</big> 2023 Nate the Programmer &nbsp; </div>
 </div>
 
 <div id=bigModal></div>
