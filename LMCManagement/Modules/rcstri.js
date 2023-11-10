@@ -589,7 +589,7 @@ function keyCheck(e,allow) {
 }
 
 function a(Str){
-	return '<a href="../../LMCDevelopment/'+Str+'">'+Str+'</a>';
+	return '<a href="../../LMCManagement/'+Str+'">'+Str+'</a>';
 }
 
 function limitInput(/*myfield,*/ e, inputChars/*, dec*/) { //inputChars can be '0123456789.' for example.

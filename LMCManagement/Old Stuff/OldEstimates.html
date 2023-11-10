@@ -51,7 +51,7 @@
 
 <div id="FrameButtons">
 	<button id="ExitFrame" onClick="PGebi('oldBidderFrame').style.display='none';"></button>
-	<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCDevelopment/images/reloadblue24.png" width="100%" height="100%"/></button>
+	<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCManagement/images/reloadblue24.png" width="100%" height="100%"/></button>
 </div>
 
 <div class="OverAllContainer" id="OverAllContainer" >
@@ -73,7 +73,7 @@
 		
 			<div style=" width:100%; font-size:13px; height:16px; padding-top:2px; z-index:1000;">
 				<div id="NewProjLink" style="float:right; text-align:center; width:88px; z-index:1000;">
-					<a href="Javascript:Void();" onClick="ShowNewProjBox();" style="background:url(../../LMCDevelopment/images/Yellowish.png)"><b>New Project</b></a>
+					<a href="Javascript:Void();" onClick="ShowNewProjBox();" style="background:url(../../LMCManagement/images/Yellowish.png)"><b>New Project</b></a>
 				</div>
 			</div>
 		
@@ -94,12 +94,12 @@
 				
 				<label class="TitleText11B" style="float:left; margin:0; width:52px; padding:6px 0 0 4px;" for="SearchDateFrom">Between:</label>
 				<input id="SearchDateFrom" onChange="GetProjects();" onFocus="SwitchToProjView();" style="float:left; width:128px;" value="1/1/1900"/>
-				<img style="cursor:pointer; float:left; clear:right; margin:3px 0 0 3px;" onClick="displayCalendar('SearchDateFrom','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16" />
+				<img style="cursor:pointer; float:left; clear:right; margin:3px 0 0 3px;" onClick="displayCalendar('SearchDateFrom','mm/dd/yyyy',this)" src="../../LMCManagement/Images/cal.gif" width="16" height="16" />
 				<br/>
 				
 				<label class="TitleText11B" style="float:left; margin:0; width:52px; padding:6px 0 0 4px;" for="SearchDateTo"><div style="float:right;">and:</div></label>
 				<input id="SearchDateTo" onChange="GetProjects();" onFocus="SwitchToProjView();" style="float:left; width:128px;"/>
-				<img style="cursor:pointer; float:left; clear:right; margin:3px 0 0 3px;" onClick="displayCalendar('SearchDateTo','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16" />
+				<img style="cursor:pointer; float:left; clear:right; margin:3px 0 0 3px;" onClick="displayCalendar('SearchDateTo','mm/dd/yyyy',this)" src="../../LMCManagement/Images/cal.gif" width="16" height="16" />
 				<script type="text/javascript">var Today=new Date; Gebi('SearchDateTo').value=(Today.getMonth()+1)+'/'+Today.getDate()+'/'+Today.getFullYear(); </script>
 				<br/>
 				<br/>
@@ -220,7 +220,7 @@
 
 	<div class="">
 		<input class="" name="NewSysDate" id="NewSysDate" type="text" value="" maxlength="48" />
-		<img style="cursor:pointer;"onclick="displayCalendar('NewSysDate','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16">	</div>
+		<img style="cursor:pointer;"onclick="displayCalendar('NewSysDate','mm/dd/yyyy',this)" src="../../LMCManagement/Images/cal.gif" width="16" height="16">	</div>
 
 	<div class="NewSystemTitles">Margin</div>
 	<div id="" class=""><input class=""  style="width:50px;" name="NewSysMU" id="NewSysMU" type="text" value="100" maxlength="20"  ></div>
@@ -247,7 +247,7 @@
 		<br/>
 		<br/>
 		<br/>
-		<img name="" src="../../LMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
+		<img name="" src="../../LMCManagement/Images/Roller.gif" width="32" height="32" alt="" />	</div>
 		
 		<div class="EstimateMainHeader"> 
 			<div id="EstTopInfo3" class="ProjectMainHeaderTxt"></div>
@@ -630,7 +630,7 @@
 				<div class="PrintSetupTitles">Date</div>
 				<div class="PrintSetupTextInput">
 					<input name="PrintDate" id="PrintDate" type="text" value="" onChange="UpdateText('PrintDate','Text','ProjectPrint','ProjectID','PrintDate');"/>
-					<img style="cursor:pointer;"onclick="displayCalendar('PrintDate','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16">				</div>
+					<img style="cursor:pointer;"onclick="displayCalendar('PrintDate','mm/dd/yyyy',this)" src="../../LMCManagement/Images/cal.gif" width="16" height="16">				</div>
 			</div>
 		</div><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
@@ -688,7 +688,7 @@
 			<br/>
 			<br/>
 			<br/>
-		<img name="" src="../../LMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
+		<img name="" src="../../LMCManagement/Images/Roller.gif" width="32" height="32" alt="" />	</div>
 
 	<div class="SysTabsBox">
 		<div id="InfoTab" onClick="ShowSysTab(this.id)" class="SystemTab1" onMouseOver="MouseOverTab(this.id)" onMouseOut="MouseOutTab(this.id)">Information</div>
@@ -996,7 +996,7 @@
 	<div style="text-align:center;">
 		<div style="float:left; width:128px;">on <input id="ObtainDate" type="text" style="width:80%;" /></div>
 		<div style="float:left; margin-top:3px; height:20px;">
-			<img style="cursor:pointer; float:right" onClick="displayCalendar('ObtainDate','mm/dd/yyyy',this);" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16">
+			<img style="cursor:pointer; float:right" onClick="displayCalendar('ObtainDate','mm/dd/yyyy',this);" src="../../LMCManagement/Images/cal.gif" width="16" height="16">
 		</div>
 	</div><!--
 	<hr/>

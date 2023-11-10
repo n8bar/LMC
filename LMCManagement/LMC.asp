@@ -5,11 +5,11 @@
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<title>RedOak Management Center</title>
 	
-	<link rel="stylesheet" href="../LMCDevelopment/LMC/LMC.css?noCache=<%=timer%>" media="all">
+	<link rel="stylesheet" href="../LMCManagement/LMC/LMC.css?noCache=<%=timer%>" media="all">
 	
-	<script type="text/javascript" src="../LMCDevelopment/Modules/rcstri.js?noCache=<%=timer%>"></script>
-	<script type="text/javascript" src="../LMCDevelopment/Modules/CommonAJAX.js?noCache=<%=timer%>"></script>
-	<script type="text/javascript" src="../LMCDevelopment/LMCTabs-AJAX.js?noCache=<%=timer%>"></script>
+	<script type="text/javascript" src="../LMCManagement/Modules/rcstri.js?noCache=<%=timer%>"></script>
+	<script type="text/javascript" src="../LMCManagement/Modules/CommonAJAX.js?noCache=<%=timer%>"></script>
+	<script type="text/javascript" src="../LMCManagement/LMCTabs-AJAX.js?noCache=<%=timer%>"></script>
 	
 	<script type="text/javascript">
 	
@@ -121,7 +121,7 @@
 	function iterateKeepAlive() { setTimeout('keepAlive()',60000*25); }
 	iterateKeepAlive();
 	</script>
-	<!--#include file="../LMCDevelopment/Common.asp" -->
+	<!--#include file="../LMCManagement/Common.asp" -->
 	<script>var commonIsDone=true;</script>
 </head>
 

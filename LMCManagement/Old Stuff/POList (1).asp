@@ -31,7 +31,7 @@ button{font-size:22px; color:#555;}
 .Row:hover{background-color:#0FF;}
 	.RowItem{border:1px solid #555; display:inline; margin:0; padding:0; float:left; overflow:hidden; height:100%; background:none;}
 	.Del{width:3%;}
-	.btnEdit{width:3%; background:none; border-width:1px; cursor:pointer; background:url(../../LMCDevelopment/images/Pencil_16.png) no-repeat center;}
+	.btnEdit{width:3%; background:none; border-width:1px; cursor:pointer; background:url(../../LMCManagement/images/Pencil_16.png) no-repeat center;}
 	.Date{width:10%; font-size: 14px;}
 	.Vendor{width:27%;}
 	.PONum{width:50%;}

@@ -49,15 +49,15 @@ Page=1
 <body onResize="Resize();" onLoad="Resize();" onMouseMove="PartsMouseMove(event,'PartsBox');" onclick="Gebi('ChangePOMenu').style.diplay='block';">
 
 <div id="Toolbar" class="Toolbar">
-	<button id=Back2 onClick="PGebi('PurchasingIframe').src='Purchase.html';"><img style="width:16px; height:16px;" src="../../LMCDevelopment/images/GreenDblLeftTriangle.png"/>Back 2 Purchasing Jobs</button>
-	<button id=Back onClick="PGebi('PurchasingIframe').src='PurchaseOrders.asp?ProjID=<%=ProjID%>';"><img style="width:16px; height:16px;" src="../../LMCDevelopment/images/GreenLeftTriangle.png"/>Back 2 P.O. List</button>
+	<button id=Back2 onClick="PGebi('PurchasingIframe').src='Purchase.html';"><img style="width:16px; height:16px;" src="../../LMCManagement/images/GreenDblLeftTriangle.png"/>Back 2 Purchasing Jobs</button>
+	<button id=Back onClick="PGebi('PurchasingIframe').src='PurchaseOrders.asp?ProjID=<%=ProjID%>';"><img style="width:16px; height:16px;" src="../../LMCManagement/images/GreenLeftTriangle.png"/>Back 2 P.O. List</button>
 	<span class="tSpacerLine"></span>
-	<button onClick="Gebi('PartsBox').style.display='block';" ><img style="width:16px; height:16px;" src="../../LMCDevelopment/images/plus_16.png"/>&nbsp;Add</button>
-	<button onClick="DeletePOItem();" ><img style="width:16px; height:16px;" src="../../LMCDevelopment/images/delete_16.png"/>&nbsp;Delete</button>
-	<button id=ChangePO onClick="Gebi('ChangePOMenu').style.display='block'; Gebi('MenuFocus').focus();"	><img style="width:16px; height:16px;" src="../../LMCDevelopment/images/SendLeft.png" />&nbsp;Move to P.O.</button>
-	<button	onClick="PlusPOItem(1);" ><img style="width:16px; height:16px;" src="../../LMCDevelopment/images/plus_16.png"/>&nbsp;Qty's+1</button>
-	<button	onClick="PlusPOItem(-1);" ><img style="width:16px; height:16px;" src="../../LMCDevelopment/images/minus_16.png"/>&nbsp;Qty's-1</button>
-	<button	id="ReloadFrame" style="float:right;" onClick="window.location.reload();"><img src="../../LMCDevelopment/images/reloadblue24.png" style="width:100%; height:100%;"/></button>
+	<button onClick="Gebi('PartsBox').style.display='block';" ><img style="width:16px; height:16px;" src="../../LMCManagement/images/plus_16.png"/>&nbsp;Add</button>
+	<button onClick="DeletePOItem();" ><img style="width:16px; height:16px;" src="../../LMCManagement/images/delete_16.png"/>&nbsp;Delete</button>
+	<button id=ChangePO onClick="Gebi('ChangePOMenu').style.display='block'; Gebi('MenuFocus').focus();"	><img style="width:16px; height:16px;" src="../../LMCManagement/images/SendLeft.png" />&nbsp;Move to P.O.</button>
+	<button	onClick="PlusPOItem(1);" ><img style="width:16px; height:16px;" src="../../LMCManagement/images/plus_16.png"/>&nbsp;Qty's+1</button>
+	<button	onClick="PlusPOItem(-1);" ><img style="width:16px; height:16px;" src="../../LMCManagement/images/minus_16.png"/>&nbsp;Qty's-1</button>
+	<button	id="ReloadFrame" style="float:right;" onClick="window.location.reload();"><img src="../../LMCManagement/images/reloadblue24.png" style="width:100%; height:100%;"/></button>
 </div>
 
 <div id=ChangePOMenu class="MenuBox" onblur="this.display='none';">
@@ -111,7 +111,7 @@ Page=1
 			
 		</div>
 		-->
-		<div class=HeadSection><img id=Logo src="../../LMCDevelopment/images/TricomLogo2.jpg"/></div>
+		<div class=HeadSection><img id=Logo src="../../LMCManagement/images/TricomLogo2.jpg"/></div>
 		<div class=HeadSection style="width:50%; float:right;">
 			<span id=PONumTitle>Purchase Order Number:</span>
 			<input id=PONumber onChange="WSQLU('PurchaseOrders','PONum',this.value,'POID',POID);" value="<%=rs("PONum")%>" />

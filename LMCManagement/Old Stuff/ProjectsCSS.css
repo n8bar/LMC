@@ -88,9 +88,9 @@ button{padding:0; margin:0; -webkit-box-sizing:border-box; -moz-box-sizing:borde
 
 .HeadNum    {	position:relative; float:left; overflow:visible; white-space:nowrap; width:4.5%; min-width:35px; height:100%; font-size:13px;	text-align:center; border-left:1px solid #888;	}
 .HeadPri{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:3%; min-width:16px; height:100%; font-size: 13px; text-align:center; border-left:1px solid #DDD; padding-top:10px;	}
-.HeadSched{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:3%; min-width:16px; height:100%; font-size: 13px; text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../LMCDevelopment/images/calendar-background-icon16.png) center no-repeat; vertical-align:middle;	}
-.HeadReport{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:3%; min-width:16px; height:100%; font-size: 13px; text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../LMCDevelopment/images/Pencil-gray16.png) center no-repeat; vertical-align:middle;	}
-.HeadManage{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:3%; min-width:16px; height:100%; font-size: 13px; text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../LMCDevelopment/images/FolderOutline.png) center no-repeat; vertical-align:middle;	}
+.HeadSched{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:3%; min-width:16px; height:100%; font-size: 13px; text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../LMCManagement/images/calendar-background-icon16.png) center no-repeat; vertical-align:middle;	}
+.HeadReport{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:3%; min-width:16px; height:100%; font-size: 13px; text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../LMCManagement/images/Pencil-gray16.png) center no-repeat; vertical-align:middle;	}
+.HeadManage{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:3%; min-width:16px; height:100%; font-size: 13px; text-align:center; padding-top:2px; border-left:1px solid #DDD; background:url(../../LMCManagement/images/FolderOutline.png) center no-repeat; vertical-align:middle;	}
 .HeadJob    {	position:relative; float:left; overflow:hidden; white-space: nowrap; width:33%; min-width:259px; height:100%; font-size: 13px; text-align:center; border-left:1px solid #DDD; padding-top:10px;	}
 .HeadDates{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:9%; height:100%; font-size: 13px; padding:0 0 0 0; text-align:center; border-left:1px solid #DDD; padding-top:10px;	}
 .HeadLists{	position:relative; float:left; overflow:hidden; white-space: nowrap; width:21%; height:100%; font-size: 13px; padding:0 0 0 0; text-align:center; border-left:1px solid #DDD;	}
@@ -121,19 +121,19 @@ button{padding:0; margin:0; -webkit-box-sizing:border-box; -moz-box-sizing:borde
 
 .ItemSched{	height:100%; width:16px; min-width:16px; min-height:15px; float:left; overflow:hidden; white-space:nowrap; font-family:Verdana, Arial, Helvetica, sans-serif-size; font-size:11px; border-left:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0;	}
 
-.InnerSched{	height:100%; width:15px; float:left; font-size:10px; padding-top:0px; text-align:center; cursor:pointer; background:url(../../LMCDevelopment/images/calendar-date-icon.png) no-repeat center; background-size:100%;	}
+.InnerSched{	height:100%; width:15px; float:left; font-size:10px; padding-top:0px; text-align:center; cursor:pointer; background:url(../../LMCManagement/images/calendar-date-icon.png) no-repeat center; background-size:100%;	}
 
 .ItemReport{	height:100%; width:16px; min-width:16px; min-height:15px; float:left; overflow:hidden; white-space:nowrap; font-family:Verdana, Arial, Helvetica, sans-serif-size; font-size:11px; border-left:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0;	}
 
-.InnerReport{	height:100%; width:15px; float:left; font-size:10px; padding:1px 0 0 1px; text-align:center; cursor:pointer; background:url(../../LMCDevelopment/images/Pencil_16.png) no-repeat center;	}
+.InnerReport{	height:100%; width:15px; float:left; font-size:10px; padding:1px 0 0 1px; text-align:center; cursor:pointer; background:url(../../LMCManagement/images/Pencil_16.png) no-repeat center;	}
 
 .ItemManage{	height:100%; width:16px; min-width:16px; min-height:15px; float:left; overflow:hidden; white-space:nowrap; font-family:Verdana, Arial, Helvetica, sans-serif-size; font-size:11px; border-left:1px solid #C0C0C0; border-bottom:1px solid #C0C0C0;	}
 
-.InnerManage{	height:100%; float:left; width:15px; font-size:10px; padding:0 0 0 1px; text-align:center; cursor:pointer; background:url(../../LMCDevelopment/images/folder_16.png) no-repeat center;	}
+.InnerManage{	height:100%; float:left; width:15px; font-size:10px; padding:0 0 0 1px; text-align:center; cursor:pointer; background:url(../../LMCManagement/images/folder_16.png) no-repeat center;	}
 
 .ItemJob{	width:30%; min-width:200px; max-width:400px; height:100%; float:left; overflow:hidden; white-space:nowrap; font-family:Arial,Helvetica,sans-serif; font-weight:bold; text-overflow: ellipsis; border-left:1px solid #C0C0C0; cursor:default;	}
 
-.PlusMinus{	margin-top:3px; margin-left:3px; float:left; width:9px; height:9px; background:center url(../../LMCDevelopment/images/TreePlus.gif) no-repeat; cursor:pointer;	}
+.PlusMinus{	margin-top:3px; margin-left:3px; float:left; width:9px; height:9px; background:center url(../../LMCManagement/images/TreePlus.gif) no-repeat; cursor:pointer;	}
 
 .JobName{	width:30%; min-width:200px; max-width:400px; height:100%; float:left; overflow:hidden; white-space:nowrap; font-family:Arial,Helvetica,sans-serif; font-weight:bold; text-overflow: ellipsis; border-left:0px solid #C0C0C0; cursor:default; -webkit-box-sizing:border-box;	}
 
@@ -163,29 +163,29 @@ button{padding:0; margin:0; -webkit-box-sizing:border-box; -moz-box-sizing:borde
 
 .ItemArchive  {	float:left; overflow:hidden; white-space:nowrap; width:25px; height:25px; padding:3px 3px 3px 3px; /*background:none;*/
 }
-.ItemArchiveButton{	float:left; overflow:hidden; white-space: nowrap; width:26px; height:24px; padding:0px; background: url(../../LMCDevelopment/Images/Archive2.gif) no-repeat; cursor:pointer; 
+.ItemArchiveButton{	float:left; overflow:hidden; white-space: nowrap; width:26px; height:24px; padding:0px; background: url(../../LMCManagement/Images/Archive2.gif) no-repeat; cursor:pointer; 
 }
-div.ItemArchiveButton:Hover{background-image:url(../../LMCDevelopment/Images/Archive2Rollover.gif)}
+div.ItemArchiveButton:Hover{background-image:url(../../LMCManagement/Images/Archive2Rollover.gif)}
 
-.ArchivedProjectItemArchiveButton{	float:left; overflow:hidden; white-space: nowrap; width:26px; height:24px; padding:0px; background: url(../../LMCDevelopment/Images/Arrow20X25L.gif) no-repeat; cursor:pointer;	}
+.ArchivedProjectItemArchiveButton{	float:left; overflow:hidden; white-space: nowrap; width:26px; height:24px; padding:0px; background: url(../../LMCManagement/Images/Arrow20X25L.gif) no-repeat; cursor:pointer;	}
 
 .ItemInfo{	float:left; clear:left; overflow:hidden; width:23px; height:25px; text-align:center; padding:0px 5px 5px 1px; /*background:#FFF5EC; */
 }
 
-.ItemInfoBackground{	float:left; overflow:hidden; width:32px; height:24px; padding:0px; margin:4px 0 0 0; background: url(../../LMCDevelopment/Images/OpenProj.png) no-repeat; 
+.ItemInfoBackground{	float:left; overflow:hidden; width:32px; height:24px; padding:0px; margin:4px 0 0 0; background: url(../../LMCManagement/Images/OpenProj.png) no-repeat; 
 }
-div.ItemInfoBackground:Hover{background-image:url(../../LMCDevelopment/Images/OpenProjRollover.png)}
+div.ItemInfoBackground:Hover{background-image:url(../../LMCManagement/Images/OpenProjRollover.png)}
 
 
 .ItemTime{	float:left; overflow:hidden; width:24px; height:24px; text-align:center; padding:3px 2px 3px 2px; /*background:#FFF5EC; */
 	cursor:pointer;	}
-.ItemTimeBackground{	float:left; overflow:hidden; width:24px; height:24px; padding:0px; background:url(../../LMCDevelopment/Images/Clock24x24.gif) no-repeat; background-repeat:no-repeat;	}
-div.ItemTimeBackground:Hover{background-image:url(../../LMCDevelopment/Images/Clock24x24Rollover.gif)}
+.ItemTimeBackground{	float:left; overflow:hidden; width:24px; height:24px; padding:0px; background:url(../../LMCManagement/Images/Clock24x24.gif) no-repeat; background-repeat:no-repeat;	}
+div.ItemTimeBackground:Hover{background-image:url(../../LMCManagement/Images/Clock24x24Rollover.gif)}
 .ItemSch{	float:left; overflow:hidden; width:24px; height:24px; text-align:center; padding:4px 2px 3px 2px; /*background:none;  */
 	cursor:pointer;	}
-.ItemSchBackground {	float:left; overflow:hidden; width:24px; height:24px; padding:0px; background-image:url(../../LMCDevelopment/Images/cal24x24.gif); 
+.ItemSchBackground {	float:left; overflow:hidden; width:24px; height:24px; padding:0px; background-image:url(../../LMCManagement/Images/cal24x24.gif); 
 }
-div.ItemSchBackground:Hover{background-image:url(../../LMCDevelopment/Images/cal24x24Rollover.gif)}
+div.ItemSchBackground:Hover{background-image:url(../../LMCManagement/Images/cal24x24Rollover.gif)}
 .ItemAttn{	float:left; overflow: visible; white-space: nowrap; width:auto; max-width:20%; height:25px; padding:6px 0px 0px 0px; font-weight:normal; color:#000;  
 }
 .ItemAttnButton {	float:left; white-space:nowrap; width:7px; height:3.5px; padding:6px 3px 3px 3px; border-left:none; background-image: url(/WebSite/LMC/Images/down10.gif) no-repeat; overflow:visible;	}

@@ -23,11 +23,11 @@
 
 <div name="TaskBox" id="TaskBox" class="TaskBox">
 	<div align="center" class="Pencil">
-		<img style="float:right; cursor:pointer; margin:2px 2px 0 0;" src="../../LMCDevelopment/images/closesmall.gif" alt="close" onclick="TaskBoxClose();" width="10" height="10"/>
+		<img style="float:right; cursor:pointer; margin:2px 2px 0 0;" src="../../LMCManagement/images/closesmall.gif" alt="close" onclick="TaskBoxClose();" width="10" height="10"/>
 		<div name="TaskBoxTitle" id="TaskBoxTitle" class="TaskBoxTitle" ></div> 
 		<div align="left" class="TaskBoxLabel">Task Date: </div>
 		<input id="txtDate" type="text" class="TaskBoxInput" style="width:85%;" readonly onfocus="displayCalendar('txtDate','mm/dd/yyyy',this);" />
-		<img style="cursor:pointer;" onclick="displayCalendar('txtDate','mm/dd/yyyy',this);" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16">
+		<img style="cursor:pointer;" onclick="displayCalendar('txtDate','mm/dd/yyyy',this);" src="../../LMCManagement/Images/cal.gif" width="16" height="16">
 		<br />
 		<div align="left" class="TaskBoxLabel">Task Description: </div>
 		<input id="txtJob" name="" type="text" class="TaskBoxInput"  />
@@ -60,7 +60,7 @@
 	<div class="Pencil" style="height:100%">
 		<div style="padding:1.5% .5% 1.5% 1.5%; width:98%; height:10%;">
 			Search:
-			<img style="float:right; cursor:pointer; margin:2px 2px 0 0;" src="../../LMCDevelopment/images/closesmall.gif" alt="close" onclick="Gebi('CustSearchBox').style.display='none';" width="10" height="10"/>
+			<img style="float:right; cursor:pointer; margin:2px 2px 0 0;" src="../../LMCManagement/images/closesmall.gif" alt="close" onclick="Gebi('CustSearchBox').style.display='none';" width="10" height="10"/>
 			<div><input id="txtCustSearch" type="text" onkeyup="SearchCust();" style="width:97%;" /></div>
 		</div>
 		<div id="SearchCustList" name="SearchCustList" class="SearchCustList"></div>
@@ -88,52 +88,52 @@
 					
 					<div id="HeadEdit" name="" class="HeadEdit">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:16px; left:0px;">Edit</div>
 					</div>
 
 					<div id="HeadDel" name="" class="HeadDel">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:16px; left:0px;">Del</div>
 					</div>
 
 					<div id="HeadSch" name="" class="HeadSch">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:16px; left:0px;">Sch</div>
 					</div>
 
 					<div id="HeadArch" name="" class="HeadArch">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:8px; left:0px;">Arch<br />ive</div>
 					</div>
 
 					<div id="HeadPri" name="" class="HeadPri" title='Sort By' onclick="LoadNotes('Priority')"
 					 onmouseover="MouseOver(this,'#7D0000')" onmouseout="MouseOut(this)">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:16px; left:0px;">Pri</div>
 					</div>
 
 					<div id="HeadJob" name="" class="HeadJob" title='Sort By' onclick="LoadNotes('Job')"
 					 onmouseover="MouseOver(this,'#7D0000')" onmouseout="MouseOut(this)">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:16px; left:0px;">Task/Job</div>
 					</div>
 
 					<div id="HeadDone" name="" class="HeadDone" style="background:#D9B9B9;">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:8px; left:0px;">Prog<br />ress</div>
 					</div>
 
 					<div id="HeadDate" name="" class="HeadDate" title='Sort By' onclick="OrderHeadId=this; LoadNotes('Date');"
 					 onmouseover="MouseOver(this,'#7D0000')" onmouseout="MouseOut(this)">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:16px; left:0px;">Date</div>
 					</div>
 
@@ -141,7 +141,7 @@
 						<div id="HeadCust" name="" class="HeadCust" title='Sort By' onclick="LoadNotes('Cust');"
 						 onmouseover="MouseOver(this,'#7D0000')" onmouseout="MouseOut(this)">
 							<div style="width:100%; height:1px; overflow:visible;">
-								<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+								<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 							<div style="position:relative; top:16px; left:0px;">Customer</div>
 						</div>
 					</div>
@@ -149,14 +149,14 @@
 					<div id="HeadAttn" name="" class="HeadAttn" title='Sort By' onclick="LoadNotes('Attn')"
 					 onmouseover="MouseOver(this,'#7D0000')" onmouseout="MouseOut(this)">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:16px; left:0px;">Attention</div>
 					</div>
 
 					<div id="HeadArea" name="" class="HeadArea" title='Sort By' onclick="LoadNotes('Area');"
 					 onmouseover="MouseOver(this,'#7D0000')" onmouseout="MouseOut(this)">
 						<div style="width:100%; height:1px; overflow:visible;">
-							<img src="../../LMCDevelopment/Images/Pinkish.png" width="100%" height="31" /></div>
+							<img src="../../LMCManagement/Images/Pinkish.png" width="100%" height="31" /></div>
 						<div style="position:relative; top:16px; left:0px;">Area</div>
 					</div>
 				</div>  

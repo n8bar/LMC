@@ -10,19 +10,19 @@
     
 <!--  #include file="RED.asp"  -->
 
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/CalendarMain-JS.js"></script>
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/CalendarCreate.js"></script>
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/CalendarJS.js"></script>
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/CalendarAJAX.js"></script>
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/DragNDropJS.js"></script>
-<SCRIPT type="text/javascript" src="../../LMCDevelopment/Old Stuff/dhtmlgoodies_calendar.js?random=20060118"></script>
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/rcstri.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/CalendarMain-JS.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/CalendarCreate.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/CalendarJS.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/CalendarAJAX.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/DragNDropJS.js"></script>
+<SCRIPT type="text/javascript" src="../../LMCManagement/Old Stuff/dhtmlgoodies_calendar.js?random=20060118"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/rcstri.js"></script>
 
 <script type="text/javascript"> var mX; var mY; </script>
 
-<link rel="stylesheet" href="../../LMCDevelopment/Old Stuff/CalendarCSS.css" media="screen">
-<link rel="stylesheet" href="../../LMCDevelopment/Old Stuff/CalendarMain-CSS.css" media="screen">
-<link type="text/css" rel="stylesheet" href="../../LMCDevelopment/Old Stuff/dhtmlgoodies_calendar.css?random=20051112" media="screen">
+<link rel="stylesheet" href="../../LMCManagement/Old Stuff/CalendarCSS.css" media="screen">
+<link rel="stylesheet" href="../../LMCManagement/Old Stuff/CalendarMain-CSS.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../LMCManagement/Old Stuff/dhtmlgoodies_calendar.css?random=20051112" media="screen">
 
 
 
@@ -54,7 +54,7 @@
 			<!-- <div id="BoardTab" onMouseUp="showBoard()" class="BoardTab">Board</div> -->
 			<!-- <div id="AlertsTab" onMouseUp="showAlerts()" class="AlertsTab">Alerts</div> -->
 			<small style="float:right;">
-				<a href="../../LMCDevelopment/Old Stuff/calendarMain.asp" target="_self" style="text-decoration:underline; font-family:Arial, Helvetica, sans-serif;">Old Calendar</a>
+				<a href="../../LMCManagement/Old Stuff/calendarMain.asp" target="_self" style="text-decoration:underline; font-family:Arial, Helvetica, sans-serif;">Old Calendar</a>
 				&nbsp;
 			</small>
 				
@@ -708,7 +708,7 @@
       
     <ul id="dragContent"></ul>
     
-		<div id="dragDropIndicator" style="background-image:url(../../LMCDevelopment/Old%20Stuff/images/ArrowUpL.gif);"></div>
+		<div id="dragDropIndicator" style="background-image:url(../../LMCManagement/Old%20Stuff/images/ArrowUpL.gif);"></div>
     </div>
 </div>  </td>
   </tr>
@@ -743,7 +743,7 @@ Everything below are divs used for popups///////////////////////////////////////
 
 	<div style="font-size:18px; background-color:#1294D0; width:100%; color:#FFFFFF;">
 		New Event
-		<img onClick="hideEventModal();" style="cursor:pointer; float:right;" src="../../LMCDevelopment/Old Stuff/Images/close15X15.gif" width="15" height="15" />
+		<img onClick="hideEventModal();" style="cursor:pointer; float:right;" src="../../LMCManagement/Old Stuff/Images/close15X15.gif" width="15" height="15" />
 	</div>
 	
 	<label style="font-size:24px; width:100%;">Please choose an event category:</label>
@@ -796,7 +796,7 @@ Everything below are divs used for popups///////////////////////////////////////
 </div>
 
 <div id="ProjectSelectionBox">
-	<img onClick="this.parentNode.style.display='none';" style="cursor:pointer; float:right;" src="../../LMCDevelopment/Old Stuff/Images/close15X15.gif" width="15" height="15" />
+	<img onClick="this.parentNode.style.display='none';" style="cursor:pointer; float:right;" src="../../LMCManagement/Old Stuff/Images/close15X15.gif" width="15" height="15" />
 	<br>
 	<!--
 	<input id="cbActive" type="checkbox" checked/><label for="cbActive">Active</label>&nbsp; &nbsp;
@@ -874,7 +874,7 @@ Everything below are divs used for popups///////////////////////////////////////
             <td align="left" valign="bottom">
             <div align="left">
               <input type="text" name="FromDateTxt" id="FromDateTxt" class="EventTextBox" size="18" maxlength="20" value=""/>
-              <img style="cursor:pointer;"onclick="displayCalendar('FromDateTxt','mm/dd/yyyy',this)" src="../../LMCDevelopment/Old Stuff/Images/cal.gif" width="16" height="16"></div>
+              <img style="cursor:pointer;"onclick="displayCalendar('FromDateTxt','mm/dd/yyyy',this)" src="../../LMCManagement/Old Stuff/Images/cal.gif" width="16" height="16"></div>
               </td>
             <td align="right" valign="bottom" style="border-left: 1px solid #AAA;">
             <div class="EventLabelText" >Task</div>            </td>
@@ -902,7 +902,7 @@ Everything below are divs used for popups///////////////////////////////////////
             <td align="left" valign="bottom">
             <div align="left">
               <input type="text" name="ToDateTxt" id="ToDateTxt" class="EventTextBox" size="18"  onChange="ToDateChange();" maxlength="20"/>
-            <img style="cursor:pointer;"onclick="displayCalendar('ToDateTxt','mm/dd/yyyy',this);" src="../../LMCDevelopment/Old Stuff/Images/cal.gif" width="16" height="16"></div>            </td>
+            <img style="cursor:pointer;"onclick="displayCalendar('ToDateTxt','mm/dd/yyyy',this);" src="../../LMCManagement/Old Stuff/Images/cal.gif" width="16" height="16"></div>            </td>
             <td align="right" valign="bottom" style="border-left: 1px solid #AAA;">
             <!-- <div class="EventLabelText" >Job Name</div>   -->          </td>
             <td align="left" valign="bottom">
@@ -1164,7 +1164,7 @@ Everything below are divs used for popups///////////////////////////////////////
 <!-- Drag and drop///////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <ul id="dragContent"></ul>
-<div id="dragDropIndicator"><img src="../../LMCDevelopment/Old Stuff/Images/Arrow20X25R2.gif"></div>
+<div id="dragDropIndicator"><img src="../../LMCManagement/Old Stuff/Images/Arrow20X25R2.gif"></div>
 
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 

@@ -91,12 +91,12 @@ var ProjID=<%=ProjID%>; //Copy the ASP ProjID to a JS ProjID
 				
 				<div style="<%=DateStyle%> clear:left;">
 					<label for="SchDateFrom" style="<%=labelStyle%> width:auto;">From:</label>
-					<img style="cursor:pointer; padding:0; clear:none; float:right;" onClick="displayCalendar('SchDateFrom','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif">
+					<img style="cursor:pointer; padding:0; clear:none; float:right;" onClick="displayCalendar('SchDateFrom','mm/dd/yyyy',this)" src="../../LMCManagement/Images/cal.gif">
 					<input id="SchDateFrom" style="<%=inputStyle%>" value="<%=rs4("DateFrom")%>" onChange="UpdateCal('DateFrom', this.value,<%=rs4("CalID")%>)"/>
 				</div>
 				<div style="<%=DateStyle%>">
 					<label for="SchDateTo" style="<%=labelStyle%> width:auto;">To:</label>
-					<img style="cursor:pointer; padding:0; clear:none; float:right;" onClick="displayCalendar('SchDateFrom','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif">
+					<img style="cursor:pointer; padding:0; clear:none; float:right;" onClick="displayCalendar('SchDateFrom','mm/dd/yyyy',this)" src="../../LMCManagement/Images/cal.gif">
 					<input id="SchDateTo" style="<%=inputStyle%>" value="<%=rs4("DateTo")%>" onChange="UpdateCal('DateTo', this.value,<%=rs4("CalID")%>)"/>
 				</div>
 				<div style="<%=DateStyle%>">

@@ -183,11 +183,11 @@ function Print()
 	URL=URL.replace('?','%3F').replace('=','%3D').replace('=','%3D').replace(/&/g,'%26');
 	alert(URL);
 	
-	window.location='http://www.web2pdfconvert.com/convert.aspx?cURL=https://www.rcstri.com/website/LMCdevelopment/EstimatePrintMain.asp%3FProjID%3D<%'=ProjID%>%26CustID%3D<%'=CustID%>&outputmode=link&allowactivex=no&ref=form';
+	window.location='http://www.web2pdfconvert.com/convert.aspx?cURL=https://www.rcstri.com/website/LMCManagement/EstimatePrintMain.asp%3FProjID%3D<%'=ProjID%>%26CustID%3D<%'=CustID%>&outputmode=link&allowactivex=no&ref=form';
 	
 	*/
 	/*
-	document.getElementById('PDFFrame').src='http://www.web2pdfconvert.com/convert.aspx?cURL=https://www.rcstri.com/website/LMCdevelopment/EstimatePrintMain.asp%3FProjID%3D<%'=ProjID%>%26CustID%3D<%'=CustID%>&outputmode=link&allowactivex=no&ref=form'
+	document.getElementById('PDFFrame').src='http://www.web2pdfconvert.com/convert.aspx?cURL=https://www.rcstri.com/website/LMCManagement/EstimatePrintMain.asp%3FProjID%3D<%'=ProjID%>%26CustID%3D<%'=CustID%>&outputmode=link&allowactivex=no&ref=form'
 	setTimeout('GeneratePDF();',10000);
 	*/
 }

@@ -47,7 +47,7 @@ function Search() {
 	var Order=document.getElementsByClassName('hColSort')[0].id;
 	
 	HttpText='MaterialsASP.asp?action=Search&Mfg='+Mfg+'&Name='+PN+'&Desc='+Desc+'&Max='+Max+'&Min='+Min+'&System='+Sys+'&Category='+Cat+'&Vendor='+Vendor+'&and='+and+'&Order='+Order;
-	//DebugBox('<a href="../../LMCDevelopment/'+HttpText+'">SearchXML</a>');
+	//DebugBox('<a href="../../LMCManagement/'+HttpText+'">SearchXML</a>');
 	xhr=GetXmlHttpObject();
 	xhr.onreadystatechange = function () {
 		Gebi('mStatus').innerHTML+='.';

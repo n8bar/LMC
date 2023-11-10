@@ -11,7 +11,7 @@
 <script type="text/javascript" src="ProjectsJS.js"></script>
 <script type="text/javascript" src="ProjectsAJAX.js"></script>
 
-<link rel="stylesheet" href="../../LMCDevelopment/Old Stuff/CSS_DEFAULTS.css" media="screen">
+<link rel="stylesheet" href="../../LMCManagement/Old Stuff/CSS_DEFAULTS.css" media="screen">
 <link rel="stylesheet" href="ProjectsCSS.css" media="screen">
 
 

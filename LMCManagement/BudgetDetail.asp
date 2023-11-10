@@ -6,12 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 <title>Budget Detail</title>
-<!--#include file="../LMCDevelopment/common.asp" -->
+<!--#include file="../LMCManagement/common.asp" -->
 
-<script type="text/javascript" src="../LMCDevelopment/Project/Project.js?nocache=<%=timer%>"></script>
-<script type="text/javascript" src="../LMCDevelopment/Project/ProjectAJAX.js?nocache=<%=timer%>"></script>
+<script type="text/javascript" src="../LMCManagement/Project/Project.js?nocache=<%=timer%>"></script>
+<script type="text/javascript" src="../LMCManagement/Project/ProjectAJAX.js?nocache=<%=timer%>"></script>
 
-<link rel=stylesheet href="../LMCDevelopment/Project/Project.css?nocache=<%=timer%>" media=all >
+<link rel=stylesheet href="../LMCManagement/Project/Project.css?nocache=<%=timer%>" media=all >
 
 <%
 If Session("user")="" Then

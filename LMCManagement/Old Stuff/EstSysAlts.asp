@@ -110,7 +110,7 @@ div{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-b
 	Gebi('Details').value='';
 	Gebi('Cost').value='';
 ">
-	<img src="../../LMCDevelopment/images/plus_16.png" style="float:left;" />
+	<img src="../../LMCManagement/images/plus_16.png" style="float:left;" />
 	<div style="height:100%; float:left;">Add&nbsp;</div>
 </button>
 
@@ -219,7 +219,7 @@ Do Until rs1.EOF
 				window.location=window.location;
 			}
 		 ">
-			<img src="../../LMCDevelopment/images/delete_16.png" />
+			<img src="../../LMCManagement/images/delete_16.png" />
 		</div>
 		<div id="iEdit<%=iCount%>" class="RowBtn ItemMO" title="Edit" style="background:<%=AltBG%>;"
 		 onClick="
@@ -235,7 +235,7 @@ Do Until rs1.EOF
 
 			 SysAltID=<%=rs1("SysAltID")%>;
 		">
-			<img src="../../LMCDevelopment/images/pencil_16.png" />
+			<img src="../../LMCManagement/images/pencil_16.png" />
 
 		
 		</div>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <!-- DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" -->
 <!-- html xmlns="http://www.w3.org/1999/xhtml" -->
-<!-- Calendar Access URL= https://www.google.com/a/tricomlv.com/AuthSubRequestJS?session=1&scope=https://www.google.com/calendar/feeds/&next=https://www.rcstri.com/website/LMCdevelopment/LMC.html 
+<!-- Calendar Access URL= https://www.google.com/a/tricomlv.com/AuthSubRequestJS?session=1&scope=https://www.google.com/calendar/feeds/&next=https://www.rcstri.com/website/LMCManagement/LMC.html 
 
 Login URL:
 https://www.google.com/a/UniversalLogin
@@ -13,7 +13,7 @@ https://www.google.com/a/UniversalLogin
 
 <!--#include file="RED.asp" -->
 
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/rcstri.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/rcstri.js"></script>
 <script type="text/javascript" src="Cal2.js"></script>
 
 <link rel="stylesheet" href="Cal2.css" media="screen">
@@ -27,7 +27,7 @@ https://www.google.com/a/UniversalLogin
 	<div id="Left" class="Left">
 		<small><a href="https://www.google.com/a/tricomlv.com/ServiceLogin" target="_blank"style="text-decoration:underline;">tricomlv.com signin</a>&nbsp;</small>
 		<br/>
-		<small><a href="../../LMCDevelopment/Old Stuff/calendarmain.asp" target="_self"style="text-decoration:underline;">Old Calendar</a>&nbsp;</small>
+		<small><a href="../../LMCManagement/Old Stuff/calendarmain.asp" target="_self"style="text-decoration:underline;">Old Calendar</a>&nbsp;</small>
 		<br/>
 		<hr/>
 		<small><a href="http://docs.tricomlv.com" target="_self"style="text-decoration:underline;">Google Docs</a>&nbsp;</small>

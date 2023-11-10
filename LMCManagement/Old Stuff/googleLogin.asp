@@ -5,7 +5,7 @@
 <title>Google Logger-Inner</title>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/rcstri.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/rcstri.js"></script>
 <script type="text/javascript">
 //<Google Calendar biz>///////////////////////////////////////////////////////////////////////////
 var calService;

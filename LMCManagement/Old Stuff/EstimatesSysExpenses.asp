@@ -284,14 +284,14 @@ body{width:100%; height:100%; overflow-x:hidden; overflow-y:auto;}
 		<button style="height:22px; margin:2px 8px 2px 0; width:auto; float:right;"
 		 onClick="Gebi('AddTravel').style.display='block'; Gebi('Modal').style.display='block'; Gebi('tSave').style.display='none'; Gebi('tAdd').style.display='block'; Gebi('TravelBoxTitle').innerHTML=Gebi('TravelBoxTitle').innerHTML.replace('Edit','Add');"
 		>
-			<img src="../../LMCDevelopment/images/plus_16.png" style="float:left;" />
+			<img src="../../LMCManagement/images/plus_16.png" style="float:left;" />
 			<div style="height:100%; float:left;">Add&nbsp;</div>
 		</button>
 	</div>
 	
 	<div id="TravelHead" class="HeadRow">
 		<div class="tHeadItem" style="width:3%;"><div class="bL"> </div></div>
-		<div class="tHeadItem ItemMO" style="width:3%;" onClick="DeleteExpenseAll('Travel')" title="DELETE ALL"><div class="bL"> </div><img src="../../LMCDevelopment/images/delete_16.png" /></div>
+		<div class="tHeadItem ItemMO" style="width:3%;" onClick="DeleteExpenseAll('Travel')" title="DELETE ALL"><div class="bL"> </div><img src="../../LMCManagement/images/delete_16.png" /></div>
 		<div class="tHeadItem" style="width:11%;"><div class="bL"> </div>Travel Type</div>
 		<div class="tHeadItem"><div class="bL"> </div>Origin</div>
 		<div class="tHeadItem"><div class="bL"> </div>Destination</div>
@@ -358,12 +358,12 @@ body{width:100%; height:100%; overflow-x:hidden; overflow-y:auto;}
 					 ExpenseID=<%=tRS("ExpenseID")%>;
 				">
 					<div class="bL"> </div>
-					<img src="../../LMCDevelopment/images/pencil_16.png" />
+					<img src="../../LMCManagement/images/pencil_16.png" />
 				</div>
 				
 				<div id="tX<%=tCount%>" class="RowBtn ItemMO" title="Delete" style="background:<%=AltBG%>;" onClick="DeleteExpense(<%=tRS("ExpenseID")%>)">
 					<div class="bL"> </div>
-					<img src="../../LMCDevelopment/images/delete_16.png" />
+					<img src="../../LMCManagement/images/delete_16.png" />
 				</div>
 
 				<div id="tType<%=tCount%>" class="RowItem" style="width:11%; background:<%=AltBG%>;" title="<%=tRS("SubType")%>">
@@ -458,14 +458,14 @@ body{width:100%; height:100%; overflow-x:hidden; overflow-y:auto;}
 		<button style="height:22px; margin:2px 8px 2px 0; width:auto; float:right;"
 		 onClick="Gebi('AddEquip').style.display='block'; Gebi('Modal').style.display='block'; Gebi('eSave').style.display='none'; Gebi('eAdd').style.display='block'; Gebi('EquipBoxTitle').innerHTML=Gebi('EquipBoxTitle').innerHTML.replace('Edit','Add');"
 		>
-			<img src="../../LMCDevelopment/images/plus_16.png" style="float:left;" />
+			<img src="../../LMCManagement/images/plus_16.png" style="float:left;" />
 			<div style="height:100%; float:left;">Add&nbsp;</div>
 		</button>
 	</div>
 	
 	<div id="EquipHead" class="HeadRow">
 		<div class="HeadItem" style="width:3%;"><div class="bL"> </div></div>
-		<div class="HeadItem ItemMO" style="width:3%;" onClick="DeleteExpenseAll('Equip')" title="DELETE ALL"><div class="bL"> </div><img src="../../LMCDevelopment/images/delete_16.png" /></div>
+		<div class="HeadItem ItemMO" style="width:3%;" onClick="DeleteExpenseAll('Equip')" title="DELETE ALL"><div class="bL"> </div><img src="../../LMCManagement/images/delete_16.png" /></div>
 		<div class="HeadItem" style="width:56%;"><div class="bL"> </div>Description</div>
 		<div class="HeadItem" style="width:12%;"><div class="bL"> </div>Amount</div>
 		<div class="HeadItem" style="width:12%;"><div class="bL"> </div>Cost ea.</div>
@@ -514,12 +514,12 @@ body{width:100%; height:100%; overflow-x:hidden; overflow-y:auto;}
 					 ExpenseID=<%=eRS("ExpenseID")%>;
 				">
 					<div class="bL"> </div>
-					<img src="../../LMCDevelopment/images/pencil_16.png" />
+					<img src="../../LMCManagement/images/pencil_16.png" />
 				</div>
 
 				<div id="eX<%=eCount%>" class="RowBtn ItemMO" title="Delete" style="background:<%=AltBG%>;" onClick="DeleteExpense(<%=eRS("ExpenseID")%>)">
 					<div class="bL"> </div>
-					<img src="../../LMCDevelopment/images/delete_16.png" />
+					<img src="../../LMCManagement/images/delete_16.png" />
 				</div>
 				
 				<div id="eDesc<%=eCount%>" class="RowItem" style="width:56%; background:<%=AltBG%>;" title="<%=eRS("SubType")%>">

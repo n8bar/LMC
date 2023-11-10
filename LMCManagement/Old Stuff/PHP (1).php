@@ -1,5 +1,5 @@
 <?php
-include("../../LMCDevelopment/Old Stuff/RED.php"); 
+include("../../LMCManagement/Old Stuff/RED.php"); 
 
 echo "Sweeeeeeeeeet. PHP now works on our site!!<br>";
 

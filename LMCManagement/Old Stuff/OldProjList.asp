@@ -10,13 +10,13 @@
 <!-- <script type="text/javascript" src="gears_init.js"></script> -->
 <script type="text/javascript" src="ProjectsJS.js"></script>
 <script type="text/javascript" src="ProjectsAJAX.js"></script>
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/rcstri.js"></script>
-<script type="text/javascript" src="../../LMCDevelopment/Old Stuff/SqlAjax.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/rcstri.js"></script>
+<script type="text/javascript" src="../../LMCManagement/Old Stuff/SqlAjax.js"></script>
 <!-- script type="text/javascript" src="https://wave-api.appspot.com/public/embed.js"></script> 
 <script type="text/javascript" src="Library/WaveEmbed.js"></script>  -->
 <!-- #include file="RED.asp" -->
 
-<link rel="stylesheet" href="../../LMCDevelopment/Old Stuff/CSS_DEFAULTS.css" media="screen"/>
+<link rel="stylesheet" href="../../LMCManagement/Old Stuff/CSS_DEFAULTS.css" media="screen"/>
 <link rel="stylesheet" href="ProjectsCSS.css" media="screen"/>
 
 </head>

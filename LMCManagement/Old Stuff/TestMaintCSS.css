@@ -550,7 +550,7 @@ a.CustListItems:active {color: #000}
 	margin:2px 0px 0px 3px;  
 	background-position:center;	
 	cursor:pointer; 
-	background: url(../../LMCDevelopment/Images/Arrow20X25L.gif); 
+	background: url(../../LMCManagement/Images/Arrow20X25L.gif); 
 	background-repeat:no-repeat;
 }
 .ItemArchiveButton  { 
@@ -562,7 +562,7 @@ a.CustListItems:active {color: #000}
 	margin:2px 0px 0px 3px;  
 	background-position:center;	
 	cursor:pointer; 
-	background: url(../../LMCDevelopment/Images/Arrow20X25R.gif);
+	background: url(../../LMCManagement/Images/Arrow20X25R.gif);
 	background-repeat:no-repeat;
 }
 .ItemDel  { 
@@ -585,7 +585,7 @@ a.CustListItems:active {color: #000}
 	margin:2px 0px 0px 1px;  
 	background-position:center;	
 	cursor:pointer; 
-	background:url(../../LMCDevelopment/Images/TrashCan20.gif); 
+	background:url(../../LMCManagement/Images/TrashCan20.gif); 
 	background-repeat:no-repeat;
 	z-index:10000;
 }
@@ -606,7 +606,7 @@ a.CustListItems:active {color: #000}
 	width:22px;
 	height:20px;  
 	margin:2px 0px 0px 3px; 
-	background:url(../../LMCDevelopment/Images/Clock20.gif); 
+	background:url(../../LMCManagement/Images/Clock20.gif); 
 	background-repeat:no-repeat;
 	cursor:pointer;
 }
@@ -628,7 +628,7 @@ a.CustListItems:active {color: #000}
 	height:20px;  
 	margin:2px 0px 0px 3px;  
 	border-left:none;  
-	background-image:url(../../LMCDevelopment/Images/calender20.gif); 
+	background-image:url(../../LMCManagement/Images/calender20.gif); 
 	background-repeat:no-repeat;
 	cursor:pointer;
 }
@@ -639,7 +639,7 @@ a.CustListItems:active {color: #000}
 	height:20px;  
 	margin:2px 0px 0px 4px;  
 	border-left:none;  
-	background-image:url(../../LMCDevelopment/Images/Pencil18x18.gif); 
+	background-image:url(../../LMCManagement/Images/Pencil18x18.gif); 
 	background-repeat:no-repeat;
 	cursor:pointer;
 }
@@ -709,7 +709,7 @@ a.CustListItems:active {color: #000}
 	height:3.5px; 
 	padding:6px 3px 3px 3px;  
 	border-left:none; 
-	background-image: url(../../LMCDevelopment/Images/down10.gif);
+	background-image: url(../../LMCManagement/Images/down10.gif);
 }
 .ItemCust  { 
 	float:left;  
@@ -757,7 +757,7 @@ a.CustListItems:active {color: #000}
 	background-position:top; 
 	background-repeat:no-repeat;  
 	border-left:none; 
-	background-image:url(../../LMCDevelopment/Images/I-10.gif);
+	background-image:url(../../LMCManagement/Images/I-10.gif);
 }
 .ItemDivider { 
 	float:left; 

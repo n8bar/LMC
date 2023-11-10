@@ -264,7 +264,7 @@ function ReturnMakeInfoBox()
 			var HTML='';
 			HTML+='<div id="CustomInfoBox'+iBNum+'">';
 			HTML+='	<div id="iTitle'+iBNum+'" class="iTitleCustom">';
-			HTML+='		<img class="CustomIX" src="../../LMCDevelopment/images/closesmall.gif" onClick="DelInfoBox('+InfoBoxID+',this.parentNode.parentNode)"/>';
+			HTML+='		<img class="CustomIX" src="../../LMCManagement/images/closesmall.gif" onClick="DelInfoBox('+InfoBoxID+',this.parentNode.parentNode)"/>';
 			HTML+='		<div class="iTitleTextCustom">'+NewInfoBoxTitle+'</div>';
 			HTML+='		<div id="UpButton'+iBNum+'" href="javascript:Void();" onClick="RollUp('+iBNum+');" class="CustomIUp">▲</div>';
 			HTML+='		<div id="DnButton'+iBNum+'" href="javascript:Void();" onClick="RollDn('+iBNum+');" class="CustomIDn">▼</div>';
@@ -315,7 +315,7 @@ function ReturnMakeInfoBoxData()
 			var TN='CustomData'+InfoBoxNum+"-"+iBDNum;
 		
 			HTML+='<div id="'+TN+'Div" class="InfoDiv" onClick="try{Gebi(\''+TN+'\').focus();}catch(e){}">';
-			HTML+='	<img src="../../LMCDevelopment/images/closesmall.gif" style="cursor:pointer;" onClick="DelInfoBoxData('+InfoBoxDataID+',this.parentNode);"/>';
+			HTML+='	<img src="../../LMCManagement/images/closesmall.gif" style="cursor:pointer;" onClick="DelInfoBoxData('+InfoBoxDataID+',this.parentNode);"/>';
 			HTML+='	<label for="'+TN+'" class="InfoLabel">'+Name+'<br/></label>';
 			HTML+='	<input id="'+TN+'" type="text" class="InfoText" onKeyUp="UpdateText(\'InfoBoxData\',\'Data\',this.value,\'InfoBoxDataID\','+InfoBoxDataID+');"/>';
 			HTML+='</div>';
@@ -466,7 +466,7 @@ function ReturnSearchParts()
 				try{return xmlHttp.responseXML.documentElement.getElementsByTagName(tagName)[0].childNodes[0].nodeValue;}
 				catch(e)
 				{
-					Gebi('PartsResults').innerHTML+='<br/>Cannot Find XML tag:<font face="consolas">'+tagName+'</font>   <a href="../../LMCDevelopment/'+HttpText+'" target="_blank">?</a>';
+					Gebi('PartsResults').innerHTML+='<br/>Cannot Find XML tag:<font face="consolas">'+tagName+'</font>   <a href="../../LMCManagement/'+HttpText+'" target="_blank">?</a>';
 				}
 			}
 			var pCount= xmlData('pCount');

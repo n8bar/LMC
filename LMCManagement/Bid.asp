@@ -4,14 +4,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<title>Estimating / Sales</title>
-	<!--#include file="../LMCDevelopment/common.asp" -->
-	<script type="text/javascript" src="../LMCDevelopment/Bid/BidJS.js"></script>
-	<script type="text/javascript" src="../LMCDevelopment/Bid/BidAJAX.js"></script>
-	<script type="text/javascript" src="../LMCDevelopment/Library/SqlAjax.js"></script>
+	<!--#include file="../LMCManagement/common.asp" -->
+	<script type="text/javascript" src="../LMCManagement/Bid/BidJS.js"></script>
+	<script type="text/javascript" src="../LMCManagement/Bid/BidAJAX.js"></script>
+	<script type="text/javascript" src="../LMCManagement/Library/SqlAjax.js"></script>
 	
-	<link rel="stylesheet" href="../LMCDevelopment/Library/ListsCommon.css" media="all">
-	<link rel="stylesheet" href="../LMCDevelopment/Bid/BidCSS.css" media="all">
-	<link type="text/css" rel="stylesheet" href="../LMCDevelopment/Library/dhtmlgoodies_calendar.css?random=20051112" media="screen" />
+	<link rel="stylesheet" href="../LMCManagement/Library/ListsCommon.css" media="all">
+	<link rel="stylesheet" href="../LMCManagement/Bid/BidCSS.css" media="all">
+	<link type="text/css" rel="stylesheet" href="../LMCManagement/Library/dhtmlgoodies_calendar.css?random=20051112" media="screen" />
 </head>
 <body onResize="Resize();" onLoad="Resize(); Gebi('BidListFrame').src='BidList.asp';" >
 

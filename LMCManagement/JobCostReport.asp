@@ -6,12 +6,12 @@
 	<title>Tricom Bid</title>
 	
 	<!--#include file="../LMC/RED.asp" -->
-	<!--#include file="../LMCDevelopment/common.asp" -->
+	<!--#include file="../LMCManagement/common.asp" -->
 	
-	<link rel=stylesheet href="../LMCDevelopment/Library/CSS_DEFAULTS.css" media=all>
+	<link rel=stylesheet href="../LMCManagement/Library/CSS_DEFAULTS.css" media=all>
 	
-	<script type="text/javascript" src="../LMCDevelopment/Modules/rcstri.js"></script>
-	<script type="text/javascript" src="../LMCDevelopment/Modules/Num2word.js"></script>
+	<script type="text/javascript" src="../LMCManagement/Modules/rcstri.js"></script>
+	<script type="text/javascript" src="../LMCManagement/Modules/Num2word.js"></script>
 
 <script type="text/javascript">
 	function onLoad() {

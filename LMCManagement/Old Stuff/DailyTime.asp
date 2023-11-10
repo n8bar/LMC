@@ -119,7 +119,7 @@ Do Until rs.EOF
 	<div id=Row<%=RowNum%> class=Row>
 		
 		<div id=DelBox<%=RowNum%> class="DelBox RowItem">
-			<img class="DelTime" src="../../LMCDevelopment/images/delete_16.png" title="Delete"
+			<img class="DelTime" src="../../LMCManagement/images/delete_16.png" title="Delete"
 			 onClick="SendSQL('Write','DELETE FROM Time WHERE TimeID=<%=TimeID%>'); window.location=window.location;"
 			/>
 			
@@ -220,7 +220,7 @@ Loop
 Set rs=Nothing
 %>
 
-<button id="New" onClick="NewTime('<%=ReportDate%>', <%=ProjID%>, '<%=ProjName%>');"><div class="vPadding3"></div><img id="imgPlus" src="../../LMCDevelopment/images/plus_16.png">New
+<button id="New" onClick="NewTime('<%=ReportDate%>', <%=ProjID%>, '<%=ProjName%>');"><div class="vPadding3"></div><img id="imgPlus" src="../../LMCManagement/images/plus_16.png">New
 </button>
 
 </body>

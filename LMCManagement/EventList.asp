@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- #include file="../LMC/RED.asp" -->
-<!-- #include file="../LMCDevelopment/Common.ASP" -->
+<!-- #include file="../LMCManagement/Common.ASP" -->
 
 <%
 TaskID=Request.QueryString("Type") : If TaskID="" Then TaskID=0
@@ -33,7 +33,7 @@ mW=783
 If Condense Then mW=0
 %>
 
-<link rel=stylesheet href="../LMCDevelopment/Library/ListsCommon.css" media=all >
+<link rel=stylesheet href="../LMCManagement/Library/ListsCommon.css" media=all >
 
 <style media="all">
 	html {width:100%; height:100%; margin:0;}

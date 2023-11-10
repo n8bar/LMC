@@ -23,7 +23,7 @@ html,body{
 	margin:0px 0px 0px 0px;
 	overflow:hidden;
 	white-space: nowrap;
-	background: url('../../LMCDevelopment/images/LMCHeader.gif');
+	background: url('../../LMCManagement/images/LMCHeader.gif');
 }
 
 .TopMainBarL {
@@ -73,7 +73,7 @@ html,body{
 	color:#000;
 	text-align:center;
 	z-index:1000;
-	background: url('../../LMCDevelopment/images/LMCHeader.gif');
+	background: url('../../LMCManagement/images/LMCHeader.gif');
 	display:none;
 }
 

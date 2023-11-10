@@ -31,7 +31,7 @@ button{font-size:22px; color:#555;}
 .Row:hover{background-color:#FF9900;}
 	.RowItem{border:1px solid #555; display:inline; margin:0; padding:0; float:left; overflow:hidden; height:100%; background:none;}
 	.Edit{min-width:28px; width:4%;}
-		.btnEdit{position:relative; left:5%; width:90%; height:16px; background:none; background:url(../../LMCDevelopment/images/Pencil_16.png) no-repeat center; border-width:1px; cursor:pointer;}
+		.btnEdit{position:relative; left:5%; width:90%; height:16px; background:none; background:url(../../LMCManagement/images/Pencil_16.png) no-repeat center; border-width:1px; cursor:pointer;}
 	.Date{min-width:64px; width:10%; font-size: 14px;}
 	.Forman{min-width:192px; width:29%;}
 	.Work{min-width:384px; width:50%;}

@@ -94,13 +94,13 @@
 	<div id=SchMain>
 		<div id=SchLeft>
 			<div style="width:100%;">
-				<label class=SchBoxLabel for=SchDateFrom>From:<img class=SchCal onClick="//displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" src=../../LMCDevelopment/Images/cal.gif></label>
+				<label class=SchBoxLabel for=SchDateFrom>From:<img class=SchCal onClick="//displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" src=../../LMCManagement/Images/cal.gif></label>
 			</div>
 			<input id=SchDateFrom class="SchBoxTxt" type="text" onFocus="displayCalendar('SchDateFrom','mm/dd/yyyy',SchDateFrom);" onChange=""/>
 			<br/>
 			
 			<div style="width:100%;">
-				<label class="SchBoxLabel" for=SchDateTo>To:<img class=SchCal onClick="//displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" src="../../LMCDevelopment/Images/cal.gif"></label>
+				<label class="SchBoxLabel" for=SchDateTo>To:<img class=SchCal onClick="//displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" src="../../LMCManagement/Images/cal.gif"></label>
 			</div>
 			<input id=SchDateTo class=SchBoxTxt type=text onFocus="displayCalendar('SchDateTo','mm/dd/yyyy',SchDateTo);" onChange=""/>
 			<br/>
@@ -205,12 +205,12 @@
 	<br/>
 	<label for="NewJobDate" style="width:33%; text-align:right; float:left;">Date:</label>
 	<input id="NewJobDate" style="width:49%; min-width:49%; float:left;" value="<%=Date()%>"/>
-  <img style="cursor:pointer;"onclick="displayCalendar('NewJobDate','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16"><br/>
+  <img style="cursor:pointer;"onclick="displayCalendar('NewJobDate','mm/dd/yyyy',this)" src="../../LMCManagement/Images/cal.gif" width="16" height="16"><br/>
 	<br/>
 	<br/>
 	<label for="NewJobDue" style="width:33%; text-align:right; float:left;">Due:</label>
 	<input id="NewJobDue" style="width:49%; min-width:49%; float:left;" value="<%=Date()%>"/>
-  <img style="cursor:pointer;"onclick="displayCalendar('NewJobDue','mm/dd/yyyy',this)" src="../../LMCDevelopment/Images/cal.gif" width="16" height="16"><br/>
+  <img style="cursor:pointer;"onclick="displayCalendar('NewJobDue','mm/dd/yyyy',this)" src="../../LMCManagement/Images/cal.gif" width="16" height="16"><br/>
 	<br/>
 	<br/>
 	<br/>
@@ -241,7 +241,7 @@
 		<br/>
 		<br/>
 		<br/>
-		<img name="" src="../../LMCDevelopment/Images/Roller.gif" width="32" height="32" alt="" />	</div>
+		<img name="" src="../../LMCManagement/Images/Roller.gif" width="32" height="32" alt="" />	</div>
  
 	<div id="Lists" class="Lists" align="center">
 	
@@ -274,10 +274,10 @@
 				
 				&nbsp; &nbsp; 
 				
-				<button id="NewJob" onClick=" Gebi('NewJobBox').style.display='block'; Gebi('ModalScreen').style.display='block'; Gebi('NewJobTitle').focus();"><img src="../../LMCDevelopment/images/plus_16.png"/>Add New Job</button>
-				<button id="DelJob" onClick="DelJob();"><img src="../../LMCDevelopment/images/delete_16.png"/>Delete Selected Job</button>
+				<button id="NewJob" onClick=" Gebi('NewJobBox').style.display='block'; Gebi('ModalScreen').style.display='block'; Gebi('NewJobTitle').focus();"><img src="../../LMCManagement/images/plus_16.png"/>Add New Job</button>
+				<button id="DelJob" onClick="DelJob();"><img src="../../LMCManagement/images/delete_16.png"/>Delete Selected Job</button>
 					
-				<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCDevelopment/images/reloadblue24.png" width="100%" height="100%"/></button>
+				<button id="ReloadFrame" onClick="window.location=window.location"><img src="../../LMCManagement/images/reloadblue24.png" width="100%" height="100%"/></button>
 			</div>
 		</div>
 							
@@ -289,25 +289,25 @@
 					<select id="ToDoEmpList" class="ControlInput">
 						<option selected></option>
 					</select>
-					<button onClick="NewEmpList();"><img src="../../LMCDevelopment/images/plus_16.png"/>Add</button>
+					<button onClick="NewEmpList();"><img src="../../LMCManagement/images/plus_16.png"/>Add</button>
 				</div>
 			
 				<div id="ItemListControl" style="float:left; display:none; width:100%;" align="left">
 					<div id="lblItemListAdd" class="ControlLabel" style="font-size:14px; padding-top:2px;">&nbsp;New Task For Employee</div>
 					<input id="txtItemListAdd" style="width:35%; max-width:35%; text-overflow:ellipsis; float:left;"/>
-					<button onClick="NewItemList();" style="width:12%; max-width:35%; float:left;"><img src="../../LMCDevelopment/images/plus_16.png"/>Add</button>
+					<button onClick="NewItemList();" style="width:12%; max-width:35%; float:left;"><img src="../../LMCManagement/images/plus_16.png"/>Add</button>
 				</div>
 				
 				<div id="ListItemControl" style="float:left; display:none; width:100%;">
 					&nbsp;<span id="lblListItemAdd" class="ControlLabel" style="font-size:14px; padding-top:2px;" >New Task Item For Item List</span>
 					<input id="txtListItemAdd" class="ControlInput"/>
-					<button onClick="NewListItem();" style="width:12%; max-width:35%;"><img src="../../LMCDevelopment/images/plus_16.png"/>Add</button>
+					<button onClick="NewListItem();" style="width:12%; max-width:35%;"><img src="../../LMCManagement/images/plus_16.png"/>Add</button>
 				</div>
 				
 				<div id="ListItemControl" style="float:left; display:none; width:100%;">
 					&nbsp;<span id="lblListItemAdd" class="ControlLabel">New Task Item For Item List</span>
 					<input id="txtListItemAdd"  class="ControlInput"/>
-					<button onClick="NewListItem();" style="width:12%; max-width:35%;"><img src="../../LMCDevelopment/images/plus_16.png"/>Add</button>
+					<button onClick="NewListItem();" style="width:12%; max-width:35%;"><img src="../../LMCManagement/images/plus_16.png"/>Add</button>
 				</div>
 			</div>
 				
@@ -316,7 +316,7 @@
 			</div>
 			
 			<div style="float:right; width:33%">
-				<button id="btnRemove" style=" margin-left:2%; text-overflow:ellipsis;" onClick="DelTreeItem();"><img src="../../LMCDevelopment/images/minus_16.png"/>Remove <span id="RemItemName"></span></button>
+				<button id="btnRemove" style=" margin-left:2%; text-overflow:ellipsis;" onClick="DelTreeItem();"><img src="../../LMCManagement/images/minus_16.png"/>Remove <span id="RemItemName"></span></button>
 			</div>
 		</div>
 							
@@ -327,7 +327,7 @@
 				<div id="ItemsHead" class="ItemsHead">        	
 					<div class="HeadNum" align="left">#</div >
 					<div class="HeadPri" align="left">!</div >
-					<div class="HeadManage" align="left"><img src="../../LMCDevelopment/images/FolderOutline.png"/></div >
+					<div class="HeadManage" align="left"><img src="../../LMCManagement/images/FolderOutline.png"/></div >
 					<div class="HeadJob" align="left">Job</div >
 					<div class="HeadCust" align="left">Customer</div>
 					<div class="HeadProg" align="center"><big><big>•••</big></big></div>
