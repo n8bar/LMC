@@ -14,9 +14,11 @@
 
 <link rel="stylesheet" href="mobile.css" media="screen">
 <link rel="stylesheet" href="TimeCSS.css" media="screen">
-<link type="text/css" rel="stylesheet" href="../tmcManagement/dhtmlgoodies_calendar.css?random=20051112" media="screen">
+<link type="text/css" rel="stylesheet" href="../lmcManagement/dhtmlgoodies_calendar.css?random=20051112" media="screen">
 
-<!--#include file="RED.asp" -->
+<!-- # include file="../LMCMangement/RED.asp" -->
+<!--  #include file="Common.asp"  -->
+
 <%
 EmpID=Session("EmpID")
 If EmpID="" Then response.Redirect("../m")
@@ -27,26 +29,38 @@ var EmpID=<%=EmpID%>;
 </script>
 
 <style type="text/css">
+body {
+}
 <%
 For wh= 1 to 1024
 	%>.w<%=wh%>{width:<%=wh%>px;}	.w<%=wh%>p{width:<%=wh%>%;}	.h<%=wh%>{height:<%=wh%>px;} .bR<%=wh%>{border-radius:<%=wh%>px;}
 	<%
 Next
 %>
+
+.EntryLabel {  font-size: 40px; }
+#d8D, #d8M, #d8Y { height:48px; font-size: 40px; width:64px; }
+#d8Y {width:128px;}
+
 </style>
+<meta name="viewport" content="width=600; user-scalable=0;" />
 
 </head>
 <body onResize="Resizer();" onload="Gebi('d8M').focus();" class="shade">
 <h1>Mobile Time</h1>
 
 <%
+Days=""
+for d=1 to 31
+	Days=Days&"<option id=d"&d&" "&selected&" >"&right("0"&d,2)&"</option>"
+next
 Months=""
 for m=1 to 12
 	Months=Months&"<option id=m"&m&" "&selected&" >"&right("0"&m,2)&"</option>"
 next
 Years=""
-for y=2012 to 2099
-	Years=Years&"<option id=y"&y&" >"&y&"</option>"
+for y=2023 to 2099
+	Years=Years&"<option id=y"&y&" "&selected&" >"&y&"</option>"
 next
 %>
 <script>
@@ -60,9 +74,9 @@ next
 	
 	<div class="fL w100p">
 		<label class="w96 EntryLabel" for=d8M align=Left>
-			Date<select id=d8M class="h16 Arial12" onChange="Gebi('d8D').focus();"><%=Months%></select>
-			/<input id=d8D class="h16 fL Arial12" onChange="Gebi('d8Y').focus();"/>
-			/<input id=d8Y class="h16 fL Arial12" onChange="Gebi('InH').focus();"/>
+			Date: <select id=d8M onChange="//Gebi('d8D').focus();"><%=Months%></select>
+			<b>/</b> <select id=d8D onChange="//Gebi('d8Y').focus();"><%=Days%></select>
+			<b>/</b> <input id=d8Y onChange="//Gebi('InH').focus();" />
 		</label>
 		<label class="w48 EntryLabel" for=InH align="left">In</label>
 		<div class="fL Arial12">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>

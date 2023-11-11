@@ -20,8 +20,8 @@
 <script type="text/javascript" >var mX; var mY; </script>
 
 <link rel=stylesheet href="Library/CSS_DEFAULTS.css" media=screen >
-<link rel=stylesheet href="Calendar/CalendarCSS.css" media=screen >
-<link rel=stylesheet href="Calendar/CalendarMain-CSS.css" media=screen >
+<link rel=stylesheet href="Calendar/CalendarCSS.css?nc=<%=nc%>" media=screen >
+<link rel=stylesheet href="Calendar/CalendarMain-CSS.css?nc=<%=nc%>" media=screen >
 <link type="text/css" rel="stylesheet" href="Library/dhtmlgoodies_calendar.css?random=20051112<%=nc%>" media=screen >
 
 </head>

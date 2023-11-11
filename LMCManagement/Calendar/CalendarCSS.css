@@ -154,15 +154,6 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Georgia, "Times New Roman", Times, 
 
 .EventDetailsScreen{ position:absolute; display: none; /*	height:240px; width:288px; */	height:1px; width:1px; top:105px; left:325px; background:#ddeeff; border: 0 solid #0FF; padding:0; margin:0 0 0 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; z-index:6000; }
 
-@media only screen and (max-width: 1024px) {
-	#CalendarLeftContainer { display:none; }
-	#NewEventTaskBox { top:1%; left:1%; width: 320px; }
-	
-	#NewEventBox { top:1%; left:1%; width: 320px; }
-	
-	#NewEventBoxLeft, #NewEventBoxRight { width:100%; }
-	
-}
 
 
 li{border:none;}
