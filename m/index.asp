@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd" >
+<!-- DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd" -->
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--#include file="../LMC/RED.asp" -->
@@ -6,6 +7,7 @@
 <!-- script type="text/javascript" src="../LmcManagement/CommonAJAX.js"></script -->
 <!-- script type="text/javascript" src="../LmcManagement/rcstri.js"></script -->
 
+<title>Lovo Management Center</title>
 
 <script type="text/javascript">
 function Void(){}
@@ -117,8 +119,8 @@ function ReturnLogin()
 <link rel="stylesheet" href="mobile.css" media="screen">
 
 <style type="text/css" media="all">
-	html{ margin:0 0 0 0; width:100%; height:100%; overflow-x:auto; overflow-y:hidden; background:#B4DAF5; text-align:center; }
-	body{ margin:0 0 0 0; width:100%; min-width: 480px; height:100%; overflow:auto; background:#E6F3FB; }
+	html{ margin:0 0 0 0; width:100%; height:100%; overflow:hidden; background:#B4DAF5; text-align:center; }
+	body{ margin:0 0 0 0; width:100%; height:100%; overflow:hidden; background:#E6F3FB; }
 	a { width:100%; height:48px; display:block; float:left; border-radius:2px; margin:0; font-size:36px; line-height:48px; text-decoration:none; color:white; opacity:.75;  
 	 font-family: "Arial Narrow", "Agency FB", "Swis721 LtCn BT"; font-weight:bold;
 	 background:-moz-linear-gradient(top, rgba(0,120,192,.75), /*rgba(0,120,192,.5) 50%*/, rgba(0,108,172,.5));
@@ -128,9 +130,9 @@ function ReturnLogin()
 	a:active { background-color:black; }
 	button { width:90%; height:32px; margin:4px 5% 4px 5%; }
 	.space { width:100%; height:48px;}
-	a:
+	a: {}
 
-	.frameHolder {width:100%; height:70%; zoom: 0.5; }	
+	.frameHolder {width:100%; max-width: 100%; height:70%;}	
 
 </style>
 
@@ -165,9 +167,9 @@ Session("EmpID")=EmpID
 <div style="text-align:center; height:100%;">
 	<b>Lovo Management Center Mobile</b>
 	<small><div>Welcome <%=UserName%>!</div></small> <!-- -->
-	<a href="Cal.asp?EmpID=<%=EmpID%>">Calendar</a><br />
+	<a href="../LMCManagement/CalendarMain.asp">Calendar</a><br />
 	<div class=frameHolder>
-		<iframe style="border:none; width:100%; height:100%;" src="Cal.asp?EmpID=<%=EmpID%>"></iframe>
+		<!-- iframe style="border:none; width:100%; height:100%;" src="/LMCManagement/CalendarMain.asp"></iframe -->
 	</div>
 	<a href="Time.asp?EmpID=<%=EmpID%>">Time Entry</a><br />
 	<a href="Inventory.asp?EmpID=<%=EmpID%>" disabled >Inventory</a><br />

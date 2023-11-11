@@ -834,7 +834,7 @@
 			<div  id="EventHeaderTxt" class="NewEventHeaderText" align="left">Create New Event</div>
 		</div>
 	 
-		<div id=NewEventBoxLeft style="width:50%; height:268px; padding:8px 4px 0 4px; float:left;" align=left >
+		<div id=NewEventBoxLeft style="" align=left >
 			<div class=EventLabelText >Title&nbsp;</div>
 			<input type=text id=EventTitleText class=EventTextBox style="font-size:12px; font-weight:bold;" size=36 maxlength=44 />
 			<br/>
@@ -856,7 +856,7 @@
 			<input type="submit" name="DeleteEventBtn" id="DeleteEventBtn" value="Delete" onClick="return EventDeleteConfirm();"/>
 		</div>
 		
-		<div id=NewEventBoxRight style="width:50%; height:268px; padding:8px 4px 0 4px; float:left;" align=left >
+		<div id=NewEventBoxRight style="" align=left >
 			<div class="EventLabelText" >Attention&nbsp;</div>
 			<%    
 			SQL = "select EmpID, FName, LName from Employees WHERE Active=1 Order By FName" 

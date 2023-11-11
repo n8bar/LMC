@@ -135,10 +135,12 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Georgia, "Times New Roman", Times, 
 /************************************The above are specifically for Drag and Drop********************************************/
 
 /* ///////////////////////////////////////////New Event MODAL //////////////////////////////////////////////////////////////////// */
+.NewEventTaskBox{ position:absolute; display: none; height:auto; width:640px; top:20%; left:26%; background:#FFF; border: 1px solid #AAA; padding:0; margin:0 0 0 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; z-index:5600;}
+
 .NewEventBox{ position:absolute; display: none; width:616px; top:22%; left:26%; background:#FFF; border: 1px solid #AAA; padding:0; margin:0px 0px 0px 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; white-space:normal; z-index:5500; }
 .NewEventBox label{white-space:nowrap;}
 
-.NewEventTaskBox{ position:absolute; display: none; height:auto; width:640px; top:20%; left:26%; background:#FFF; border: 1px solid #AAA; padding:0; margin:0 0 0 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; z-index:5600;}
+#NewEventBoxLeft, #NewEventBoxRight { 	width:50%; height:268px; padding:8px 4px 0 4px; float:left; }
 
 .JobSelectionBox{ position:absolute; top:33%; left:33%; width:33%; height:33%; display:none; margin:auto; z-index:5800; background:#88bbff; text-align:center;}
 
@@ -151,5 +153,16 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Georgia, "Times New Roman", Times, 
 .EventListBox{ cursor:auto; font-family:Arial,Helvetica,sans-serif; font-weight:normal; font-size: 12px; font-weight:normal; text-align:left; border: 1px solid #666; border-bottom:1px solid #AAA; border-right: 1px solid #AAA; }
 
 .EventDetailsScreen{ position:absolute; display: none; /*	height:240px; width:288px; */	height:1px; width:1px; top:105px; left:325px; background:#ddeeff; border: 0 solid #0FF; padding:0; margin:0 0 0 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; z-index:6000; }
+
+@media only screen and (max-width: 1024px) {
+	#CalendarLeftContainer { display:none; }
+	#NewEventTaskBox { top:1%; left:1%; width: 320px; }
+	
+	#NewEventBox { top:1%; left:1%; width: 320px; }
+	
+	#NewEventBoxLeft, #NewEventBoxRight { width:100%; }
+	
+}
+
 
 li{border:none;}
