@@ -119,12 +119,13 @@ Session("EmpID")=EmpID
 <link rel="stylesheet" href="mobile.css" media="screen">
 
 <style type="text/css" media="all">
-	html{ margin:0 0 0 0; width:100%; height:100%; overflow:hidden; background:#B4DAF5; text-align:center; }
-	body{ margin:0 0 0 0; width:100%; height:100%; overflow:hidden; background:#E6F3FB; }
-	a { width:100%; height:48px; display:block; border-radius:2px; margin:0; font-size:36px; line-height:48px; text-decoration:none; color:white; opacity:.75;  
+	html{ margin:0 0 0 0; width:100%; height:100%; overflow:hidden; background:#fff; text-align:center; }
+	body{ margin:0 0 0 0; width:100%; height:100%; overflow:hidden; background:#000; color:rgba(255,204,102,1);  }
+	
+	a { width:100%; height:48px; display:block; border-radius:2px; margin:0; font-size:36px; line-height:48px; text-decoration:none; color:white;
 	 font-family: "Arial Narrow", "Agency FB", "Swis721 LtCn BT"; font-weight:bold;
-	 background:-moz-linear-gradient(top, rgba(0,120,192,.75), /*rgba(0,120,192,.5) 50%*/, rgba(0,108,172,.5));
-	 background:-webkit-gradient(linear,0 100%,0 0, from(rgba(0,120,192,.75)) /*,color-stop(.5,  rgba(0,120,192,.5))*/, to(rgba(0,108,172,.5)));
+	 background:-moz-linear-gradient(top, rgba(0,180,255,1), /*rgba(0,120,192,.5) 50%*/, rgba(0,108,172,.75));
+	 background:-webkit-gradient(linear,0 0,0 100%, from(rgba(0,180,255,1)) /*,color-stop(.5,  rgba(0,120,192,.5))*/, to(rgba(0,108,172,.75)));
 	}
 	a:focus { background-color:white; outline:invert thin solid; opacity:1; }
 	a:active { background-color:black; }
@@ -143,8 +144,9 @@ Session("EmpID")=EmpID
 <body>
 <div style="text-align:center; height:100%;">
 	<b>Lovo Management Center Mobile</b>
-	<small><div>Welcome <%=UserName%>!</div></small> <!-- -->
-	<a href="../LMCManagement/CalendarMain.asp">Calendar</a>
+	<small><div>Welcome <%=UserName%>!</div></small> 
+		<!-- ../LMCManagement/CalendarMain.asp -->
+	<a href="">Calendar</a>
 	<div class=frameHolder>
 		<iframe style="border:none; width:100%; height:100%;" src="/LMCManagement/CalendarMain.asp"></iframe>
 	</div>

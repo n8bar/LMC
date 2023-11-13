@@ -15,7 +15,7 @@
 		background: -webkit-gradient( linear,0 100%,0 0, from(#113322), color-stop(.5, rgba(240,192,96,1)), color-stop(.6, rgba(240,192,96,1)), to(#113322) );
 		background: gradient( linear,0 100%,0 0, from(#113322), color-stop(.3, rgba(240,192,96,1)), color-stop(.7, rgba(240,192,96,1)), to(#113322) );
 	}
-	body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; color:#230; /* background-image:url(Logos/Acorn.png); background-size:cover; */ }
+	body { margin:0; padding:0; width:100%; min-width: 300px; height:100%; overflow:hidden; color:#230; /* background-image:url(Logos/Acorn.png); background-size:cover; */ }
 	
 	.text{outline:none; border-radius:6px; -ie-border-radius:6px; border:inset 1px; background-color:rgba(255,255,255,.75); margin:2px; padding:2px;}
 	strong{text-shadow:#fff 0px 0px 1px, #fff 0px 0px 2px, #fff 0px 0px 3px, #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 20px, #fff 0px 0px 40px;}
@@ -24,7 +24,11 @@
 			font-family:"Dejavu sans", Arial, Geneva, sans-serif; font-size:48px; /*font-style:italic;*/ font-weight:bold; text-align:center; padding: 12px 0 0 0;
 			text-shadow:#fff 0 0 40px, #fff 0 0 36px, #fff 0 0 32px, #fff 0 0 28px, #fff 0 0 24px, #fff 0 0 20px, #fff 0 0 16px, #fff 0 0 12px, #fff 0 0 8px, #fff 0 0 4px;
 	}	
-	#loginMeat { margin:0 auto 0 auto; background:rgba(144,184,128,.67); width:50%; border:rgba(64,112,72,.25) 5px solid; border-radius:32px; box-shadow: #fff, 0 0 10px;}
+	.backLogo { 
+		background:url(../LMC/Logos/LovoL.png) center no-repeat; 
+		background-size:contain;
+	}
+	#loginMeat { margin:0 auto 0 auto; background:rgba(144,184,128,.67); width:50%; height: 33.333%; min-height: 120px; border:rgba(64,112,72,.25) 5px solid; border-radius:32px; box-shadow: #fff, 0 0 10px; display:flex; flex-direction: column; align-items: center; justify-content: center;}
 	.mobile{display:block; float:right; text-decoration:none; padding:3px; font-weight:bold; color:#240; text-align:center; }
 </style>
 
@@ -38,9 +42,9 @@
 	</tr>
 	<tr> 
 		<td width="100%" height="100%" align="center" valign="middle"> 
-			<table width=768 height=768 border=0 cellpadding=0 cellspacing=0 >
+			<table border=0 cellpadding=0 cellspacing=0 style="width:100%; height: 100%;" >
 				<tr>
-					<td width="648"  align="center" valign="middle" style="background:url(../LMC/Logos/LovoL.png) center fixed no-repeat; "> 
+					<td width="648"  align="center" valign="middle" class="backLogo"> 
 						<span action="javascript:Login();" method=post >
 							<div id=loginMeat>
 								<br/>

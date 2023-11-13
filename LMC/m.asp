@@ -10,11 +10,14 @@
  
 <style>
 	table,tr,td,form,font,label,input,div,a,b,i { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
-	html { margin:0; padding:0; width:100%; height:100%; min-height: 768px; overflow:hidden;
-		background: -moz-linear-gradient( 90deg bottom left, rgba(213,226,234,0) 0, rgba(213,226,234,.875) 5%, rgba(213,226,234,1) 10%, rgba(213,226,234,1) 90%, rgba(213,226,234,.875) 95%, rgba(213,226,234,0) 100% );
-		background: -webkit-gradient( linear,0 100%,0 0, from(rgba(213,226,234,0)), color-stop(.05, rgba(213,226,234,.875)), color-stop(.1, rgba(213,226,234,1)), color-stop(.9, rgba(213,226,234,1)), color-stop(.95, rgba(213,226,234,.875)), to(rgba(213,226,234,0)) );
+	html { margin:0; padding:0; width:100%; height:100%; min-height: 768px; overflow:hidden; background-color:#A0AC50;
+		background: -moz-linear-gradient( 90deg bottom left, #113322 0, rgba(240,192,96,1) 30%, rgba(240,192,96,1) 70%, #113322 100% );
+		background: -webkit-gradient( linear,0 100%,0 0, from(#113322), color-stop(.5, rgba(240,192,96,1)), color-stop(.6, rgba(240,192,96,1)), to(#113322) );
+		background: gradient( linear,0 100%,0 0, from(#113322), color-stop(.3, rgba(240,192,96,1)), color-stop(.7, rgba(240,192,96,1)), to(#113322) );
+		/*background: -moz-linear-gradient( 90deg bottom left, rgba(213,226,234,0) 0, rgba(213,226,234,.875) 5%, rgba(213,226,234,1) 10%, rgba(213,226,234,1) 90%, rgba(213,226,234,.875) 95%, rgba(213,226,234,0) 100% );
+		background: -webkit-gradient( linear,0 100%,0 0, from(rgba(213,226,234,0)), color-stop(.05, rgba(213,226,234,.875)), color-stop(.1, rgba(213,226,234,1)), color-stop(.9, rgba(213,226,234,1)), color-stop(.95, rgba(213,226,234,.875)), to(rgba(213,226,234,0)) );/**/
 	}
-	body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; color:#046; /* background-image:url(Logos/TMCTriangle.gif); background-size:cover; */ 
+	body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; color:#113322;  
 	
 	}
 	
@@ -22,10 +25,9 @@
 	.text{outline:none; border-radius:6px; border:inset 1px; background-color:rgba(255,255,255,.75); margin:2px; padding:2px;}
 	strong{text-shadow:#fff 0px 0px 1px, #fff 0px 0px 2px, #fff 0px 0px 3px, #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 20px, #fff 0px 0px 40px;}
 	#caseSensitive{text-shadow:#fff 0px 0px 1px, #fff 0px 0px 2px, #fff 0px 0px 3px, #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 20px, #fff 0px 0px 40px;}
-	.lmc{
-			font-family:Nyala, Arial, Geneva, sans-serif; font-size:64px; font-style:italic; font-weight:bold; text-align:center;
-			text-shadow:#fff 0 0 40px, #fff 0 0 36px, #fff 0 0 32px, #fff 0 0 28px, #fff 0 0 24px, #fff 0 0 20px, #fff 0 0 16px, #fff 0 0 12px, #fff 0 0 8px, #fff 0 0 4px;
-	}	
+	#lmc { min-width:64px; height: 80px; font-family:Nyala, Arial, Geneva, sans-serif; font-size:64px; font-style:italic; font-weight:bold; display:flex; justify-content:center; flex-direction:row-reverse; }
+	#lmc img { left:16px; height:96px; position: relative;}
+	#lmc span { text-shadow:#fff 0 0 40px, #fff 0 0 36px, #fff 0 0 32px, #fff 0 0 28px, #fff 0 0 24px, #fff 0 0 20px, #fff 0 0 16px, #fff 0 0 12px, #fff 0 0 8px, #fff 0 0 4px; }
 
 </style>
  
@@ -34,7 +36,7 @@
 <body onLoad="document.getElementById('user').focus();" >
 <div class=center>
 	<br/></br/>
-	<div class=lmc> LMC Mobile</div>
+	<div id=lmc><span>MC Mobile</span><img src="../favicon.png" /></div>
 	<br/></br/>
 	<form action="javascript:LoginMobile('<%=Request.QueryString("Destination")%>');" method=post >
 		<label>
