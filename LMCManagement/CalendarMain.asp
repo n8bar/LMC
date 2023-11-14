@@ -957,8 +957,9 @@
 			set rs=Server.CreateObject("ADODB.Recordset")
 			rs.Open SQL, REDconnstring 
 			%>
-			<select name=CustomerList id=CustomerList style="font-size:10px; width:212px">
+			<select name=CustomerList id=CustomerList style="font-size:10px; width:192px" onChange="eventCustChange();">
 				<option value="0"selected="selected">----</option>
+				<option value=-1 >➕Add a Customer</option>
 				<%
 				Do While Not rs.EOF
 					%><option  value="<%= rs("ID")%>"><%= rs("Name")%></option><%
@@ -967,6 +968,7 @@
 				set rs = nothing
 				%>
 			</select>
+			<!-- button id="newCustBtn" class="tButton24" onclick="showNewCust();" title="New Cutomer"><img src="../Images/plus_16.png"></button -->
 			<br/>
 			<br/>
 			<div class=EventLabelText >Crew&nbsp;</div>
@@ -1034,6 +1036,12 @@
 			
 	</div> 		
 </form>
+				
+<div id=addCustomerBox >
+	<div id=addCustomerTitle class="WindowTitle" style="border-bottom:1px solid #AAA; background:#3599E3;">Add a Customer</div>
+	<label>Customer Name: <input id=addCustSearch /></label>
+	
+</div>
 
 <!-- Drag and drop ------------------------------------------------------------------------------------------------------ -->
 

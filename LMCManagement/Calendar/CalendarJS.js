@@ -86,6 +86,7 @@ function hideEventModal() {
 	Gebi('ModalScreen').style.display = 'none';
 	Gebi('NewEventBox').style.display = 'none';
 	Gebi('NewEventTaskBox').style.display = 'none';
+	Gebi('addCustomerBox').style.display = 'none';
 }
   
 
@@ -235,14 +236,16 @@ function BillStatus() {
 
 
 
+function eventCustChange() {
+	var custSelect = Gebi("CustomerList");
+	if (custSelect.options[custSelect.selectedIndex].value==-1) {
+		
+	}
+}
 
-
-
-
-
-
-
-
+function showAddCustBox() {
+	Gebi('addCustomerBox').style.display='block';
+}
 
 
 
