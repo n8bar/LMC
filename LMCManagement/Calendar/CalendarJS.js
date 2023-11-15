@@ -45,6 +45,7 @@ function ShowEventModal(Source,inst,sDate, RemoteCode) {
 	if(RemoteCode!='NewEvent') {	
 		Gebi('NewEventTaskBox').style.display='block'; //Show the New Event cateory window if not coming from another tab.
 		Gebi('NewEventDate').innerHTML=sDate;
+		Gebi('HoverNotes').style.display='none'; 
 	}
 	
 	for(i=1;i<Gebi('AttnList').length;i++) {
@@ -87,6 +88,7 @@ function hideEventModal() {
 	Gebi('NewEventBox').style.display = 'none';
 	Gebi('NewEventTaskBox').style.display = 'none';
 	Gebi('addCustomerBox').style.display = 'none';
+	Gebi('InterEventModalScreen').style.display='none';
 }
   
 
@@ -238,16 +240,22 @@ function BillStatus() {
 
 function eventCustChange() {
 	var custSelect = Gebi("CustomerList");
+	//alert(custSelect.options[custSelect.selectedIndex].value);
 	if (custSelect.options[custSelect.selectedIndex].value==-1) {
-		
+		showAddCustBox();
 	}
 }
 
-function showAddCustBox() {
-	Gebi('addCustomerBox').style.display='block';
+function hideAddCustBox() {
+	Gebi('addCustomerBox').style.display='none';
+	Gebi('InterEventModalScreen').style.display='none';
 }
 
 
+function showAddCustBox() {
+	Gebi('addCustomerBox').style.display='block';
+	Gebi('InterEventModalScreen').style.display='block';
+}
 
 
 
@@ -299,16 +307,10 @@ function EventProjectSelect() // shows certain select options when certain tasks
 		var CrewObj=Gebi('NewEstCrew')
 		if(CrewObj!=null) {CrewObj.value = 'Crew:';}
 	}
-	
 }
 
 
 
-
-
-
- 
-  
 //Deletes an Event---------------------------------------------------- 
  
  function EventDeleteConfirm() {
@@ -326,8 +328,6 @@ function EventProjectSelect() // shows certain select options when certain tasks
  
  
 
- 
- 
 ////////////////////////////////////////////Views////////////////////////////////////////////////////////////////////////
  
 var QuickViewID = '';
@@ -365,11 +365,8 @@ function ClearViews() {
 	Gebi('ViewArea').options.selectedIndex=0;
 	Gebi('ViewPhase').options.selectedIndex=0;
 	Gebi('ViewCustomer').options.selectedIndex=0;
-				
-
    
 }
- 
  
  
 function HoverUpdate(sDate) { 
@@ -378,24 +375,11 @@ function HoverUpdate(sDate) {
 }
  
  
- 
- 
- 
 function EventClickUpdate(CalID) {
 	EventClickID = CalID;
 	CapturedID=CalID;
 	alert(EventClickID);
 }
- 
- 
- 
- 
- 
- 
-
-
-
- 
  
  
  
@@ -421,78 +405,50 @@ function showEventBubble(inst,ev,sDate,sDay,Row,Col) {
 		Gebi('DayNotes').innerHTML = ('');					  
 		Gebi('BubbleBottom').innerHTML = ('<div class="BubbleBottomPlain"></div>');
 			
-		//var obj = Gebi('bubble_tooltip');
-		
 		var st = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
 		
 		if(navigator.userAgent.toLowerCase().indexOf('safari')>=0)st=0;
-		
-		//obj.style.display = 'block';
 			
 		//  This Positions the popup relative to the mouse pointer-------------------------
 		
 		if(Row == 1 || Row == 2) {
 			var leftPos = ev.clientX - 220;
 			if(leftPos<0)leftPos = 0;
-			//obj.style.left = leftPos + 'px';
-			//obj.style.top = ev.clientY - obj.offsetHeight +220 + st + 'px';	
 		}
-			
 			
 		if(Row == 3 || Row == 4 || Row == 5 || Row == 6) {
 			var leftPos = ev.clientX - 220;
 			if(leftPos<0)leftPos = 0;
-			//obj.style.left = leftPos + 'px';
-			//obj.style.top = ev.clientY - obj.offsetHeight -1 + st + 'px';	
 		}
 		
 		if(Col == 1 && (Row == 1 || Row == 2)) {
 			var leftPos = ev.clientX - 80;
 			if(leftPos<0)leftPos = 0;
-			//obj.style.left = leftPos + 'px';
-			//obj.style.top = ev.clientY - obj.offsetHeight +220 + st + 'px';	
 		}
-			
 			
 		if(Col == 1 && (Row == 3 || Row == 4 || Row == 5 || Row == 6)) {
 			var leftPos = ev.clientX - 80;
 			if(leftPos<0)leftPos = 0;
-			//obj.style.left = leftPos + 'px';
-			//obj.style.top = ev.clientY - obj.offsetHeight -1 + st + 'px';	
 		}			
-
-
 		
 		if(Col == 2 && (Row == 1 || Row == 2)) {
 			var leftPos = ev.clientX - 120;
 			if(leftPos<0)leftPos = 0;
-			//obj.style.left = leftPos + 'px';
-			//obj.style.top = ev.clientY - obj.offsetHeight +220 + st + 'px';	
 		}
-			
 			
 		if(Col == 2 && (Row == 3 || Row == 4 || Row == 5 || Row == 6)) {
 			var leftPos = ev.clientX - 120;
 			if(leftPos<0)leftPos = 0;
-			//obj.style.left = leftPos + 'px';
-			//obj.style.top = ev.clientY - obj.offsetHeight -1 + st + 'px';	
 		}
-		
-		
 		
 		if(Col == 7 && (Row == 1 || Row == 2)) {
 			var leftPos = ev.clientX - 270;
 			if(leftPos<0)leftPos = 0;
-			//obj.style.left = leftPos + 'px';
-			//obj.style.top = ev.clientY - obj.offsetHeight +220 + st + 'px';	
 		}
-			
 			
 		if(Col == 7 && (Row == 3 || Row == 4 || Row == 5 || Row == 6)) {
 			var leftPos = ev.clientX - 270;
 			if(leftPos<0)leftPos = 0;
-			//obj.style.left = leftPos + 'px';
-			//obj.style.top = ev.clientY - obj.offsetHeight -1 + st + 'px';	
 		}
 }
 
@@ -501,11 +457,7 @@ function hideToolTip() {
 	//Gebi('bubble_tooltip').style.display = 'none';
 }
   
-  
-  
-  
-  
-  
+
 //Popup Hover//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -618,9 +570,7 @@ function showEventList(sDate) {
 	Gebi('EventPopupItems').innerHTML = ('<div>Hi Bob</div>');
 	
 	var obj = Gebi('EventPopup');
-	
 	var st = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
-	
 	if(navigator.userAgent.toLowerCase().indexOf('safari')>=0)st=0;
 	
 	obj.style.display = 'block';

@@ -763,14 +763,14 @@ function n8alert(msg) {
 function AjaxErr(Message,URL)	{
 	
 	if(confirm(window.top.accessUser+': '+Message+'\n@\n'+URL)){	window.open(URL,'','scrollbars=yes,height=704,width=980, resizable=yes',false);	}
-	/*
+	/**/
 	if (window.top.accessUser=='n8')	{
 		if(confirm(window.top.accessUser+': '+Message+'\n@\n'+URL)){	window.open(URL,'','scrollbars=yes,height=704,width=980, resizable=yes',false);	}
 	}
 	else {
 		alert(Message);
 	}
-	*/
+	/**/
 	
 }
 //////////////////////////////////////////  AJAX  /////////////////////////////////////////////////////////////////////////

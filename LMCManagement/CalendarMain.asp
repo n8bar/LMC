@@ -829,6 +829,7 @@
 
 <form action="javascript:SaveEvent(document.getElementById('EventBoxForm'));" id="EventBoxForm" style="">
 	<input id=EventJobID type="hidden" value="0" />
+	<div id=InterEventModalScreen class=ModalScreen ></div>
 	<div id="NewEventBox" class="NewEventBox WindowBox" style="height:auto;"><!-- For Entering a new event -->
 		<div id=NewEventBoxTitle class="WindowTitle" style="border-bottom:1px solid #AAA; background:#3599E3;">
 			<div  id="EventHeaderTxt" class="NewEventHeaderText" align="left">Create New Event</div>
@@ -1036,12 +1037,22 @@
 			
 	</div> 		
 </form>
-				
-<div id=addCustomerBox >
-	<div id=addCustomerTitle class="WindowTitle" style="border-bottom:1px solid #AAA; background:#3599E3;">Add a Customer</div>
-	<label>Customer Name: <input id=addCustSearch /></label>
 	
-</div>
+<div id=addCustomerBox >
+	<div id=addCustomerTitle class="WindowTitle" style="border-bottom:1px solid #AAA; background:#3599E3; color:white;">Add a Customer</div>
+	<div id=addCustInnerBox>
+		<label>Customer Name:<br/><input id=addCustSearchText onchange=populateExistingContacts(this.value); /></label><br/><br/>
+		<label>Customer Phone:<br/><input id=addCustPhone /></label><br/><br/>
+		<label>Customer Email:<br/><input id=addCustEmail /></label><br/><br/>
+		<span id=addCustExistingListLabel >Please check below for an existing duplicate, and click it if it's what you're looking for and it will be added to the Customer List. Otherwise, complete the fields above and click Add.</span>
+		<div id=existingContactList>
+			
+		</div><br/><br/>
+		<button class="addCustButton" onClick="Gebi('CustomerList').selectedIndex=0; hideAddCustBox();  ">Cancel</button>
+		&nbsp; &nbsp; &nbsp;
+		<button class="addCustButton" onClick="insertNewCustomer();"  >Add</button>
+	</div>
+</div> 
 
 <!-- Drag and drop ------------------------------------------------------------------------------------------------------ -->
 

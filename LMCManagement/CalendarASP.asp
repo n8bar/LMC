@@ -32,7 +32,16 @@ Select Case sAction
 		DayEvents
 	
 	Case "UpdateDragDrop"
-		UpdateDragDrop		
+		UpdateDragDrop	
+	
+	Case "populateExistingContacts"	
+		PopulateExistingContacts
+	
+	Case "UseAsCust"
+		UseAsCust
+	
+	Case "insertNewCustomer"
+		insertNewCustomer
 	
 	Case "ShowEventNotes"
 		ShowEventNotes
@@ -562,10 +571,100 @@ End Sub '-----------------------------------------------------------------------
 
 
 
+Sub PopulateExistingContacts '-------------------------------------------------------------------------------------------------
+	   Dim searchText
+	   searchText = CStr(Request.QueryString("searchText"))
+	   
+	   Dim ConactID
+	   Dim ContactName
+	   
+	   SQL1="SELECT ID, Name, Phone1, Email FROM Contacts WHERE Customer=0 AND Name like '%"&searchText&"%' ORDER BY Name"
+	   set rs1=Server.CreateObject("ADODB.Recordset")
+	   	%><SQL><%=SQL1%></SQL><%
+	rs1.Open SQL1, REDconnstring
+	rC=0
+	If rs1.EOF Then
+		Error="Error reading Contact ID "&ContactID
+	Else
+	   	Do Until rs1.EOF
+	   		rC=rC+1
+	   		
+			ConactID = rs1("ID")
+			ContactName=rs1("Name")
+			If(IsNull(ContactName))Or ContactName="" Then ContactName="[No Name]"
+
+			%>
+			<%="<ID"&rC&">0"&rs1("ID")&"</ID"&rC&">"%>
+			<%="<Name"&rC&">--"&ContactName&"</Name"&rC&">"%>
+			<%="<Phone"&rC&">--"&Phone(rs1("Phone1"))&"</Phone"&rC&">"%>
+			<%="<Email"&rC&">--"&rs1("Email")&"</Email"&rC&">"%>
+			<%
+	   		rs1.MoveNext
+	   	Loop
+		Set rs1 = Nothing
+	End If
+	%><recordCount>0<%=rC%></recordCount><%
+	   
+	   
+End Sub '--------------------------------------------------------------------------------------------------------------------
+
+				
+				
+
+Sub UseAsCust '---------------------------------------------------------------------------------------------------------------
+	Dim ContactID
+	Dim CName
+	ContactID= CStr(Request.QueryString("id"))
+	
+	SQL1="UPDATE Contacts SET Customer=1 WHERE id = "&ContactID
+	%><sql1><%=SQL1%></sql1><%	
+	set rs1=Server.CreateObject("ADODB.Recordset")
+	rs1.Open SQL1, REDconnstring
+
+	'If rs1.EOF Then
+		
+	'Else
+		%><success>1</success><%
+	'End If
+	
+	Set rs1=Nothing
+	
+	
+End Sub '---------------------------------------------------------------------------------------------------------------------
 
 
-
-
+Sub insertNewCustomer '---------------------------------------------------------------------------------------------------------------
+	Dim CName
+	Dim Phone
+	Dim Email
+	
+	CName = EncodeChars(CStr(Request.QueryString("cName")))
+	Phone = CStr(Request.QueryString("phone"))
+	Email = CStr(Request.QueryString("email"))
+	
+	cKey = newCreationKey()
+		
+	
+	SQL ="INSERT INTO Contacts (Name, Phone1, Email, Customer, cKey)"		
+	SQL=SQL&" VALUES ('"&CName&"','"&Phone&"','"&Email&"', 1, '"&cKey&"')"
+	%><Name><%=CName%></Name><%
+	%><cKey><%=cKey%></cKey><%
+	%><SQL><%=SQL%></SQL><%
+	set rs=Server.CreateObject("ADODB.Recordset")
+	rs.Open SQL, REDconnstring
+	set rs = nothing
+	
+	
+	SQL="SELECT Id FROM Contacts WHERE cKey='"&cKey&"'"
+	set rs=Server.CreateObject("ADODB.Recordset")
+	rs.Open SQL, REDconnstring
+	%><id><%=rs("ID")%></id><%
+	set rs = nothing
+	
+End Sub '----------------------------------------------------------------------------------------------------------------------
+				
+				
+				
 Sub ShowEventNotes '-------------------------------------------------------------------------------------------------------------
 
 	Dim CalID

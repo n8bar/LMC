@@ -652,6 +652,116 @@ function GetTaskList() {
 }
 //-------------------------------------------------------------------------------------------------
 
+function populateExistingContacts(searchText) { 
+	if (searchText=='') {
+		Gebi('existingContactList').innerHTML='';
+		Gebi('addCustExistingListLabel').style.display='none';
+		return;
+	}
+	HttpText='CalendarASP.asp?action=populateExistingContacts&searchText='+searchText;
+	xmlHttp = GetXmlHttpObject();
+	xmlHttp.onreadystatechange = returnExistingContacts;
+	xmlHttp.open('GET',HttpText, true);
+	xmlHttp.send(null);
+	function returnExistingContacts() {
+		if (xmlHttp.readyState == 4) {
+			if (xmlHttp.status == 200) {
+				if(xmlHttp.responseXML==null){DebugBox(a(HttpText)); return false;}
+				//console.log(xmlHttp.responseXML);
+				try	{	var xmlDoc = xmlHttp.responseXML.documentElement;	}
+				catch(e)	{	
+					AjaxErr('There was a problem with the populateExistingContacts:"'+searchText+'" response.',HttpText);
+					return;
+				}
+				var recordCount=xmlDoc.getElementsByTagName('recordCount')[0].childNodes[0].nodeValue;
+				
+				if (recordCount>0) {
+					Gebi('addCustExistingListLabel').style.display='inline-block';
+				} else {
+					Gebi('addCustExistingListLabel').style.display='none';
+				}
+				var contactList='';
+				for(r=1;r<=recordCount;r++) {
+					var contactId=xmlDoc.getElementsByTagName('ID'+r)[0].childNodes[0].nodeValue;
+					var name=CharsDecode(xmlDoc.getElementsByTagName('Name'+r)[0].childNodes[0].nodeValue.replace('--',''));
+					contactList+='<button onclick="useAsCust('+contactId+',\''+name+'\');" class=existingContactListItem >'+name+'</button> <br/>';
+					
+				}
+				Gebi('existingContactList').innerHTML=contactList;
+			}
+			else { AjaxErr('There was a problem with the populateExistingContacts request.',HttpText)}
+		}		
+	}
+}
+
+function useAsCust(id,cName) {
+	var fName='UseAsCust';
+	HttpText='CalendarASP.asp?action='+fName+'&id='+id+'&cName='+cName;
+	xmlHttp = GetXmlHttpObject();
+	xmlHttp.onreadystatechange = returnExistingContacts;
+	xmlHttp.open('GET',HttpText, true);
+	xmlHttp.send(null);
+	function returnExistingContacts() {
+		if (xmlHttp.readyState == 4) {
+			if (xmlHttp.status == 200) {
+				if(xmlHttp.responseXML==null){DebugBox(a(HttpText)); return false;}
+				console.log(xmlHttp.responseXML);
+				try	{	var xmlDoc = xmlHttp.responseXML.documentElement;	}
+				catch(e)	{	
+					AjaxErr('There was a problem with the '+fName+':"'+id+','+cName+'" response.',HttpText);
+					return;
+				}
+				//var recordCount=xmlDoc.getElementsByTagName('recordCount')[0].childNodes[0].nodeValue;
+				
+
+				//var contactId=xmlDoc.getElementsByTagName('ID')[0].childNodes[0].nodeValue;
+				//var name=CharsDecode(xmlDoc.getElementsByTagName('Name')[0].childNodes[0].nodeValue.replace('--',''));
+				Gebi('CustomerList').innerHTML='<option value='+id+'>'+cName+'<option>'+Gebi('CustomerList').innerHTML;
+				Gebi('CustomerList').selectedIndex=0;
+				
+				
+				hideAddCustBox();
+			}
+			else { AjaxErr('There was a problem with the '+fName+' request.',HttpText)}
+		}		
+	}
+}
+
+function insertNewCustomer() {
+	var cName=Gebi('addCustSearchText').value;
+	var phone=Gebi('addCustPhone').value;
+	var email=Gebi('addCustEmail').value;
+	var fName='insertNewCustomer';
+	
+	HttpText='CalendarASP.asp?action='+fName+'&cName='+cName+'&phone='+phone+'&email='+email;
+	xmlHttp = GetXmlHttpObject();
+	xmlHttp.onreadystatechange = returnExistingContacts;
+	xmlHttp.open('GET',HttpText, true);
+	xmlHttp.send(null);
+	function returnExistingContacts() {
+		if (xmlHttp.readyState == 4) {
+			if (xmlHttp.status == 200) {
+				if(xmlHttp.responseXML==null){DebugBox(a(HttpText)); return false;}
+				console.log(xmlHttp.responseXML);
+				try	{	var xmlDoc = xmlHttp.responseXML.documentElement;	}
+				catch(e)	{	
+					AjaxErr('There was a problem with the '+fName+':"'+cName+'" response.',HttpText);
+					return;
+				}
+					
+				var newCustId=xmlDoc.getElementsByTagName('id')[0].childNodes[0].nodeValue;
+				
+				Gebi('CustomerList').innerHTML='<option value='+newCustId+'>'+cName+'<option>'+Gebi('CustomerList').innerHTML;
+				Gebi('CustomerList').selectedIndex=0;
+				
+				
+				hideAddCustBox();
+			}
+		}
+	}
+}
+
+
 function ShowEventNotes(e,CalID, HoverItem) {
 	CalID=HoverItem.id.replace('li','');
 	
@@ -673,7 +783,6 @@ function ShowEventNotes(e,CalID, HoverItem) {
 			if (xmlHttp.status == 200) {
 				if(xmlHttp.responseXML==null){DebugBox(a(HttpText)); return false;}
 				var xmlDoc = xmlHttp.responseXML.documentElement;			
-			
 				Gebi('HoverNotes').style.visibility = 'visible';
 				Gebi('HoverNotes').innerHTML='';
 				var Note=CharsDecode((xmlDoc.getElementsByTagName('Notes')[0].childNodes[0].nodeValue.replace('--','')));
