@@ -459,6 +459,8 @@ function LoadExistingEvent(EventID)	{
 			if (xmlHttp.status == 200)	{
 				//try { 
 					var xmlDoc = xmlHttp.responseXML.documentElement;
+					console.log('Existing Event:');
+					console.log(xmlDoc);
 					var Title = CharsDecode(xmlDoc.getElementsByTagName('Title')[0].childNodes[0].nodeValue.replace('--',''));
 					var DateFrom = xmlDoc.getElementsByTagName('DateFrom')[0].childNodes[0].nodeValue;
 					var DateTo = xmlDoc.getElementsByTagName('DateTo')[0].childNodes[0].nodeValue;
@@ -470,7 +472,8 @@ function LoadExistingEvent(EventID)	{
 					//var SuperID = xmlDoc.getElementsByTagName('SuperID')[0].childNodes[0].nodeValue;
 					var AreaID = xmlDoc.getElementsByTagName('AreaID')[0].childNodes[0].nodeValue;
 					var PhaseID = xmlDoc.getElementsByTagName('PhaseID')[0].childNodes[0].nodeValue;
-					var CustomerID = xmlDoc.getElementsByTagName('CustomerID')[0].childNodes[0].nodeValue;
+					var CustomerID = xmlDoc.getElementsByTagName('CustomerID')[0].childNodes[0].nodeValue.replace('--','');
+					//console.log(CustomerID);
 					var CrewNames = xmlDoc.getElementsByTagName('CrewNames')[0].childNodes[0].nodeValue.replace('--','');
 					var TaskLength = xmlDoc.getElementsByTagName('TaskLength')[0].childNodes[0].nodeValue;
 					
@@ -511,12 +514,13 @@ function LoadExistingEvent(EventID)	{
 				Gebi("TaskList").value = TaskID;
 				Gebi('EventHeaderTxt').innerHTML = 'Edit Event';
 				
-				Gebi('JobName').selectedIndex=0;
-				Gebi('SuperList').selectedIndex=0;
-				Gebi('AreaList').selectedIndex=0;
+				//Gebi('JobName').selectedIndex=0;
+				//Gebi('SuperList').selectedIndex=0;
+				//Gebi('AreaList').selectedIndex=0;
 				//Gebi('AreaList2').selectedIndex=0;
-				Gebi('PhaseList').selectedIndex=0;
-				Gebi('CustomerList').selectedIndex=0;
+				//Gebi('PhaseList').selectedIndex=0;
+				//Gebi('CustomerList').selectedIndex=0;
+				Gebi('CustomerList').value=CustomerID;
 				Gebi('CrewList').selectedIndex=0;
 				Gebi("CrewNames").value = 'Crew:';
 				

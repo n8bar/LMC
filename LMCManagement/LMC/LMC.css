@@ -52,7 +52,7 @@ div {white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 	*/
 }
 
-.toolbar {	border:none; height:29px; width:100%; background-color:#025B86; overflow:hidden; white-space:nowrap;
+.toolbar {	border:none; height:40px; width:100%; background-color:#025B86; overflow:hidden; white-space:nowrap;
 	/*
 	background:-moz-linear-gradient(-90deg top left, #025B86 0%,            #025B86 2%,            #6bf 49.99%,           #8cf 50%,    #def 100%);
 	background:-webkit-gradient(linear,0 0,0 100%,from(#025B86),color-stop(.02, #025B86),color-stop(.49999, #6bf),color-stop(.5, #8cf), to(#def));
@@ -61,8 +61,8 @@ div {white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 	background:-webkit-gradient(linear,0 0,0 100%,from(#025B86),color-stop(.02, #025B86),to(#abc));
 }
 
-.subTab	{	color:white !important; cursor:pointer; float:left; font-size:14px; height:25px; margin:4px 0 0 0; padding: 2px 0 0 0; text-align:center; width:auto; font-family:"Dejavu Sans", Tahoma, Geneva, sans-serif;
-	border-top-left-radius:3px; border-top-right-radius:3px; border:2px #ccc solid; border-bottom:3px #fff solid; border-bottom-color:inherit !important; background-color:#046;
+.subTab	{	color:white !important; cursor:pointer; float:left; font-size:14px; height:25px; margin:15px 0 0 0; padding: 2px 0 0 0; text-align:center; width:auto; font-family:"Dejavu Sans", Tahoma, Geneva, sans-serif;
+	border-top-left-radius:6px; border-top-right-radius:6px; border:4px #ccc solid; border-bottom:3px #fff solid; border-bottom-color:inherit !important; background-color:#046;
 	background:-moz-linear-gradient(90deg bottom left, #444 0%, #104974 10%, #7CBDED 100%); 
 	background:-webkit-gradient(linear, 0 100%, 0 0, from(#444), color-stop(.1, #104974), to(#7cbded));
 }
@@ -70,8 +70,8 @@ div {white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 	background:-moz-linear-gradient(90deg bottom left, #444 0%, #1C80CA 10%, #D5EBF9 100%);
 	background:-webkit-gradient(linear, 0 100%, 0 0, from(#444), color-stop(.1, #1C80CA), to(#D5EBF9));
 }
-.selectedSubTab	{ color:white; cursor:pointer; float:left; font-size:14px; font-weight:bold; height:26px; margin:3px 0 0 0; padding: 4px 0 0 0; text-align:center;  width:auto; color:#000; font-family:"Dejavu Sans", Tahoma, Geneva, sans-serif; background-color:#fff;
-	border-top-left-radius:5px;	border-top-right-radius:5px; border:2px #ddd solid;	border-bottom:none !important;
+.selectedSubTab	{ color:white; cursor:pointer; float:left; font-size:14px; font-weight:bold; height:26px; margin:14px 0 0 0; padding: 4px 0 0 0; text-align:center;  width:auto; color:#000; font-family:"Dejavu Sans", Tahoma, Geneva, sans-serif; background-color:#fff;
+	border-top-left-radius:8px;	border-top-right-radius:8px; border:2px #ddd solid;	border-bottom:none !important;
 	background:-moz-linear-gradient(90deg bottom left, #fff, #fff 10%, #bdf 66.667%, #fff 100%);
 	background:-webkit-gradient(linear, 0 100%, 0 0, from(#fff), color-stop(.1, #fff), color-stop(.66667, #def), to(#fff));
 }

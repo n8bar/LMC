@@ -408,7 +408,7 @@ Password:<input id="txtPassword" type="password" value="********" onFocus="this.
   
   
 <div id="SQLBox" class="MainBoxHidden" style="background:#EEE;"><!--Creates the Tabs for The Estimate-->
-<iframe src="file://///Lmc/sqlwebi/SQL.ASP" style="width:100%; height:100%;"></iframe>
+<iframe src="../sqlwebi/SQL.ASP" style="width:100%; height:100%;"></iframe>
 </div>     
     
   

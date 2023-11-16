@@ -108,7 +108,7 @@ function resize() {
 				%>
 				<div class=row id=row<%=rI%>.5 style=" font-family:Consolas, 'Courier New', monospace; font-size:16px; font-weight:bold; " >
 					<div style="float:left; text-align:left; border:none;"><%=cName(cI)%> Total:</div>
-					<div style="float:right; text-align:right; border:none;"><%=formatCurrency(cTotal(cI))%></div>
+					<div style="float:right; text-align:right; border:none;"><%=formatCurrency("0"&cTotal(cI))%></div>
 				</div>
 				<div class=row style="opacity:0" >&nbsp;</div>
 				<%
@@ -129,8 +129,9 @@ function resize() {
 				<div class=modelW><%=rs("Model")%>&nbsp;</div>
 				<div class=PNW><%=rs("PN")%>&nbsp;</div>
 				<div class=qtyW><%=rs("Qty")%>&nbsp;</div>
-				<div class=costW><%=formatCurrency(rs("Cost"))%>&nbsp;</div>
-				<div class=totalW><%=formatCurrency(rs("Total"))%>&nbsp;</div>
+				<div class=costW><%=formatCurrency("0"&rs("Cost"))%>&nbsp;</div>
+				<!-- div class=totalW><%=formatCurrency("0"&rs("Total"))%>&nbsp;</div -->
+				<div class=totalW><%=formatCurrency(Total)%>&nbsp;</div>				
 				<div class=endW>&nbsp;</div>
 			</div>
 			<!-- div class=row style="background:#eff;">< %=rs("Category1")%> - < %=rs("System")%> - < %=Cat%> - < %=cName(cI)%>&nbsp;</div -->
@@ -140,13 +141,13 @@ function resize() {
 		%>
 		<div class=row id=row<%=rI%>.5 style=" font-family:Consolas, 'Courier New', monospace; font-size:16px; font-weight:bold;" >
 			<div style="float:left; text-align:left; border:none;"><%=cName(cI)%> Total:</div>
-			<div style="float:right; text-align:right; border:none;"><%=formatCurrency(cTotal(cI))%></div>
+			<div style="float:right; text-align:right; border:none;"><%=formatCurrency("0"&cTotal(cI))%></div>
 		</div>
 		<div class=row style="opacity:0" >&nbsp;</div>
 	
 		<div class=row id=row<%=rI%>.5 style=" height:32px; font-family:Consolas, 'Courier New', monospace; font-size:24px;" >
 			<div style="float:left; text-align:left; border:none;">Inventory Total:</div>
-			<div id=bottomTotal style="float:right; text-align:right; border:none;"><%=formatCurrency(Total)%></div>
+			<div id=bottomTotal style="float:right; text-align:right; border:none;"><%=formatCurrency("0"&Total)%></div>
 		</div>
 	
 	</div> 

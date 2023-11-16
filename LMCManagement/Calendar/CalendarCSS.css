@@ -155,6 +155,10 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 
 .EventDetailsScreen{ position:absolute; display: none; /*	height:240px; width:288px; */	height:1px; width:1px; top:105px; left:325px; background:#ddeeff; border: 0 solid #0FF; padding:0; margin:0 0 0 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; z-index:6000; }
 
+#JobName, #SuperList, #AreaList, #PhaseList {visibility: hidden}
+
+
+
 #newCustBtn {float:right; }
 #addCustomerBox { top:10%; left:5%; width: 320px; position:absolute; display: none; background:#FFF; border: 1px solid #AAA; padding:0; margin:0px 0px 0px 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; white-space:normal; z-index:6600; border-top-left-radius: 5px; border-bottom-right-radius: 5px; }
 #addCustomerTitle { font-size:18px;}

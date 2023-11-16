@@ -216,11 +216,11 @@
 	<div class=spacer></div>
 	<div id=mainPreferences class="subTab o50" style="border-color:#6be; color:#07c; width:16%;" onClick="subTab(this,'Preferences.asp?nc=--TSTAMP');" >Preferences</div>
 	<div class=spacer></div>
-	<div class=spacer style="float:right; height:29px; width:15%; ">&nbsp;</div>
+	<div class=spacer style="float:right; width:15%; ">&nbsp;</div>
 </div>
 <div id=ProjSubTabs class="toolbar dN">
 	<div class=spacer></div>
-	<div id=projEstimatingSales class=subTab style="border-color:8c0#; color:#680; width:16%;" onClick="subTab(this,'bid.asp?nc=--TSTAMP');" >Estimating / Sales</div>
+	<div id=projEstimatingSales class=subTab style="border-color:#8c0; color:#680; width:16%;" onClick="subTab(this,'bid.asp?nc=--TSTAMP');" >Estimating / Sales</div>
 	<div class=spacer></div>	<div class=spacer></div>
 	<div id=projProjects class=subTab style="border-color:#f90; color:#e70; width:16%;" onClick="subTab(this,'Projects.asp?nc=--TSTAMP');" >Projects</div>
 	<div class=spacer></div>	<div class=spacer></div>
@@ -230,21 +230,21 @@
 	<div class=spacer></div>	<div class=spacer></div>
 	<div id=projTimeEntry class=subTab style="border-color:#cc6; color:#662; width:16%;" onClick="subTab(this,'Time_Entry.asp?nc=--TSTAMP');" >Time Entry</div>
 	<div class=spacer></div>
-	<div class=spacer style="float:right; height:29px; width:15%; ">&nbsp;</div>
+	<div class=spacer style="float:right; width:15%; ">&nbsp;</div>
 </div>
 <div id=ServSubTabs class="toolbar dN">
-	<div class=spacer></div>
+	<!-- div class=spacer></div>
 	<div id=servMonitoring class=subTab style="border-color:#35f; color:#00f; width:20%;" onClick="subTab(this,'Monitoring.asp?nc=--TSTAMP');" >Monitoring</div>
+	<div class=spacer></div -->
+	<div class=spacer></div>
+	<div id=servTaskList class=subTab style="border-color:#35f; color:#00f; width:25%;" onClick="subTab(this,'Events.asp?type=3&type2=4&Active=True&nc=--TSTAMP');" >Service Task List</div>
 	<div class=spacer></div>
 	<div class=spacer></div>
-	<div id=servTaskList class=subTab style="border-color:#35f; color:#00f; width:20%;" onClick="subTab(this,'Events.asp?type=3&type2=4&Active=True&nc=--TSTAMP');" >Service Task List</div>
-	<div class=spacer></div>
-	<div class=spacer></div>
-	<div id=servMaterials class=subTab style="border-color:#0dd; color:#088; width:20%;" onClick="subTab(this,'Materials.asp?nc=--TSTAMP');" >Materials</div>
+	<div id=servMaterials class=subTab style="border-color:#0dd; color:#088; width:25%;" onClick="subTab(this,'Materials.asp?nc=--TSTAMP');" >Materials</div>
 	<div class=spacer></div>	<div class=spacer></div>
-	<div id=servTimeEntry class=subTab style="border-color:#cc6; color:#662; width:20%;" onClick="subTab(this,'Time_Entry.asp?nc=--TSTAMP');" >Time Entry</div>
+	<div id=servTimeEntry class=subTab style="border-color:#cc6; color:#662; width:25%;" onClick="subTab(this,'Time_Entry.asp?nc=--TSTAMP');" >Time Entry</div>
 	<div class=spacer></div>
-	<div class=spacer style="float:right; height:29px; width:16%; ">&nbsp;</div>
+	<div class=spacer style="float:right; width:22%; ">&nbsp;</div>
 </div>
 <div id=MgmtSubTabs class="toolbar dN">
 	<div class=spacer></div>
@@ -262,7 +262,7 @@
 	<div class=spacer></div>
 	<div id=mgmtAdministration class=subTab style="border-color:#fff; color:#444; width:16%;" onClick="subTab(this,'Admin.asp?nc=--TSTAMP');" >Administration</div>
 	<div class=spacer></div>
-	<div class=spacer style="float:right; height:29px; width:15%; ">&nbsp;</div>
+	<div class=spacer style="float:right; width:15%; ">&nbsp;</div>
 </div>
 
 <div id=frames></div>

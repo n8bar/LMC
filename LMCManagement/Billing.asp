@@ -238,27 +238,6 @@ function Search() {
 		<div id="EventDetails2"  Class="EventDetailsScreen">
 				</div>
 				<div>
-					<div height="23"><div class="EventLabelText" style="float:right;">Area</div></div>
-					<div><%    
-						SQL = "select AreaID, AreaDescription from Area" 
-						set rs=Server.CreateObject("ADODB.Recordset")
-						rs.Open SQL, REDconnstring 
-						%>
-						<select name="AreaList2" id="AreaList2" style="font-size:12px; width:200px">
-						<option value="0"selected="selected">----</option>
-						<%
-	Do Until rs.EOF
-		%>
-						<option  value="<%= rs("AreaID")%>"><%= rs("AreaDescription")%></option>
-						<%   
-						rs.MoveNext
-						Loop
-						set rs = nothing
-						%>
-						</select>
-					</div>
-				</div>
-				<div>
 					<div>&nbsp;</div>
 					<div>&nbsp;</div>
 				</div>
