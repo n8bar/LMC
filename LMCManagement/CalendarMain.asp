@@ -50,7 +50,7 @@
 		<%
 		Session("eventListFrom0")="1/1/1900"
 		Session("eventListTo0")=Date
-		src="EventList.asp?Type=0&condense=1&jsLink=LoadExistingEvent&user=1&CHeading=<br/>Tasks for <b>"&Replace(Session("User"),"Conference","Everyone")&"</b> up to Today."
+		src="EventList.asp?Type=0&condense=1&jsLink=LoadExistingEvent&user=1&CHeading=<br/>Tasks for Everyone up to Today."
 		%>
 		<iframe class=vTabBox id=EventList src="<%=src%>" style="display:block; padding:0; border:none;" ></iframe>
 		<div id=Views class=vTabBox >
@@ -266,7 +266,7 @@
 						heightButton:'18px',					
 			
 						// Sets the color schemes for the Calendar
-						colorTopBG:'#55A9E8', // top control bar bg color
+						colorTopBG:'#448844', // top control bar bg color
 						colorTopOffBG:'#00F',
 						colorCalendarBG:'#FFF', // Bg of all the days
 						colorCalDayHeadersBG:'#DDD', //Bg of the top bar for each day
@@ -278,9 +278,9 @@
 						colorToDayMouseOver:'#00F',//BG of today cell when the mouse hovers over it
 			
 						// Borders
-						borderMain:'1px solid #98CBF1', 
-						borderWeekNames:'1px solid #98CBF1',
-						borderDays:'1px solid #98CBF1', 
+						borderMain:'1px solid #99ff99', 
+						borderWeekNames:'1px solid #99ff99',
+						borderDays:'1px solid #99ff99', 
 								
 								
 						 // Header Display Banner
@@ -313,7 +313,7 @@
 						sizeWeekNames:'10px',
 						fontWeekNames:'Arial,Helvetica,sans-serif',
 						colorWeekNames:'#000',
-						colorWeekNamesBG:'#98CBF1',
+						colorWeekNamesBG:'#99ff99',
 						weightWeekNames:'bold',
 						typeWeekNames:'short',//Sets long medium or short - Monday, Mon, M
 			
@@ -322,15 +322,15 @@
 						sizeWeekNums:'8px',
 						fontWeekNums:'Arial,Helvetica,sans-serif',
 						colorWeekNums:'#000', 
-						colorWeekNumsBG:'#C9E4F8',
-						colorWeekNumsHover:'#55A9E8',
+						colorWeekNumsBG:'#E4F8E4',
+						colorWeekNumsHover:'#448844',
 						weightWeekNums:'bold',
 			
 								
 						 // Sets CSS for the date numbersS
 						sizeDayNums:'10px',
 						fontDayNums:'Arial,Helvetica,sans-serif',
-						colorDayNums:'#09273E',
+						colorDayNums:'#223300',
 						weightDayNames:'bold'
 					});
 						
@@ -370,7 +370,7 @@
 					heightButton:'18px',					
 					
 					// Sets the color schemes for the Calendar
-					colorTopBG:'#55A9E8', // top control bar bg color
+					colorTopBG:'#448844', // top control bar bg color
 					colorTopOffBG:'#00F',
 					colorCalendarBG:'#FFF', // Bg of all the days
 					colorCalDayHeadersBG:'#DDD', //Bg of the top bar for each day
@@ -382,9 +382,9 @@
 					colorToDayMouseOver:'#00F',//BG of today cell when the mouse hovers over it
 					
 					// Borders
-					borderMain:'1px solid #98CBF1', 
-					borderWeekNames:'1px solid #98CBF1',
-					borderDays:'1px solid #98CBF1', 
+					borderMain:'1px solid #99ff99', 
+					borderWeekNames:'1px solid #99ff99',
+					borderDays:'1px solid #99ff99', 
 					
 					
 					// Header Display Banner
@@ -417,7 +417,7 @@
 					sizeWeekNames:'10px',
 					fontWeekNames:'Arial,Helvetica,sans-serif',
 					colorWeekNames:'#000',
-					colorWeekNamesBG:'#98CBF1',
+					colorWeekNamesBG:'#99ff99',
 					weightWeekNames:'bold',
 					typeWeekNames:'short',//Sets long medium or short - Monday, Mon, M
 					
@@ -426,15 +426,15 @@
 					sizeWeekNums:'8px',
 					fontWeekNums:'Arial,Helvetica,sans-serif',
 					colorWeekNums:'#000', 
-					colorWeekNumsBG:'#C9E4F8',
-					colorWeekNumsHover:'#55A9E8',
+					colorWeekNumsBG:'#E4F8E4',
+					colorWeekNumsHover:'#448844',
 					weightWeekNums:'bold',
 					
 					
 					// Sets CSS for the date numbersS
 					sizeDayNums:'10px',
 					fontDayNums:'Arial,Helvetica,sans-serif',
-					colorDayNums:'#09273E',
+					colorDayNums:'#223300',
 					weightDayNames:'bold'
 				});
 				
@@ -474,7 +474,7 @@
 					heightButton:'18px',					
 					
 					// Sets the color schemes for the Calendar
-					colorTopBG:'#55A9E8', // top control bar bg color
+					colorTopBG:'#448844', // top control bar bg color
 					colorTopOffBG:'#00F',
 					colorCalendarBG:'#FFF', // Bg of all the days
 					colorCalDayHeadersBG:'#DDD', //Bg of the top bar for each day
@@ -486,9 +486,9 @@
 					colorToDayMouseOver:'#00F',//BG of today cell when the mouse hovers over it
 					
 					// Borders
-					borderMain:'1px solid #98CBF1', 
-					borderWeekNames:'1px solid #98CBF1',
-					borderDays:'1px solid #98CBF1', 
+					borderMain:'1px solid #99ff99', 
+					borderWeekNames:'1px solid #99ff99',
+					borderDays:'1px solid #99ff99', 
 					
 					
 					// Header Display Banner
@@ -521,7 +521,7 @@
 					sizeWeekNames:'10px',
 					fontWeekNames:'Arial,Helvetica,sans-serif',
 					colorWeekNames:'#000',
-					colorWeekNamesBG:'#98CBF1',
+					colorWeekNamesBG:'#99ff99',
 					weightWeekNames:'bold',
 					typeWeekNames:'short',//Sets long medium or short - Monday, Mon, M
 					
@@ -530,15 +530,15 @@
 					sizeWeekNums:'8px',
 					fontWeekNums:'Arial,Helvetica,sans-serif',
 					colorWeekNums:'#000', 
-					colorWeekNumsBG:'#C9E4F8',
-					colorWeekNumsHover:'#55A9E8',
+					colorWeekNumsBG:'#E4F8E4',
+					colorWeekNumsHover:'#448844',
 					weightWeekNums:'bold',
 					
 					
 					// Sets CSS for the date numbersS
 					sizeDayNums:'10px',
 					fontDayNums:'Arial,Helvetica,sans-serif',
-					colorDayNums:'#09273E',
+					colorDayNums:'#223300',
 					weightDayNames:'bold'
 				});
 				
@@ -589,13 +589,13 @@
 						colorTodayTopBG:'#FF9',/*Bg of the top bar for today/**/
 						colorCalOtherBG:'#E5E5E5',/* Bg of last month and next month cells/**/
 						colorCalOtherTopBG:'#DDD',/*Bg of the top bar for last mo and this mo/**/
-						colorDayMouseOver:'#D5EBF9', /*BG of a day cell when the mouse hovers over it/**/
+						colorDayMouseOver:'#D5FFD5', /*BG of a day cell when the mouse hovers over it/**/
 						colorToDayMouseOver:'#FF0',/*BG of today cell when the mouse hovers over it/**/
 						
 						/* Borders/**/
-						borderMain:'1px solid #98CBF1', 
-						borderWeekNames:'1px solid #98CBF1',
-						borderDays:'1px solid #98CBF1', 
+						borderMain:'1px solid #e6d04a', 
+						borderWeekNames:'1px solid #e6d04a',
+						borderDays:'1px solid #e6d04a', 
 						
 						
 						/* Header Display Banner/**/
@@ -628,7 +628,7 @@
 						sizeWeekNames:'11px',
 						fontWeekNames:'Arial,Helvetica,sans-serif',
 						colorWeekNames:'#000',
-						colorWeekNamesBG:'#55A9E8',					
+						colorWeekNamesBG:'#448844',					
 						weightWeekNames:'bold',
 						typeWeekNames:'long',/*Sets long medium or short - Monday, Mon, M
 						
@@ -636,9 +636,9 @@
 						/* Sets the CSS for the week number column down the L side/**/
 						sizeWeekNums:'10px',
 						fontWeekNums:'Arial,Helvetica,sans-serif',
-						colorWeekNums:'#324358', 
-						colorWeekNumsBG:'#C9E4F8',
-						colorWeekNumsHover:'#55A9E8',
+						colorWeekNums:'#114422', 
+						colorWeekNumsBG:'#E4F8E4',
+						colorWeekNumsHover:'#448844',
 						weightWeekNums:'bold',
 						
 						
@@ -646,7 +646,7 @@
 						sizeDayNums:'10px',
 						fontDayNums:'Arial,Helvetica,sans-serif',
 						weightDayNums:'bold',
-						colorDayNums:'#09273E',
+						colorDayNums:'#223300',
 						
 						// Week view specific/**/							
 						show8dayWeek:true

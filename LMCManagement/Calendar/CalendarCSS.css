@@ -84,8 +84,8 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 .WeekContainer {position:relative; overflow:hidden; height:100%; width:100%; margin:0; padding:0; Background:#FFF; float:none; }
 .WeekContainerPop { position:relative; overflow:hidden; height:100%; width:100%; margin:0; padding:0; Background:#FFF; z-index:1000;}
 
-.WeekDayHeader{ text-align:center; float:left; width:13.5%; border:1px solid #4499ff; border-left:none; text-shadow:#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px; color:#036; font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";}
-.WeekNumHeader{ text-align:center; float:left; max-width:2%; min-width:24px; border:1px solid #4499ff; font-size:10px; text-shadow:#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px; color:#036; font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";}
+.WeekDayHeader{ text-align:center; float:left; width:13.5%; border:1px solid #e6d04a; border-left:none; text-shadow:#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px; color:#363; font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";}
+.WeekNumHeader{ text-align:center; float:left; max-width:2%; min-width:24px; border:1px solid #99ff99; font-size:10px; text-shadow:#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px; color:#036; font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";}
 
 .tdCalendar4rows { margin:0; padding:0; height:22.75%; width:100%;}
 .tdCalendar5rows { margin:0; padding:0; height:18.2%; width:100%;}
@@ -112,7 +112,7 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 .DayEvent{ height:14px; width:100%; margin:0; padding:0; overflow:hidden; white-space:nowrap; font-family:Verdana, Geneva, sans-serif; font-size:10px; float:left; font-weight:normal; cursor:pointer; z-index:5000; text-overflow:ellipsis;}
 
 
-.WeekEvent{ position:relative; height:14px; width:97%; background:#ccc; overflow:hidden; border: 1px solid #BBB; padding:0; margin:0px 0px 0px 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; color:#004488; cursor:crosshair; z-index:5000;}
+.WeekEvent{ position:relative; height:14px; width:97%; background:#ccc; overflow:hidden; border: 1px solid #BBB; padding:0; margin:0px 0px 0px 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; color:#448844; cursor:crosshair; z-index:5000;}
 
 .OverflowNumber{ position:relative; height:14px; width:97%; background:none; overflow:hidden; border:0px solid #BBB; padding:0; margin:0; top:-2px; font-family:Consolas,Arial,Helvetica,sans-serif; font-size:12px; font-weight:normal; text-align:center; color:#33F; cursor:default; z-index:5000;}
 
@@ -126,9 +126,9 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 	
 	#CalendarMain li, #dragContent li, li#indicateDestination{/* Movable items, i.e. <LI> */ list-style-type:none;	}
 
-	li#indicateDestination{	/* Small Box indicating where content will be dropped - i.e. the one you use if you don't use arrow */ border:1px solid #317082; background-color:#FFF; height:16px; }
+	li#indicateDestination{	/* Small Box indicating where content will be dropped - i.e. the one you use if you don't use arrow */ border:1px solid #708270; background-color:#FFF; height:16px; }
 	
-	#CalendarMain .mouseover{	/* Mouse over effect on drag */ background-color:#E2EBED; border:0px solid Red; }
+	#CalendarMain .mouseover{	/* Mouse over effect on drag */ background-color:#EBEDEB; border:0px solid Red; }
 	
 	#dragContent{	/* Drag container */ position:absolute; width:100px; height:16px; display:none; margin:0px; padding:0px; z-index:20000; border:rgba(255,255,255,.5) 1px solid; border-radius:7px; }
 
@@ -143,7 +143,7 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 
 #NewEventBoxLeft, #NewEventBoxRight { 	width:50%; height:268px; padding:8px 4px 0 4px; float:left; }
 
-.JobSelectionBox{ position:absolute; top:33%; left:33%; width:33%; height:33%; display:none; margin:auto; z-index:5800; background:#88bbff; text-align:center;}
+.JobSelectionBox{ position:absolute; top:33%; left:33%; width:33%; height:33%; display:none; margin:auto; z-index:5800; background:#bbffbb; text-align:center;}
 
 .EventLabelText{font-family:Consolas, "Courier New", Courier, monospace; font-weight:normal; font-size:14px; text-align:right; }
 
@@ -153,7 +153,7 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 
 .EventListBox{ cursor:auto; font-family:Arial,Helvetica,sans-serif; font-size: 12px; font-weight:normal; text-align:left; border: 1px solid #666; border-bottom:1px solid #AAA; border-right: 1px solid #AAA; }
 
-.EventDetailsScreen{ position:absolute; display: none; /*	height:240px; width:288px; */	height:1px; width:1px; top:105px; left:325px; background:#ddeeff; border: 0 solid #0FF; padding:0; margin:0 0 0 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; z-index:6000; }
+.EventDetailsScreen{ position:absolute; display: none; /*	height:240px; width:288px; */	height:1px; width:1px; top:105px; left:325px; background:#eeffee; border: 0 solid #0FF; padding:0; margin:0 0 0 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; z-index:6000; }
 
 #JobName, #SuperList, #AreaList, #PhaseList {visibility: hidden}
 
@@ -163,7 +163,7 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 #addCustomerBox { top:10%; left:5%; width: 320px; position:absolute; display: none; background:#FFF; border: 1px solid #AAA; padding:0; margin:0px 0px 0px 1px; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; text-align:center; color:#33F; white-space:normal; z-index:6600; border-top-left-radius: 5px; border-bottom-right-radius: 5px; }
 #addCustomerTitle { font-size:18px;}
 #addCustomerBox label{white-space:nowrap; background: none;}
-#addCustInnerBox { padding:5px; width:100%; background:#88ddff; }
+#addCustInnerBox { padding:5px; width:100%; background:#ddffdd; }
 .addCustButton {font-weight: bold; padding:3px;}
 #addCustExistingListLabel { display:none; font-weight: normal; font-size:larger; background:white; text-align: justify; padding:1px 2px;}
 #existingContactList { height:auto; max-height: 160px; width:100%; overflow-y: auto; margin: 0 0 8px 0; background:white; }
