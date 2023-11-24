@@ -202,10 +202,10 @@
 % -->
 <div id=MainSubTabs class="toolbar dB">
 	<div class=spacer></div>
-	<div id=mainCalendar class=subTab style="border-color:#6be; color:#07c; width:16%;" onClick="subTab(this,'CalendarMain.asp?nc=--TSTAMP');" >Calendar</div>
+	<div id=mainCalendar class=subTab style="border-color:#8fb787; color:#142; width:16%;" onClick="subTab(this,'CalendarMain.asp?nc=--TSTAMP');" >Calendar</div>
 	<div class=spacer></div>
 	<div class=spacer></div>
-	<div id=mainMyTodo class=subTab style="border-color:#6be; color:#07c; width:16%;" onClick="subTab(this,'Events.asp?Type=11&Active=True&nc=--TSTAMP');" >My ToDo</div>
+	<div id=mainMyTodo class=subTab style="border-color:#8fb787; color:#142; width:16%;" onClick="subTab(this,'Events.asp?Type=11&Active=True&nc=--TSTAMP');" >My ToDo</div>
 	<div class=spacer></div>
 	<div class=spacer></div>
 	<div id=mainContacts class=subTab style="border-color:#bbe; color:#22a; width:16%;" onClick="subTab(this,'Contacts.asp?nc=--TSTAMP');" >Contacts</div>

@@ -625,7 +625,7 @@
 						
 						
 						/* Sets the CSS for the week Names M T W T F S/**/
-						sizeWeekNames:'11px',
+						sizeWeekNames:'14px',
 						fontWeekNames:'Arial,Helvetica,sans-serif',
 						colorWeekNames:'#000',
 						colorWeekNamesBG:'#448844',					

@@ -9,7 +9,7 @@ a:active{color:#09273E;}
 a:visited{color:#09273E;}
 a:hover{color:#169A70;}
 
-* { color: #07c; }
+* { color: #142; }
 
 li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 
@@ -84,8 +84,8 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 .WeekContainer {position:relative; overflow:hidden; height:100%; width:100%; margin:0; padding:0; Background:#FFF; float:none; }
 .WeekContainerPop { position:relative; overflow:hidden; height:100%; width:100%; margin:0; padding:0; Background:#FFF; z-index:1000;}
 
-.WeekDayHeader{ text-align:center; float:left; width:13.5%; border:1px solid #e6d04a; border-left:none; text-shadow:#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px; color:#363; font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";}
-.WeekNumHeader{ text-align:center; float:left; max-width:2%; min-width:24px; border:1px solid #99ff99; font-size:10px; text-shadow:#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px; color:#036; font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";}
+.WeekDayHeader{ text-align:center; float:left; width:13.5%; height:100%; border:1px solid #e6d04a; border-left:none; text-shadow:#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px; color:#142; font-family: Verdana, "DejaVu Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "sans-serif";}
+.WeekNumHeader{ text-align:center; float:left; max-width:2%; height:100%; min-width:24px; border:1px solid #e6d04a; font-size:10px; text-shadow:#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px,#FFF 0 0 3px; color:#142; font-family: Verdana, "DejaVu Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "sans-serif";}
 
 .tdCalendar4rows { margin:0; padding:0; height:22.75%; width:100%;}
 .tdCalendar5rows { margin:0; padding:0; height:18.2%; width:100%;}

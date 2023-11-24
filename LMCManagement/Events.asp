@@ -20,7 +20,7 @@ If Not rs.EOF Then
 	%><style> * { color:#<%=rs("TextColor")%>; } </style><%
 Else 
 	TaskName=Unknown
-	%><style> * { color:#07c; } </style><% 
+	%><style> * { color:#142; } </style><% 
 End If
 Set rs=Nothing
 
