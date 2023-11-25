@@ -634,7 +634,7 @@
 						
 						
 						/* Sets the CSS for the week number column down the L side/**/
-						sizeWeekNums:'10px',
+						sizeWeekNums:'14px',
 						fontWeekNums:'Arial,Helvetica,sans-serif',
 						colorWeekNums:'#114422', 
 						colorWeekNumsBG:'#E4F8E4',
