@@ -47,7 +47,7 @@ div {overflow:hidden; float:left;}
 
 .ViewsTabs{ position:relative; height:3%; width:100%; Border:0px solid blue; margin: 10px 1px 0 0; z-index:800; }
 .ViewsTabsBottom{ position:relative; height:.5%; width:95%; font-size:6px; background:#aaddaa; z-index:800; float:none; border-bottom-right-radius:100%;}
-.vTab{ position:relative; float:left; height:100%; margin: 4px 0 0 1px; padding: 3px 3px 0 3px; background:#ddffdd; cursor:pointer; font-family: Arial,Helvetica,sans-serif; font-weight:normal; font-size: 14px; color:#000; text-align:center; z-index:1000;  border-top-left-radius:7px; border-top-right-radius:7px;}
+.vTab{ position:relative; float:left; height:100%; margin: 4px 0 0 1px; padding: 3px 3px 0 3px; background:#bbffdd; cursor:pointer; font-family: Arial,Helvetica,sans-serif; font-weight:normal; font-size: 14px; color:#000; text-align:center; z-index:1000;  border-top-left-radius:7px; border-top-right-radius:7px; border: #e6d04a 1px solid; border-bottom:none;}
 .selVTab{ position:relative; float:left; height:100%; margin: 4px 0 0 1px; padding: 3px 4px 0 4px; background:#aaddaa; border-left:1px solid white; cursor:pointer; font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight:bold; color:#336633; text-align:center; z-index:1000; border-top-left-radius:8px; border-top-right-radius:8px;}
 
 .vTabBox{ display:none; position:relative; height:90%; width:100%; margin:0; padding: 0; Border: 0 solid blue; z-index:1000; }

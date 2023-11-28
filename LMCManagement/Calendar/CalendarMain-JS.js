@@ -26,9 +26,7 @@ function TabSlideIn(sThis) { sThis.style.width = '12px'; }
 
 
 function CreateCalendarTabs() {
-	
     var HTML = '';
-
    HTML +='<li id="TaskTabs1000" style="padding:0px 0px 0px 0px; background:#3599E3; color:#FFF;" ><div id="SlideTabText1000" class="SlideTabText" onclick="ShowCalendar();">Calendar</div></li>'; 
    HTML +='<li id="TaskTabs1001" style="background:#FF99CC;"><div id="SlideTabText1001" class="SlideTabText"  onclick="">Gant Chart</div></li>'; 
 

@@ -160,7 +160,7 @@
 
 	<div id=mainTabMain class=mainTab onClick="mainTab(this);" >&nbsp;Main&nbsp;</div>
 	<div id=mainTabProj class=mainTab onClick="mainTab(this);" >&nbsp;Projects&nbsp;</div>
-	<div id=mainTabServ class=mainTab onClick="mainTab(this);" >&nbsp;Service&nbsp;</div>
+	<div id=mainTabServ class=mainTab onClick="mainTab(this);" >&nbsp;Jobs&nbsp;</div>
 	<div id=mainTabMgmt class=mainTab onClick="mainTab(this);" >&nbsp;Management&nbsp;</div>
 </div>	
 
