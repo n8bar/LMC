@@ -438,18 +438,9 @@ Sub CalendarEvents  () '--------------------------------------------------------
 				
 				If Task = x Then
 					
-					If Done = True then 
-						BgColor = "#"&AltBgArray(x) 
-						Bg = "#"&AltBgArray(x) 
-						TextColor = "#"&AltTxtColorArray(x)
-						TextShadow=""
-					End If
-					
 					TextD=""
 					opacity=""
 					If Done = False then 
-						TextD="text-decoration:line-through;"
-						opacity="opacity:0.5;"
 						TextColor = "#"&TxtColorArray(x)
 						Bg="#"&BgArray(x)
 						'Bg=" -webkit-gradient(linear, left bottom, left top, color-stop(0,#"&BgArray(x)&"), color-stop(.5,#FFF), color-stop(1,#"&AltBgArray(x)&"));"
@@ -458,11 +449,18 @@ Sub CalendarEvents  () '--------------------------------------------------------
 						TxtWt="0"
 						TextD=""
 						
-						If IE>=7 Then
-							'Bg="-webkit-gradient(linear, left bottom, left top, color-stop(0,#"&BgArray(x)&"), color-stop(.5,#FFF), color-stop(1,#"&AltBgArray(x)&")) ;"
-							Bg="#"&BgArray(x)
-							TextColor="#"&TxtColorArray(x)
-						End If
+						'If IE>=7 Then
+						'	'Bg="-webkit-gradient(linear, left bottom, left top, color-stop(0,#"&BgArray(x)&"), color-stop(.5,#FFF), color-'stop(1,#"&AltBgArray(x)&")) ;"
+						'	Bg="#"&BgArray(x)
+						'	TextColor="#"&TxtColorArray(x)
+						'End If
+					Else
+						BgColor = "#"&AltBgArray(x) 
+						Bg = "#"&AltBgArray(x) 
+						TextColor = "#"&AltTxtColorArray(x)
+						TextShadow=""
+						TextD=" text-decoration: line-through; "
+						opacity="opacity:0.75;"
 					End if
 					
 					TextPx = TxtSizeArray(x)&"px"
@@ -496,7 +494,7 @@ Sub CalendarEvents  () '--------------------------------------------------------
 			Bg=Replace(lCase(bg),"#ffffff","rgba(255,255,255,.7)")
 			
 			EvStyle="overflow:hidden; background:"&Bg&"; color:"&TextColor&"; "&BrR&BrL
-			EvStyle=EvStyle&" font-size:"&TextPx&"; line-height:"&LineH&"; "'font-weight:"&TxtWt&"; "&TextD&" "&opacity&" "&TextShadow
+			EvStyle=EvStyle&" font-size:"&TextPx&"; line-height:"&LineH&"; "&TextD&" "&opacity&"  "'font-weight:"&TxtWt&";"&TextShadow
 			EvStyle=EvStyle&" min-height:"&BoxHt&"; height:"&BoxHt&"; width:"&EvWidth&"%; border-bottom:1px solid "&TextColor&";"'&TxtWt&";"
 			
 			Response.Write("<CalID"&DateCount&"-"&EventCount&">"&rs1("CalID")&"</CalID"&DateCount&"-"&EventCount&">")
