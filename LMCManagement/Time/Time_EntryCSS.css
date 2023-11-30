@@ -3,10 +3,12 @@
 
 html,body{ height:100%; width:100%; white-space:nowrap; overflow:hidden; margin-bottom:10px; background:#F3EFC5; text-align:center; }
 
+body { }
+
 a{text-decoration:underline; font-size:10px; font-family:Arial, Helvetica, sans-serif;} 
-a:link{color:#blue;}
-a:active{color:#blue;}
-a:visited{color:#blue;}
+a:link{color:blue;}
+a:active{color:blue;}
+a:visited{color:blue;}
 a:hover{color:#169A70;}
 
 
@@ -16,16 +18,16 @@ a:hover{color:#169A70;}
 
 /* CONTAINER//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.MainContainer{ position:absolute; top:0px; left:-4px; width:115%; height:100%; overflow:hidden; white-space:nowrap; text-align:center; background:#FAF8E2; border:1px solid #000; }
+.MainContainer{ position:absolute; top:0px; left:-4px; width:100%; height:100%; overflow:hidden; white-space:nowrap; text-align:center; background:#FAF8E2; /*border:1px solid #000;/**/ }
 
-.TimeEntryHeader { float:left; height:5%; width:100%; text-align:left; color:#0; font-size:100%; font-family:Arial, Helvetica, sans-serif; background-color:#FAF8E2; padding:.25% 0px 0 32px; margin:8px 0 0 1px; }
+.TimeEntryHeader { float:left; height:5%; width:100%; text-align:left; color:#000; font-size:100%; font-family:Arial, Helvetica, sans-serif; background-color:#FAF8E2; padding:.25% 0px 0 32px; margin:8px 0 0 1px; }
 #ReloadFrame{ border-width:2px; -moz-border-radius:6px; position:relative; left:auto; float:right; font-family:Arial, Helvetica, sans-serif; padding:-4px; margin:0; overflow:hidden; height:24px; width:24px; font-size:18px; text-align:center; vertical-align:top; }
 #ReloadFrame img{ position:relative; margin:0; -moz-width:24px; -moz-height:24px; -moz-top:-4px; -moz-left:-4px; }
 
 .RightHeader { height:4%; width:728px; font-size:23px; font-family:"Times New Roman", Times, serif; background-color:#FAF8E2; margin:1px 0px 2px 2px; padding:10px 0px 0px 10px; border:1px solid  #504912; }
-.LeftBox { float:left; clear:left; height:85%; width:192px; background:#FAF8E2; white-space:nowrap; position:relative; text-align:center; padding:0px 1px 0px 1px; border:1px solid #000; }
+.LeftBox { float:left; clear:left; height:85%; width:192px; background:#FAF8E2; white-space:nowrap; position:relative; text-align:center; margin-left:32px; padding:0px 1px 0px 1px; border:1px solid #000; }
 
-.RightBox{ float:left; height:85%; width:800px; overflow-x:hidden; overflow-y:hidden; background:#F3EFC5; border:none; white-space:nowrap; position:relative; padding:0px 0px 0px 2px; border:1px solid #000; }
+.RightBox{ float:left; height:85%; width:calc(100% - 192px - 64px); overflow-x:hidden; overflow-y:hidden; background:#F3EFC5; border:none; white-space:nowrap; position:relative; padding:0px 0px 0px 2px; border:1px solid #000; }
 
 /*Employee Info Section */
 

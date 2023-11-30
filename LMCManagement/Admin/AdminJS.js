@@ -4,8 +4,8 @@
 
 var DataBoxArray = new Array('TimeBox','SQLBox','GeneralBox','BidPreset','EmployeeBox','InventoryBox');
 var DataTabArray = new Array('TimeTabBox','SQLTabBox','BidPresetTabBox','GeneralTabBox','EmployeeTabBox','InventoryTabBox');
-var TimeBoxArray = new Array('TimeByEmp','TimeByProj','TimeByServ','TimeByTest','TimeForWorkersComp');
-var TimeTabArray = new Array('TimeByEmpTab','TimeByProjTab','TimeByServTab','TimeByTestTab','TimeForWorkersCompTab');
+var TimeBoxArray = new Array('TimeByEmp','TimeByProj','TimeByServ',/*'TimeByTest',/**/'TimeForWorkersComp');
+var TimeTabArray = new Array('TimeByEmpTab','TimeByProjTab','TimeByServTab',/*'TimeByTestTab',/**/'TimeForWorkersCompTab');
 var EmpBoxArray = new Array('EmpInfo','EmpUser','EmpAccess');
 var EmpTabArray = new Array('EmpInfoTabBox','EmpUserTabBox','EmpAccessTabBox');
 //Man, if only I knew then what I do now....!

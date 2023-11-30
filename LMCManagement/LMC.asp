@@ -237,7 +237,7 @@
 	<div id=servMonitoring class=subTab style="border-color:#35f; color:#00f; width:20%;" onClick="subTab(this,'Monitoring.asp?nc=--TSTAMP');" >Monitoring</div>
 	<div class=spacer></div -->
 	<div class=spacer></div>
-	<div id=servTaskList class=subTab style="border-color:#35f; color:#00f; width:25%;" onClick="subTab(this,'Events.asp?type=3&type2=4&Active=True&nc=--TSTAMP');" >Service Task List</div>
+	<div id=servTaskList class=subTab style="border-color:#35f; color:#00f; width:25%;" onClick="subTab(this,'Events.asp?type=3&type2=4&Active=True&nc=--TSTAMP');" >Jobs</div>
 	<div class=spacer></div>
 	<div class=spacer></div>
 	<div id=servMaterials class=subTab style="border-color:#0dd; color:#088; width:25%;" onClick="subTab(this,'Materials.asp?nc=--TSTAMP');" >Materials</div>

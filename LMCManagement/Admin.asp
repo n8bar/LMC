@@ -88,12 +88,12 @@
 		</div>
 			
 		<div id="TimeByServTab" class="TabBox2" style="background:#D2D2FF;">
-			<div id="ServiceTab"  class="TabInner2" onClick="TimeTabs('TimeByServ');" onMouseOver="MouseOverMarTop('TimeByServTab')" onMouseOut="MouseOutMarTop('TimeByServTab')">Service<br/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+			<div id="ServiceTab"  class="TabInner2" onClick="TimeTabs('TimeByServ');" onMouseOver="MouseOverMarTop('TimeByServTab')" onMouseOut="MouseOutMarTop('TimeByServTab')">Job<br/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
 		</div>
 			
-		<div id="TimeByTestTab" class="TabBox2" style="background:#FFE1E1;">
+		<!-- div id="TimeByTestTab" class="TabBox2" style="background:#FFE1E1;">
 			<div id="TestTab"  class="TabInner2" onClick="TimeTabs('TimeByTest')" onMouseOver="MouseOverMarTop('TimeByTestTab')" onMouseOut="MouseOutMarTop('TimeByTestTab')">Test/Maint<br/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
-		</div>
+		</div -->
 	</div><!--  End Time Tabs  --  --  --  --  --  --  --  --  --  --  --  --  --  --  --  --  --  --  --  --  -->
     
     

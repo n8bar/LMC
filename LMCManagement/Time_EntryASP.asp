@@ -305,7 +305,7 @@ Sub populatePhases() '----------------------------------------------------------
 	
 	projID=Request.QueryString("ProjID")
 	
-	SQL="SELECT SystemID FROM Systems WHERE ProjectID="&projID
+	SQL="SELECT SectionID FROM Sections WHERE ProjectID="&projID
 	%><SQL><%=SQL%></SQL><%
 	Set rs=Server.CreateObject("AdoDB.RecordSet")
 	rs.Open SQL,RedConnString	
@@ -314,9 +314,9 @@ Sub populatePhases() '----------------------------------------------------------
 	pI=-1
 		
 	Do Until rs.EOF
-		sysID=rs("SystemID")
+		secID=rs("SectionID")
 	
-		SQL1="SELECT ItemName FROM BidItems WHERE SysID="&sysID&" AND type='labor'"
+		SQL1="SELECT ItemName FROM BidItems WHERE SecID="&secID&" AND type='labor'"
 		%><SQL1><%=SQL1%></SQL1><%
 		Set rs1=Server.CreateObject("AdoDB.RecordSet")
 		rs1.Open SQL1,RedConnString	

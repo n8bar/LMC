@@ -6,13 +6,13 @@
 
 <!--#include file="../LMC/RED.asp" -->
 <!--#include file="Common.asp" -->
-<script type="text/javascript" src="Modules/rcstri.js"></script>
-<script type="text/javascript" src="Time/Time-EntryJS.js"></script>
-<script type="text/javascript" src="Time/Time-EntryAJAX.js"></script>
+<script type="text/javascript" src="Modules/rcstri.js?nc=<%=LoadStamp%>"></script>
+<script type="text/javascript" src="Time/Time-EntryJS.js?nc=<%=LoadStamp%>"></script>
+<script type="text/javascript" src="Time/Time-EntryAJAX.js?nc=<%=LoadStamp%>"></script>
 <SCRIPT type="text/javascript" src="Library/dhtmlgoodies_calendar.js?random=20060118"></script>
 
 <link rel="stylesheet" href="Library/CSS_DEFAULTS.css" media="screen">
-<link rel="stylesheet" href="Time/Time_EntryCSS.css" media="screen">
+<link rel="stylesheet" href="Time/Time_EntryCSS.css?nc=<%=LoadStamp%>" media="screen">
 <link type="text/css" rel="stylesheet" href="Library/dhtmlgoodies_calendar.css?random=20051112" media="screen">
 <script>
 	//alert('<%=Session("accessTime")%>');
@@ -52,7 +52,7 @@
 		%>
 	</select>
 	<select style="display:none;" id=ServiceList>
-		<option>Service Job:</option>
+		<option>Job:</option>
 		<%
 		SQL1="SELECT NoteID, Job FROM JobsLists WHERE Active=1 AND Type=3 ORDER BY Job"
 		Set rs1=Server.CreateObject("AdoDB.RecordSet")
@@ -65,20 +65,20 @@
 		Set rs1=Nothing
 		%>
 	</select>
-	<select style="display:none;" id=TestMaintList>
+	<!-- select style="display:none;" id=TestMaintList>
 		<option>Testing / Maintenance Job:</option>
 		<%
-		SQL1="SELECT NoteID, Job FROM JobsLists WHERE Active=1 AND Type=4 ORDER BY Job"
-		Set rs1=Server.CreateObject("AdoDB.RecordSet")
-		rs1.Open SQL1, REDConnString
-		
-		Do Until rs1.EOF
-			%><option value="<%=rs1("NoteID")%>"><%=DecodeChars(rs1("Job"))%></option><%
-			rs1.MoveNext
-		Loop
-		Set rs1=Nothing
+		'SQL1="SELECT NoteID, Job FROM JobsLists WHERE Active=1 AND Type=4 ORDER BY Job"
+		'Set rs1=Server.CreateObject("AdoDB.RecordSet")
+		'rs1.Open SQL1, REDConnString
+		'
+		'Do Until rs1.EOF
+		'	%><option value="<%'=rs1("NoteID")%>"><%'=DecodeChars(rs1("Job"))%></option><%
+		'	rs1.MoveNext
+		'Loop
+		'Set rs1=Nothing
 		%>
-	</select>
+	</select -->
 	
 	<div class="JobTimeEntry" id="JobTimeEntryBox">
 		
@@ -222,9 +222,9 @@
 		<br style="float:left; clear:both;" />
 		<div style="float:left; clear:both;" align="left">New Entry:</div><br style="float:left; clear:both;" />
 		<div style="height:64px;">
-			<button id="ProjectTab" class="JobStyleTab" style="color:#950;" onClick="JobSelect('Project');">Project / Jobs</button>
-			<button id="ServiceTab" class="JobStyleTab" style="color:#000090;" onClick="JobSelect('Service');">Service</button>
-			<button id="TestTab" class="JobStyleTab" style="color:#9B0000;" onClick="JobSelect('Test');">Test / Maint.</button>
+			<button id="ProjectTab" class="JobStyleTab" style="color:#950;" onClick="JobSelect('Project');">Projects</button>
+			<button id="ServiceTab" class="JobStyleTab" style="color:#000090;" onClick="JobSelect('Service');">Jobs</button>
+			<!-- button id="TestTab" class="JobStyleTab" style="color:#9B0000;" onClick="JobSelect('Test');">Test / Maint.</button -->
 			<button id="OtherTab" class="JobStyleTab" style="color:#8C8C00;" onClick="JobSelect('Other');">Office / Other</button>
 		</div>
 		<!--

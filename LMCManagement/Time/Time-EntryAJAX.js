@@ -256,7 +256,7 @@ function SaveTimeEntry(EmpID) {
 	}
 
 	if(JobName==""){alert("Please choose project"); return false;}
-	if(Gebi('TimeEntryPhase').selectedIndex==0&&JobType=='Project'){alert("Please choose project phase"); return false;}
+	//if(Gebi('TimeEntryPhase').selectedIndex==0&&JobType=='Project'){alert("Please choose project phase"); return false;}
 	if(Gebi('SupName').selectedIndex==0){alert("Please choose Supervisor"); return false;}
 		
 	if(TimeEntryDate==""){alert("Please Choose Date"); return false;}

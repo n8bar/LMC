@@ -164,7 +164,7 @@
 		<div id=Top></div>
 		<div id=mainToolbar class=Toolbar style="background:none; height:48px; text-align:center; width:98%;">
 			
-			<div id=path>&nbsp; Jobs > <big><b>Estimating/Sales</b></big></div>
+			<div id=path>&nbsp; Projects > <big><b>Estimating/Sales</b></big></div>
 			
 			<div class=tSpacer5 >&nbsp;</div>
 			<button id=newBid class="tButton32" onClick="showNewBid();" title="New Project" /><img src="../Images/plus_16.png" /></button>
