@@ -8,6 +8,7 @@
 
 <%
 TaskID=Request.QueryString("Type") : If TaskID="" Then TaskID=0
+CustomTasks=Request.QueryString("CustomTasks") : If CustomTasks="" Then CustomTasks=TaskID
 jsLink=Request.QueryString("jsLink")
 Condense=(Request.QueryString("condense")=1)
 CHeading=Request.QueryString("CHeading")
@@ -67,13 +68,14 @@ If Condense Then mW=0
 </style>
 <%
 
-sText=Session("eventListText"&TaskID)
-sAttn=Session("eventListAttn"&TaskID)
-sAttnID=Session("eventListAttnID"&TaskID) : If sAttnID="" Then sAttnID=0
+sText=Session("eventListText"&CustomTasks)
+sAttn=Session("eventListAttn"&CustomTasks)
+sAttnID=Session("eventListAttnID"&CustomTasks) : If sAttnID="" Then sAttnID=0
 sAttnID=CInt(AttnID)
 If Request.QueryString("User")=1 Then sAttnID=Session("EmpID")
-sFrom=(Session("eventListFrom"&TaskID))
-sTo=(Session("eventListTo"&TaskID))
+sFrom=(Session("eventListFrom"&CustomTasks))
+sTo=(Session("eventListTo"&CustomTasks))
+	%><%'=Session("eventListTo"&CustomTasks)%><%
 sFromDate=CDate(sFrom)
 sToDate=CDate(sTo)
 
@@ -105,7 +107,7 @@ sToDate=CDate(sTo)
 	If Condense Then
 		%>
 		<div class=HeadTitle style="width:90%; font-size:14px; font-family:Verdana, Arial, Helvetica, sans-serif;" >Task Name</div>
-		<div class=HeadProg style="width:10%;" >√</div>
+		<div class=HeadProg style="width:10%;" >✔</div>
 		<%
 	Else
 		%>

@@ -35,6 +35,7 @@
 <!--#include file="Materials/MaterialsHelper.asp" -->
 
 <div id=Top></div>
+	
 <div id=mainToolbar class=Toolbar style="background:none; height:48px; text-align:center; width:98%;">
 	
 	<div id=path></div>
@@ -102,13 +103,14 @@
 			<option value="Lost">Lost Bids</option>
 		</select>
 		<label for="selShowBids" style="float:right; margin:5px 0 0 0;">Show&nbsp;</label>	
-		-->
+		--> 
 	</div>
-
+	
 	<iframe id=ipePage class=tabPage src="MaterialsDB.asp?nocache=<%=LoadStamp%>" ></iframe>
 	<iframe id=mrPage class=tabPage src="matReq.asp?nocache=<%=LoadStamp%>" ></iframe>
 	<iframe id=jpPage class=tabPage src="JobPacks.asp?nocache=<%=LoadStamp%>" ></iframe>
 	<iframe id=orPage class=tabPage src="PurchaseOrders.asp?nocache=<%=LoadStamp%>" ></iframe>
+	<!-- -->
 	
 </div>                
 

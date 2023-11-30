@@ -40,7 +40,8 @@
 		
 			<div id="MonthsTab" onMouseUp="tab(this);" class=vTab >Months</div>
 			<div id="ViewsTab"  onMouseUp="tab(this);" class=vTab>Views</div>
-			<div id="EventListTab" onMouseUp="tab(this);" class=selVTab>ToDo</div>
+			<div id="DueEventListTab" onMouseUp="tab(this);" class=selVTab>Due</div>
+			<div id="EventListTab" onMouseUp="tab(this);" class=vTab>ToDo</div>
 		</div>
 		
 		<div class="ViewsTabsBottom"></div>
@@ -52,7 +53,13 @@
 		Session("eventListTo0")=Date
 		src="EventList.asp?Type=0&condense=1&jsLink=LoadExistingEvent&user=1&CHeading=<br/>Tasks for Everyone up to Today."
 		%>
-		<iframe class=vTabBox id=EventList src="<%=src%>" style="display:block; padding:0; border:none;" ></iframe>
+		<iframe class=vTabBox id=DueEventList src="<%=src%>" style="display:block; padding:0; border:none;" ></iframe>
+		<%
+		Session("eventListFrom99")=Date+1
+		Session("eventListTo99")="6/6/2079"
+		src="EventList.asp?Type=0&condense=1&jsLink=LoadExistingEvent&user=1&CustomTasks=99&CHeading=<br/>Tasks for Everyone after Today."
+		%>
+		<iframe class=vTabBox id=EventList src="<%=src%>" style="display:none; padding:0; border:none;" ></iframe>
 		<div id=Views class=vTabBox >
 			<div class=ViewsBox style="height:50%;">
 			<div class=ViewsHeader style="">Detailed View</div>

@@ -98,7 +98,7 @@
 		<div class="w6p p0" ><button class=tButton0x24 style="float:none;" onClick="showAddPart();"><img height=16 src="../images/plus_16.png"/></button></div>
 	</div>	
 	<%
-	SQL0="SELECT SystemID, System FROM Systems WHERE ProjectID="&ProjID&" AND ExcludeSys=0"
+	SQL0="SELECT SectionID, Section FROM Sections WHERE ProjectID="&ProjID&" AND ExcludeSec=0"
 	Set rs0=Server.CreateObject("AdoDb.RecordSet")
 	rs0.Open SQL0, REDConnString
 	
@@ -107,11 +107,11 @@
 	Do until rs0.EOF
 		sysI=sysI+1
 		%><script>
-			sysNames[<%=sysI%>]='<%=DecodeChars(rs0("System"))%>';
-			sysIDs[<%=sysI%>]='<%=rs0("SystemID")%>';
+			sysNames[<%=sysI%>]='<%=DecodeChars(rs0("Section"))%>';
+			sysIDs[<%=sysI%>]='<%=rs0("SectionID")%>';
 		</script><%
 		
-		SQL1="SELECT * FROM BidItems WHERE SysID="&rs0("SystemID")&" AND Type='Part' ORDER BY PartID"
+		SQL1="SELECT * FROM BidItems WHERE SecID="&rs0("SectionID")&" AND Type='Part' ORDER BY PartID"
 		Set rs1=Server.CreateObject("AdoDb.RecordSet")
 		rs1.Open SQL1, REDConnString
 		

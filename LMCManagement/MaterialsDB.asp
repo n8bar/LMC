@@ -83,10 +83,10 @@
 		<label style="white-space:nowrap;">Min Price<input id=sMin class=w96 type=text onkeypress="ifEnter(event,'Search();');" autocomplete=on /></label>
 		&nbsp;
 		<label style="white-space:nowrap;">
-			System Type:
+			System Section Type:
 			<select id=sSystem onkeypress="ifEnter(event,'Search();');">
 				<option value=0>[Any]</option>
-				<% SysTypesOptionList("") %>
+				<% SecTypesOptionList("") %>
 			</select>
 		</label>
 		&nbsp;

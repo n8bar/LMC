@@ -131,7 +131,7 @@ function resize() {
 				<div class=qtyW><%=rs("Qty")%>&nbsp;</div>
 				<div class=costW><%=formatCurrency("0"&rs("Cost"))%>&nbsp;</div>
 				<!-- div class=totalW><%=formatCurrency("0"&rs("Total"))%>&nbsp;</div -->
-				<div class=totalW><%=formatCurrency(Total)%>&nbsp;</div>				
+				<div class=totalW><%=formatCurrency("0"&Total)%>&nbsp;</div>				
 				<div class=endW>&nbsp;</div>
 			</div>
 			<!-- div class=row style="background:#eff;">< %=rs("Category1")%> - < %=rs("System")%> - < %=Cat%> - < %=cName(cI)%>&nbsp;</div -->

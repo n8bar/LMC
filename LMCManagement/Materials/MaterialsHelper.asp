@@ -31,7 +31,7 @@
 			Set mfgRS=Server.CreateObject("AdoDB.RecordSet")
 			mfgRS.Open mfgSQL, REDConnString
 			Do Until mfgRS.EOF
-				%><option value="<%=mfgRS("ManufID")%>"><%=DecodeChars(mfgRS("Name"))%></option><%
+				%><option value="<%'=mfgRS("ManufID")%>"><%'=DecodeChars(mfgRS("Name"))%></option><%
 				mfgRS.moveNext
 			Loop
 			Set mfgRS=Nothing
@@ -58,14 +58,14 @@
 		<select id=npCat class=newPartTxt style="font-size:16px; height:100%; overflow-y:auto" onChange="npCatChange();" required multiple size="1" onFocus="//this.multiple=true; this.style.height='100%';" onBlur="//this.multiple=false; this.style.height='20px';" >
 			<option id=cChoose >Please Choose a Category</option>
 			<%
-			catSQL="SELECT CategoryID, Category FROM Categories ORDER BY Category"
-			Set catRS=Server.CreateObject("AdoDB.RecordSet")
-			catRS.Open catSQL, REDConnString
-			Do Until catRS.EOF
-				%><option value="<%=catRS("CategoryID")%>"><%=DecodeChars(catRS("Category"))%></option><%
-				catRS.moveNext
-			Loop
-			Set catRS=Nothing
+			'catSQL="SELECT CategoryID, Category FROM Categories ORDER BY Category"
+			'Set catRS=Server.CreateObject("AdoDB.RecordSet")
+			'catRS.Open catSQL, REDConnString
+			'Do Until catRS.EOF
+			'	% ><option value="<%=catRS("CategoryID")% >"><%=DecodeChars(catRS("Category"))% ></option><%
+			'	catRS.moveNext
+			'Loop
+			'Set catRS=Nothing
 			%>
 			<option value="new"><b style="color:#0a0;">+</b>New Category</option>
 		</select>
@@ -79,14 +79,14 @@
 		<select id=npSys class=newPartTxt style="font-size:16px; height:100%; overflow-y:auto" onChange="npCatChange();" required multiple size="1" onFocus="//this.multiple=true; this.style.height='100%';" onBlur="//this.multiple=false; this.style.height='20px';" >
 			<option id=sChoose >Please Choose a System Type</option>
 			<%
-			sysSQL="SELECT SystemID, SystemName FROM SystemList WHERE Enabled>0 ORDER BY SystemName"
-			Set sysRS=Server.CreateObject("AdoDB.RecordSet")
-			sysRS.Open sysSQL, REDConnString
-			Do Until sysRS.EOF
-				%><option value="<%=sysRS("SystemID")%>"><%=DecodeChars(sysRS("SystemName"))%></option><%
-				sysRS.moveNext
-			Loop
-			Set sysRS=Nothing
+			'sysSQL="SELECT SystemID, SystemName FROM SystemList WHERE Enabled>0 ORDER BY SystemName"
+			'Set sysRS=Server.CreateObject("AdoDB.RecordSet")
+			'sysRS.Open sysSQL, REDConnString
+			'Do Until sysRS.EOF
+			'	% ><option value="<%=sysRS("SystemID")% >"><%=DecodeChars(sysRS("SystemName"))% ></option><%
+			'	sysRS.moveNext
+			'Loop
+			'Set sysRS=Nothing
 			%>
 			<option value="new"><b style="color:#0a0;">+</b>New System Type</option>
 		</select>
