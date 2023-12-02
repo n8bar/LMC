@@ -796,7 +796,7 @@ function ShowEventNotes(e,CalID, HoverItem) {
 				for(n=0;n<NotesArray.length;n++) { Gebi('HoverNotes').innerHTML+=NotesArray[n]+'<br/>'; }
 				Gebi('HoverNotes').style.left=nX+('px');
 				Gebi('HoverNotes').style.top=nY+('px');
-				if(parent.accessUser=='n8') { Gebi('HoverNotes').innerHTML+='nX:'+nX+' nY:'+nY+' &nbsp; calID:'+CalID; }
+				//if(parent.accessUser=='n8') { Gebi('HoverNotes').innerHTML+='nX:'+nX+' nY:'+nY+' &nbsp; calID:'+CalID; }
 			}
 			else { AjaxErr('There was a problem with the ShowEventNotes request.',HttpText); }
 		}
