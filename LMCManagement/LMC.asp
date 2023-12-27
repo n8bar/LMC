@@ -26,7 +26,9 @@
 		var toolbarId=tab.id.replace('mainTab','')+'SubTabs'
 		Gebi(toolbarId).style.display='block';
 		
-		var lastUserSelectedSubTabId=appGet(selectedMainTab.id+sessionEmpID).replace('undefined','');
+		if(!('sessionEmpID' in window)) { LogOut(); }
+		
+		var lastUserSelectedSubTabId=appGet(selectedMainTab.id+sessionEmpID);
 		if(!!Gebi(lastUserSelectedSubTabId)) { 
 			Gebi(lastUserSelectedSubTabId).onclick(); 
 		} else {
@@ -80,9 +82,9 @@
 	var logoutSeconds=30*60;
 	var logoutCounter=logoutSeconds;
 	function LogoutCounter()	{	}
-
+	
 	var logoutTimer=setInterval('LogoutCounter();',1000);
-
+	
 	var reloadGant=true; //The Gant chart will need to be reloaded.
 	
 	var selectedMainTab;
@@ -104,7 +106,7 @@
 		
 		if(document.getElementsByClassName('selectedMainTab').length!=1) mainTab(Gebi('mainTabMain'));
 	}
-
+	
 	function Resize()	{
 			var H=document.body.offsetHeight;
 			var h=Gebi('heading').offsetHeight;
