@@ -34,7 +34,7 @@ Function DecodeChars(TheString)
 		while(OldString<>TheString)
 			OldString=TheString
 			TheString=Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(TheString,"--RET--",chr(13)&chr(10)),"-COMMA-",","),"-AMPERSAND-","&"),"-QUOTE-",""""),"-APOSTROPHE-","'"),"-LESSTHAN-","<"),"-GREATERTHAN-",">"),"-PERCENT-","%"),"-POUND-","#")
-			TheString=Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(TheString,"_CR_",chr(13)&chr(10)),"_CO_",","),"_AM_","&"),"_QU_",""""),"_AP_","'"),"_LT_","<"),"_GT_",">"),"_PE_","%"),"_PO_","#"),"_PL_","+"),"_DE_","°"),"•","&bull;")
+			TheString=Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(TheString,"_CR_",chr(13)&chr(10)),"_CO_",","),"_AM_","&"),"_QU_",""""),"_AP_","'"),"_LT_","<"),"_GT_",">"),"_PE_","%"),"_PO_","#"),"_PL_","+"),"_DE_","°"),"•","&bull;"),"✔","_CH_")
 		wend
 	End If
 	DecodeChars=TheString
@@ -46,7 +46,7 @@ Function EncodeChars(TheString)
 	If Not IsNull(TheString) Then
 		while(OldString<>TheString)
 			OldString=TheString
-			TheString=Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(TheString,chr(13),"_CR_"),",","_CO_"),"&","_AM_"),chr(34),"_QU_"),"'","_AP_"),"<","_LT_"),">","_GT_"),"%","_PE_"),"#","_PO_"),"+","_PL_"),"°","_DE_")
+			TheString=Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(TheString,chr(13),"_CR_"),",","_CO_"),"&","_AM_"),chr(34),"_QU_"),"'","_AP_"),"<","_LT_"),">","_GT_"),"%","_PE_"),"#","_PO_"),"+","_PL_"),"°","_DE_"),"✔","_CH_")
 		wend
 	End If
 	EncodeChars=TheString

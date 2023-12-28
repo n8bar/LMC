@@ -143,11 +143,12 @@ function CharsEncode(S) {
 	S=S.replace(/#/g,'_PO_');
 	S=S.replace(/\+/g,'_PL_');
 	S=S.replace(/°/g,'_DE_');
+	S=S.replace(/✔/g,'_CH_');
 	return S;
 }
 
 function CharsDecode(S) {
-	if(!S){return ''}
+	if(!S) { return ''; }
 	S=S.toString();
 	S=S.replace(/</g,'<');
 	S=S.replace(/>/g,'>');
@@ -165,6 +166,7 @@ function CharsDecode(S) {
 	S=S.replace(/-LESSTHAN-/g,'<');
 	S=S.replace(/-GREATERTHAN-/g,'>');
 
+	S=S.replace(/_CH_/g,'✔');
 	S=S.replace(/_DE_/g,'°');
 	S=S.replace(/_PL_/g,'+');
 	S=S.replace(/_PO_/g,'#');
