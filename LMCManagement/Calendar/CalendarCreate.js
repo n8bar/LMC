@@ -11,18 +11,18 @@ var Days_in_Month = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 var Month_Label = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
 
 var Current_Year = Current_Date.getYear();
-if (Current_Year < 1000) {Current_Year+=1900}
+if (Current_Year < 1000) {Current_Year+=1900;}
 
 var Today = Current_Date.getDate();
 var Current_Week = Current_Date.getYear();
 
 //Setup Todays Date -----------------------------Todays Date----------------- 
-	var atoday = new Date;
+	var atoday = new Date();
 	var aDay = atoday.getDate();
 	var aMonth =(atoday.getMonth()+1);
 	var aYear = atoday.getFullYear();
-	if(aDay <=9){aDay = '0'+aDay}
-	if(aMonth <=9){aMonth = '0'+aMonth}
+	if(aDay <=9){aDay = '0'+aDay;}
+	if(aMonth <=9){aMonth = '0'+aMonth;}
 	
 	var TodayAll = (aMonth+'/'+aDay+'/'+aYear);
 //--------------------------------------------------------------------------
@@ -184,12 +184,15 @@ function WeekDates(sDate){
 function y2k(number) { return (number < 1000) ? number + 1900 : number; }
 
 function getWeek(year,month,day) { 
+	alert('Hi');
 	var when = new Date(year,month,day);
 	var newYear = new Date(year,0,1);
 	var offset = 7 + 1 - newYear.getDay();
 	if (offset == 8) offset = 1;
 	var daynum = ((Date.UTC(y2k(year),when.getMonth(),when.getDate(  ),0,0,0) - Date.UTC(y2k(year),0,1,0,0,0)) /1000/60/60/24) + 1;
 	var weeknum = Math.floor((daynum-offset+7)/7);
+	while (weeknum > 52) weeknum-=52;
+
 	if (weeknum == 0) {
 		year--;
 		var prevNewYear = new Date(year,0,1);
@@ -201,11 +204,24 @@ function getWeek(year,month,day) {
 
 function getWeekDates(w,y) {
 	if(w == 53){y--;}
+	//if(w>52) w=w-52;
 	var n = new Date();
 	if(y)n.setYear(y);
 	//window.top.document.title=n.getFullYear();
 	n.setMonth(0); n.setDate(1); n.setDate(n.getDate()-n.getDay());
-	while( w != getWeek(n.getFullYear(),n.getMonth(),n.getDate()) ) n.setDate(n.getDate()+7);
+	
+	
+	var wc=0;
+	while( w != getWeek(n.getFullYear(),n.getMonth(),n.getDate()) ) {
+		wc++;
+		n.setDate(n.getDate()+7);
+		//alert(wc+':'+n+'\n'+w+':'+getWeek(n.getFullYear(),n.getMonth(),n.getDate()));
+		if(wc>53) {
+			window.top.document.title='err: I ran out of weeks!';
+			return null;
+		}
+	}
+
 	var WeekD = new Array();
 	//WeekD[0] = "0";
 	var DayNum = 1;
@@ -369,17 +385,19 @@ function Make_Calendar(Year,Month,inst,count,Direction) {
 			calHTML+='	</select>';
 					 
 			calHTML+='	<select id="yearSelect'+inst+'" name="yearSelect" style="color:'+Cal.colorPicker+';  font-family:'+Cal.fontPicker+';  font-size:'+Cal.sizePicker+';  font-weight:'+Cal.weightPicker+'; height:'+Cal.heightPicker+';">';
-			calHTML+='		<option value="2008">2008</option>';
-			calHTML+='		<option value="2009">2009</option>';
-			calHTML+='		<option value="2010">2010</option>';
-			calHTML+='		<option value="2011">2011</option>';
-			calHTML+='		<option value="2012">2012</option>';
-			calHTML+='		<option value="2013">2013</option>';
-			calHTML+='		<option value="2014">2014</option>';
-			calHTML+='		<option value="2015">2015</option>';
-			calHTML+='		<option value="2016">2016</option>';
-			calHTML+='		<option value="2017">2017</option>';
-			calHTML+='		<option value="2018">2018</option>';
+			for(var o = -5; o <= 10; o++) {
+				calHTML+='		<option value="'+(Year+o*1)+'">'+(Year+o*1)+'</option>';
+			}
+			//calHTML+='		<option value="2009">2009</option>';
+			//calHTML+='		<option value="2010">2010</option>';
+			//calHTML+='		<option value="2011">2011</option>';
+			//calHTML+='		<option value="2012">2012</option>';
+			//calHTML+='		<option value="2013">2013</option>';
+			//calHTML+='		<option value="2014">2014</option>';
+			//calHTML+='		<option value="2015">2015</option>';
+			//calHTML+='		<option value="2016">2016</option>';
+			//calHTML+='		<option value="2017">2017</option>';
+			//calHTML+='		<option value="2018">2018</option>';
 			calHTML+='		<option value="Year" selected="selected">Year</option>';
 			calHTML+='	</select>';
 			calHTML+='</div>';
@@ -424,6 +442,7 @@ function Make_Calendar(Year,Month,inst,count,Direction) {
 	var gMonth = (Month);
 	var gYear = (Year);
 	var WeekNum = (getWeekByDate(gMonth,gDay,gYear));
+	if (WeekNum>52) WeekNum-=53; //For certain years January had weeks in the 50's continuing the count from the previous year so this fixes that.
 	
 // Sets up the previous and next months days, included in this month
 
@@ -748,13 +767,14 @@ function Make_Calendar(Year,Month,inst,count,Direction) {
 function Make_Week(inst,Year,Week) {
 	//Setup Todays Date   
 	var today = new Date;
+	
 	var Day = today.getDate();
 	var Month =(today.getMonth()+1);
 	var nYear = today.getFullYear();
 	var todayAll = (Month+'/'+Day+'/'+Year);
-
+	
 	//Date Header Setup---------------------------------------------------------------
-	Week = (parseInt(Week)-1);
+	Week = (parseInt(Week));
 	window.top.document.title=Week+' - '+Year;
 	var WeekFullDates = getWeekDates(Week,Year);
 	var WeekDayNumbers = getWeekDays(Week,Year);	 
@@ -782,11 +802,11 @@ function Make_Week(inst,Year,Week) {
 	calHTML+='<div style="" class ="TopControl" onMouseOver="">';
 			
 	calHTML+='	<div class ="PrevDiv">';
-	calHTML+='		<button class="buttonPrev" onclick="WeekSkip('+inst+','+Year+','+(Week+1)+', \'-\')" style="color:'+Cal.colorButton+';  font-family:'+Cal.fontButton+';  font-size:'+Cal.sizeButton+';  font-weight:'+Cal.weightButton+'; height:'+Cal.heightButton+';"><<</button>';
+	calHTML+='		<button class="buttonPrev" disabled onclick="WeekSkip('+inst+','+Year+','+(Week+0)+', \'-\')" style="color:'+Cal.colorButton+';  font-family:'+Cal.fontButton+';  font-size:'+Cal.sizeButton+';  font-weight:'+Cal.weightButton+'; height:'+Cal.heightButton+';"><<</button>';
 	calHTML+='	</div>';
 	
 	calHTML+='	<div class ="NextDiv">';
-	calHTML+='		<button class="buttonNext" onclick="WeekSkip('+inst+','+Year+','+(Week+1)+', \'+\')" style="color:'+Cal.colorButton+';  font-family:'+Cal.fontButton+';  font-size:'+Cal.sizeButton+';  font-weight:'+Cal.weightButton+'; height:'+Cal.heightButton+';">>></button>';
+	calHTML+='		<button class="buttonNext" disabled onclick="WeekSkip('+inst+','+Year+','+(Week+0)+', \'+\')" style="color:'+Cal.colorButton+';  font-family:'+Cal.fontButton+';  font-size:'+Cal.sizeButton+';  font-weight:'+Cal.weightButton+'; height:'+Cal.heightButton+';">>></button>';
 	calHTML+='	</div>';
 	
 	calHTML+='	<div class ="TodayDiv">';
