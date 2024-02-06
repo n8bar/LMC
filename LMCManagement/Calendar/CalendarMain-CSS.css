@@ -45,12 +45,17 @@ div {overflow:hidden; float:left;}
 #CalendarRightContainer{ height: 100%; width: 10%; text-align:left; margin:0; padding:0 5px 0 5px; background:#99CC99; }
 
 
-.ViewsTabs{ position:relative; height:3%; width:100%; Border:0px solid blue; margin: 10px 1px 0 0; z-index:800; }
-.ViewsTabsBottom{ position:relative; height:.5%; width:95%; font-size:6px; background:#aaddaa; z-index:800; float:none; border-bottom-right-radius:100%;}
+#collapseLeftContainer{ box-sizing:border-box; float:right; width:11px; height:calc(100% - 64px); margin-top:56px; border-radius:16px; font-size:11px; background:#ccc; display:flex; align-items:center; }
+#collapseLeftContainer:hover { background:#ddd; border-top:2px solid white; border-bottom: 2px solid #888; }
+#collapseLeftContainer:active { background:#bbb; border-top:2px solid #888; border-bottom: 2px solid white;  }
+
+
+.ViewsTabs{ position:relative; height:3%; width:calc(100% - 12px); Border:0px solid blue; margin: 10px 1px 0 0; z-index:800; }
+.ViewsTabsBottom{ position:relative; height:.5%; width:calc(95% - 12px); font-size:6px; background:#aaddaa; z-index:800; float:none; border-bottom-right-radius:100%;}
 .vTab{ position:relative; float:left; height:100%; margin: 4px 0 0 1px; padding: 3px 3px 0 3px; background:#bbffdd; cursor:pointer; font-family: Arial,Helvetica,sans-serif; font-weight:normal; font-size: 14px; color:#000; text-align:center; z-index:1000;  border-top-left-radius:7px; border-top-right-radius:7px; border: #e6d04a 1px solid; border-bottom:none;}
 .selVTab{ position:relative; float:left; height:100%; margin: 4px 0 0 1px; padding: 3px 4px 0 4px; background:#aaddaa; border-left:1px solid white; cursor:pointer; font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight:bold; color:#336633; text-align:center; z-index:1000; border-top-left-radius:8px; border-top-right-radius:8px;}
 
-.vTabBox{ display:none; position:relative; height:90%; width:100%; margin:0; padding: 0; Border: 0 solid blue; z-index:1000; }
+.vTabBox{ display:none; position:relative; height:90%; width:calc(100% - 12px); margin:0; padding: 0; Border: 0 solid blue; z-index:1000; }
 
 .ViewsBox{ position:relative; width:81.25%; margin:10px 0 0 6.25%; padding: 0 0 8px 0; overflow-x:hidden; overflow-y:auto; background:#FFF; border:1px solid #999; text-align:center; z-index:1000; float:none; }
 .ViewsHeader{ width:100%; height:15px; border-bottom:1px solid #888; margin: 0; padding: 0; background:#00aadd; font-family: Arial,Helvetica,sans-serif; font-size: 11px; font-weight:bold; color:#FFF; cursor:pointer; z-index:1100; }

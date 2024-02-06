@@ -30,7 +30,19 @@ function onLoad() {
 	}
 }
 
-
+function collapseLC() {
+	Gebi('CalendarLeftContainer').style.width='20px';
+	Gebi('CalendarMainContainer').style.width='calc(100% - 20px)';
+	Gebi('collapseLeftContainer').innerHTML='►';
+	Gebi('collapseLeftContainer').onclick=expandLC;
+}
+function expandLC() {	
+	Gebi('CalendarLeftContainer').style.width='25%';
+	Gebi('CalendarMainContainer').style.width='75%';
+	Gebi('collapseLeftContainer').innerHTML='◄';
+	Gebi('collapseLeftContainer').onclick=collapseLC;
+}
+	
 
 var SelectedDate=null;
 //Modal For New Events  ///////////////////////////////////////////////////////////////////////////////////////  

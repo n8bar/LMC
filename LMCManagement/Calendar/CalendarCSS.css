@@ -130,7 +130,7 @@ li{/*text-shadow:#FFF 0 0 3px;*/ font-family:Cambria, "Hoefler Text", "Liberatio
 	
 	#CalendarMain .mouseover{	/* Mouse over effect on drag */ background-color:#EBEDEB; border:0px solid Red; }
 	
-	#dragContent{	/* Drag container */ position:absolute; width:100px; height:16px; display:none; margin:0px; padding:0px; z-index:20000; border:rgba(255,255,255,.5) 1px solid; border-radius:7px; }
+	#dragContent{	/* Drag container */ position:absolute; /*width:100px; height:16px;*/ width:fit-content; height:fit-content; display:none; margin:0px; padding:0px; z-index:20000; border:rgba(255,255,255,.5) 1px solid; border-radius:7px; }
 
 	#dragDropIndicator{	/* DIV for the small arrow */ position:absolute; width:7px; height:10px; display:none; z-index:1000; margin:0px; padding:0px; }
 /************************************The above are specifically for Drag and Drop********************************************/

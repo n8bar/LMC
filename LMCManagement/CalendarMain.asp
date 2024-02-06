@@ -36,6 +36,7 @@
 
 <div id=CalendarContainer >
 	<div align="center" valign="top" id="CalendarLeftContainer" class="CalendarLeftContainer">
+    	<div id=collapseLeftContainer onclick="collapseLC();">◄</div>
 		<div class="ViewsTabs"> 
 		
 			<div id="MonthsTab" onMouseUp="tab(this);" class=vTab >Months</div>
