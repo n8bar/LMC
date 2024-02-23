@@ -4,6 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- #include file="../LMC/RED.asp" -->
+<% noExtraCSS=True %>
 <!-- #include file="../LMCManagement/Common.ASP" -->
 
 <%
@@ -34,7 +35,7 @@ mW=783
 If Condense Then mW=0
 %>
 
-<link rel=stylesheet href="../LMCManagement/Library/ListsCommon.css" media=all >
+<link rel=stylesheet href="../LMCManagement/Library/ListsCommon.css?nc=<%=noCache%>" media=all >
 
 <style media="all">
 	html {width:100%; height:100%; margin:0;}
@@ -97,7 +98,7 @@ sToDate=CDate(sTo)
 
 </head>
 
-<body onResize="Resize();">
+<body onResize="//Resize();">
 
 <div id=scrollbarCover></div>
 

@@ -284,67 +284,6 @@ End Sub
 
 <style media="all">
 
-<%
-For p= 0 to 100 step .25
-	'if (p=fix(p)) then 
-	'	% ><%=chr(13)&chr(10)%><% 
-	'End If
-		
-	pdec=replace(p,".","p")
-	%>.w<%=pdec%>p {width:<%=p%>% !important;} <%
-	%>.h<%=pdec%>p {height:<%=p%>% !important;} <%
-	%>.m<%=pdec%>p {margin:<%=p%>% !important;} <%
-	%>.mT<%=pdec%>p {margin-top:<%=p%>% !important;} <%
-	%>.mR<%=pdec%>p {margin-right:<%=p%>% !important;} <%
-	%>.mB<%=pdec%>p {margin-bottom:<%=p%>% !important;} <%
-	%>.mL<%=pdec%>p {margin-left:<%=p%>% !important;} <%
-	%>.p<%=pdec%>p {padding:<%=p%>% !important;} <%
-	%>.pT<%=pdec%>p {padding-top:<%=p%>% !important;} <%
-	%>.pR<%=pdec%>p {padding-right:<%=p%>% !important;} <%
-	%>.pB<%=pdec%>p {padding-bottom:<%=p%>% !important;} <%
-	%>.pL<%=pdec%>p {padding-left:<%=p%>% !important;} <%
-	%>.o<%=pdec%> {opacity:<%=p%>% !important;} <%
-
-	%>.shade<%=pdec%> { <%
-		%>background:-webkit-gradient(linear,0 100%,0 0, from(rgba(0,0,0,.<%=right("0"&p,2)%>)), to(rgba(255,255,255,0)));<%
-		%>background:-moz-linear-gradient(top, rgba(0,0,0,<%=p%>%), rgba(255,255,255,0));<%
-	%>}<%
-	
-	%><%=chr(13)&chr(10)%><% 
-	if p/10 = fix(p/10) then %><%=chr(13)&chr(10)%><% End If
-Next
-
-%><%=chr(13)&chr(10)&chr(13)&chr(10)&chr(13)&chr(10)%><%
-
-For h= 0 to 1080
-	%>.h<%=h%> {height:<%=h%>px !important;} <%
-	%>.mT<%=h%> {margin-top:<%=h%>px !important;} <%
-	%>.mB<%=h%> {margin-bottom:<%=h%>px !important;} <%
-	%>.pT<%=h%> {padding-top:<%=h%>px !important;} <%
-	%>.pB<%=h%> {padding-bottom:<%=h%>px !important;} <%
-	%>.fS<%=h%> {font-size:<%=h%>px !important;} <%
-	%>.lH<%=h%> {line-height:<%=h%>px !important;}<%
-	%><%=chr(13)&chr(10)%><%
-	if h/10 = fix(h/10) then %><%=chr(13)&chr(10)%><% End If
-Next
-For w= 1 to 1920
-	%>.w<%=w%> {width:<%=w%>px !important;} <%
-	%>.m<%=w%> {margin:<%=w%>px !important;} <%
-	%>.mT<%=w%> {margin-top:<%=w%>px !important;} <%
-	%>.mR<%=w%> {margin-right:<%=w%>px !important;} <%
-	%>.mB<%=w%> {margin-bottom:<%=w%>px !important;} <%
-	%>.mL<%=w%> {margin-left:<%=w%>px !important;} <%
-	%>.p<%=w%> {padding:<%=w%>px !important;} <%
-	%>.pT<%=w%> {padding-top:<%=w%>px !important;} <%
-	%>.pR<%=w%> {padding-right:<%=w%>px !important;} <%
-	%>.pB<%=w%> {padding-bottom:<%=w%>px !important;} <%
-	%>.pL<%=w%> {padding-left:<%=w%>px !important;} <%
-	%><%=chr(13)&chr(10)%><%
-	if w/10 = fix(w/10) then %><%=chr(13)&chr(10)%><% End If
-Next
-
-%>
-
 .w66-7p {width:66.66667% !important;}
 .w66p {width:66.6666% !important;}
 .w33p {width:33.3333% !important;}
@@ -352,4 +291,66 @@ Next
 .w17p {width:16.6667% !important;}
 .w16p {width:16.6666% !important;}
 
+<% 	
+If Not noExtraCSS Then
+	noExtraCSS=False				
+	For p= 0 to 100 step .25
+		'if (p=fix(p)) then 
+		'	% ><%=chr(13)&chr(10)%><% 
+		'End If
+			
+		pdec=replace(p,".","p")
+		%>.w<%=pdec%>p {width:<%=p%>% !important;} <%
+		%>.h<%=pdec%>p {height:<%=p%>% !important;} <%
+		%>.m<%=pdec%>p {margin:<%=p%>% !important;} <%
+		%>.mT<%=pdec%>p {margin-top:<%=p%>% !important;} <%
+		%>.mR<%=pdec%>p {margin-right:<%=p%>% !important;} <%
+		%>.mB<%=pdec%>p {margin-bottom:<%=p%>% !important;} <%
+		%>.mL<%=pdec%>p {margin-left:<%=p%>% !important;} <%
+		%>.p<%=pdec%>p {padding:<%=p%>% !important;} <%
+		%>.pT<%=pdec%>p {padding-top:<%=p%>% !important;} <%
+		%>.pR<%=pdec%>p {padding-right:<%=p%>% !important;} <%
+		%>.pB<%=pdec%>p {padding-bottom:<%=p%>% !important;} <%
+		%>.pL<%=pdec%>p {padding-left:<%=p%>% !important;} <%
+		%>.o<%=pdec%> {opacity:<%=p%>% !important;} <%
+	
+		%>.shade<%=pdec%> { <%
+			%>background:-webkit-gradient(linear,0 100%,0 0, from(rgba(0,0,0,.<%=right("0"&p,2)%>)), to(rgba(255,255,255,0)));<%
+			%>background:-moz-linear-gradient(top, rgba(0,0,0,<%=p%>%), rgba(255,255,255,0));<%
+		%>}<%
+		
+		%><%=chr(13)&chr(10)%><% 
+		if p/10 = fix(p/10) then %><%=chr(13)&chr(10)%><% End If
+	Next
+	
+	%><%=chr(13)&chr(10)&chr(13)&chr(10)&chr(13)&chr(10)%><%
+	
+	For h= 0 to 1080
+		%>.h<%=h%> {height:<%=h%>px !important;} <%
+		%>.mT<%=h%> {margin-top:<%=h%>px !important;} <%
+		%>.mB<%=h%> {margin-bottom:<%=h%>px !important;} <%
+		%>.pT<%=h%> {padding-top:<%=h%>px !important;} <%
+		%>.pB<%=h%> {padding-bottom:<%=h%>px !important;} <%
+		%>.fS<%=h%> {font-size:<%=h%>px !important;} <%
+		%>.lH<%=h%> {line-height:<%=h%>px !important;}<%
+		%><%=chr(13)&chr(10)%><%
+		if h/10 = fix(h/10) then %><%=chr(13)&chr(10)%><% End If
+	Next
+	For w= 1 to 1920
+		%>.w<%=w%> {width:<%=w%>px !important;} <%
+		%>.m<%=w%> {margin:<%=w%>px !important;} <%
+		%>.mT<%=w%> {margin-top:<%=w%>px !important;} <%
+		%>.mR<%=w%> {margin-right:<%=w%>px !important;} <%
+		%>.mB<%=w%> {margin-bottom:<%=w%>px !important;} <%
+		%>.mL<%=w%> {margin-left:<%=w%>px !important;} <%
+		%>.p<%=w%> {padding:<%=w%>px !important;} <%
+		%>.pT<%=w%> {padding-top:<%=w%>px !important;} <%
+		%>.pR<%=w%> {padding-right:<%=w%>px !important;} <%
+		%>.pB<%=w%> {padding-bottom:<%=w%>px !important;} <%
+		%>.pL<%=w%> {padding-left:<%=w%>px !important;} <%
+		%><%=chr(13)&chr(10)%><%
+		if w/10 = fix(w/10) then %><%=chr(13)&chr(10)%><% End If
+	Next
+End If
+%>
 </style>
