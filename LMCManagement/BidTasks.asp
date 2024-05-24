@@ -171,7 +171,7 @@
 			<div class=tSpacer1 >&nbsp;</div>
 			<button id=searchBids class="tButton32" onClick="toggleSearchSort();" title="Search Bids" /><img src="../Images/search.png" /></button>
 			<div class=tSpacer1 >&nbsp;</div>
-			<button id=searchBids class="tButton32" onClick="location='Events.asp?Type=6&Active=True&Events.asp?Type=8&Active=True';" title="Estimating Tasks" /><img src="../Images/2items.png" /></button>
+			<button id=searchBids class="tButton32" onClick="toggleSearchSort();" title="Search Bids" /><img src="../Images/2items.png" /></button>
 			<div class="tSpacer5">&nbsp;</div>
 			<div class="tSpacer10">&nbsp;</div>
 			<div class="tSpacer10">&nbsp;</div>
@@ -293,7 +293,7 @@
 			<div style="float:left; width:33%; min-width:33%; height:100%;">
 				<span id="BidListControl" style="float:left; width:100%;">
 					<span class="ControlLabel"> New list for:</span>
-					<select id="ToDoEmpList" class="ControlInput"><%'EmployeeOptionList("active")%></select>
+					<select id="ToDoEmpList" class="ControlInput"><%EmployeeOptionList("active")%></select>
 					<button onClick="NewEmpList();">Add</button>
 				</span>
 			

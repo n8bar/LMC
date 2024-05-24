@@ -47,6 +47,8 @@ function Resize() {
 }
 
 function Load() {
+	if (document.referrer !== '') document.getElementById('backButton').style.visibility = 'visible';
+	
 	//try {	
 		topTab=window.top.document.getElementsByClassName('selectedMainTab'); 
 	//} 
@@ -54,6 +56,29 @@ function Load() {
 	if(!!topTab) Gebi('path').innerHTML.replace('LMC',topTab.innerHTML);
 	
 	Search();
+}
+function goBack() {
+	////window.history.back();
+	// For some reason the back button had to be clicked twice, hence, all this stuff:
+    const currentPath = window.location.pathname;
+    const referrer = document.referrer;
+    const backButton = document.getElementById('backButton'); 
+
+    if (referrer && referrer !== window.location.href) {
+        const referrerPath = new URL(referrer).pathname;
+		console.log(referrerPath,' != ',currentPath);
+
+        if (referrerPath === currentPath) {
+            window.history.go(-2); // Go back two pages.
+			console.log('back 2');
+        } else {
+			console.log('back 1');
+            window.history.go(-2); // Go back one page.  I think this is supposed to be -1 but I gave up for the moment.
+        }
+    } else {
+        console.warn("No referrer detected or referrer is the same as the current page.");
+        backButton.style.visibility = 'hidden'; // Hide the button
+    }
 }
 
 function Search() {
@@ -267,6 +292,8 @@ function Search() {
 		<div class="tSpacer10">&nbsp;</div>
 		<div class="tSpacer10">&nbsp;</div>
 		<div class="tSpacer10">&nbsp;</div>
+		<button id=backButton class=tButton32 style="visibility:hidden;" onClick="goBack();" title="Back"/><img src="../Images/GreenLeftTriangle.png" /></button>
+        <div class=tSpacer1 >&nbsp;</div>
 		<button id=ReloadFrame class=tButton32 onClick="window.location=window.location;" title="Reload Tab"/><img src="../Images/reloadblue24.png" /></button>
 	</div>
 
