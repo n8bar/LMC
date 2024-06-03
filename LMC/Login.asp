@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>Untitled Document</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
 
 <script type="text/javascript" src="../LMC/LoginAJAX.js"></script>
 <script type="text/javascript" src="../LMC/rcstri.js"></script>
@@ -51,11 +52,13 @@
 								<label style="">
 									<font color=black size=2 face="Verdana, Arial, Helvetica, sans-serif" style="" ><strong>Username:</strong></font>
 									<input class=text type=text id=user size=16 onKeyPress="ifEnter(event,'pass.focus();');"/>
+                                    <span style="display:inline-block; width:1px;">&nbsp;</span>
 								</label>
 								<br/>
 								<label>
 									<font color=black size=2 face="Verdana, Arial, Helvetica, sans-serif" ><strong>Password:</strong></font>
 									<input class=text type=password id=pass size=16 onKeyPress="ifEnter(event,'Login();')" onFocus="//Gebi('caseSensitive').innerHTML='Case Sensitive!';" onBlur="Gebi('caseSensitive').innerHTML='&nbsp;';" />
+                                    <span id=pwEye style="display:inline-block; width:1px;" onMouseDown="Gebi('pass').setAttribute('type','text');" onMouseUp="Gebi('pass').setAttribute('type','password');" >&lt;<big>o</big>&gt;</span>
 								</label>
 								<table width="222" border="0" cellspacing="0" cellpadding="0">
 									<tr> 
