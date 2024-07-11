@@ -181,296 +181,301 @@ Do Until secListRS.EOF
 	SQL4 = "SELECT "&F&" FROM Sections WHERE SectionID = "&secListRS("DetailID")
 	set rs4=Server.CreateObject("ADODB.Recordset")
 	rs4.Open SQL4, REDconnstring
-
-	SecID = rs4("SectionID")
 	
-		SecSection = DecodeChars(rs4("Section"))
-		SecNotes = DecodeChars(CR2Br(rs4("Notes")))
+	if rs4.EOF Then
+		'Sometimes a section is deleted but not from ProposalPrintSections. This if block is a bandaid to ignore those.
+	Else 
+		SecID = rs4("SectionID")
 		
-		%>
-		<br/>
-		<div class="bold fs3-16 ul mB0625 w100p taC">&nbsp;<%=SecSection%>&nbsp;</div>
-		<%
-		If psRs("pScope") = "True" AND SecNotes <> "" Then 
-			%>
-			<div class="mL25">
-				<div class="ul"><%=psRs("pScopeTitle")%></div>
-				&nbsp; &nbsp; <%=SecNotes%>
-			</div>
-			<%
-		End If
-		
-		useNewBidder=(rs("use2010Bidder")="True")
-		If Not useNewBidder Then 
-			PartsPrice=(psRs("pPartsPrice")="True")
-			LaborPrice=(psRs("pLaborPrice")="True")
-		Else 
-			PartsPrice=False
-			LaborPrice=False
-		End If
-		
-		Margin=(rs4("MU")/100)+1
-		
-		If psRs("pParts")="True" Then
+			SecSection = DecodeChars(rs4("Section"))
+			SecNotes = DecodeChars(CR2Br(rs4("Notes")))
+			
 			%>
 			<br/>
-			<div class="w80p ul taC fs3-16" style="margin-left:10%;">Materials</div>
-			<div class="w80p taC" style="border-bottom:.0078125in solid #ccc; height:.1875in; margin-left:10%;">
-				<div class="w10p fL taR">Qty</div>
-				<div class="w20p fL taC">Part#</div>
-				<%
-				If PartsPrice Then
-					%>
-					<div class="w40p fL taC">Description</div>
-					<div class="w15p fL taR">Price</div>
-					<div class="w15p fL taR">Total</div>
-					<%
-				Else
-					%><div class="w70p fL taC">Description</div><%
-				End If
-				%>
-			</div>
+			<div class="bold fs3-16 ul mB0625 w100p taC">&nbsp;<%=SecSection%>&nbsp;</div>
 			<%
-		End If
-		
-		Parts=0
-		SQL6="SELECT BidItemsID, Cost, Qty, ItemName, ItemDescription FROM BidItems WHERE Type='Part' AND editable<>1 AND SecID = "&SecID
-		Set rs6=Server.CreateObject("ADODB.Recordset")
-		rs6.Open SQL6, REDconnstring
-
-		Do Until rs6.EOF
-			cost=rs6("Cost")
-			qty=rs6("Qty") : if qty="" Or IsNull(qty) Then qty=0
-			
-			If UseNewBidder Then Parts=Parts+(cost*qty) Else Parts=Parts+(cost*qty*Margin)
-			
-			If psRs("pParts")="True" Then
-				bIId=rs6("BidItemsID")
-				
-				itemPrice=cost*margin
-				%><!-- <%
-				%><%=qty%><br/><%
-				%><%=cost%><br/><%
-				%><%=margin%><br/><%
-				%> --><%
-				itemTotal=(qty*cost*Margin)*1
-				boxStyle="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; "
+			If psRs("pScope") = "True" AND SecNotes <> "" Then 
 				%>
-				<div class="w80p taC fs1-8" style="height:.1875in; margin-left:10%; overflow:hidden;">
-					<div id=Qty<%=bIId%> class="h100p w10p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=qty%></font></div>
-					<div id=PN<%=bIId%> class="h100p w20p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs6("ItemName"))%></div>
-					<%
-					If PartsPrice Then
-						if itemPrice=0 Then itemPrice="FREE" Else itemPrice=formatCurrency(itemPrice)
-						%>
-						<div id=Desc<%=bIId%> class="h100p w40p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs6("ItemDescription"))%></div>
-						<div id=Price<%=bIId%> class="h100p w15p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=itemPrice%></font></div>
-						<div id=Total<%=bIId%> class="h100p w15p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=formatCurrency(itemTotal)%></font></div>
-						<%
-					Else
-						%><div id=Desc<%=bIId%> class="h100p w70p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs6("ItemDescription"))%></div><%
-					End If
-				%>
+				<div class="mL25">
+					<div class="ul"><%=psRs("pScopeTitle")%></div>
+					&nbsp; &nbsp; <%=SecNotes%>
 				</div>
 				<%
-			End IF
+			End If
 			
-			rs6.MoveNext
-		Loop
-
-		SecTaxRate = rs4("TaxRate") : if SecTaxRate = "" or (IsNull(SecTaxRate)) then SecTaxRate = 0
-		If UseNewBidder Then SecSalesTax = (SecTaxRate*Parts)/100 Else SecSalesTax = SecTaxRate*Parts/100
-		FixedPrice="0"&rs4("FixedPrice")
-		Overhead="0"&rs4("Overhead")
-		Profit="0"&rs4("MU")
-		
-		TotalFixed=rs4("TotalFixed")
-		
-
-
-		If psRs("pPartsTotal") = "True" Then
-			ShownMaterialsTotal=parts
-			If NOT psRs("pTax")="True" Then ShownMaterialsTotal=ShownMaterialsTotal+SecSalesTax
-			%>
-			<div class="w80p taR" style="height:.25in; margin-left:10%; overflow:hidden;">
-				Materials Total: &nbsp;<font face=Consolas><%=formatCurrency(ShownMaterialsTotal)%></font>
-			</div>
-			<%
-		End If
-		
-		
-		
-		
-		If psRs("pLabor")="True" Then
-			%>
-			<br/>
-			<div class="w80p ul taC fs3-16" style="margin-left:10%;">Labor</div>
-			<div class="w80p taC" style="border-bottom:.01in solid #ccc; height:.1875in; margin-left:10%;">
-				<div class="w10p fL taC">Hrs</div>
-				<div class="w20p fL taC">Labor</div>
-				<%
-				If LaborPrice Then
-					%>
-					<div class="w50p fL taC" style="<%=boxStyle%>" >Description</div>
-					<div class="w20p fL taC">$</div>
-					<%
-				Else
-					%><div class="w70p fL taC" style="<%=boxStyle%>">Description</div><%
-				End If
+			useNewBidder=(rs("use2010Bidder")="True")
+			If Not useNewBidder Then 
+				PartsPrice=(psRs("pPartsPrice")="True")
+				LaborPrice=(psRs("pLaborPrice")="True")
+			Else 
+				PartsPrice=False
+				LaborPrice=False
+			End If
+			
+			Margin=(rs4("MU")/100)+1
+			
+			If psRs("pParts")="True" Then
 				%>
-			</div>
-			<%
-		End If
-		
-		Labor=0
-		SQL7="SELECT BidItemsID, Cost, Qty, ItemName, ItemDescription FROM BidItems WHERE Type='Labor' AND editable<>1 AND SecID = "&SecID
-		Set rs7=Server.CreateObject("ADODB.Recordset")
-		rs7.Open SQL7, REDconnstring
-
-		Do Until rs7.EOF
-			cost=rs7("Cost")
-			qty=rs7("Qty")
+				<br/>
+				<div class="w80p ul taC fs3-16" style="margin-left:10%;">Materials</div>
+				<div class="w80p taC" style="border-bottom:.0078125in solid #ccc; height:.1875in; margin-left:10%;">
+					<div class="w10p fL taR">Qty</div>
+					<div class="w20p fL taC">Part#</div>
+					<%
+					If PartsPrice Then
+						%>
+						<div class="w40p fL taC">Description</div>
+						<div class="w15p fL taR">Price</div>
+						<div class="w15p fL taR">Total</div>
+						<%
+					Else
+						%><div class="w70p fL taC">Description</div><%
+					End If
+					%>
+				</div>
+				<%
+			End If
 			
-			If UseNewBidder Then Labor=Labor+(cost*qty) Else Labor=Labor+(cost*qty*Margin)
+			Parts=0
+			SQL6="SELECT BidItemsID, Cost, Qty, ItemName, ItemDescription FROM BidItems WHERE Type='Part' AND editable<>1 AND SecID = "&SecID
+			Set rs6=Server.CreateObject("ADODB.Recordset")
+			rs6.Open SQL6, REDconnstring
+	
+			Do Until rs6.EOF
+				cost=rs6("Cost")
+				qty=rs6("Qty") : if qty="" Or IsNull(qty) Then qty=0
+				
+				If UseNewBidder Then Parts=Parts+(cost*qty) Else Parts=Parts+(cost*qty*Margin)
+				
+				If psRs("pParts")="True" Then
+					bIId=rs6("BidItemsID")
+					
+					itemPrice=cost*margin
+					%><!-- <%
+					%><%=qty%><br/><%
+					%><%=cost%><br/><%
+					%><%=margin%><br/><%
+					%> --><%
+					itemTotal=(qty*cost*Margin)*1
+					boxStyle="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; "
+					%>
+					<div class="w80p taC fs1-8" style="height:.1875in; margin-left:10%; overflow:hidden;">
+						<div id=Qty<%=bIId%> class="h100p w10p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=qty%></font></div>
+						<div id=PN<%=bIId%> class="h100p w20p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs6("ItemName"))%></div>
+						<%
+						If PartsPrice Then
+							if itemPrice=0 Then itemPrice="FREE" Else itemPrice=formatCurrency(itemPrice)
+							%>
+							<div id=Desc<%=bIId%> class="h100p w40p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs6("ItemDescription"))%></div>
+							<div id=Price<%=bIId%> class="h100p w15p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=itemPrice%></font></div>
+							<div id=Total<%=bIId%> class="h100p w15p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=formatCurrency(itemTotal)%></font></div>
+							<%
+						Else
+							%><div id=Desc<%=bIId%> class="h100p w70p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs6("ItemDescription"))%></div><%
+						End If
+					%>
+					</div>
+					<%
+				End IF
+				
+				rs6.MoveNext
+			Loop
+	
+			SecTaxRate = rs4("TaxRate") : if SecTaxRate = "" or (IsNull(SecTaxRate)) then SecTaxRate = 0
+			If UseNewBidder Then SecSalesTax = (SecTaxRate*Parts)/100 Else SecSalesTax = SecTaxRate*Parts/100
+			FixedPrice="0"&rs4("FixedPrice")
+			Overhead="0"&rs4("Overhead")
+			Profit="0"&rs4("MU")
+			
+			TotalFixed=rs4("TotalFixed")
+			
+	
+	
+			If psRs("pPartsTotal") = "True" Then
+				ShownMaterialsTotal=parts
+				If NOT psRs("pTax")="True" Then ShownMaterialsTotal=ShownMaterialsTotal+SecSalesTax
+				%>
+				<div class="w80p taR" style="height:.25in; margin-left:10%; overflow:hidden;">
+					Materials Total: &nbsp;<font face=Consolas><%=formatCurrency(ShownMaterialsTotal)%></font>
+				</div>
+				<%
+			End If
+			
+			
+			
 			
 			If psRs("pLabor")="True" Then
-				bIId=rs7("BidItemsID")
-				
-				itemTotal=qty*cost*Margin
-				boxStyle="style="" overflow:hidden;"""
 				%>
-				<div class="w80p taC fs1-8" style="height:.1875in; margin-left:10%; overflow:hidden;">
-					<div id=Qty<%=bIId%> class="h100p w10p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=qty%></font></div>
-					<div id=LN<%=bIId%> class="h100p w20p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs7("ItemName"))%></div>
+				<br/>
+				<div class="w80p ul taC fs3-16" style="margin-left:10%;">Labor</div>
+				<div class="w80p taC" style="border-bottom:.01in solid #ccc; height:.1875in; margin-left:10%;">
+					<div class="w10p fL taC">Hrs</div>
+					<div class="w20p fL taC">Labor</div>
 					<%
 					If LaborPrice Then
 						%>
-						<div id=Desc<%=bIId%> class="h100p w50p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs7("ItemDescription"))%></div>
-						<div id=Qty<%=bIId%> class="h100p w20p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=formatCurrency(itemTotal)%></font></div>
+						<div class="w50p fL taC" style="<%=boxStyle%>" >Description</div>
+						<div class="w20p fL taC">$</div>
 						<%
 					Else
-						%><div id=Desc<%=bIId%> class="h100p w70p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs7("ItemDescription"))%></div><%
+						%><div class="w70p fL taC" style="<%=boxStyle%>">Description</div><%
 					End If
-				%>
+					%>
 				</div>
 				<%
-			End IF
-			
-			rs7.MoveNext
-		Loop
-		
-		
-		
-		
-		
-		Equipment=0
-		Travel=0
-		SQL8="Select UnitCost, Units, Type From Expenses WHERE editable<>1 AND SecID = "&SecID&" ORDER BY Type"
-		set rs8=Server.CreateObject("ADODB.Recordset")
-		rs8.Open SQL8, REDconnstring
-		
-		Do Until rs8.EOF
-			
-			itemCost=unCurrency(DecodeChars(rs8("UnitCost")))
-			itemQty=rs8("Units")
-			
-			Select Case rs8("Type")
-				Case "Equip"
-					Equipment=Equipment+(itemCost*itemQty)
-
-				Case "Travel"
-					Travel=Travel+(itemCost*itemQty)
-			
-			End Select
-			
-			rs8.MoveNext
-		Loop
-		
-		Set rs8=Nothing
-		
-		if Parts = "" or (IsNull(Parts)) then Parts = 0
-		if Labor = "" or (IsNull(Labor)) then Labor = 0
-		if Travel = "" or (IsNull(Travel)) then Travel = 0
-		if Equipment = "" or (IsNull(Equipment)) then Equipment = 0
-		Expenses=Travel+Equipment
-
-
-		If psRs("pLaborTotal") = "True" Then
-			ShownLaborTotal=labor
-			If NOT psRs("pTravel")="True" Then ShownLaborTotal=ShownLaborTotal+Travel
-			%>
-			<div class="w80p taR" style="height:.25in; margin-left:10%; overflow:hidden;">
-				Labor Total: &nbsp;<font id=LaborTotal face=Consolas><%=formatCurrency(ShownLaborTotal)%></font>
-			</div>
-			<%
-		End If
-
-
-
-		
-		If Not useNewBidder and psRs("pLaborTotal") = "True" And psRs("pLabor")="True" Then
-			If Travel <> 0 Then
-				%>
-				<div class="w60p ul taL fs3-16" style="margin-left:10%;">Travel <span style="font-family:Consolas;"><%=formatCurrency(Travel)%></span></div>
-				<br/>
-				<%
 			End If
-			If Equipment <> 0 Then
-				%>
-				<div class="w60p ul taL fs3-16" style="margin-left:10%;">Equipment <span style="font-family:Consolas;"><%=formatCurrency(Equipment)%></span></div>
-				<br/>
-				<%
-			End If
-			If Other <> 0 Then
-				%>
-				<div class="w60p ul taL fs3-16" style="margin-left:10%;">Goverment Fees and Misc Charges <span style="font-family:Consolas;"><%=formatCurrency(Other)%></span></div>
-				<br/>
-				<%
-			End If
-		End If
-		
-		%>
-		<div style="display:none; white-space:pre; color:silver; font-size:10px; font-family:Consolas, 'Courier New', Courier, monospace;">
-			SecSection: <%=SecSection%>
-			Parts: <%=Parts%>
-			Labor: <%=Labor%>
-			Travel: <%=Travel%>
-			Equipment: <%=Equipment%>
-			Expenses: <%=Expenses%>
-			Overhead: <%=Overhead%>
-			Profit: <%=Profit%>
-			Margin: <%=Margin%>
-			FixedPrice: <%=FixedPrice%>
-			SecTaxRate: <%=SecTaxRate%>
-			SecSalesTax: <%=SecSalesTax%>
-		</div>
-
-		<%
-		SecTotal=(FixedPrice*1)'+(SecSalesTax*1)
-		OverheadCost=(Overhead*FixedPrice)/100
+			
+			Labor=0
+			SQL7="SELECT BidItemsID, Cost, Qty, ItemName, ItemDescription FROM BidItems WHERE Type='Labor' AND editable<>1 AND SecID = "&SecID
+			Set rs7=Server.CreateObject("ADODB.Recordset")
+			rs7.Open SQL7, REDconnstring
 	
-		ProfitDollars=FixedPrice-OverheadCost-Expenses-Parts-Labor
-		
-		ProfitDollars=(ProfitDollars*100)/100
-		
-		If psRs("pTax")="True" Then SecTotal=SecTotal - SecSalesTax
-		
-		If psRs("pLaborTotal") = "True" AND psRs("pPartsTotal") = "True" Then
+			Do Until rs7.EOF
+				cost=rs7("Cost")
+				qty=rs7("Qty")
+				
+				If UseNewBidder Then Labor=Labor+(cost*qty) Else Labor=Labor+(cost*qty*Margin)
+				
+				If psRs("pLabor")="True" Then
+					bIId=rs7("BidItemsID")
+					
+					itemTotal=qty*cost*Margin
+					boxStyle="style="" overflow:hidden;"""
+					%>
+					<div class="w80p taC fs1-8" style="height:.1875in; margin-left:10%; overflow:hidden;">
+						<div id=Qty<%=bIId%> class="h100p w10p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=qty%></font></div>
+						<div id=LN<%=bIId%> class="h100p w20p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs7("ItemName"))%></div>
+						<%
+						If LaborPrice Then
+							%>
+							<div id=Desc<%=bIId%> class="h100p w50p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs7("ItemDescription"))%></div>
+							<div id=Qty<%=bIId%> class="h100p w20p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=formatCurrency(itemTotal)%></font></div>
+							<%
+						Else
+							%><div id=Desc<%=bIId%> class="h100p w70p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs7("ItemDescription"))%></div><%
+						End If
+					%>
+					</div>
+					<%
+				End IF
+				
+				rs7.MoveNext
+			Loop
+			
+			
+			
+			
+			
+			Equipment=0
+			Travel=0
+			SQL8="Select UnitCost, Units, Type From Expenses WHERE editable<>1 AND SecID = "&SecID&" ORDER BY Type"
+			set rs8=Server.CreateObject("ADODB.Recordset")
+			rs8.Open SQL8, REDconnstring
+			
+			Do Until rs8.EOF
+				
+				itemCost=unCurrency(DecodeChars(rs8("UnitCost")))
+				itemQty=rs8("Units")
+				
+				Select Case rs8("Type")
+					Case "Equip"
+						Equipment=Equipment+(itemCost*itemQty)
+	
+					Case "Travel"
+						Travel=Travel+(itemCost*itemQty)
+				
+				End Select
+				
+				rs8.MoveNext
+			Loop
+			
+			Set rs8=Nothing
+			
+			if Parts = "" or (IsNull(Parts)) then Parts = 0
+			if Labor = "" or (IsNull(Labor)) then Labor = 0
+			if Travel = "" or (IsNull(Travel)) then Travel = 0
+			if Equipment = "" or (IsNull(Equipment)) then Equipment = 0
+			Expenses=Travel+Equipment
+	
+	
+			If psRs("pLaborTotal") = "True" Then
+				ShownLaborTotal=labor
+				If NOT psRs("pTravel")="True" Then ShownLaborTotal=ShownLaborTotal+Travel
+				%>
+				<div class="w80p taR" style="height:.25in; margin-left:10%; overflow:hidden;">
+					Labor Total: &nbsp;<font id=LaborTotal face=Consolas><%=formatCurrency(ShownLaborTotal)%></font>
+				</div>
+				<%
+			End If
+	
+	
+	
+			
+			If Not useNewBidder and psRs("pLaborTotal") = "True" And psRs("pLabor")="True" Then
+				If Travel <> 0 Then
+					%>
+					<div class="w60p ul taL fs3-16" style="margin-left:10%;">Travel <span style="font-family:Consolas;"><%=formatCurrency(Travel)%></span></div>
+					<br/>
+					<%
+				End If
+				If Equipment <> 0 Then
+					%>
+					<div class="w60p ul taL fs3-16" style="margin-left:10%;">Equipment <span style="font-family:Consolas;"><%=formatCurrency(Equipment)%></span></div>
+					<br/>
+					<%
+				End If
+				If Other <> 0 Then
+					%>
+					<div class="w60p ul taL fs3-16" style="margin-left:10%;">Goverment Fees and Misc Charges <span style="font-family:Consolas;"><%=formatCurrency(Other)%></span></div>
+					<br/>
+					<%
+				End If
+			End If
+			
 			%>
-			<script type="text/javascript">
-				//	alert('<%=SecTotal%>');
-				LaborTotal.innerHTML='<%=formatCurrency(SecTotal-ShownMaterialsTotal,2)%>';
-			</script>
+			<div style="display:none; white-space:pre; color:silver; font-size:10px; font-family:Consolas, 'Courier New', Courier, monospace;">
+				SecSection: <%=SecSection%>
+				Parts: <%=Parts%>
+				Labor: <%=Labor%>
+				Travel: <%=Travel%>
+				Equipment: <%=Equipment%>
+				Expenses: <%=Expenses%>
+				Overhead: <%=Overhead%>
+				Profit: <%=Profit%>
+				Margin: <%=Margin%>
+				FixedPrice: <%=FixedPrice%>
+				SecTaxRate: <%=SecTaxRate%>
+				SecSalesTax: <%=SecSalesTax%>
+			</div>
+	
 			<%
-		End If
+			SecTotal=(FixedPrice*1)'+(SecSalesTax*1)
+			OverheadCost=(Overhead*FixedPrice)/100
 		
-		MoneyFormat = SecTotal-SecSalesTax
-		MoneyFormat = FormatCurrency(MoneyFormat,2)
-		
-
-		SecIncludes = DecodeChars(CR2Br(rs4("Includes")))
-
-		SecExcludes = DecodeChars(CR2Br(rs4("Excludes")))
+			ProfitDollars=FixedPrice-OverheadCost-Expenses-Parts-Labor
+			
+			ProfitDollars=(ProfitDollars*100)/100
+			
+			If psRs("pTax")="True" Then SecTotal=SecTotal - SecSalesTax
+			
+			If psRs("pLaborTotal") = "True" AND psRs("pPartsTotal") = "True" Then
+				%>
+				<script type="text/javascript">
+					//	alert('<%=SecTotal%>');
+					LaborTotal.innerHTML='<%=formatCurrency(SecTotal-ShownMaterialsTotal,2)%>';
+				</script>
+				<%
+			End If
+			
+			MoneyFormat = SecTotal-SecSalesTax
+			MoneyFormat = FormatCurrency(MoneyFormat,2)
+			
+	
+			SecIncludes = DecodeChars(CR2Br(rs4("Includes")))
+	
+			SecExcludes = DecodeChars(CR2Br(rs4("Excludes")))
+			
+		End If 'This is supposed to be for the rs4 record-exist check.
 
 		If psRs("pInc") = "True" AND SecIncludes <> "" Then 
 			%>
