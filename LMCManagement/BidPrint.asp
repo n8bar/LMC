@@ -217,7 +217,7 @@ Do Until secListRS.EOF
 			If psRs("pParts")="True" Then
 				%>
 				<br/>
-				<div class="w80p ul taC fs3-16" style="margin-left:10%;">Materials</div>
+				<div class="w80p ul taC fs3-16" style="margin-left:10%;">Products &amp; Materials</div>
 				<div class="w80p taC" style="border-bottom:.0078125in solid #ccc; height:.1875in; margin-left:10%;">
 					<div class="w10p fL taR">Qty</div>
 					<div class="w20p fL taC">Part#</div>
@@ -296,7 +296,7 @@ Do Until secListRS.EOF
 				If NOT psRs("pTax")="True" Then ShownMaterialsTotal=ShownMaterialsTotal+SecSalesTax
 				%>
 				<div class="w80p taR" style="height:.25in; margin-left:10%; overflow:hidden;">
-					Materials Total: &nbsp;<font face=Consolas><%=formatCurrency(ShownMaterialsTotal)%></font>
+					Products/Materials Total: &nbsp;<font face=Consolas><%=formatCurrency(ShownMaterialsTotal)%></font>
 				</div>
 				<%
 			End If
