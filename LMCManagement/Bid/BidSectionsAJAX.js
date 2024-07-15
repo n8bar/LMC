@@ -82,7 +82,7 @@ function dupBid() {
 	var secName=Gebi('dwSecName').value;
 	var move='1';
 	if (Gebi('dwMoveChk').checked) move='0';
-	HttpText='BidASP.asp?action=dupBid&secId='+secId+'&ProjID='+ProjID+'&secName='+secName+'&move='+move;
+	HttpText='BidASP.asp?action=dupBid&secId='+secId+'&ProjID='+projId+'&secName='+secName+'&move='+move;
 	xhr=getXHRObject();
 	xhr.onreadystatechange = function() {
 		if(xhr.readyState==4) {
