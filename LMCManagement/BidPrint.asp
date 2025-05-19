@@ -342,7 +342,7 @@ Do Until secListRS.EOF
 					itemTotal=qty*cost*Margin
 					boxStyle="style="" overflow:hidden;"""
 					%>
-					<div class="w80p taC fs1-8" style="height:.1875in; margin-left:10%; overflow:hidden;">
+					<div class="w80p taC fs1-8" style="height:auto; margin-left:10%; overflow:hidden;">
 						<div id=Qty<%=bIId%> class="h100p w10p fL taRP" style="<%=boxStyle%>"><font face=Consolas><%=qty%></font></div>
 						<div id=LN<%=bIId%> class="h100p w20p fL taLP" style="<%=boxStyle%>"><%=DecodeChars(rs7("ItemName"))%></div>
 						<%
@@ -527,7 +527,7 @@ Do Until secListRS.EOF
 			var Price = '<%=Round(TotalsTotal*100)/100%>';
 			Price=Price.split('.');
 			var Dollars= Num2Word(Price[0]);
-			var Cents=Num2Word(Price[1]*1);
+			var Cents = Num2Word(Price[1].padEnd(2, '0'));
 			Gebi('WordPrice').innerHTML=Dollars+' dollars and '+Cents+' cents';
 		</script>
 		<%
